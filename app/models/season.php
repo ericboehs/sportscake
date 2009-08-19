@@ -14,7 +14,7 @@ class Season extends AppModel {
 			'foreignKey' => 'publisher_id',
 		),
 		'League' => array(
-			'className' => 'League',
+			'className' => 'Affiliations',
 			'foreignKey' => 'league_id',
 		)
 	);
@@ -25,6 +25,7 @@ class Season extends AppModel {
 			'foreignKey' => 'season_id',
 			'dependent' => false
 		),
+
 		'StartTeamPhase' => array(
             'className' => 'TeamPhase',
             'foreignKey' => 'start_season_id',
@@ -34,7 +35,19 @@ class Season extends AppModel {
             'className' => 'TeamPhase',
             'foreignKey' => 'end_season_id',
             'dependent' => false
-        )
+        ),
+
+		'AffiliationPhaseStart' => array(
+			'className' => 'AffiliationPhase',
+			'foreignKey' => 'start_season_id',
+			'dependent' => false
+		),
+		'AffiliationPhaseEnd' => array(
+			'className' => 'AffiliationPhase',
+			'foreignKey' => 'end_season_id',
+			'dependent' => false
+		)
+
 	);
 
 	var $hasAndBelongsToMany = array(

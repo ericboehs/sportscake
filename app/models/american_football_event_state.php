@@ -15,14 +15,6 @@ class AmericanFootballEventState extends AppModel {
 		)
 	);
 
-	var $hasOne = array(
-		'AmericanFootballActionPlay' => array(
-			'className' => 'AmericanFootballActionPlay',
-			'foreignKey' => 'american_football_event_state_id',
-			'dependent' => false,
-		)
-	);
-
 	var $hasMany = array(
 		'AmericanFootballActionPlay' => array(
 			'className' => 'AmericanFootballActionPlay',

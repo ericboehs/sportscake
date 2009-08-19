@@ -10,7 +10,7 @@ class BaseballDefensivePlayer extends AppModel {
 			'foreignKey' => 'baseball_defensive_group_id',
 		),
 		'Player' => array(
-			'className' => 'Player',
+			'className' => 'Person',
 			'foreignKey' => 'player_id',
 		),
 		'Position' => array(
