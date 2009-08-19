@@ -11,16 +11,10 @@ class IceHockeyActionPlay extends AppModel {
 		'IceHockeyEventState' => array(
 			'className' => 'IceHockeyEventState',
 			'foreignKey' => 'ice_hockey_event_state_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Team' => array(
 			'className' => 'Team',
 			'foreignKey' => 'team_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -28,17 +22,8 @@ class IceHockeyActionPlay extends AppModel {
 		'IceHockeyActionParticipant' => array(
 			'className' => 'IceHockeyActionParticipant',
 			'foreignKey' => 'ice_hockey_action_play_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

@@ -12,18 +12,11 @@ class PersonsDocument extends AppModel {
 		'Person' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Document' => array(
 			'className' => 'Document',
 			'foreignKey' => 'document_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

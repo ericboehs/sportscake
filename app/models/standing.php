@@ -12,16 +12,10 @@ class Standing extends AppModel {
 		'Affiliation' => array(
 			'className' => 'Affiliation',
 			'foreignKey' => 'affiliation_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'SubSeason' => array(
 			'className' => 'SubSeason',
 			'foreignKey' => 'sub_season_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -29,17 +23,8 @@ class Standing extends AppModel {
 		'StandingSubgroup' => array(
 			'className' => 'StandingSubgroup',
 			'foreignKey' => 'standing_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

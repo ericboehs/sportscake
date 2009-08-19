@@ -12,18 +12,11 @@ class TeamsDocument extends AppModel {
 		'Team' => array(
 			'className' => 'Team',
 			'foreignKey' => 'team_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Document' => array(
 			'className' => 'Document',
 			'foreignKey' => 'document_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

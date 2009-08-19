@@ -12,16 +12,10 @@ class MediaCaption extends AppModel {
 		'Media' => array(
 			'className' => 'Media',
 			'foreignKey' => 'media_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'CaptionAuthor' => array(
 			'className' => 'CaptionAuthor',
 			'foreignKey' => 'caption_author_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -29,17 +23,8 @@ class MediaCaption extends AppModel {
 		'DocumentsMedium' => array(
 			'className' => 'DocumentsMedium',
 			'foreignKey' => 'media_caption_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

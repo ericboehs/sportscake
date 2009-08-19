@@ -8,17 +8,8 @@ class KeyRoot extends AppModel {
 		'KeyAlias' => array(
 			'className' => 'KeyAlias',
 			'foreignKey' => 'key_root_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

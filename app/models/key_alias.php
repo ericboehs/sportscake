@@ -12,18 +12,11 @@ class KeyAlias extends AppModel {
 		'Key' => array(
 			'className' => 'Key',
 			'foreignKey' => 'key_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'KeyRoot' => array(
 			'className' => 'KeyRoot',
 			'foreignKey' => 'key_root_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

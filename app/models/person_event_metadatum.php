@@ -12,39 +12,23 @@ class PersonEventMetadatum extends AppModel {
 		'Person' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Event' => array(
 			'className' => 'Event',
 			'foreignKey' => 'event_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Role' => array(
 			'className' => 'Role',
 			'foreignKey' => 'role_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Position' => array(
 			'className' => 'Position',
 			'foreignKey' => 'position_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Team' => array(
 			'className' => 'Team',
 			'foreignKey' => 'team_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

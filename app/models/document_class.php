@@ -8,17 +8,8 @@ class DocumentClass extends AppModel {
 		'DocumentFixture' => array(
 			'className' => 'DocumentFixture',
 			'foreignKey' => 'document_class_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

@@ -11,16 +11,10 @@ class BaseballActionPitch extends AppModel {
 		'BaseballActionPlay' => array(
 			'className' => 'BaseballActionPlay',
 			'foreignKey' => 'baseball_action_play_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'BaseballDefensiveGroup' => array(
 			'className' => 'BaseballDefensiveGroup',
 			'foreignKey' => 'baseball_defensive_group_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -28,17 +22,8 @@ class BaseballActionPitch extends AppModel {
 		'BaseballActionContactDetail' => array(
 			'className' => 'BaseballActionContactDetail',
 			'foreignKey' => 'baseball_action_pitch_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

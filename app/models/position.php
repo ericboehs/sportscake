@@ -12,9 +12,6 @@ class Position extends AppModel {
 		'Affiliation' => array(
 			'className' => 'Affiliation',
 			'foreignKey' => 'affiliation_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -22,56 +19,23 @@ class Position extends AppModel {
 		'BaseballDefensivePlayer' => array(
 			'className' => 'BaseballDefensivePlayer',
 			'foreignKey' => 'position_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'CoreStat' => array(
 			'className' => 'CoreStat',
 			'foreignKey' => 'position_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'PersonOriginalPosition' => array(
 			'className' => 'SoccerActionSubstitution',
 			'foreignKey' => 'position_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'PersonReplacingPosition' => array(
 			'className' => 'SoccerActionSubstitution',
 			'foreignKey' => 'position_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

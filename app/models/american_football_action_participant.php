@@ -13,18 +13,11 @@ class AmericanFootballActionParticipant extends AppModel {
 		'AmericanFootballActionPlay' => array(
 			'className' => 'AmericanFootballActionPlay',
 			'foreignKey' => 'american_football_action_play_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Person' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

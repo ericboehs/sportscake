@@ -12,18 +12,11 @@ class AffiliationsMedium extends AppModel {
 		'Affiliation' => array(
 			'className' => 'Affiliation',
 			'foreignKey' => 'affiliation_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Media' => array(
 			'className' => 'Media',
 			'foreignKey' => 'media_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

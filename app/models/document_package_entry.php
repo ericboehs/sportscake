@@ -9,18 +9,11 @@ class DocumentPackageEntry extends AppModel {
 		'DocumentPackage' => array(
 			'className' => 'DocumentPackage',
 			'foreignKey' => 'document_package_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Document' => array(
 			'className' => 'Document',
 			'foreignKey' => 'document_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

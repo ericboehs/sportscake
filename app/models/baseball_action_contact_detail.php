@@ -11,11 +11,7 @@ class BaseballActionContactDetail extends AppModel {
 		'BaseballActionPitch' => array(
 			'className' => 'BaseballActionPitch',
 			'foreignKey' => 'baseball_action_pitch_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

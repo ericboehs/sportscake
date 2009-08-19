@@ -11,9 +11,6 @@ class IceHockeyEventState extends AppModel {
 		'Event' => array(
 			'className' => 'Event',
 			'foreignKey' => 'event_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -21,17 +18,8 @@ class IceHockeyEventState extends AppModel {
 		'IceHockeyActionPlay' => array(
 			'className' => 'IceHockeyActionPlay',
 			'foreignKey' => 'ice_hockey_event_state_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

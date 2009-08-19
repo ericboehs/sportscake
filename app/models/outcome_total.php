@@ -11,18 +11,11 @@ class OutcomeTotal extends AppModel {
 		'StandingSubgroup' => array(
 			'className' => 'StandingSubgroup',
 			'foreignKey' => 'standing_subgroup_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'OutcomeHolder' => array(
 			'className' => 'OutcomeHolder',
 			'foreignKey' => 'outcome_holder_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

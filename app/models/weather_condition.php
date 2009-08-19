@@ -11,11 +11,7 @@ class WeatherCondition extends AppModel {
 		'Event' => array(
 			'className' => 'Event',
 			'foreignKey' => 'event_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

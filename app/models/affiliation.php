@@ -8,9 +8,6 @@ class Affiliation extends AppModel {
 		'Publisher' => array(
 			'className' => 'Publisher',
 			'foreignKey' => 'publisher_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -18,67 +15,32 @@ class Affiliation extends AppModel {
 		'AffiliationPhase' => array(
 			'className' => 'AffiliationPhase',
 			'foreignKey' => 'affiliation_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
+		),
+		'AncestorAffiliation' => array(
+			'className' => 'AffiliationPhase',
+			'foreignKey' => 'ancestor_affiliation_id',
+			'dependent' => false
 		),
 		'Position' => array(
 			'className' => 'Position',
 			'foreignKey' => 'affiliation_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'StandingSubgroup' => array(
 			'className' => 'StandingSubgroup',
 			'foreignKey' => 'affiliation_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'Standing' => array(
 			'className' => 'Standing',
 			'foreignKey' => 'affiliation_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'TeamPhase' => array(
 			'className' => 'TeamPhase',
 			'foreignKey' => 'affiliation_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
 
@@ -88,47 +50,22 @@ class Affiliation extends AppModel {
 			'joinTable' => 'affiliations_documents',
 			'foreignKey' => 'affiliation_id',
 			'associationForeignKey' => 'document_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		),
 		'Event' => array(
 			'className' => 'Event',
 			'joinTable' => 'affiliations_events',
 			'foreignKey' => 'affiliation_id',
 			'associationForeignKey' => 'event_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		),
 		'Media' => array(
 			'className' => 'Media',
 			'joinTable' => 'affiliations_media',
 			'foreignKey' => 'affiliation_id',
 			'associationForeignKey' => 'media_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		)
 	);
-
 }
 ?>

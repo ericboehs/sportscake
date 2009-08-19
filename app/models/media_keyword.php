@@ -11,11 +11,7 @@ class MediaKeyword extends AppModel {
 		'Media' => array(
 			'className' => 'Media',
 			'foreignKey' => 'media_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

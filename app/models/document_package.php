@@ -8,17 +8,8 @@ class DocumentPackage extends AppModel {
 		'DocumentPackageEntry' => array(
 			'className' => 'DocumentPackageEntry',
 			'foreignKey' => 'document_package_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

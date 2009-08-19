@@ -12,18 +12,11 @@ class EventsSubSeason extends AppModel {
 		'Event' => array(
 			'className' => 'Event',
 			'foreignKey' => 'event_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'SubSeason' => array(
 			'className' => 'SubSeason',
 			'foreignKey' => 'sub_season_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

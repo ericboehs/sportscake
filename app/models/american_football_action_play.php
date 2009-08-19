@@ -11,9 +11,6 @@ class AmericanFootballActionPlay extends AppModel {
 		'AmericanFootballEventState' => array(
 			'className' => 'AmericanFootballEventState',
 			'foreignKey' => 'american_football_event_state_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -21,17 +18,8 @@ class AmericanFootballActionPlay extends AppModel {
 		'AmericanFootballActionParticipant' => array(
 			'className' => 'AmericanFootballActionParticipant',
 			'foreignKey' => 'american_football_action_play_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

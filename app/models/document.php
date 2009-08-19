@@ -8,37 +8,22 @@ class Document extends AppModel {
 		'Doc' => array(
 			'className' => 'Doc',
 			'foreignKey' => 'doc_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Publisher' => array(
 			'className' => 'Publisher',
 			'foreignKey' => 'publisher_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Revision' => array(
 			'className' => 'Revision',
 			'foreignKey' => 'revision_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'DocumentFixture' => array(
 			'className' => 'DocumentFixture',
 			'foreignKey' => 'document_fixture_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Source' => array(
 			'className' => 'Source',
 			'foreignKey' => 'source_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -47,17 +32,11 @@ class Document extends AppModel {
 			'className' => 'DocumentContent',
 			'foreignKey' => 'document_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'DocumentPackageEntry' => array(
 			'className' => 'DocumentPackageEntry',
 			'foreignKey' => 'document_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -65,28 +44,12 @@ class Document extends AppModel {
 		'DocumentContent' => array(
 			'className' => 'DocumentContent',
 			'foreignKey' => 'document_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'DocumentPackageEntry' => array(
 			'className' => 'DocumentPackageEntry',
 			'foreignKey' => 'document_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
 
@@ -96,77 +59,36 @@ class Document extends AppModel {
 			'joinTable' => 'affiliations_documents',
 			'foreignKey' => 'document_id',
 			'associationForeignKey' => 'affiliation_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		),
 		'Media' => array(
 			'className' => 'Media',
 			'joinTable' => 'documents_media',
 			'foreignKey' => 'document_id',
 			'associationForeignKey' => 'media_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		),
 		'Event' => array(
 			'className' => 'Event',
 			'joinTable' => 'events_documents',
 			'foreignKey' => 'document_id',
 			'associationForeignKey' => 'event_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		),
 		'Person' => array(
 			'className' => 'Person',
 			'joinTable' => 'persons_documents',
 			'foreignKey' => 'document_id',
 			'associationForeignKey' => 'person_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		),
 		'Team' => array(
 			'className' => 'Team',
 			'joinTable' => 'teams_documents',
 			'foreignKey' => 'document_id',
 			'associationForeignKey' => 'team_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		)
 	);
-
 }
 ?>

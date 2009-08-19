@@ -11,18 +11,11 @@ class InjuryPhase extends AppModel {
 		'Person' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Season' => array(
 			'className' => 'Season',
 			'foreignKey' => 'season_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

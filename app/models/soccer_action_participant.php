@@ -12,18 +12,11 @@ class SoccerActionParticipant extends AppModel {
 		'SoccerActionPlay' => array(
 			'className' => 'SoccerActionPlay',
 			'foreignKey' => 'soccer_action_play_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Person' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

@@ -12,18 +12,11 @@ class LatestRevision extends AppModel {
 		'Revision' => array(
 			'className' => 'Revision',
 			'foreignKey' => 'revision_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'LatestDocument' => array(
 			'className' => 'LatestDocument',
 			'foreignKey' => 'latest_document_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

@@ -12,39 +12,23 @@ class TeamPhase extends AppModel {
 		'Team' => array(
 			'className' => 'Team',
 			'foreignKey' => 'team_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'StartSeason' => array(
 			'className' => 'StartSeason',
 			'foreignKey' => 'start_season_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'EndSeason' => array(
 			'className' => 'EndSeason',
 			'foreignKey' => 'end_season_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Affiliation' => array(
 			'className' => 'Affiliation',
 			'foreignKey' => 'affiliation_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Role' => array(
 			'className' => 'Role',
 			'foreignKey' => 'role_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

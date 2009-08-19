@@ -12,16 +12,10 @@ class Site extends AppModel {
 		'Publisher' => array(
 			'className' => 'Publisher',
 			'foreignKey' => 'publisher_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Location' => array(
 			'className' => 'Location',
 			'foreignKey' => 'location_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -29,30 +23,13 @@ class Site extends AppModel {
 		'HomeSite' => array(
 			'className' => 'Team',
 			'foreignKey' => 'site_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'Event' => array(
 			'className' => 'Event',
 			'foreignKey' => 'site_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

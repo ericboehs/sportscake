@@ -8,11 +8,7 @@ class TennisActionPoint extends AppModel {
 		'SubPeriod' => array(
 			'className' => 'SubPeriod',
 			'foreignKey' => 'sub_period_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

@@ -12,16 +12,10 @@ class DocumentFixture extends AppModel {
 		'Publisher' => array(
 			'className' => 'Publisher',
 			'foreignKey' => 'publisher_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'DocumentClass' => array(
 			'className' => 'DocumentClass',
 			'foreignKey' => 'document_class_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -29,28 +23,12 @@ class DocumentFixture extends AppModel {
 		'Document' => array(
 			'className' => 'Document',
 			'foreignKey' => 'document_fixture_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'Ranking' => array(
 			'className' => 'Ranking',
 			'foreignKey' => 'document_fixture_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
 
@@ -60,17 +38,8 @@ class DocumentFixture extends AppModel {
 			'joinTable' => 'document_fixtures_events',
 			'foreignKey' => 'document_fixture_id',
 			'associationForeignKey' => 'event_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		)
 	);
-
 }
 ?>

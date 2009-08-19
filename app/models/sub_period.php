@@ -11,9 +11,6 @@ class SubPeriod extends AppModel {
 		'Period' => array(
 			'className' => 'Period',
 			'foreignKey' => 'period_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -21,17 +18,8 @@ class SubPeriod extends AppModel {
 		'TennisActionPoint' => array(
 			'className' => 'TennisActionPoint',
 			'foreignKey' => 'sub_period_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

@@ -10,25 +10,16 @@ class BaseballDefensiveGroup extends AppModel {
 			'className' => 'BaseballActionPitch',
 			'foreignKey' => 'baseball_defensive_group_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'BaseballActionPlay' => array(
 			'className' => 'BaseballActionPlay',
 			'foreignKey' => 'baseball_defensive_group_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'BaseballDefensivePlayer' => array(
 			'className' => 'BaseballDefensivePlayer',
 			'foreignKey' => 'baseball_defensive_group_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -36,43 +27,18 @@ class BaseballDefensiveGroup extends AppModel {
 		'BaseballActionPitch' => array(
 			'className' => 'BaseballActionPitch',
 			'foreignKey' => 'baseball_defensive_group_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'BaseballActionPlay' => array(
 			'className' => 'BaseballActionPlay',
 			'foreignKey' => 'baseball_defensive_group_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'BaseballDefensivePlayer' => array(
 			'className' => 'BaseballDefensivePlayer',
 			'foreignKey' => 'baseball_defensive_group_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

@@ -13,37 +13,22 @@ class Person extends AppModel {
 		'Publisher' => array(
 			'className' => 'Publisher',
 			'foreignKey' => 'publisher_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'BirthLocation' => array(
 			'className' => 'Location',
 			'foreignKey' => 'birth_location_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'HometownLocation' => array(
 			'className' => 'Location',
 			'foreignKey' => 'hometown_location_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'ResidenceLocation' => array(
 			'className' => 'Location',
 			'foreignKey' => 'residence_location_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'DeathLocation' => array(
 			'className' => 'Location',
 			'foreignKey' => 'death_location_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -52,97 +37,61 @@ class Person extends AppModel {
 			'className' => 'AmericanFootballActionParticipant',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'EventActionParticipant' => array(
 			'className' => 'EventActionParticipant',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'IceHockeyActionParticipant' => array(
 			'className' => 'IceHockeyActionParticipant',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'InjuryPhase' => array(
 			'className' => 'InjuryPhase',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'PersonEventMetadatum' => array(
 			'className' => 'PersonEventMetadatum',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'PersonPhase' => array(
 			'className' => 'PersonPhase',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'SoccerActionParticipant' => array(
 			'className' => 'SoccerActionParticipant',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'WageringMoneyline' => array(
 			'className' => 'WageringMoneyline',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'WageringOddsLine' => array(
 			'className' => 'WageringOddsLine',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'WageringRunline' => array(
 			'className' => 'WageringRunline',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'WageringStraightSpreadLine' => array(
 			'className' => 'WageringStraightSpreadLine',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'WageringTotalScoreLine' => array(
 			'className' => 'WageringTotalScoreLine',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -150,208 +99,87 @@ class Person extends AppModel {
 		'AmericanFootballActionParticipant' => array(
 			'className' => 'AmericanFootballActionParticipant',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'EventActionParticipant' => array(
 			'className' => 'EventActionParticipant',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'IceHockeyActionParticipant' => array(
 			'className' => 'IceHockeyActionParticipant',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'InjuryPhase' => array(
 			'className' => 'InjuryPhase',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'PersonEventMetadatum' => array(
 			'className' => 'PersonEventMetadatum',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'PersonOriginal' => array(
 			'className' => 'SoccerActionSubstitution',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'PersonPhase' => array(
 			'className' => 'PersonPhase',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'PersonReplacing' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'RunnerOnFirst' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'RunnerOnSecond' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'RunnerOnThird' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'SoccerActionParticipant' => array(
 			'className' => 'SoccerActionParticipant',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'WageringMoneyline' => array(
 			'className' => 'WageringMoneyline',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'WageringOddsLine' => array(
 			'className' => 'WageringOddsLine',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'WageringRunline' => array(
 			'className' => 'WageringRunline',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'WageringStraightSpreadLine' => array(
 			'className' => 'WageringStraightSpreadLine',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'WageringTotalScoreLine' => array(
 			'className' => 'WageringTotalScoreLine',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
 
@@ -361,32 +189,15 @@ class Person extends AppModel {
 			'joinTable' => 'persons_documents',
 			'foreignKey' => 'person_id',
 			'associationForeignKey' => 'document_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		),
 		'Media' => array(
 			'className' => 'Media',
 			'joinTable' => 'persons_media',
 			'foreignKey' => 'person_id',
 			'associationForeignKey' => 'media_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		)
 	);
-
 }
 ?>

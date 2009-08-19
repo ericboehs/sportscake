@@ -8,25 +8,15 @@ class DocumentFixturesEvent extends AppModel {
 		'DocumentFixture' => array(
 			'className' => 'DocumentFixture',
 			'foreignKey' => 'document_fixture_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Event' => array(
 			'className' => 'Event',
 			'foreignKey' => 'event_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'LatestDocument' => array(
 			'className' => 'LatestDocument',
 			'foreignKey' => 'latest_document_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

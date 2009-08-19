@@ -12,16 +12,10 @@ class Season extends AppModel {
 		'Publisher' => array(
 			'className' => 'Publisher',
 			'foreignKey' => 'publisher_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'League' => array(
 			'className' => 'League',
 			'foreignKey' => 'league_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -29,15 +23,7 @@ class Season extends AppModel {
 		'InjuryPhase' => array(
 			'className' => 'InjuryPhase',
 			'foreignKey' => 'season_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
 
@@ -47,32 +33,15 @@ class Season extends AppModel {
 			'joinTable' => 'events_sub_seasons',
 			'foreignKey' => 'season_id',
 			'associationForeignKey' => 'events_sub_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		),
 		'Sub' => array(
 			'className' => 'Sub',
 			'joinTable' => 'sub_seasons',
 			'foreignKey' => 'season_id',
 			'associationForeignKey' => 'sub_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		)
 	);
-
 }
 ?>

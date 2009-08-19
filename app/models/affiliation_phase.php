@@ -11,33 +11,19 @@ class AffiliationPhase extends AppModel {
 		'Affiliation' => array(
 			'className' => 'Affiliation',
 			'foreignKey' => 'affiliation_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'AncestorAffiliation' => array(
 			'className' => 'Affiliation',
-			//FIXME: the className here was AncestorAffiliation
 			'foreignKey' => 'ancestor_affiliation_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'StartSeason' => array(
-			'className' => 'StartSeason',
+			'className' => 'Season',
 			'foreignKey' => 'start_season_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'EndSeason' => array(
-			'className' => 'EndSeason',
+			'className' => 'Season',
 			'foreignKey' => 'end_season_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

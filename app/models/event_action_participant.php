@@ -13,25 +13,15 @@ class EventActionParticipant extends AppModel {
 		'EventState' => array(
 			'className' => 'EventState',
 			'foreignKey' => 'event_state_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'EventActionPlay' => array(
 			'className' => 'EventActionPlay',
 			'foreignKey' => 'event_action_play_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Person' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

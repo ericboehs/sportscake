@@ -12,18 +12,11 @@ class IceHockeyActionParticipant extends AppModel {
 		'IceHockeyActionPlay' => array(
 			'className' => 'IceHockeyActionPlay',
 			'foreignKey' => 'ice_hockey_action_play_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Person' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

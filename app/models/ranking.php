@@ -8,25 +8,15 @@ class Ranking extends AppModel {
 		'DocumentFixture' => array(
 			'className' => 'DocumentFixture',
 			'foreignKey' => 'document_fixture_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Participant' => array(
 			'className' => 'Participant',
 			'foreignKey' => 'participant_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'DateCoverage' => array(
 			'className' => 'DateCoverage',
 			'foreignKey' => 'date_coverage_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

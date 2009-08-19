@@ -8,11 +8,7 @@ class EventActionFoul extends AppModel {
 		'EventState' => array(
 			'className' => 'EventState',
 			'foreignKey' => 'event_state_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

@@ -8,25 +8,15 @@ class BaseballDefensivePlayer extends AppModel {
 		'BaseballDefensiveGroup' => array(
 			'className' => 'BaseballDefensiveGroup',
 			'foreignKey' => 'baseball_defensive_group_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Player' => array(
 			'className' => 'Player',
 			'foreignKey' => 'player_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Position' => array(
 			'className' => 'Position',
 			'foreignKey' => 'position_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

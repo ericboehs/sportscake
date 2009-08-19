@@ -12,18 +12,11 @@ class AffiliationsDocument extends AppModel {
 		'Affiliation' => array(
 			'className' => 'Affiliation',
 			'foreignKey' => 'affiliation_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Document' => array(
 			'className' => 'Document',
 			'foreignKey' => 'document_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

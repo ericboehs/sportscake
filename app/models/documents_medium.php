@@ -13,25 +13,15 @@ class DocumentsMedium extends AppModel {
 		'Document' => array(
 			'className' => 'Document',
 			'foreignKey' => 'document_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Media' => array(
 			'className' => 'Media',
 			'foreignKey' => 'media_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'MediaCaption' => array(
 			'className' => 'MediaCaption',
 			'foreignKey' => 'media_caption_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

@@ -8,11 +8,7 @@ class DisplayName extends AppModel {
 		'Entity' => array(
 			'className' => 'Entity',
 			'foreignKey' => 'entity_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

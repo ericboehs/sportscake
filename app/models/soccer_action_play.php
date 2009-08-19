@@ -11,9 +11,6 @@ class SoccerActionPlay extends AppModel {
 		'SoccerEventState' => array(
 			'className' => 'SoccerEventState',
 			'foreignKey' => 'soccer_event_state_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -21,17 +18,8 @@ class SoccerActionPlay extends AppModel {
 		'SoccerActionParticipant' => array(
 			'className' => 'SoccerActionParticipant',
 			'foreignKey' => 'soccer_action_play_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

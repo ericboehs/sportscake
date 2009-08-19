@@ -11,9 +11,6 @@ class SoccerEventState extends AppModel {
 		'Event' => array(
 			'className' => 'Event',
 			'foreignKey' => 'event_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -21,56 +18,23 @@ class SoccerEventState extends AppModel {
 		'SoccerActionFoul' => array(
 			'className' => 'SoccerActionFoul',
 			'foreignKey' => 'soccer_event_state_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'SoccerActionPenalty' => array(
 			'className' => 'SoccerActionPenalty',
 			'foreignKey' => 'soccer_event_state_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'SoccerActionPlay' => array(
 			'className' => 'SoccerActionPlay',
 			'foreignKey' => 'soccer_event_state_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'SoccerActionSubstitution' => array(
 			'className' => 'SoccerActionSubstitution',
 			'foreignKey' => 'soccer_event_state_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

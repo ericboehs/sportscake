@@ -8,18 +8,11 @@ class Award extends AppModel {
 		'Participant' => array(
 			'className' => 'Participant',
 			'foreignKey' => 'participant_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'DateCoverage' => array(
 			'className' => 'DateCoverage',
 			'foreignKey' => 'date_coverage_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

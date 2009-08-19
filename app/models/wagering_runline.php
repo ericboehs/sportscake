@@ -13,32 +13,19 @@ class WageringRunline extends AppModel {
 		'Bookmaker' => array(
 			'className' => 'Bookmaker',
 			'foreignKey' => 'bookmaker_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Event' => array(
 			'className' => 'Event',
 			'foreignKey' => 'event_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Team' => array(
 			'className' => 'Team',
 			'foreignKey' => 'team_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Person' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

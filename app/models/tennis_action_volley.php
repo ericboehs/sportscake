@@ -8,11 +8,7 @@ class TennisActionVolley extends AppModel {
 		'TennisActionPoints' => array(
 			'className' => 'TennisActionPoints',
 			'foreignKey' => 'tennis_action_points_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

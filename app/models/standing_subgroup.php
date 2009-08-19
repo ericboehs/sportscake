@@ -12,23 +12,14 @@ class StandingSubgroup extends AppModel {
 		'Standing' => array(
 			'className' => 'Standing',
 			'foreignKey' => 'standing_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Affiliation' => array(
 			'className' => 'Affiliation',
 			'foreignKey' => 'affiliation_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'CompetitionScope' => array(
 			'className' => 'CompetitionScope',
 			'foreignKey' => 'competition_scope_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -36,17 +27,8 @@ class StandingSubgroup extends AppModel {
 		'OutcomeTotal' => array(
 			'className' => 'OutcomeTotal',
 			'foreignKey' => 'standing_subgroup_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

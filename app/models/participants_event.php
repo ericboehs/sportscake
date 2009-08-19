@@ -13,18 +13,11 @@ class ParticipantsEvent extends AppModel {
 		'Participant' => array(
 			'className' => 'Participant',
 			'foreignKey' => 'participant_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Event' => array(
 			'className' => 'Event',
 			'foreignKey' => 'event_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

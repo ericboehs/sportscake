@@ -8,11 +8,7 @@ class CoreStat extends AppModel {
 		'Position' => array(
 			'className' => 'Position',
 			'foreignKey' => 'position_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
 }
 ?>

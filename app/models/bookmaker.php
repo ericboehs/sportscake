@@ -11,16 +11,10 @@ class Bookmaker extends AppModel {
 		'Publisher' => array(
 			'className' => 'Publisher',
 			'foreignKey' => 'publisher_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Location' => array(
 			'className' => 'Location',
 			'foreignKey' => 'location_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -28,69 +22,28 @@ class Bookmaker extends AppModel {
 		'WageringMoneyline' => array(
 			'className' => 'WageringMoneyline',
 			'foreignKey' => 'bookmaker_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'WageringOddsLine' => array(
 			'className' => 'WageringOddsLine',
 			'foreignKey' => 'bookmaker_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'WageringRunline' => array(
 			'className' => 'WageringRunline',
 			'foreignKey' => 'bookmaker_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'WageringStraightSpreadLine' => array(
 			'className' => 'WageringStraightSpreadLine',
 			'foreignKey' => 'bookmaker_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'WageringTotalScoreLine' => array(
 			'className' => 'WageringTotalScoreLine',
 			'foreignKey' => 'bookmaker_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

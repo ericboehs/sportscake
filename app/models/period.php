@@ -11,9 +11,6 @@ class Period extends AppModel {
 		'ParticipantEvent' => array(
 			'className' => 'ParticipantEvent',
 			'foreignKey' => 'participant_event_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -23,17 +20,8 @@ class Period extends AppModel {
 			'joinTable' => 'sub_periods',
 			'foreignKey' => 'period_id',
 			'associationForeignKey' => 'sub_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		)
 	);
-
 }
 ?>

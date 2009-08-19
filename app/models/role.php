@@ -11,43 +11,18 @@ class Role extends AppModel {
 		'PersonEventMetadatum' => array(
 			'className' => 'PersonEventMetadatum',
 			'foreignKey' => 'role_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'PersonPhase' => array(
 			'className' => 'PersonPhase',
 			'foreignKey' => 'role_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		),
 		'TeamPhase' => array(
 			'className' => 'TeamPhase',
 			'foreignKey' => 'role_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

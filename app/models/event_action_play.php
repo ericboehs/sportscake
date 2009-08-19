@@ -11,9 +11,6 @@ class EventActionPlay extends AppModel {
 		'EventState' => array(
 			'className' => 'EventState',
 			'foreignKey' => 'event_state_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -21,17 +18,8 @@ class EventActionPlay extends AppModel {
 		'EventActionParticipant' => array(
 			'className' => 'EventActionParticipant',
 			'foreignKey' => 'event_action_play_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
-
 }
 ?>

@@ -13,9 +13,6 @@ class SubSeason extends AppModel {
 		'Season' => array(
 			'className' => 'Season',
 			'foreignKey' => 'season_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -23,15 +20,7 @@ class SubSeason extends AppModel {
 		'Standing' => array(
 			'className' => 'Standing',
 			'foreignKey' => 'sub_season_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
 		)
 	);
 
@@ -41,17 +30,8 @@ class SubSeason extends AppModel {
 			'joinTable' => 'events_sub_seasons',
 			'foreignKey' => 'sub_season_id',
 			'associationForeignKey' => 'event_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
+			'unique' => true
 		)
 	);
-
 }
 ?>
