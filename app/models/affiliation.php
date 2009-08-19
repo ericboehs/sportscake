@@ -27,6 +27,11 @@ class Affiliation extends AppModel {
 			'foreignKey' => 'affiliation_id',
 			'dependent' => false
 		),
+		'Season' => array(
+			'className' => 'Season',
+			'foreignKey' => 'league_id',
+			'dependent' => false
+		),
 		'StandingSubgroup' => array(
 			'className' => 'StandingSubgroup',
 			'foreignKey' => 'affiliation_id',

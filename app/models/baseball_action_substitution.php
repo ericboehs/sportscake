@@ -14,15 +14,15 @@ class BaseballActionSubstitution extends AppModel {
 			'foreignKey' => 'person_original_id',
 		),
 		'PersonOriginalPosition' => array(
-			'className' => 'PersonOriginalPosition',
+			'className' => 'Position',
 			'foreignKey' => 'person_original_position_id',
 		),
 		'PersonReplacing' => array(
-			'className' => 'PersonReplacing',
+			'className' => 'Person',
 			'foreignKey' => 'person_replacing_id',
 		),
 		'PersonReplacingPosition' => array(
-			'className' => 'PersonReplacingPosition',
+			'className' => 'Position',
 			'foreignKey' => 'person_replacing_position_id',
 		)
 	);

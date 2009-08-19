@@ -101,6 +101,21 @@ class Person extends AppModel {
 			'foreignKey' => 'person_id',
 			'dependent' => false
 		),
+		'BaseballActionSubstitution.PersonOriginal' => array(
+			'className' => 'BaseballActionSubstituion',
+			'foreignKey' => 'person_original_id',
+			'dependent' => false
+		),
+		'BaseballActionSubstitution.PersonReplacing' => array(
+			'className' => 'BaseballActionSubstituion',
+			'foreignKey' => 'person_original_id',
+			'dependent' => false
+		),
+		'BaseballDefensivePlayer.Player' => array(
+			'className' => 'BaseballDefensivePlayer',
+			'foreignKey' => 'player_id',
+			'dependent' => false
+		);
 		'EventActionParticipant' => array(
 			'className' => 'EventActionParticipant',
 			'foreignKey' => 'person_id',

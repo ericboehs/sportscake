@@ -14,7 +14,7 @@ class Season extends AppModel {
 			'foreignKey' => 'publisher_id',
 		),
 		'League' => array(
-			'className' => 'League',
+			'className' => 'Affiliations',
 			'foreignKey' => 'league_id',
 		)
 	);
@@ -23,6 +23,16 @@ class Season extends AppModel {
 		'InjuryPhase' => array(
 			'className' => 'InjuryPhase',
 			'foreignKey' => 'season_id',
+			'dependent' => false
+		),
+		'AffiliationPhaseStart' => array(
+			'className' => 'AffiliationPhase',
+			'foreignKey' => 'start_season_id',
+			'dependent' => false
+		),
+		'AffiliationPhaseEnd' => array(
+			'className' => 'AffiliationPhase',
+			'foreignKey' => 'end_season_id',
 			'dependent' => false
 		)
 	);

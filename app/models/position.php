@@ -16,6 +16,16 @@ class Position extends AppModel {
 	);
 
 	var $hasMany = array(
+		'BaseballActionSubstitutionPersonOriginalPosition' => array(
+			'className' => 'BaseballActionSubstitution',
+			'foreignKey' => 'person_original_position_id',
+			'dependent' => false
+		),
+		'BaseballActionSubstitutionPersonReplacingPosition' => array(
+			'className' => 'BaseballActionSubstitution',
+			'foreignKey' => 'person_replacing_position_id',
+			'dependent' => false
+		)
 		'BaseballDefensivePlayer' => array(
 			'className' => 'BaseballDefensivePlayer',
 			'foreignKey' => 'position_id',
@@ -26,12 +36,12 @@ class Position extends AppModel {
 			'foreignKey' => 'position_id',
 			'dependent' => false
 		),
-		'PersonOriginalPosition' => array(
+		'SoccerActionSubstitutionPersonOriginalPosition' => array(
 			'className' => 'SoccerActionSubstitution',
 			'foreignKey' => 'position_id',
 			'dependent' => false
 		),
-		'PersonReplacingPosition' => array(
+		'SoccerActionSubstitutionPersonReplacingPosition' => array(
 			'className' => 'SoccerActionSubstitution',
 			'foreignKey' => 'position_id',
 			'dependent' => false
