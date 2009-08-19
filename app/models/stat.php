@@ -6,7 +6,7 @@ class Stat extends AppModel {
 		'stat_repository_id' => array('numeric'),
 		'context' => array('notempty')
 	);
-
+/*
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 	var $belongsTo = array(
 		'StatRepository' => array(
@@ -260,5 +260,6 @@ class Stat extends AppModel {
 			'unique' => true
 		)
 	);
+*/
 }
 ?>

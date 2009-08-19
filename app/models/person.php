@@ -67,31 +67,6 @@ class Person extends AppModel {
 			'className' => 'SoccerActionParticipant',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
-		),
-		'WageringMoneyline' => array(
-			'className' => 'WageringMoneyline',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-		),
-		'WageringOddsLine' => array(
-			'className' => 'WageringOddsLine',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-		),
-		'WageringRunline' => array(
-			'className' => 'WageringRunline',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-		),
-		'WageringStraightSpreadLine' => array(
-			'className' => 'WageringStraightSpreadLine',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-		),
-		'WageringTotalScoreLine' => array(
-			'className' => 'WageringTotalScoreLine',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
 		)
 	);
 
@@ -136,6 +111,10 @@ class Person extends AppModel {
 			'foreignKey' => 'person_id',
 			'dependent' => false
 		),
+		'ReceiverPerson' => array(
+            'className' => 'SoccerActionParticipant',
+            'foreignKey' => 'receiver_person_id',
+        ),
 		'RunnerOnFirst' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
@@ -156,6 +135,10 @@ class Person extends AppModel {
 			'foreignKey' => 'person_id',
 			'dependent' => false
 		),
+		'ServerPerson' => array(
+            'className' => 'TennisEventState',
+            'foreignKey' => 'server_person_id',
+        ),
 		'WageringMoneyline' => array(
 			'className' => 'WageringMoneyline',
 			'foreignKey' => 'person_id',

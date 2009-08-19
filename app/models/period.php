@@ -14,6 +14,13 @@ class Period extends AppModel {
 		)
 	);
 
+    var $hasMany = array(
+	   'SubPeriod' => array(
+            'className' => 'Period',
+            'foreignKey' => 'period_id'
+		)
+	);
+	
 	var $hasAndBelongsToMany = array(
 		'Sub' => array(
 			'className' => 'Sub',

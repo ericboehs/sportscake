@@ -24,7 +24,17 @@ class Season extends AppModel {
 			'className' => 'InjuryPhase',
 			'foreignKey' => 'season_id',
 			'dependent' => false
-		)
+		),
+		'StartTeamPhase' => array(
+            'className' => 'TeamPhase',
+            'foreignKey' => 'start_season_id',
+            'dependent' => false
+        ),
+		'EndTeamPhase' => array(
+            'className' => 'TeamPhase',
+            'foreignKey' => 'end_season_id',
+            'dependent' => false
+        )
 	);
 
 	var $hasAndBelongsToMany = array(
