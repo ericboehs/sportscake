@@ -64,7 +64,7 @@
  * 'admin' 		-> admin_index() and /admin/controller/index
  * 'superuser' -> superuser_index() and /superuser/controller/index
  */
-	//Configure::write('Routing.admin', 'admin');
+	Configure::write('Routing.admin', 'admin');
 
 /**
  * Turn off all caching application-wide.
@@ -148,7 +148,7 @@
 /**
  * A random string used in security hashing methods.
  */
-	Configure::write('Security.salt', 'DYhG93b0qyJfIxfs2guVoUubWwvniR2G0FgaC9mi');
+	Configure::write('Security.salt', '4940A1B74818445BF98691E215B2A0F2C361905C');
 /**
  * Compress CSS output by removing comments, whitespace, repeating tags, etc.
  * This requires a/var/cache directory to be writable by the web server for caching.
