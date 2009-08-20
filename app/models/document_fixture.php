@@ -7,7 +7,6 @@ class DocumentFixture extends AppModel {
 		'document_class_id' => array('numeric')
 	);
 
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
 	var $belongsTo = array(
 		'Publisher' => array(
 			'className' => 'Publisher',
@@ -25,7 +24,7 @@ class DocumentFixture extends AppModel {
 			'foreignKey' => 'document_fixture_id',
 			'dependent' => false
 		),
-		'Ranking' => array(
+		'Ranking' => array( //NOTE: There are no foriegn keys setup in the DB for this
 			'className' => 'Ranking',
 			'foreignKey' => 'document_fixture_id',
 			'dependent' => false

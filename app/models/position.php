@@ -31,7 +31,7 @@ class Position extends AppModel {
 			'foreignKey' => 'position_id',
 			'dependent' => false
 		),
-		'CoreStat' => array(
+		'CoreStat' => array( //NOTE: There is no foreignKey in the db for this
 			'className' => 'CoreStat',
 			'foreignKey' => 'position_id',
 			'dependent' => false

@@ -4,39 +4,27 @@ class Document extends AppModel {
 	var $name = 'Document';
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
+	//TODO: This file needs to be looked over
 	var $belongsTo = array(
-		'Doc' => array(
-			'className' => 'Doc',
-			'foreignKey' => 'doc_id',
-		),
+		// 'Doc' => array( //NOTE: This table doesn't exist.. but it seems like it sould
+		// 	'className' => 'Doc',
+		// 	'foreignKey' => 'doc_id',
+		// ),
 		'Publisher' => array(
 			'className' => 'Publisher',
 			'foreignKey' => 'publisher_id',
 		),
-		'Revision' => array(
-			'className' => 'Revision',
-			'foreignKey' => 'revision_id',
-		),
+		// 'Revision' => array( //NOTE: This table doesn't exist.. but it seems like it sould
+		// 	'className' => 'Revision',
+		// 	'foreignKey' => 'revision_id',
+		// ),
 		'DocumentFixture' => array(
 			'className' => 'DocumentFixture',
 			'foreignKey' => 'document_fixture_id',
 		),
-		'Source' => array(
-			'className' => 'Source',
+		'PublisherSource' => array(
+			'className' => 'Publisher',
 			'foreignKey' => 'source_id',
-		)
-	);
-
-	var $hasOne = array(
-		'DocumentContent' => array(
-			'className' => 'DocumentContent',
-			'foreignKey' => 'document_id',
-			'dependent' => false,
-		),
-		'DocumentPackageEntry' => array(
-			'className' => 'DocumentPackageEntry',
-			'foreignKey' => 'document_id',
-			'dependent' => false,
 		)
 	);
 

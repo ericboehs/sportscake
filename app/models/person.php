@@ -32,44 +32,6 @@ class Person extends AppModel {
 		)
 	);
 
-	var $hasOne = array(
-		'AmericanFootballActionParticipant' => array(
-			'className' => 'AmericanFootballActionParticipant',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-		),
-		'EventActionParticipant' => array(
-			'className' => 'EventActionParticipant',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-		),
-		'IceHockeyActionParticipant' => array(
-			'className' => 'IceHockeyActionParticipant',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-		),
-		'InjuryPhase' => array(
-			'className' => 'InjuryPhase',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-		),
-		'PersonEventMetadatum' => array(
-			'className' => 'PersonEventMetadatum',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-		),
-		'PersonPhase' => array(
-			'className' => 'PersonPhase',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-		),
-		'SoccerActionParticipant' => array(
-			'className' => 'SoccerActionParticipant',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-		)
-	);
-
 	var $hasMany = array(
 		'AmericanFootballActionParticipant' => array(
 			'className' => 'AmericanFootballActionParticipant',
@@ -90,7 +52,17 @@ class Person extends AppModel {
 			'className' => 'BaseballDefensivePlayer',
 			'foreignKey' => 'player_id',
 			'dependent' => false
-		);
+		),
+		'BaseballEventState.Batter' => array(
+			'className' => 'BaseballEventState',
+			'foreignKey' => 'batter_id',
+			'dependent' => false
+		),
+		'BaseballEventState.Pitcher' => array(
+			'className' => 'BaseballEventState',
+			'foreignKey' => 'pitcher_id',
+			'dependent' => false
+		),
 		'EventActionParticipant' => array(
 			'className' => 'EventActionParticipant',
 			'foreignKey' => 'person_id',
@@ -122,14 +94,14 @@ class Person extends AppModel {
 			'dependent' => false
 		),
 		'PersonReplacing' => array(
-			'className' => 'Person',
+			'className' => 'Person', //FIXME: This looks wrong.  Person has many PersonReplacing in the Person class?
 			'foreignKey' => 'person_id',
 			'dependent' => false
 		),
 		'ReceiverPerson' => array(
-            'className' => 'SoccerActionParticipant',
-            'foreignKey' => 'receiver_person_id',
-        ),
+			'className' => 'SoccerActionParticipant',
+			'foreignKey' => 'receiver_person_id',
+		),
 		'RunnerOnFirst' => array(
 			'className' => 'Person',
 			'foreignKey' => 'person_id',
@@ -151,9 +123,9 @@ class Person extends AppModel {
 			'dependent' => false
 		),
 		'ServerPerson' => array(
-            'className' => 'TennisEventState',
-            'foreignKey' => 'server_person_id',
-        ),
+			'className' => 'TennisEventState',
+			'foreignKey' => 'server_person_id',
+		),
 		'WageringMoneyline' => array(
 			'className' => 'WageringMoneyline',
 			'foreignKey' => 'person_id',

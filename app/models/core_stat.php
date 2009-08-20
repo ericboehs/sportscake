@@ -5,7 +5,7 @@ class CoreStat extends AppModel {
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 	var $belongsTo = array(
-		'Position' => array(
+		'Position' => array( //NOTE: There is no foreignKey in the db for this
 			'className' => 'Position',
 			'foreignKey' => 'position_id',
 		)

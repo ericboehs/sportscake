@@ -22,25 +22,12 @@ class BaseballEventState extends AppModel {
 			'foreignKey' => 'runner_on_third_id',
 		),
 		'Pitcher' => array(
-			'className' => 'Pitcher',
+			'className' => 'Person',
 			'foreignKey' => 'pitcher_id',
 		),
 		'Batter' => array(
-			'className' => 'Batter',
+			'className' => 'Person',
 			'foreignKey' => 'batter_id',
-		)
-	);
-
-	var $hasOne = array(
-		'BaseballActionPlay' => array(
-			'className' => 'BaseballActionPlay',
-			'foreignKey' => 'baseball_event_state_id',
-			'dependent' => false,
-		),
-		'BaseballActionSubstitution' => array(
-			'className' => 'BaseballActionSubstitution',
-			'foreignKey' => 'baseball_event_state_id',
-			'dependent' => false,
 		)
 	);
 
