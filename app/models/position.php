@@ -16,12 +16,12 @@ class Position extends AppModel {
 	);
 
 	var $hasMany = array(
-		'BaseballActionSubstitution.PersonOriginalPosition' => array(
+		'BaseballActionSubstitutionPersonOriginalPosition' => array(
 			'className' => 'BaseballActionSubstitution',
 			'foreignKey' => 'person_original_position_id',
 			'dependent' => false
 		),
-		'BaseballActionSubstitution.PersonReplacingPosition' => array(
+		'BaseballActionSubstitutionPersonReplacingPosition' => array(
 			'className' => 'BaseballActionSubstitution',
 			'foreignKey' => 'person_replacing_position_id',
 			'dependent' => false
@@ -36,12 +36,12 @@ class Position extends AppModel {
 			'foreignKey' => 'position_id',
 			'dependent' => false
 		),
-		'EventActionSubstitution.Original' => array(
+		'EventActionSubstitutionOriginal' => array(
             'className' => 'EventActionSubstitution',
             'foreignKey' => 'person_original_position_id',
             'dependent' => false
         ),
-		'EventActionSubstitution.Replaceing' => array(
+		'EventActionSubstitutionReplacing' => array(
             'className' => 'EventActionSubstitution',
             'foreignKey' => 'person_replacing_position_id',
 			'dependent' => false
@@ -56,12 +56,12 @@ class Position extends AppModel {
             'foreignKey' => 'position_id',
             'dependent' => false
         ),
-		'SoccerActionSubstitution.PersonOriginalPosition' => array(
+		'SoccerActionSubstitutionPersonOriginalPosition' => array(
 			'className' => 'SoccerActionSubstitution',
 			'foreignKey' => 'person_original_position_id',
 			'dependent' => false
 		),
-		'SoccerActionSubstitution.PersonReplacingPosition' => array(
+		'SoccerActionSubstitutionPersonReplacingPosition' => array(
 			'className' => 'SoccerActionSubstitution',
 			'foreignKey' => 'person_replacing_position_id',
 			'dependent' => false

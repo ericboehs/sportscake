@@ -8,8 +8,8 @@ class Period extends AppModel {
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 	var $belongsTo = array(
-		'ParticipantEvent' => array(
-			'className' => 'ParticipantEvent',
+		'ParticipantsEvent' => array(
+			'className' => 'ParticipantsEvent',
 			'foreignKey' => 'participant_event_id',
 		)
 	);
@@ -18,16 +18,6 @@ class Period extends AppModel {
 	   'SubPeriod' => array(
             'className' => 'Period',
             'foreignKey' => 'period_id'
-		)
-	);
-	
-	var $hasAndBelongsToMany = array(
-		'Sub' => array(
-			'className' => 'Sub',
-			'joinTable' => 'sub_periods',
-			'foreignKey' => 'period_id',
-			'associationForeignKey' => 'sub_id',
-			'unique' => true
 		)
 	);
 }

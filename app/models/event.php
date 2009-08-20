@@ -50,6 +50,10 @@ class Event extends AppModel {
 			'foreignKey' => 'event_id',
 			'dependent' => false
 		),
+		'ParticipantsEvent' => array(
+			'className' => 'ParticipantsEvent',
+			'foreignKey' => 'event_id'
+		),
 		'PersonEventMetadatum' => array(
 			'className' => 'PersonEventMetadatum',
 			'foreignKey' => 'event_id',
@@ -133,13 +137,6 @@ class Event extends AppModel {
 			'associationForeignKey' => 'sub_season_id',
 			'unique' => true
 		),
-		'Participant' => array( //FIXME: Not sure on this one
-			'className' => 'ParticipantEvents',
-			'joinTable' => 'participants_events',
-			'foreignKey' => 'event_id',
-			'associationForeignKey' => 'participant_id',
-			'unique' => true
-		)
 	);
 }
 ?>

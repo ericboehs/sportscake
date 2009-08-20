@@ -68,27 +68,27 @@ class Person extends AppModel {
 			'foreignKey' => 'person_id',
 			'dependent' => false
 		),
-		'BaseballActionSubstitution.PersonOriginal' => array(
+		'BaseballActionSubstitutionPersonOriginal' => array(
 			'className' => 'BaseballActionSubstitution',
 			'foreignKey' => 'person_original_id',
 			'dependent' => false
 		),
-		'BaseballActionSubstitution.PersonReplacing' => array(
+		'BaseballActionSubstitutionPersonReplacing' => array(
 			'className' => 'BaseballActionSubstitution',
 			'foreignKey' => 'person_replacing_id',
 			'dependent' => false
 		),
-		'BaseballDefensivePlayer.Player' => array(
+		'BaseballDefensivePlayerPlayer' => array(
 			'className' => 'BaseballDefensivePlayer',
 			'foreignKey' => 'player_id',
 			'dependent' => false
 		),
-		'BaseballEventState.Batter' => array(
+		'BaseballEventStateBatter' => array(
 			'className' => 'BaseballEventState',
 			'foreignKey' => 'batter_id',
 			'dependent' => false
 		),
-		'BaseballEventState.Pitcher' => array(
+		'BaseballEventStatePitcher' => array(
 			'className' => 'BaseballEventState',
 			'foreignKey' => 'pitcher_id',
 			'dependent' => false
@@ -98,11 +98,11 @@ class Person extends AppModel {
 			'foreignKey' => 'person_id',
 			'dependent' => false
 		),
-		'EventActionSubstitution.PersonOriginal' => array(
+		'EventActionSubstitutionPersonOriginal' => array(
 			'className' => 'EventActionSubstitution',
 			'foreignKey' => 'person_original_id',
 		),
-		'EventActionSubstitution.PersonReplacing' => array(
+		'EventActionSubstitutionPersonReplacing' => array(
 			'className' => 'EventActionSubstitution',
 			'foreignKey' => 'person_replacing_id',
 		),
@@ -139,12 +139,12 @@ class Person extends AppModel {
 			'foreignKey' => 'participant_id',
 			'dependent' => false,
 		),
-		'SoccerActionFoul.Fouler' => array(
+		'SoccerActionFoulFouler' => array(
 			'className' => 'SoccerActionFoul',
 			'foreignKey' => 'fouler_id',
 			'dependent' => false,
 		),
-		'SoccerActionFoul.Recipient' => array(
+		'SoccerActionFoulRecipient' => array(
 			'className' => 'SoccerActionFoul',
 			'foreignKey' => 'recipient_id',
 			'dependent' => false,
@@ -159,25 +159,21 @@ class Person extends AppModel {
 			'foreignKey' => 'recipient_id',
 			'dependent' => false
 			),
-		'SoccerActionSubstitution.Original' => array(
+		'SoccerActionSubstitutionOriginal' => array(
 			'className' => 'SoccerActionSubstitution',
 			'foreignKey' => 'person_original_id',
 			'dependent' => false
 		),
-		'SoccerActionParticipant.ReceiverPerson' => array(
-			'className' => 'SoccerActionParticipant',
-			'foreignKey' => 'receiver_person_id',
-		),
-		'SoccerActionSubstitution.Replaceing' => array(
+		'SoccerActionSubstitutionReplacing' => array(
 			'className' => 'SoccerActionSubstitution',
-			'foreignKey' => 'person_replaceing_id',
+			'foreignKey' => 'person_replacing_id',
 			'dependent' => false
 		),
-		'TennisEventState.ServerPerson' => array(
+		'TennisEventStateServerPerson' => array(
 			'className' => 'TennisEventState',
 			'foreignKey' => 'server_person_id',
 		),
-		'TennisEventState.ReceiverPerson' => array(
+		'TennisEventStateReceiverPerson' => array(
 			'className' => 'TennisEventState',
 			'foreignKey' => 'receiver_person_id',
 		),

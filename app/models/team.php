@@ -74,19 +74,19 @@ class Team extends AppModel {
 
 	var $hasAndBelongsToMany = array(
 		'AnFootballSpecialTeamsStat' => array(
-			'className' => 'AnFootballSpecialTeamsStat',
+			'className' => 'AmericanFootballSpecialTeamsStat',
 			'joinTable' => 'american_football_special_teams_stats',
 			'foreignKey' => 'team_id',
 			'associationForeignKey' => 'an_football_special_teams_stat_id',
 			'unique' => true
 		),
-		'AmericanFootballSpecial' => array(
-			'className' => 'AmericanFootballSpecial',
-			'joinTable' => 'american_football_special_teams_stats',
-			'foreignKey' => 'team_id',
-			'associationForeignKey' => 'american_football_special_id',
-			'unique' => true
-		),
+		// 'AmericanFootballSpecial' => array(
+		// 	'className' => 'AmericanFootballSpecial',
+		// 	'joinTable' => 'american_football_special_teams_stats',
+		// 	'foreignKey' => 'team_id',
+		// 	'associationForeignKey' => 'american_football_special_id',
+		// 	'unique' => true
+		// ),
 		'Document' => array(
 			'className' => 'Document',
 			'joinTable' => 'teams_documents',

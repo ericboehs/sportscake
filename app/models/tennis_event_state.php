@@ -12,14 +12,14 @@ class TennisEventState extends AppModel {
 			'className' => 'Event',
 			'foreignKey' => 'event_id',
 		),
-		'ServerPerson' => array(
-			'className' => 'Person',
-			'foreignKey' => 'server_person_id',
-		),
-		'ReceiverPerson' => array(
-			'className' => 'Person',
-			'foreignKey' => 'receiver_person_id',
-		)
+		// 'ServerPerson' => array(
+		// 	'className' => 'Person',
+		// 	'foreignKey' => 'server_person_id',
+		// ),
+		// 'ReceiverPerson' => array(
+		// 	'className' => 'Person',
+		// 	'foreignKey' => 'receiver_person_id',
+		// )
 	);
 }
 ?>
