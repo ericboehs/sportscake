@@ -38,6 +38,11 @@ class Document extends AppModel {
 			'className' => 'DocumentPackageEntry',
 			'foreignKey' => 'document_id',
 			'dependent' => false
+		),
+		'LatestRevision' => array(
+			'className' => 'LatestRevision',
+			'foreignKey' => 'latest_document_id',
+			'dependent' => false
 		)
 	);
 

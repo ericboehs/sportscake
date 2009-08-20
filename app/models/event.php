@@ -133,8 +133,8 @@ class Event extends AppModel {
 			'associationForeignKey' => 'sub_season_id',
 			'unique' => true
 		),
-		'Participant' => array(
-			'className' => 'Participant',
+		'Participant' => array( //FIXME: Not sure on this one
+			'className' => 'ParticipantEvents',
 			'joinTable' => 'participants_events',
 			'foreignKey' => 'event_id',
 			'associationForeignKey' => 'participant_id',

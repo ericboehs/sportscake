@@ -9,10 +9,6 @@ class KeyAlias extends AppModel {
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 	var $belongsTo = array(
-		'Key' => array(
-			'className' => 'Key',
-			'foreignKey' => 'key_id',
-		),
 		'KeyRoot' => array(
 			'className' => 'KeyRoot',
 			'foreignKey' => 'key_root_id',

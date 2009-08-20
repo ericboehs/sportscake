@@ -15,34 +15,6 @@ class EventState extends AppModel {
 		)
 	);
 
-	var $hasOne = array(
-		'EventActionFoul' => array(
-			'className' => 'EventActionFoul',
-			'foreignKey' => 'event_state_id',
-			'dependent' => false,
-		),
-		'EventActionParticipant' => array(
-			'className' => 'EventActionParticipant',
-			'foreignKey' => 'event_state_id',
-			'dependent' => false,
-		),
-		'EventActionPenalty' => array(
-			'className' => 'EventActionPenalty',
-			'foreignKey' => 'event_state_id',
-			'dependent' => false,
-		),
-		'EventActionPlay' => array(
-			'className' => 'EventActionPlay',
-			'foreignKey' => 'event_state_id',
-			'dependent' => false,
-		),
-		'EventActionSubstitution' => array(
-			'className' => 'EventActionSubstitution',
-			'foreignKey' => 'event_state_id',
-			'dependent' => false,
-		)
-	);
-
 	var $hasMany = array(
 		'EventActionFoul' => array(
 			'className' => 'EventActionFoul',
@@ -114,8 +86,8 @@ class EventState extends AppModel {
 			'associationForeignKey' => 'soccer_id',
 			'unique' => true
 		),
-		'Tenni' => array(
-			'className' => 'Tenni',
+		'Tennis' => array(
+			'className' => 'Tennis',
 			'joinTable' => 'tennis_event_states',
 			'foreignKey' => 'event_state_id',
 			'associationForeignKey' => 'tenni_id',

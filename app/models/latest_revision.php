@@ -9,12 +9,12 @@ class LatestRevision extends AppModel {
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 	var $belongsTo = array(
-		'Revision' => array(
-			'className' => 'Revision',
-			'foreignKey' => 'revision_id',
-		),
+		// 'Revision' => array(
+		// 	'className' => 'Revision',
+		// 	'foreignKey' => 'revision_id',
+		// ),
 		'LatestDocument' => array(
-			'className' => 'LatestDocument',
+			'className' => 'Document',
 			'foreignKey' => 'latest_document_id',
 		)
 	);
