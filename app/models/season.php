@@ -46,25 +46,16 @@ class Season extends AppModel {
 			'className' => 'AffiliationPhase',
 			'foreignKey' => 'end_season_id',
 			'dependent' => false
-		)
-
-	);
-
-	var $hasAndBelongsToMany = array(
-		'EventsSub' => array(
-			'className' => 'EventsSub',
-			'joinTable' => 'events_sub_seasons',
-			'foreignKey' => 'season_id',
-			'associationForeignKey' => 'events_sub_id',
-			'unique' => true
 		),
-		'Sub' => array(
-			'className' => 'Sub',
-			'joinTable' => 'sub_seasons',
-			'foreignKey' => 'season_id',
-			'associationForeignKey' => 'sub_id',
-			'unique' => true
-		)
+        'EventsSubSeason' => array(
+            'className' => 'EventsSubSeason',
+            'foreignKey' => 'season_id'
+        ),
+        'SubSeason' => array(
+            'className' => 'SubSeason',
+            'foreignKey' => 'season_id'
+        )
 	);
+
 }
 ?>
