@@ -37,6 +37,21 @@ class Media extends AppModel {
 			'foreignKey' => 'creation_location_id',
 		)
 	);
+	
+	var $hasMany = array(
+		'MediaCaption' => array(
+			'className' => 'MediaCaption',
+			'foreignKey' => 'media_id',
+		),
+		'MediaContent' => array(
+			'className' => 'MediaContent',
+			'foreignKey' => 'media_id',
+		),
+		'MediaKeyword' => array(
+			'className' => 'MediaKeyword',
+			'foreignKey' => 'media_id',
+		),
+	);
 
 	var $hasAndBelongsToMany = array(
 		'Affiliation' => array(
@@ -58,27 +73,6 @@ class Media extends AppModel {
 			'joinTable' => 'events_media',
 			'foreignKey' => 'media_id',
 			'associationForeignKey' => 'event_id',
-			'unique' => true
-		),
-		'Caption' => array(
-			'className' => 'Caption',
-			'joinTable' => 'media_captions',
-			'foreignKey' => 'media_id',
-			'associationForeignKey' => 'caption_id',
-			'unique' => true
-		),
-		'Content' => array(
-			'className' => 'Content',
-			'joinTable' => 'media_contents',
-			'foreignKey' => 'media_id',
-			'associationForeignKey' => 'content_id',
-			'unique' => true
-		),
-		'Keyword' => array(
-			'className' => 'Keyword',
-			'joinTable' => 'media_keywords',
-			'foreignKey' => 'media_id',
-			'associationForeignKey' => 'keyword_id',
 			'unique' => true
 		),
 		'Person' => array(

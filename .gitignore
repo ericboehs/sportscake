@@ -2,3 +2,4 @@
 app/config/database.php
 .project
 models.tmproj
+app/tmp/*

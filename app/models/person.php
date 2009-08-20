@@ -69,13 +69,13 @@ class Person extends AppModel {
 			'dependent' => false
 		),
 		'BaseballActionSubstitution.PersonOriginal' => array(
-			'className' => 'BaseballActionSubstituion',
+			'className' => 'BaseballActionSubstitution',
 			'foreignKey' => 'person_original_id',
 			'dependent' => false
 		),
 		'BaseballActionSubstitution.PersonReplacing' => array(
-			'className' => 'BaseballActionSubstituion',
-			'foreignKey' => 'person_original_id',
+			'className' => 'BaseballActionSubstitution',
+			'foreignKey' => 'person_replacing_id',
 			'dependent' => false
 		),
 		'BaseballDefensivePlayer.Player' => array(
