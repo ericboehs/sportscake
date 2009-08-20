@@ -14,7 +14,7 @@ class MediaCaption extends AppModel {
 			'foreignKey' => 'media_id',
 		),
 		'CaptionAuthor' => array(
-			'className' => 'CaptionAuthor',
+			'className' => 'Person',
 			'foreignKey' => 'caption_author_id',
 		)
 	);

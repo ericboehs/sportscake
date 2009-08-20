@@ -10,19 +10,19 @@ class EventActionSubstitution extends AppModel {
 			'foreignKey' => 'event_state_id',
 		),
 		'PersonOriginal' => array(
-			'className' => 'PersonOriginal',
+			'className' => 'Person',
 			'foreignKey' => 'person_original_id',
 		),
 		'PersonOriginalPosition' => array(
-			'className' => 'PersonOriginalPosition',
+			'className' => 'Position',
 			'foreignKey' => 'person_original_position_id',
 		),
 		'PersonReplacing' => array(
-			'className' => 'PersonReplacing',
+			'className' => 'Person',
 			'foreignKey' => 'person_replacing_id',
 		),
 		'PersonReplacingPosition' => array(
-			'className' => 'PersonReplacingPosition',
+			'className' => 'Position',
 			'foreignKey' => 'person_replacing_position_id',
 		)
 	);

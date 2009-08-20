@@ -12,7 +12,11 @@ class SoccerActionPenalty extends AppModel {
 		'SoccerEventState' => array(
 			'className' => 'SoccerEventState',
 			'foreignKey' => 'soccer_event_state_id',
-		)
+		),
+		'Recipient' => array(
+            'className' => 'Person',
+            'foreignKey' => 'recipient_id',
+        )
 	);
 }
 ?>

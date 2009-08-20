@@ -21,5 +21,14 @@ class SoccerActionPlay extends AppModel {
 			'dependent' => false
 		)
 	);
+/*	
+	var $hasAndBelongsToMany = array(
+	   'SoccerActionParticipant' => array(
+            'className' => 'SoccerActionParticipant',
+            'foreignKey' => 'soccer_action_play_id',
+            'dependent' => false
+        )
+	);
+*/
 }
 ?>

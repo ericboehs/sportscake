@@ -17,10 +17,11 @@ class StandingSubgroup extends AppModel {
 			'className' => 'Affiliation',
 			'foreignKey' => 'affiliation_id',
 		),
-		'CompetitionScope' => array(
+/*		'CompetitionScope' => array(
 			'className' => 'CompetitionScope',
 			'foreignKey' => 'competition_scope_id',
 		)
+*/
 	);
 
 	var $hasMany = array(

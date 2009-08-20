@@ -12,7 +12,16 @@ class SoccerActionFoul extends AppModel {
 		'SoccerEventState' => array(
 			'className' => 'SoccerEventState',
 			'foreignKey' => 'soccer_event_state_id',
-		)
+		),
+		'Fouler' => array(
+            'className' => 'Person',
+            'foreignKey' => 'fouler_id',
+        ),
+        'Recipient' => array(
+            'className' => 'Person',
+            'foreignKey' => 'recipient_id',
+        )
+		
 	);
 }
 ?>

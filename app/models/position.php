@@ -16,16 +16,16 @@ class Position extends AppModel {
 	);
 
 	var $hasMany = array(
-		'BaseballActionSubstitutionPersonOriginalPosition' => array(
+		'BaseballActionSubstitution.PersonOriginalPosition' => array(
 			'className' => 'BaseballActionSubstitution',
 			'foreignKey' => 'person_original_position_id',
 			'dependent' => false
 		),
-		'BaseballActionSubstitutionPersonReplacingPosition' => array(
+		'BaseballActionSubstitution.PersonReplacingPosition' => array(
 			'className' => 'BaseballActionSubstitution',
 			'foreignKey' => 'person_replacing_position_id',
 			'dependent' => false
-		)
+		),
 		'BaseballDefensivePlayer' => array(
 			'className' => 'BaseballDefensivePlayer',
 			'foreignKey' => 'position_id',
@@ -36,14 +36,34 @@ class Position extends AppModel {
 			'foreignKey' => 'position_id',
 			'dependent' => false
 		),
-		'SoccerActionSubstitutionPersonOriginalPosition' => array(
+		'EventActionSubstitution.Original' => array(
+            'className' => 'EventActionSubstitution',
+            'foreignKey' => 'person_original_position_id',
+            'dependent' => false
+        ),
+		'EventActionSubstitution.Replaceing' => array(
+            'className' => 'EventActionSubstitution',
+            'foreignKey' => 'person_replacing_position_id',
+			'dependent' => false
+        ),
+        'PersonPhase' => array(
+            'className' => 'PersonPhase',
+            'foreignKey' => 'start_season_id',
+            'dependent' => false
+        ),
+		'PersonEventMetadatum' => array(
+            'className' => 'PersonEventMetadatum',
+            'foreignKey' => 'position_id',
+            'dependent' => false
+        ),
+		'SoccerActionSubstitution.PersonOriginalPosition' => array(
 			'className' => 'SoccerActionSubstitution',
-			'foreignKey' => 'position_id',
+			'foreignKey' => 'person_original_position_id',
 			'dependent' => false
 		),
-		'SoccerActionSubstitutionPersonReplacingPosition' => array(
+		'SoccerActionSubstitution.PersonReplacingPosition' => array(
 			'className' => 'SoccerActionSubstitution',
-			'foreignKey' => 'position_id',
+			'foreignKey' => 'person_replacing_position_id',
 			'dependent' => false
 		)
 	);

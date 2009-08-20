@@ -30,6 +30,11 @@ class Team extends AppModel {
 			'foreignKey' => 'team_id',
 			'dependent' => false
 		),
+		'OutcomeTotal' => array(
+            'className' => 'OutcomeTotal',
+            'foreignKey' => 'outcome_holder_id',
+            'dependent' => false
+        ),
 		'PersonEventMetadatum' => array(
 			'className' => 'PersonEventMetadatum',
 			'foreignKey' => 'team_id',
