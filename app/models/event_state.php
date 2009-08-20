@@ -42,7 +42,7 @@ class EventState extends AppModel {
 			'dependent' => false
 		)
 	);
-
+/*
 	var $hasAndBelongsToMany = array(
 		'AmericanFootball' => array(
 			'className' => 'AmericanFootball',
@@ -94,5 +94,6 @@ class EventState extends AppModel {
 			'unique' => true
 		)
 	);
+*/
 }
 ?>
