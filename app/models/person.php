@@ -31,13 +31,8 @@ class Person extends AppModel {
 			'foreignKey' => 'death_location_id',
 		)
 	);
-
+/*
 	var $hasOne = array(
-		'AmericanFootballActionParticipant' => array(
-			'className' => 'AmericanFootballActionParticipant',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-		),
 		'EventActionParticipant' => array(
 			'className' => 'EventActionParticipant',
 			'foreignKey' => 'person_id',
@@ -63,13 +58,8 @@ class Person extends AppModel {
 			'foreignKey' => 'person_id',
 			'dependent' => false,
 		),
-		'SoccerActionParticipant' => array(
-			'className' => 'SoccerActionParticipant',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-		)
 	);
-
+*/
 	var $hasMany = array(
 		'AmericanFootballActionParticipant' => array(
 			'className' => 'AmericanFootballActionParticipant',
@@ -90,12 +80,40 @@ class Person extends AppModel {
 			'className' => 'BaseballDefensivePlayer',
 			'foreignKey' => 'player_id',
 			'dependent' => false
-		);
+		),
+		'BaseballEventState.Batter' => array(
+            'className' => 'Person',
+            'foreignKey' => 'batter_id',
+        ),
+		'BaseballEventState.Pitcher' => array(
+            'className' => 'Person',
+            'foreignKey' => 'pitcher_id',
+        ),
+		'BaseballEventState.RunnerOnFirst' => array(
+            'className' => 'Person',
+            'foreignKey' => 'runner_on_first_id',
+        ),
+        'BaseballEventState.RunnerOnSecond' => array(
+            'className' => 'Person',
+            'foreignKey' => 'runner_on_second_id',
+        ),
+        'BaseballEventState.RunnerOnThird' => array(
+            'className' => 'Person',
+            'foreignKey' => 'runner_on_third_id',
+        ),
 		'EventActionParticipant' => array(
 			'className' => 'EventActionParticipant',
 			'foreignKey' => 'person_id',
 			'dependent' => false
 		),
+		'EventActionSubstitution.PersonOriginal' => array(
+            'className' => 'EventActionSubstitution',
+            'foreignKey' => 'person_original_id',
+        ),
+        'EventActionSubstitution.PersonReplacing' => array(
+            'className' => 'EventActionSubstitution',
+            'foreignKey' => 'person_replacing_id',
+        ),
 		'IceHockeyActionParticipant' => array(
 			'className' => 'IceHockeyActionParticipant',
 			'foreignKey' => 'person_id',
@@ -106,13 +124,16 @@ class Person extends AppModel {
 			'foreignKey' => 'person_id',
 			'dependent' => false
 		),
+		'Media' => array(
+            'className' => 'Media',
+            'foreignKey' => 'credit_id',
+        ),
+		'MediaCaption' => array(
+            'className' => 'Person',
+            'foreignKey' => 'caption_author_id',
+        ),
 		'PersonEventMetadatum' => array(
 			'className' => 'PersonEventMetadatum',
-			'foreignKey' => 'person_id',
-			'dependent' => false
-		),
-		'PersonOriginal' => array(
-			'className' => 'SoccerActionSubstitution',
 			'foreignKey' => 'person_id',
 			'dependent' => false
 		),
@@ -121,39 +142,58 @@ class Person extends AppModel {
 			'foreignKey' => 'person_id',
 			'dependent' => false
 		),
-		'PersonReplacing' => array(
-			'className' => 'Person',
-			'foreignKey' => 'person_id',
-			'dependent' => false
-		),
-		'ReceiverPerson' => array(
-            'className' => 'SoccerActionParticipant',
-            'foreignKey' => 'receiver_person_id',
+
+		'Ranking' => array(
+            'className' => 'Ranking',
+            'foreignKey' => 'participant_id',
         ),
-		'RunnerOnFirst' => array(
-			'className' => 'Person',
-			'foreignKey' => 'person_id',
+		'Record' => array(
+            'className' => 'Record',
+			'foreignKey' => 'participant_id',
 			'dependent' => false,
 		),
-		'RunnerOnSecond' => array(
-			'className' => 'Person',
-			'foreignKey' => 'person_id',
+		
+		'SoccerActionFoul.Fouler' => array(
+            'className' => 'SoccerActionFoul',
+            'foreignKey' => 'fouler_id',
 			'dependent' => false,
-		),
-		'RunnerOnThird' => array(
-			'className' => 'Person',
-			'foreignKey' => 'person_id',
+        ),
+        'SoccerActionFoul.Recipient' => array(
+            'className' => 'SoccerActionFoul',
+            'foreignKey' => 'recipient_id',
 			'dependent' => false,
-		),
+        ),
+		
 		'SoccerActionParticipant' => array(
 			'className' => 'SoccerActionParticipant',
 			'foreignKey' => 'person_id',
 			'dependent' => false
 		),
-		'ServerPerson' => array(
+		'SoccerActionPenalty' => array(
+            'className' => 'SoccerActionPenalty',
+            'foreignKey' => 'recipient_id',
+            'dependent' => false
+        ),
+		'SoccerActionSubstitution.Original' => array(
+            'className' => 'SoccerActionSubstitution',
+            'foreignKey' => 'person_original_id',
+            'dependent' => false
+        ),
+		'SoccerActionSubstitution.Replaceing' => array(
+            'className' => 'SoccerActionSubstitution',
+            'foreignKey' => 'person_replaceing_id',
+            'dependent' => false
+        ),
+
+		'TennisEventState.ServerPerson' => array(
             'className' => 'TennisEventState',
             'foreignKey' => 'server_person_id',
         ),
+        'TennisEventState.ReceiverPerson' => array(
+            'className' => 'TennisEventState',
+            'foreignKey' => 'receiver_person_id',
+        ),
+		
 		'WageringMoneyline' => array(
 			'className' => 'WageringMoneyline',
 			'foreignKey' => 'person_id',

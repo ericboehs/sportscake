@@ -13,7 +13,7 @@ class OutcomeTotal extends AppModel {
 			'foreignKey' => 'standing_subgroup_id',
 		),
 		'OutcomeHolder' => array(
-			'className' => 'OutcomeHolder',
+			'className' => 'Team',
 			'foreignKey' => 'outcome_holder_id',
 		)
 	);

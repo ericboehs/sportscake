@@ -22,11 +22,11 @@ class BaseballEventState extends AppModel {
 			'foreignKey' => 'runner_on_third_id',
 		),
 		'Pitcher' => array(
-			'className' => 'Pitcher',
+			'className' => 'Person',
 			'foreignKey' => 'pitcher_id',
 		),
 		'Batter' => array(
-			'className' => 'Batter',
+			'className' => 'Person',
 			'foreignKey' => 'batter_id',
 		)
 	);

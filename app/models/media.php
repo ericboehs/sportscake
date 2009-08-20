@@ -10,6 +10,7 @@ class Media extends AppModel {
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 	var $belongsTo = array(
+/*
 		'Object' => array(
 			'className' => 'Object',
 			'foreignKey' => 'object_id',
@@ -22,16 +23,17 @@ class Media extends AppModel {
 			'className' => 'Revision',
 			'foreignKey' => 'revision_id',
 		),
+*/
 		'Publisher' => array(
 			'className' => 'Publisher',
 			'foreignKey' => 'publisher_id',
 		),
 		'Credit' => array(
-			'className' => 'Credit',
+			'className' => 'Person',
 			'foreignKey' => 'credit_id',
 		),
 		'CreationLocation' => array(
-			'className' => 'CreationLocation',
+			'className' => 'Location',
 			'foreignKey' => 'creation_location_id',
 		)
 	);

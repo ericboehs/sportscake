@@ -10,13 +10,14 @@ class Ranking extends AppModel {
 			'foreignKey' => 'document_fixture_id',
 		),
 		'Participant' => array(
-			'className' => 'Participant',
+			'className' => 'Person',
 			'foreignKey' => 'participant_id',
 		),
-		'DateCoverage' => array(
+/*		'DateCoverage' => array(
 			'className' => 'DateCoverage',
 			'foreignKey' => 'date_coverage_id',
 		)
+*/
 	);
 }
 ?>
