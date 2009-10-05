@@ -1,5 +1,6 @@
 <?php
-/* SVN FILE: $Id: media.php 8120 2009-03-19 20:25:10Z gwoo $ */
+/* SVN FILE: $Id$ */
+
 /**
  * Methods to display or download any type of file
  *
@@ -17,12 +18,13 @@
  * @package       cake
  * @subpackage    cake.cake.libs.view
  * @since         CakePHP(tm) v 1.2.0.5714
- * @version       $Revision: 8120 $
- * @modifiedby    $LastChangedBy: gwoo $
- * @lastmodified  $Date: 2009-03-19 13:25:10 -0700 (Thu, 19 Mar 2009) $
+ * @version       $Revision$
+ * @modifiedby    $LastChangedBy$
+ * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 class MediaView extends View {
+
 /**
  * Holds known mime type mappings
  *
@@ -79,6 +81,7 @@ class MediaView extends View {
 								'iges' => 'model/iges', 'igs' => 'model/iges', 'mesh' => 'model/mesh', 'msh' => 'model/mesh',
 								'silo' => 'model/mesh', 'vrml' => 'model/vrml', 'wrl' => 'model/vrml',
 								'mime' => 'www/mime', 'pdb' => 'chemical/x-pdb', 'xyz' => 'chemical/x-pdb');
+
 /**
  * Holds headers sent to browser before rendering media
  *
@@ -86,6 +89,7 @@ class MediaView extends View {
  * @access protected
  */
 	var $_headers = array();
+
 /**
  * Constructor
  *
@@ -94,6 +98,7 @@ class MediaView extends View {
 	function __construct(&$controller) {
 		parent::__construct($controller);
 	}
+
 /**
  * Display or download the given file
  *
@@ -215,6 +220,7 @@ class MediaView extends View {
 		}
 		return false;
 	}
+
 /**
  * Method to set headers
  * @param mixed $header
@@ -235,6 +241,7 @@ class MediaView extends View {
 		$this->_headers[] = array($header => $boolean);
 		return;
 	}
+
 /**
  * Method to output headers
  * @access protected

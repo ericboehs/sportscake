@@ -1,5 +1,6 @@
 <?php
-/* SVN FILE: $Id: theme.php 7945 2008-12-19 02:16:01Z gwoo $ */
+/* SVN FILE: $Id$ */
+
 /**
  * A custom view class that is used for themeing
  *
@@ -17,11 +18,12 @@
  * @package       cake
  * @subpackage    cake.cake.libs.view
  * @since         CakePHP(tm) v 0.10.0.1076
- * @version       $Revision: 7945 $
- * @modifiedby    $LastChangedBy: gwoo $
- * @lastmodified  $Date: 2008-12-18 18:16:01 -0800 (Thu, 18 Dec 2008) $
+ * @version       $Revision$
+ * @modifiedby    $LastChangedBy$
+ * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
+
 /**
  * Theme view class
  *
@@ -29,30 +31,34 @@
  * @subpackage    cake.cake.libs.view
  */
 class ThemeView extends View {
+
 /**
  * System path to themed element: themed . DS . theme . DS . elements . DS
  *
  * @var string
  */
 	var $themeElement = null;
+
 /**
  * System path to themed layout: themed . DS . theme . DS . layouts . DS
  *
  * @var string
  */
 	var $themeLayout = null;
+
 /**
  * System path to themed: themed . DS . theme . DS
  *
  * @var string
  */
 	var $themePath = null;
+
 /**
  * Enter description here...
  *
  * @param unknown_type $controller
  */
-	function __construct (&$controller) {
+	function __construct(&$controller) {
 		parent::__construct($controller);
 		$this->theme =& $controller->theme;
 
