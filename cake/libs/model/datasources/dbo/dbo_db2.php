@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * IBM DB2 for DBO
  *
@@ -27,7 +26,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * IBM DB2 for DBO
  *
@@ -39,28 +37,24 @@
  * @subpackage    cake.cake.libs.model.datasources.dbo
  */
 class DboDb2 extends DboSource {
-
 /**
  * A short description of the type of driver.
  *
  * @var string
  */
 	var $description = 'IBM DB2 DBO Driver';
-
 /**
  * The start quote in which database column and table names should be wrapped.
  *
  * @var string
  */
 	var $startQuote = '';
-
 /**
  * The end quote in which database column and table names should be wrapped.
  *
  * @var string
  */
 	var $endQuote = '';
-
 /**
  * An array of base configuration settings to be used if settings are not
  * provided, i.e. default host, port, and connection method.
@@ -79,7 +73,6 @@ class DboDb2 extends DboSource {
 		'cataloged'		=> true,
 		'autocommit'	=> true
 	);
-
 /**
  * An array that maps Cake column types to database native column types.
  * The mapped information can include a reference to a function that should
@@ -101,14 +94,12 @@ class DboDb2 extends DboSource {
 		'binary' 		=> array('name' => 'blob'),
 		'boolean' 		=> array('name' => 'smallint', 'limit' => '1')
 	);
-
 /**
  * A map for every result mapping tables to columns
  *
  * @var array result -> ( table -> column )
  */
 	var $_resultMap = array();
-
 /**
  * Connects to the database using options in the given configuration array.
  *
@@ -145,7 +136,6 @@ class DboDb2 extends DboSource {
 		}
 		return $this->connected;
 	}
-
 /**
  * Disconnects from database.
  *
@@ -156,7 +146,6 @@ class DboDb2 extends DboSource {
 		$this->connected = !@db2_close($this->connection);
 		return !$this->connected;
 	}
-
 /**
  * Executes given SQL statement.  We should use prepare / execute to allow the
  * database server to reuse its access plan and increase the efficiency
@@ -193,7 +182,6 @@ class DboDb2 extends DboSource {
 
 		return $result;
 	}
-
 /**
  * Returns an array of all the tables in the database.
  * Should call parent::listSources twice in the method:
@@ -217,7 +205,6 @@ class DboDb2 extends DboSource {
 		parent::listSources($tables);
 		return $tables;
 	}
-
 /**
  * Returns an array of the fields in given table name.
  *
@@ -244,7 +231,6 @@ class DboDb2 extends DboSource {
 		$this->__cacheDescription($model->tablePrefix . $model->table, $fields);
 		return $fields;
 	}
-
 /**
  * Returns a quoted name of $data for use in an SQL statement.
  *
@@ -254,7 +240,6 @@ class DboDb2 extends DboSource {
 	function name($data) {
 		return $data;
 	}
-
 /**
  * Returns a quoted and escaped string of $data for use in an SQL statement.
  *
@@ -295,7 +280,6 @@ class DboDb2 extends DboSource {
 		}
 		return "'" . $data . "'";
 	}
-
 /**
  * Not sure about this one, MySQL needs it but does ODBC?  Safer just to leave it
  * Translates between PHP boolean values and MySQL (faked) boolean values
@@ -316,7 +300,6 @@ class DboDb2 extends DboSource {
 			return false;
 		}
 	}
-
 /**
  * Begins a transaction.  Returns true if the transaction was
  * started successfully, otherwise false.
@@ -334,7 +317,6 @@ class DboDb2 extends DboSource {
 		}
 		return false;
 	}
-
 /**
  * Commit a transaction
  *
@@ -353,7 +335,6 @@ class DboDb2 extends DboSource {
 		}
 		return false;
 	}
-
 /**
  * Rollback a transaction
  *
@@ -370,7 +351,6 @@ class DboDb2 extends DboSource {
 		}
 		return false;
 	}
-
 /**
  * Removes Identity (primary key) column from update data before returning to parent
  *
@@ -389,7 +369,6 @@ class DboDb2 extends DboSource {
 		}
 		return parent::update($model, $fields, $values);
 	}
-
 /**
  * Returns a formatted error message from previous database operation.
  * DB2 distinguishes between statement and connnection errors so we
@@ -405,7 +384,6 @@ class DboDb2 extends DboSource {
 		}
 		return null;
 	}
-
 /**
  * Returns number of affected rows in previous database operation. If no previous operation exists,
  * this returns false.
@@ -418,7 +396,6 @@ class DboDb2 extends DboSource {
 		}
 		return null;
 	}
-
 /**
  * Returns number of rows in previous resultset. If no previous resultset exists,
  * this returns false.
@@ -431,7 +408,6 @@ class DboDb2 extends DboSource {
 		}
 		return null;
 	}
-
 /**
  * Returns the ID generated from the previous INSERT operation.
  *
@@ -446,7 +422,6 @@ class DboDb2 extends DboSource {
 		}
 		return null;
 	}
-
 /**
  * Returns a limit statement in the correct format for the particular database.
  *
@@ -486,7 +461,6 @@ class DboDb2 extends DboSource {
 		}
 		return null;
 	}
-
 /**
  * Converts database-layer column types to basic types
  *
@@ -533,7 +507,6 @@ class DboDb2 extends DboSource {
 		}
 		return 'text';
 	}
-
 /**
  * Maps a result set to an array so that returned fields are
  * grouped by model.  Any calculated fields, or fields that
@@ -563,7 +536,6 @@ class DboDb2 extends DboSource {
 		$this->results =& $results;
 		$this->map = $this->_resultMap[$this->results];
 	}
-
 /**
  * Fetches the next row from the current result set
  * Maps the records in the $result property to the map

@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * DebuggerTest file
  *
@@ -8,21 +7,24 @@
  *
  * PHP versions 4 and 5
  *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2009, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) Tests <https://trac.cakephp.org/wiki/Developement/TestSuite>
+ * Copyright 2005-2008, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
  *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
+ *  Licensed under The Open Group Test Suite License
+ *  Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2009, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org
+ * @filesource
+ * @copyright     Copyright 2005-2008, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
+ * @link          https://trac.cakephp.org/wiki/Developement/TestSuite CakePHP(tm) Tests
  * @package       cake
  * @subpackage    cake.tests.cases.libs
  * @since         CakePHP(tm) v 1.2.0.5432
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @version       $Revision$
+ * @modifiedby    $LastChangedBy$
+ * @lastmodified  $Date$
+ * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
 App::import('Core', 'Debugger');
-
 /**
  * DebugggerTestCaseDebuggger class
  *
@@ -31,7 +33,6 @@ App::import('Core', 'Debugger');
  */
 class DebuggerTestCaseDebugger extends Debugger {
 }
-
 /**
  * DebuggerTest class
  *
@@ -59,7 +60,6 @@ class DebuggerTest extends CakeTestCase {
 			}
 		}
 	}
-
 /**
  * tearDown method
  *
@@ -69,7 +69,6 @@ class DebuggerTest extends CakeTestCase {
 	function tearDown() {
 		Configure::write('log', true);
 	}
-
 /**
  * testDocRef method
  *
@@ -82,7 +81,6 @@ class DebuggerTest extends CakeTestCase {
 		$debugger = new Debugger();
 		$this->assertEqual(ini_get('docref_root'), 'http://php.net/');
 	}
-
 /**
  * test Excerpt writing
  *
@@ -90,23 +88,14 @@ class DebuggerTest extends CakeTestCase {
  * @return void
  */
 	function testExcerpt() {
-		$result = Debugger::excerpt(__FILE__, __LINE__, 2);
-		$this->assertTrue(is_array($result));
-		$this->assertEqual(count($result), 5);
-		$this->assertPattern('/function(.+)testExcerpt/', $result[1]);
-
-		$result = Debugger::excerpt(__FILE__, 2, 2);
-		$this->assertTrue(is_array($result));
-		$this->assertEqual(count($result), 4);
-
-		$expected = '<code><span style="color: #000000">&lt;?php';
-		$expected .= '</span></code>';
-		$this->assertEqual($result[0], $expected);
+		$return = Debugger::excerpt(__FILE__, 2, 2);
+		$this->assertTrue(is_array($return));
+		$this->assertEqual(count($return), 4);
+		$this->assertPattern('#/*&nbsp;SVN&nbsp;FILE:&nbsp;\$Id\$#', $return[1]);
 
 		$return = Debugger::excerpt('[internal]', 2, 2);
 		$this->assertTrue(empty($return));
 	}
-
 /**
  * testOutput method
  *
@@ -146,62 +135,14 @@ class DebuggerTest extends CakeTestCase {
 		ob_start();
 		Debugger::output('js');
 		$buzz .= '';
-		$result = explode('</a>', ob_get_clean());
-		$this->assertTags($result[0], array(
-			'pre' => array('class' => 'cake-debug'),
-			'a' => array(
-				'href' => "javascript:void(0);",
-				'onclick' => "document.getElementById('cakeErr4-trace').style.display = " .
-				             "(document.getElementById('cakeErr4-trace').style.display == 'none'" .
-				             " ? '' : 'none');"
-			),
-			'b' => array(), 'Notice', '/b', ' (8)',
-		));
-
-		$this->assertPattern('/Undefined variable: buzz/', $result[1]);
-		$this->assertPattern('/<a[^>]+>Code/', $result[1]);
-		$this->assertPattern('/<a[^>]+>Context/', $result[2]);
-		set_error_handler('simpleTestErrorHandler');
-	}
-
-/**
- * Tests that changes in output formats using Debugger::output() change the templates used.
- *
- * @return void
- */
-	function testChangeOutputFormats() {
-		Debugger::invoke(Debugger::getInstance());
-		Debugger::output('js', array(
-			'traceLine' => '{:reference} - <a href="txmt://open?url=file://{:file}' .
-			               '&line={:line}">{:path}</a>, line {:line}'
-		));
-		$result = Debugger::trace();
-		$this->assertPattern('/' . preg_quote('txmt://open?url=file:///', '/') . '/', $result);
-
-		Debugger::output('xml', array(
-			'error' => '<error><code>{:code}</code><file>{:file}</file><line>{:line}</line>' .
-			           '{:description}</error>',
-			'context' => "<context>{:context}</context>",
-			'trace' => "<stack>{:trace}</stack>",
-		));
-		Debugger::output('xml');
-
-		ob_start();
-		$foo .= '';
 		$result = ob_get_clean();
+		$this->assertPattern("/<a href\='javascript:void\(0\);' onclick\='/", $result);
+		$this->assertPattern('/<b>Notice<\/b>/', $result);
+		$this->assertPattern('/Undefined variable: buzz/', $result);
+		$this->assertPattern('/<a[^>]+>Code<\/a>/', $result);
+		$this->assertPattern('/<a[^>]+>Context<\/a>/', $result);
 		set_error_handler('simpleTestErrorHandler');
-
-		$data = array(
-			'error' => array(),
-			'code' => array(), '8', '/code',
-			'file' => array(), 'preg:/[^<]+/', '/file',
-			'line' => array(), '' . (intval(__LINE__) + -8), '/line',
-			'Undefined variable: foo',
-			'/error'
-		);
-		$this->assertTags($result, $data, true);
 	}
-
 /**
  * testTrimPath method
  *
@@ -212,7 +153,6 @@ class DebuggerTest extends CakeTestCase {
 		$this->assertEqual(Debugger::trimPath(APP), 'APP' . DS);
 		$this->assertEqual(Debugger::trimPath(CAKE_CORE_INCLUDE_PATH), 'CORE');
 	}
-
 /**
  * testExportVar method
  *
@@ -265,7 +205,6 @@ class DebuggerTest extends CakeTestCase {
 		$expected =  str_replace(array("\t", "\r\n", "\n"), "", $expected);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testLog method
  *
@@ -291,7 +230,6 @@ class DebuggerTest extends CakeTestCase {
 		$this->assertPattern('/"whatever",/', $result);
 		$this->assertPattern('/"here"/', $result);
 	}
-
 /**
  * testDump method
  *
@@ -318,7 +256,6 @@ class DebuggerTest extends CakeTestCase {
 		$expected = "<pre>array(\n\t\"People\" => array()\n)</pre>";
 		$this->assertEqual($expected, $result);
 	}
-
 /**
  * test getInstance.
  *

@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Controller Merge vars Test file
  *
@@ -64,14 +63,12 @@ class MergeVarComponent extends Object {
  * @package cake.tests.cases.libs.controller
  **/
 class MergeVariablesController extends AppController {
-
 /**
  * name
  *
  * @var string
  **/
 	var $name = 'MergeVariables';
-
 /**
  * uses
  *
@@ -86,14 +83,12 @@ class MergeVariablesController extends AppController {
  * @package cake.tests.cases.libs.controller
  **/
 class MergeVarPluginAppController extends AppController {
-
 /**
  * components
  *
  * @var array
  **/
 	var $components = array('Auth' => array('setting' => 'val', 'otherVal'));
-
 /**
  * helpers
  *
@@ -108,14 +103,12 @@ class MergeVarPluginAppController extends AppController {
  * @package cake.tests.cases.libs.controller
  **/
 class MergePostsController extends MergeVarPluginAppController {
-
 /**
  * name
  *
  * @var string
  **/
 	var $name = 'MergePosts';
-
 /**
  * uses
  *
@@ -140,7 +133,6 @@ class ControllerMergeVarsTestCase extends CakeTestCase {
 	function endTest() {
 		ClassRegistry::flush();
 	}
-
 /**
  * test that component settings are not duplicated when merging component settings
  *
@@ -153,7 +145,6 @@ class ControllerMergeVarsTestCase extends CakeTestCase {
 		$expected = array('MergeVar' => array('flag', 'otherFlag', 'redirect' => false));
 		$this->assertEqual($Controller->components, $expected, 'Duplication of settings occured. %s');
 	}
-
 /**
  * test component merges with redeclared components
  *
@@ -167,7 +158,6 @@ class ControllerMergeVarsTestCase extends CakeTestCase {
 		$expected = array('MergeVar' => array('flag', 'otherFlag', 'redirect' => true, 'remote'));
 		$this->assertEqual($Controller->components, $expected, 'Merging of settings is wrong. %s');
 	}
-
 /**
  * test merging of helpers array, ensure no duplication occurs
  *
@@ -180,7 +170,6 @@ class ControllerMergeVarsTestCase extends CakeTestCase {
 		$expected = array('MergeVar' => array('format' => 'html', 'terse'));
 		$this->assertEqual($Controller->helpers, $expected, 'Duplication of settings occured. %s');
 	}
-
 /**
  * test merging of vars with plugin
  *
@@ -198,7 +187,7 @@ class ControllerMergeVarsTestCase extends CakeTestCase {
 			'Email' => array('ports' => 'open')
 		);
 		$this->assertEqual($Controller->components, $expected, 'Components are unexpected %s');
-
+		
 		$expected = array(
 			'Javascript',
 			'MergeVar' => array('format' => 'html', 'terse')
@@ -216,7 +205,6 @@ class ControllerMergeVarsTestCase extends CakeTestCase {
 		);
 		$this->assertEqual($Controller->components, $expected, 'Components are unexpected %s');
 	}
-
 /**
  * Ensure that __mergeVars is not being greedy and merging with
  * AppController when you make an instance of Controller

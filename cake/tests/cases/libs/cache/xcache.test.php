@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * XcacheEngineTest file
  *
@@ -28,7 +27,6 @@
 if (!class_exists('Cache')) {
 	require LIBS . 'cache.php';
 }
-
 /**
  * XcacheEngineTest class
  *
@@ -36,7 +34,6 @@ if (!class_exists('Cache')) {
  * @subpackage    cake.tests.cases.libs.cache
  */
 class XcacheEngineTest extends UnitTestCase {
-
 /**
  * skip method
  *
@@ -50,7 +47,6 @@ class XcacheEngineTest extends UnitTestCase {
 		}
 		$this->skipIf($skip, '%s Xcache is not installed or configured properly');
 	}
-
 /**
  * setUp method
  *
@@ -62,7 +58,6 @@ class XcacheEngineTest extends UnitTestCase {
 		Configure::write('Cache.disable', false);
 		Cache::config('xcache', array('engine' => 'Xcache', 'prefix' => 'cake_'));
 	}
-
 /**
  * tearDown method
  *
@@ -73,7 +68,6 @@ class XcacheEngineTest extends UnitTestCase {
 		Configure::write('Cache.disable', $this->_cacheDisable);
 		Cache::config('default');
 	}
-
 /**
  * testSettings method
  *
@@ -91,7 +85,6 @@ class XcacheEngineTest extends UnitTestCase {
 						);
 		$this->assertEqual($settings, $expecting);
 	}
-
 /**
  * testReadAndWriteCache method
  *
@@ -115,7 +108,6 @@ class XcacheEngineTest extends UnitTestCase {
 
 		Cache::delete('test');
 	}
-
 /**
  * testExpiry method
  *
@@ -145,7 +137,6 @@ class XcacheEngineTest extends UnitTestCase {
 		$result = Cache::read('other_test');
 		$this->assertFalse($result);
 	}
-
 /**
  * testDeleteCache method
  *
@@ -160,7 +151,6 @@ class XcacheEngineTest extends UnitTestCase {
 		$result = Cache::delete('delete_test');
 		$this->assertTrue($result);
 	}
-
 /**
  * testClearCache method
  *

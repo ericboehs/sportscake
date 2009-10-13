@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Base class for Shells
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * Base class for command-line utilities for automating programmer chores.
  *
@@ -33,7 +31,6 @@
  * @subpackage    cake.cake.console.libs
  */
 class Shell extends Object {
-
 /**
  * An instance of the ShellDispatcher object that loaded this script
  *
@@ -41,7 +38,6 @@ class Shell extends Object {
  * @access public
  */
 	var $Dispatch = null;
-
 /**
  * If true, the script will ask for permission to perform actions.
  *
@@ -49,7 +45,6 @@ class Shell extends Object {
  * @access public
  */
 	var $interactive = true;
-
 /**
  * Holds the DATABASE_CONFIG object for the app. Null if database.php could not be found,
  * or the app does not exist.
@@ -58,7 +53,6 @@ class Shell extends Object {
  * @access public
  */
 	var $DbConfig = null;
-
 /**
  * Contains command switches parsed from the command line.
  *
@@ -66,7 +60,6 @@ class Shell extends Object {
  * @access public
  */
 	var $params = array();
-
 /**
  * Contains arguments parsed from the command line.
  *
@@ -74,7 +67,6 @@ class Shell extends Object {
  * @access public
  */
 	var $args = array();
-
 /**
  * The file name of the shell that was invoked.
  *
@@ -82,7 +74,6 @@ class Shell extends Object {
  * @access public
  */
 	var $shell = null;
-
 /**
  * The class name of the shell that was invoked.
  *
@@ -90,7 +81,6 @@ class Shell extends Object {
  * @access public
  */
 	var $className = null;
-
 /**
  * The command called if public methods are available.
  *
@@ -98,7 +88,6 @@ class Shell extends Object {
  * @access public
  */
 	var $command = null;
-
 /**
  * The name of the shell in camelized.
  *
@@ -106,7 +95,6 @@ class Shell extends Object {
  * @access public
  */
 	var $name = null;
-
 /**
  * An alias for the shell
  *
@@ -114,7 +102,6 @@ class Shell extends Object {
  * @access public
  */
 	var $alias = null;
-
 /**
  * Contains tasks to load and instantiate
  *
@@ -122,7 +109,6 @@ class Shell extends Object {
  * @access public
  */
 	var $tasks = array();
-
 /**
  * Contains the loaded tasks
  *
@@ -130,7 +116,6 @@ class Shell extends Object {
  * @access public
  */
 	var $taskNames = array();
-
 /**
  * Contains models to load and instantiate
  *
@@ -138,7 +123,6 @@ class Shell extends Object {
  * @access public
  */
 	var $uses = array();
-
 /**
  *  Constructs this Shell instance.
  *
@@ -175,7 +159,6 @@ class Shell extends Object {
 
 		$this->Dispatch =& $dispatch;
 	}
-
 /**
  * Initializes the Shell
  * acts as constructor for subclasses
@@ -186,7 +169,6 @@ class Shell extends Object {
 	function initialize() {
 		$this->_loadModels();
 	}
-
 /**
  * Starts up the the Shell
  * allows for checking and configuring prior to command or main execution
@@ -197,21 +179,18 @@ class Shell extends Object {
 	function startup() {
 		$this->_welcome();
 	}
-
 /**
  * Displays a header for the shell
  *
  * @access protected
  */
 	function _welcome() {
-		$this->Dispatch->clear();
 		$this->out("\nWelcome to CakePHP v" . Configure::version() . " Console");
 		$this->out("---------------------------------------------------------------");
 		$this->out('App : '. $this->params['app']);
 		$this->out('Path: '. $this->params['working']);
 		$this->hr();
 	}
-
 /**
  * Loads database file and constructs DATABASE_CONFIG class
  * makes $this->DbConfig available to subclasses
@@ -228,7 +207,6 @@ class Shell extends Object {
 		$this->out('Run \'bake\' to create the database configuration');
 		return false;
 	}
-
 /**
  * if var $uses = true
  * Loads AppModel file and constructs AppModel class
@@ -273,7 +251,6 @@ class Shell extends Object {
 		}
 		return false;
 	}
-
 /**
  * Loads tasks defined in var $tasks
  *
@@ -327,7 +304,6 @@ class Shell extends Object {
 
 		return true;
 	}
-
 /**
  * Prompts the user for input, and returns it.
  *
@@ -361,82 +337,68 @@ class Shell extends Object {
 			return $in;
 		}
 	}
-
 /**
- * Outputs a single or multiple messages to stdout.
+ * Outputs to the stdout filehandle.
  *
- * @param mixed $message A string or a an array of strings to output
- * @param mixed $after Appended to message, if true a newline is used
+ * @param string $string String to output.
+ * @param boolean $newline If true, the outputs gets an added newline.
  * @access public
  */
-	function out($message, $after = true) {
-		if (is_array($message)) {
-			$message = implode($this->nl(), $message);
+	function out($string, $newline = true) {
+		if (is_array($string)) {
+			$str = '';
+			foreach ($string as $message) {
+				$str .= $message ."\n";
+			}
+			$string = $str;
 		}
-		$this->Dispatch->stdout($message . $this->nl($after), false);
+		return $this->Dispatch->stdout($string, $newline);
 	}
-
 /**
- * Outputs a single or multiple error messages to stderr.
+ * Outputs to the stderr filehandle.
  *
- * @param mixed $message A string or a an array of strings to output
- * @param mixed $after Appended to message, if true a newline is used
+ * @param string $string Error text to output.
  * @access public
  */
-	function err($message, $after = true) {
-		if (is_array($message)) {
-			$message = implode($this->nl(), $message);
+	function err($string) {
+		if (is_array($string)) {
+			$str = '';
+			foreach ($string as $message) {
+				$str .= $message ."\n";
+			}
+			$string = $str;
 		}
-		$this->Dispatch->stderr($message . $this->nl($after));
+		return $this->Dispatch->stderr($string."\n");
 	}
-
-/**
- * Returns a single or multiple linefeeds sequences.
- *
- * @param mixed $format If true returns a linefeed sequence, if false null,
- *	if a string is given that is returned,
- *	if an integer is given it is used as a multiplier to return multiple linefeed sequences
- * @access public
- * @return string
- */
-	function nl($format = true) {
-		if (is_string($format)) {
-			return $format . "\n";
-		}
-		if (is_int($format)) {
-			return str_repeat("\n", $format);
-		}
-		return $format ? "\n" : null;
-	}
-
 /**
  * Outputs a series of minus characters to the standard output, acts as a visual separator.
  *
- * @param mixed $surround If true, the outputs gets surrounded by newlines.
+ * @param boolean $newline If true, the outputs gets an added newline.
  * @access public
  */
-	function hr($surround = false) {
-		$this->out(null, $surround);
+	function hr($newline = false) {
+		if ($newline) {
+			$this->out("\n");
+		}
 		$this->out('---------------------------------------------------------------');
-		$this->out(null, $surround);
+		if ($newline) {
+			$this->out("\n");
+		}
 	}
 /**
- * Displays a formatted error message
- * and exits the application with status code 1
+ * Displays a formatted error message and exits the application
  *
- * @param string $title Title of the error
- * @param string $message An optional error message
+ * @param string $title Title of the error message
+ * @param string $msg Error message
  * @access public
  */
-	function error($title, $message = null) {
-		$this->err(sprintf(__('Error: %s', true), $title));
-
-		if (!empty($message)) {
-			$this->err($message);
-		}
-		$this->_stop(1);
+	function error($title, $msg) {
+		$out  = "$title\n";
+		$out .= "$msg\n";
+		$out .= "\n";
+		$this->err($out);
+		$this->_stop();
 	}
-
 /**
  * Will check the number args matches otherwise throw an error
  *
@@ -452,7 +414,6 @@ class Shell extends Object {
 			$this->error("Wrong number of parameters: ".count($this->args), "Expected: {$expectedNum}\nPlease type 'cake {$this->shell} help' for help on usage of the {$this->name} {$command}");
 		}
 	}
-
 /**
  * Creates a file at given path
  *
@@ -475,7 +436,7 @@ class Shell extends Object {
 			}
 		}
 		if (!class_exists('File')) {
-			require LIBS . 'file.php';
+			uses('file');
 		}
 
 		if ($File = new File($path, true)) {
@@ -488,7 +449,6 @@ class Shell extends Object {
 			return false;
 		}
 	}
-
 /**
  * Outputs usage text on the standard output. Implement it in subclasses.
  *
@@ -501,7 +461,6 @@ class Shell extends Object {
 			$this->Dispatch->help();
 		}
 	}
-
 /**
  * Action to create a Unit Test
  *
@@ -520,7 +479,6 @@ class Shell extends Object {
 		}
 		return $result;
 	}
-
 /**
  * Makes absolute file path easier to read
  *
@@ -533,7 +491,35 @@ class Shell extends Object {
 		$shortPath = str_replace('..' . DS, '', $shortPath);
 		return str_replace(DS . DS, DS, $shortPath);
 	}
-
+/**
+ * Checks for Configure::read('Routing.admin') and forces user to input it if not enabled
+ *
+ * @return string Admin route to use
+ * @access public
+ */
+	function getAdmin() {
+		$admin = '';
+		$cakeAdmin = null;
+		$adminRoute = Configure::read('Routing.admin');
+		if (!empty($adminRoute)) {
+			$cakeAdmin = $adminRoute . '_';
+		} else {
+			$this->out('You need to enable Configure::write(\'Routing.admin\',\'admin\') in /app/config/core.php to use admin routing.');
+			$this->out('What would you like the admin route to be?');
+			$this->out('Example: www.example.com/admin/controller');
+			while ($admin == '') {
+				$admin = $this->in("What would you like the admin route to be?", null, 'admin');
+			}
+			if ($this->Project->cakeAdmin($admin) !== true) {
+				$this->out('Unable to write to /app/config/core.php.');
+				$this->out('You need to enable Configure::write(\'Routing.admin\',\'admin\') in /app/config/core.php to use admin routing.');
+				$this->_stop();
+			} else {
+				$cakeAdmin = $admin . '_';
+			}
+		}
+		return $cakeAdmin;
+	}
 /**
  * Creates the proper controller path for the specified controller class name
  *
@@ -544,7 +530,6 @@ class Shell extends Object {
 	function _controllerPath($name) {
 		return strtolower(Inflector::underscore($name));
 	}
-
 /**
  * Creates the proper controller plural name for the specified controller class name
  *
@@ -555,7 +540,6 @@ class Shell extends Object {
 	function _controllerName($name) {
 		return Inflector::pluralize(Inflector::camelize($name));
 	}
-
 /**
  * Creates the proper controller camelized name (singularized) for the specified name
  *
@@ -566,7 +550,6 @@ class Shell extends Object {
 	function _modelName($name) {
 		return Inflector::camelize(Inflector::singularize($name));
 	}
-
 /**
  * Creates the proper singular model key for associations
  *
@@ -577,7 +560,6 @@ class Shell extends Object {
 	function _modelKey($name) {
 		return Inflector::underscore(Inflector::singularize($name)).'_id';
 	}
-
 /**
  * Creates the proper model name from a foreign key
  *
@@ -589,7 +571,6 @@ class Shell extends Object {
 		$name = str_replace('_id', '',$key);
 		return Inflector::camelize($name);
 	}
-
 /**
  * creates the singular name for use in views.
  *
@@ -600,7 +581,6 @@ class Shell extends Object {
 	function _singularName($name) {
 		return Inflector::variable(Inflector::singularize($name));
 	}
-
 /**
  * Creates the plural name for views
  *
@@ -611,7 +591,6 @@ class Shell extends Object {
 	function _pluralName($name) {
 		return Inflector::variable(Inflector::pluralize($name));
 	}
-
 /**
  * Creates the singular human name used in views
  *
@@ -622,7 +601,6 @@ class Shell extends Object {
 	function _singularHumanName($name) {
 		return Inflector::humanize(Inflector::underscore(Inflector::singularize($name)));
 	}
-
 /**
  * Creates the plural human name used in views
  *
@@ -632,23 +610,6 @@ class Shell extends Object {
  */
 	function _pluralHumanName($name) {
 		return Inflector::humanize(Inflector::underscore(Inflector::pluralize($name)));
-	}
-
-/**
- * Find the correct path for a plugin. Scans $pluginPaths for the plugin you want.
- *
- * @param string $pluginName Name of the plugin you want ie. DebugKit
- * @return string $path path to the correct plugin.
- **/
-	function _pluginPath($pluginName) {
-		$pluginPaths = App::path('plugins');
-		$pluginDirName = Inflector::underscore($pluginName);
-		foreach ($pluginPaths as $path) {
-			if (is_dir($path . $pluginDirName)) {
-				return $path . $pluginDirName . DS ;
-			}
-		}
-		return $pluginPaths[0] . $pluginDirName . DS;
 	}
 }
 ?>

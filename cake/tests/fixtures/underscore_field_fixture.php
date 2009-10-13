@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Short description for file.
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
-
 /**
  * UnderscoreFieldFixture class
  *
@@ -33,7 +31,6 @@
  * @subpackage    cake.tests.fixtures
  */
 class UnderscoreFieldFixture extends CakeTestFixture {
-
 /**
  * name property
  *

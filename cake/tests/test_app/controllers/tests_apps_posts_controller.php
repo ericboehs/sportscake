@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Short description for file.
  *
@@ -43,7 +42,6 @@ class TestsAppsPostsController extends AppController {
 		$this->set('posts', $this->Post->find('all'));
 		$this->render('index');
 	}
-
 /**
  * check url params
  *
@@ -52,7 +50,6 @@ class TestsAppsPostsController extends AppController {
 		$this->set('params', $this->params);
 		$this->render('index');
 	}
-
 /**
  * post var testing
  *
@@ -61,7 +58,6 @@ class TestsAppsPostsController extends AppController {
 		$this->set('data', $this->data);
 		$this->render('index');
 	}
-
 /**
  * Fixturized action for testAction()
  *

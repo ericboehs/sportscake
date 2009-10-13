@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * L10nTest file
  *
@@ -26,7 +25,6 @@
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
 App::import('Core', 'l10n');
-
 /**
  * L10nTest class
  *
@@ -34,7 +32,6 @@ App::import('Core', 'l10n');
  * @subpackage    cake.tests.cases.libs
  */
 class L10nTest extends CakeTestCase {
-
 /**
  * testGet method
  *
@@ -117,7 +114,6 @@ class L10nTest extends CakeTestCase {
 		$expected = 'en_us';
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testGetAutoLanguage method
  *
@@ -172,7 +168,6 @@ class L10nTest extends CakeTestCase {
 
 		$_SERVER = $__SERVER;
 	}
-
 /**
  * testMap method
  *
@@ -494,7 +489,6 @@ class L10nTest extends CakeTestCase {
 		$expected = array('zul' => 'zu', 'zu' => 'zul');
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testCatalog method
  *

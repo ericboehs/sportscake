@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  *
  * PHP versions 4 and 5
@@ -79,9 +78,7 @@ endif;
 </p>
 <?php
 if (isset($filePresent)):
-	if (!class_exists('ConnectionManager')) {
-		require LIBS . 'model' . DS . 'connection_manager.php';
-	}
+	uses('model' . DS . 'connection_manager');
 	$db = ConnectionManager::getInstance();
 	@$connected = $db->getDataSource('default');
 ?>

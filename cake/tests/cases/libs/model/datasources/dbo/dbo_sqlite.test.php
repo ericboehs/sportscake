@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * DboSqliteTest file
  *
@@ -24,7 +23,6 @@
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 App::import('Core', array('Model', 'DataSource', 'DboSource', 'DboSqlite'));
-
 /**
  * DboSqliteTestDb class
  *
@@ -32,7 +30,6 @@ App::import('Core', array('Model', 'DataSource', 'DboSource', 'DboSqlite'));
  * @subpackage    cake.tests.cases.libs.model.datasources
  */
 class DboSqliteTestDb extends DboSqlite {
-
 /**
  * simulated property
  *
@@ -40,7 +37,6 @@ class DboSqliteTestDb extends DboSqlite {
  * @access public
  */
 	var $simulated = array();
-
 /**
  * execute method
  *
@@ -52,7 +48,6 @@ class DboSqliteTestDb extends DboSqlite {
 		$this->simulated[] = $sql;
 		return null;
 	}
-
 /**
  * getLastQuery method
  *
@@ -63,7 +58,6 @@ class DboSqliteTestDb extends DboSqlite {
 		return $this->simulated[count($this->simulated) - 1];
 	}
 }
-
 /**
  * DboSqliteTest class
  *
@@ -71,7 +65,6 @@ class DboSqliteTestDb extends DboSqlite {
  * @subpackage    cake.tests.cases.libs.model.datasources.dbo
  */
 class DboSqliteTest extends CakeTestCase {
-
 /**
  * Do not automatically load fixtures for each test, they will be loaded manually using CakeTestCase::loadFixtures
  *
@@ -79,7 +72,6 @@ class DboSqliteTest extends CakeTestCase {
  * @access public
  */
 	var $autoFixtures = false;
-
 /**
  * Fixtures
  *
@@ -87,7 +79,6 @@ class DboSqliteTest extends CakeTestCase {
  * @access public
  */
 	var $fixtures = array('core.user');
-
 /**
  * Actual DB connection used in testing
  *
@@ -95,7 +86,6 @@ class DboSqliteTest extends CakeTestCase {
  * @access public
  */
 	var $db = null;
-
 /**
  * Simulated DB connection used in testing
  *
@@ -103,7 +93,6 @@ class DboSqliteTest extends CakeTestCase {
  * @access public
  */
 	var $db2 = null;
-
 /**
  * Skip if cannot connect to SQLite
  *
@@ -113,7 +102,6 @@ class DboSqliteTest extends CakeTestCase {
 		$this->_initDb();
 		$this->skipUnless($this->db->config['driver'] == 'sqlite', '%s SQLite connection not available');
 	}
-
 /**
  * Set up test suite database connection
  *
@@ -122,7 +110,6 @@ class DboSqliteTest extends CakeTestCase {
 	function startTest() {
 		$this->_initDb();
 	}
-
 /**
  * Sets up a Dbo class instance for testing
  *
@@ -134,7 +121,6 @@ class DboSqliteTest extends CakeTestCase {
 		$this->db =& ConnectionManager::getDataSource('test_suite');
 		$this->db2 = new DboSqliteTestDb($this->db->config, false);
 	}
-
 /**
  * Sets up a Dbo class instance for testing
  *
@@ -144,7 +130,6 @@ class DboSqliteTest extends CakeTestCase {
 		Configure::write('Cache.disable', false);
 		unset($this->db2);
 	}
-
 /**
  * Tests that SELECT queries from DboSqlite::listSources() are not cached
  *
@@ -159,7 +144,6 @@ class DboSqliteTest extends CakeTestCase {
 		$this->db->query('DROP TABLE foo_test;');
 		$this->assertFalse(in_array('foo_test', $this->db->listSources()));
 	}
-
 /**
  * test Index introspection.
  *
@@ -191,7 +175,6 @@ class DboSqliteTest extends CakeTestCase {
 		$this->assertEqual($expected, $result);
 		$this->db->query('DROP TABLE ' . $name);
 	}
-
 /**
  * Tests that cached table descriptions are saved under the sanitized key name
  *
@@ -221,7 +204,6 @@ class DboSqliteTest extends CakeTestCase {
 		Cache::delete($fileName, '_cake_model_');
 		Configure::write('Cache.disable', true);
 	}
-
 /**
  * test describe() and normal results.
  *

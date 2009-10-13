@@ -2,20 +2,33 @@
 class Season extends AppModel {
 
 	var $name = 'Season';
-	var $validate = array(
-		'season_key' => array('numeric'),
-		'publisher_id' => array('numeric')
-	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 	var $belongsTo = array(
 		'Publisher' => array(
 			'className' => 'Publisher',
 			'foreignKey' => 'publisher_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		),
 		'League' => array(
-			'className' => 'Affiliations',
+			'className' => 'League',
 			'foreignKey' => 'league_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
+
+	var $hasOne = array(
+		'InjuryPhase' => array(
+			'className' => 'InjuryPhase',
+			'foreignKey' => 'season_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
 
@@ -23,38 +36,16 @@ class Season extends AppModel {
 		'InjuryPhase' => array(
 			'className' => 'InjuryPhase',
 			'foreignKey' => 'season_id',
-			'dependent' => false
-		),
-
-		'StartTeamPhase' => array(
-            'className' => 'TeamPhase',
-            'foreignKey' => 'start_season_id',
-            'dependent' => false
-        ),
-		'EndTeamPhase' => array(
-            'className' => 'TeamPhase',
-            'foreignKey' => 'end_season_id',
-            'dependent' => false
-        ),
-
-		'AffiliationPhaseStart' => array(
-			'className' => 'AffiliationPhase',
-			'foreignKey' => 'start_season_id',
-			'dependent' => false
-		),
-		'AffiliationPhaseEnd' => array(
-			'className' => 'AffiliationPhase',
-			'foreignKey' => 'end_season_id',
-			'dependent' => false
-		),
-        'EventsSubSeason' => array(
-            'className' => 'EventsSubSeason',
-            'foreignKey' => 'season_id'
-        ),
-        'SubSeason' => array(
-            'className' => 'SubSeason',
-            'foreignKey' => 'season_id'
-        )
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
 	);
 
 }

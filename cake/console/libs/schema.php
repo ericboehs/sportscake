@@ -1,6 +1,4 @@
 <?php
-/* SVN FILE: $Id$ */
-
 /**
  * Command-line database management utility to automate programmer chores.
  *
@@ -10,25 +8,21 @@
  * PHP versions 4 and 5
  *
  * CakePHP(tm) :  Rapid Development Framework (http://www.cakephp.org)
- * Copyright 2005-2008, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
+ * Copyright 2005-2009, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
  * @filesource
- * @copyright     Copyright 2005-2008, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
+ * @copyright     Copyright 2005-2009, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
  * @link          http://www.cakefoundation.org/projects/info/cakephp CakePHP(tm) Project
  * @package       cake
  * @subpackage    cake.cake.console.libs
  * @since         CakePHP(tm) v 1.2.0.5550
- * @version       $Revision$
- * @modifiedby    $LastChangedBy$
- * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 App::import('File');
-App::import('Model', 'CakeSchema', false);
-
+App::import('Model', 'Schema');
 /**
  * Schema is a command-line database management utility for automating programmer chores.
  *
@@ -37,7 +31,6 @@ App::import('Model', 'CakeSchema', false);
  * @link          http://book.cakephp.org/view/734/Schema-management-and-migrations
  */
 class SchemaShell extends Shell {
-
 /**
  * is this a dry run?
  *
@@ -45,7 +38,6 @@ class SchemaShell extends Shell {
  * @access private
  */
 	var $__dry = null;
-
 /**
  * Override initialize
  *
@@ -56,7 +48,6 @@ class SchemaShell extends Shell {
 		$this->out('Cake Schema Shell');
 		$this->hr();
 	}
-
 /**
  * Override startup
  *
@@ -90,7 +81,6 @@ class SchemaShell extends Shell {
 
 		$this->Schema =& new CakeSchema(compact('name', 'path', 'file', 'connection'));
 	}
-
 /**
  * Override main
  *
@@ -99,7 +89,6 @@ class SchemaShell extends Shell {
 	function main() {
 		$this->help();
 	}
-
 /**
  * Read and output contents of schema object
  * path to read as second arg
@@ -116,7 +105,6 @@ class SchemaShell extends Shell {
 			$this->_stop();
 		}
 	}
-
 /**
  * Read database and Write schema object
  * accepts a connection as first arg or path to save as second arg
@@ -124,7 +112,7 @@ class SchemaShell extends Shell {
  * @access public
  */
 	function generate() {
-		$this->out('Generating Schema...');
+		$this->out(__('Generating Schema...', true));
 		$options = array();
 		if (isset($this->params['f'])) {
 			$options = array('models' => false);
@@ -137,9 +125,9 @@ class SchemaShell extends Shell {
 
 		if (!$snapshot && file_exists($this->Schema->path . DS . $this->params['file'])) {
 			$snapshot = true;
-			$result = $this->in("Schema file exists.\n [O]verwrite\n [S]napshot\n [Q]uit\nWould you like to do?", array('o', 's', 'q'), 's');
+			$result = strtolower($this->in("Schema file exists.\n [O]verwrite\n [S]napshot\n [Q]uit\nWould you like to do?", array('o', 's', 'q'), 's'));
 			if ($result === 'q') {
-				$this->_stop();
+				return $this->_stop();
 			}
 			if ($result === 'o') {
 				$snapshot = false;
@@ -185,7 +173,6 @@ class SchemaShell extends Shell {
 			$this->_stop();
 		}
 	}
-
 /**
  * Dump Schema object to sql file
  * if first arg == write, file will be written to sql file
@@ -226,7 +213,6 @@ class SchemaShell extends Shell {
 		$this->out($contents);
 		return $contents;
 	}
-
 /**
  * Run database commands: create, update
  *
@@ -234,7 +220,7 @@ class SchemaShell extends Shell {
  */
 	function run() {
 		if (!isset($this->args[0])) {
-			$this->err('command not found');
+			$this->err(__('Command not found', true));
 			$this->_stop();
 		}
 
@@ -281,18 +267,17 @@ class SchemaShell extends Shell {
 				$this->__update($Schema, $table);
 			break;
 			default:
-				$this->err(__('command not found', true));
-			$this->_stop();
+				$this->err(__('Command not found', true));
+				$this->_stop();
 		}
 	}
-
 /**
  * Create database from Schema object
  * Should be called via the run method
  *
  * @access private
  */
-	function __create($Schema, $table = null) {
+	function __create(&$Schema, $table = null) {
 		$db =& ConnectionManager::getDataSource($this->Schema->connection);
 
 		$drop = $create = array();
@@ -315,7 +300,7 @@ class SchemaShell extends Shell {
 		$this->out(array_keys($drop));
 
 		if ('y' == $this->in(__('Are you sure you want to drop the table(s)?', true), array('y', 'n'), 'n')) {
-			$this->out('Dropping table(s).');
+			$this->out(__('Dropping table(s).', true));
 			$this->__run($drop, 'drop', $Schema);
 		}
 
@@ -323,24 +308,27 @@ class SchemaShell extends Shell {
 		$this->out(array_keys($create));
 
 		if ('y' == $this->in(__('Are you sure you want to create the table(s)?', true), array('y', 'n'), 'y')) {
-			$this->out('Creating table(s).');
+			$this->out(__('Creating table(s).', true));
 			$this->__run($create, 'create', $Schema);
 		}
 
 		$this->out(__('End create.', true));
 	}
-
 /**
  * Update database with Schema object
  * Should be called via the run method
  *
  * @access private
  */
-	function __update($Schema, $table = null) {
+	function __update(&$Schema, $table = null) {
 		$db =& ConnectionManager::getDataSource($this->Schema->connection);
 
-		$this->out('Comparing Database to Schema...');
-		$Old = $this->Schema->read();
+		$this->out(__('Comparing Database to Schema...', true));
+		$options = array();
+		if (isset($this->params['f'])) {
+			$options['models'] = false;
+		}
+		$Old = $this->Schema->read($options);
 		$compare = $this->Schema->compare($Old, $Schema);
 
 		$contents = array();
@@ -368,13 +356,12 @@ class SchemaShell extends Shell {
 
 		$this->out(__('End update.', true));
 	}
-
 /**
  * Runs sql from __create() or __update()
  *
  * @access private
  */
-	function __run($contents, $event, $Schema) {
+	function __run($contents, $event, &$Schema) {
 		if (empty($contents)) {
 			$this->err(__('Sql could not be run', true));
 			return;
@@ -383,7 +370,6 @@ class SchemaShell extends Shell {
 		$db =& ConnectionManager::getDataSource($this->Schema->connection);
 		$db->fullDebug = true;
 
-		$errors = array();
 		foreach ($contents as $table => $sql) {
 			if (empty($sql)) {
 				$this->out(sprintf(__('%s is up to date.', true), $table));
@@ -395,29 +381,30 @@ class SchemaShell extends Shell {
 					if (!$Schema->before(array($event => $table))) {
 						return false;
 					}
-					if (!$db->_execute($sql)) {
+					$error = null;
+					if (!$db->execute($sql)) {
 						$error = $table . ': '  . $db->lastError();
 					}
 
-					$Schema->after(array($event => $table, 'errors'=> $errors));
+					$Schema->after(array($event => $table, 'errors' => $error));
 
-					if (isset($error)) {
+					if (!empty($error)) {
 						$this->out($error);
-					} elseif ($this->__dry !== true) {
+					} else {
 						$this->out(sprintf(__('%s updated.', true), $table));
 					}
 				}
 			}
 		}
 	}
-
 /**
  * Displays help contents
  *
  * @access public
  */
 	function help() {
-		$this->out("The Schema Shell generates a schema object from \n\t\tthe database and updates the database from the schema.");
+		$this->out("The Schema Shell generates a schema object from");
+		$this->out("the database and updates the database from the schema.");
 		$this->hr();
 		$this->out("Usage: cake schema <command> <arg1> <arg2>...");
 		$this->hr();

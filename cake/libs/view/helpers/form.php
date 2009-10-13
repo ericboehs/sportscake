@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Automatic generation of HTML FORMs from given data.
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * Form helper library.
  *
@@ -35,7 +33,6 @@
  * @subpackage    cake.cake.libs.view.helpers
  */
 class FormHelper extends AppHelper {
-
 /**
  * Other helpers used by FormHelper
  *
@@ -43,7 +40,6 @@ class FormHelper extends AppHelper {
  * @access public
  */
 	var $helpers = array('Html');
-
 /**
  * Holds the fields array('field_name' => array('type'=> 'string', 'length'=> 100),
  * primaryKey and validates array('field_name')
@@ -51,7 +47,6 @@ class FormHelper extends AppHelper {
  * @access public
  */
 	var $fieldset = array('fields' => array(), 'key' => 'id', 'validates' => array());
-
 /**
  * Options used by DateTime fields
  *
@@ -61,7 +56,6 @@ class FormHelper extends AppHelper {
 		'day' => array(), 'minute' => array(), 'hour' => array(),
 		'month' => array(), 'year' => array(), 'meridian' => array()
 	);
-
 /**
  * List of fields created, used with secure forms.
  *
@@ -69,7 +63,6 @@ class FormHelper extends AppHelper {
  * @access public
  */
 	var $fields = array();
-
 /**
  * Defines the type of form being created.  Set by FormHelper::create().
  *
@@ -77,7 +70,6 @@ class FormHelper extends AppHelper {
  * @access public
  */
 	var $requestType = null;
-
 /**
  * Returns an HTML FORM element.
  *
@@ -255,7 +247,6 @@ class FormHelper extends AppHelper {
 		$attributes = $this->_parseAttributes($htmlAttributes, null, '');
 		return $this->output(sprintf($this->Html->tags['form'], $attributes)) . $append;
 	}
-
 /**
  * Closes an HTML form, cleans up values set by FormHelper::create(), and writes hidden
  * input fields where appropriate.
@@ -308,7 +299,6 @@ class FormHelper extends AppHelper {
 		$view->modelScope = false;
 		return $this->output($out);
 	}
-
 /**
  * Generates a hidden field with a security hash based on the fields used in the form.
  *
@@ -342,7 +332,6 @@ class FormHelper extends AppHelper {
 		));
 		return $out .= '</fieldset>';
 	}
-
 /**
  * Determine which fields of a form should be used for hash
  *
@@ -374,7 +363,6 @@ class FormHelper extends AppHelper {
 			$this->fields[] = $field;
 		}
 	}
-
 /**
  * Returns true if there is an error for the given field, otherwise false
  *
@@ -386,7 +374,6 @@ class FormHelper extends AppHelper {
 		$this->setEntity($field);
 		return (bool)$this->tagIsInvalid();
 	}
-
 /**
  * Returns a formatted error message for given FORM field, NULL if no errors.
  *
@@ -448,13 +435,12 @@ class FormHelper extends AppHelper {
 			return null;
 		}
 	}
-
 /**
  * Returns a formatted LABEL element for HTML FORMs.
  *
  * @param string $fieldName This should be "Modelname.fieldname"
  * @param string $text Text that will appear in the label field.
- * @param Mixed $attributes An array of HTML attributes, or a string, to be used as a class name.
+ * @param array $attributes Array of HTML attributes.
  * @return string The formatted LABEL element
  */
 	function label($fieldName = null, $text = null, $attributes = array()) {
@@ -475,10 +461,6 @@ class FormHelper extends AppHelper {
 			$text = __(Inflector::humanize(Inflector::underscore($text)), true);
 		}
 
-		if (is_string($attributes)) {
-			$attributes = array('class' => $attributes);
-		}
-
 		if (isset($attributes['for'])) {
 			$labelFor = $attributes['for'];
 			unset($attributes['for']);
@@ -492,7 +474,6 @@ class FormHelper extends AppHelper {
 			$this->_parseAttributes($attributes), $text
 		));
 	}
-
 /**
  * Will display all the fields passed in an array expects fieldName as an array key
  * replaces generateFields
@@ -575,11 +556,10 @@ class FormHelper extends AppHelper {
 			return $out;
 		}
 	}
-
 /**
  * Generates a form input element complete with label and wrapper div
  *
- * Options - See each field type method for more information. Any options that are part of
+ * Options - See each field type method for more information. Any options that are part of 
  * $attributes or $options for the different type methods can be included in $options for input().
  *
  * - 'type' - Force the type of widget you want. e.g. ```type => 'select'```
@@ -846,7 +826,6 @@ class FormHelper extends AppHelper {
 		}
 		return $out;
 	}
-
 /**
  * Creates a checkbox input widget.
  *
@@ -885,7 +864,6 @@ class FormHelper extends AppHelper {
 			$this->_parseAttributes($options, array('name'), null, ' ')
 		));
 	}
-
 /**
  * Creates a set of radio widgets.
  *
@@ -970,7 +948,6 @@ class FormHelper extends AppHelper {
 		}
 		return $this->output($out);
 	}
-
 /**
  * Creates a text input widget.
  *
@@ -988,7 +965,6 @@ class FormHelper extends AppHelper {
 			$this->_parseAttributes($options, array('name'), null, ' ')
 		));
 	}
-
 /**
  * Creates a password input widget.
  *
@@ -1004,7 +980,6 @@ class FormHelper extends AppHelper {
 			$this->_parseAttributes($options, array('name'), null, ' ')
 		));
 	}
-
 /**
  * Creates a textarea widget.
  *
@@ -1030,7 +1005,6 @@ class FormHelper extends AppHelper {
 			$value
 		));
 	}
-
 /**
  * Creates a hidden input field.
  *
@@ -1061,7 +1035,6 @@ class FormHelper extends AppHelper {
 			$this->_parseAttributes($options, array('name', 'class'), '', ' ')
 		));
 	}
-
 /**
  * Creates file input widget.
  *
@@ -1083,7 +1056,6 @@ class FormHelper extends AppHelper {
 		$attributes = $this->_parseAttributes($options, array('name'), '', ' ');
 		return $this->output(sprintf($this->Html->tags['file'], $options['name'], $attributes));
 	}
-
 /**
  * Creates a button tag.
  *
@@ -1109,7 +1081,6 @@ class FormHelper extends AppHelper {
 			$this->_parseAttributes($options, array('type'), '', ' ')
 		));
 	}
-
 /**
  * Creates a submit button element.
  *
@@ -1117,7 +1088,7 @@ class FormHelper extends AppHelper {
  *  extension .jpg, .jpe, .jpeg, .gif, .png use an image if the extension
  *  exists, AND the first character is /, image is relative to webroot,
  *  OR if the first character is not /, image is relative to webroot/img.
- * @param array $options
+ * @param array $options 
  * @return string A HTML submit button
  */
 	function submit($caption = null, $options = array()) {
@@ -1176,7 +1147,6 @@ class FormHelper extends AppHelper {
 		}
 		return $out;
 	}
-
 /**
  * Returns a formatted SELECT element.
  *
@@ -1270,7 +1240,6 @@ class FormHelper extends AppHelper {
 		$select[] = $this->Html->tags[$template];
 		return $this->output(implode("\n", $select));
 	}
-
 /**
  * Returns a SELECT element for days.
  *
@@ -1305,7 +1274,6 @@ class FormHelper extends AppHelper {
 			$fieldName . ".day", $this->__generateOptions('day'), $selected, $attributes, $showEmpty
 		);
 	}
-
 /**
  * Returns a SELECT element for years
  *
@@ -1347,7 +1315,6 @@ class FormHelper extends AppHelper {
 			$selected, $attributes, $showEmpty
 		);
 	}
-
 /**
  * Returns a SELECT element for months.
  *
@@ -1393,7 +1360,6 @@ class FormHelper extends AppHelper {
 			$selected, $attributes, $showEmpty
 		);
 	}
-
 /**
  * Returns a SELECT element for hours.
  *
@@ -1437,7 +1403,6 @@ class FormHelper extends AppHelper {
 			$selected, $attributes, $showEmpty
 		);
 	}
-
 /**
  * Returns a SELECT element for minutes.
  *
@@ -1479,7 +1444,6 @@ class FormHelper extends AppHelper {
 			$selected, $attributes, $showEmpty
 		);
 	}
-
 /**
  * Returns a SELECT element for AM or PM.
  *
@@ -1513,7 +1477,6 @@ class FormHelper extends AppHelper {
 			$selected, $attributes, $showEmpty
 		);
 	}
-
 /**
  * Returns a set of SELECT elements for a full datetime setup: day, month and year, and then time.
  *
@@ -1647,15 +1610,16 @@ class FormHelper extends AppHelper {
 			}
 			$opt = implode($separator, $selects);
 		}
-
+		if (!empty($interval) && $interval > 1 && !empty($min)) {
+			$min = round($min * (1 / $interval)) * $interval;
+		}
+		$selectMinuteAttr['interval'] = $interval;
 		switch ($timeFormat) {
 			case '24':
-				$selectMinuteAttr['interval'] = $interval;
 				$opt .= $this->hour($fieldName, true, $hour, $selectHourAttr, $showEmpty) . ':' .
 				$this->minute($fieldName, $min, $selectMinuteAttr, $showEmpty);
 			break;
 			case '12':
-				$selectMinuteAttr['interval'] = $interval;
 				$opt .= $this->hour($fieldName, false, $hour, $selectHourAttr, $showEmpty) . ':' .
 				$this->minute($fieldName, $min, $selectMinuteAttr, $showEmpty) . ' ' .
 				$this->meridian($fieldName, $meridian, $selectMeridianAttr, $showEmpty);
@@ -1667,7 +1631,6 @@ class FormHelper extends AppHelper {
 		}
 		return $opt;
 	}
-
 /**
  * Gets the input field name for the current tag
  *
@@ -1702,7 +1665,6 @@ class FormHelper extends AppHelper {
 		}
 		return parent::__name($options, $field, $key);
 	}
-
 /**
  * Returns an array of formatted OPTION/OPTGROUP elements
  * @access private
@@ -1792,7 +1754,6 @@ class FormHelper extends AppHelper {
 
 		return array_reverse($select, true);
 	}
-
 /**
  * Generates option lists for common <select /> menus
  * @access private
@@ -1890,13 +1851,12 @@ class FormHelper extends AppHelper {
 		$this->__options[$name] = $data;
 		return $this->__options[$name];
 	}
-
 /**
  * Sets field defaults and adds field to form security input hash
- *
+ * 
  * Options
  *  - secure - boolean whether or not the the field should be added to the security fields.
- *
+ * 
  * @param string $field
  * @param array $options
  * @return array

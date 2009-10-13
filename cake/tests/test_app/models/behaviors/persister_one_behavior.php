@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Behavior for binding management.
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * Behavior to allow for dynamic and atomic manipulation of a Model's associations used for a find call. Most useful for limiting
  * the amount of associations and data returned.
@@ -34,7 +32,7 @@
  * @subpackage    cake.cake.console.libs
  */
 class PersisterOneBehaviorBehavior extends ModelBehavior {
-
-
+	
+	
 }
 ?>

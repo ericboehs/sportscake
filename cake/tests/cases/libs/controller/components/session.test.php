@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * SessionComponentTest file
  *
@@ -25,9 +24,8 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
-App::import('Controller', 'Controller', false);
+App::import('Core', array('Controller', 'Object'));
 App::import('Component', 'Session');
-
 /**
  * SessionTestController class
  *
@@ -35,7 +33,6 @@ App::import('Component', 'Session');
  * @subpackage    cake.tests.cases.libs.controller.components
  */
 class SessionTestController extends Controller {
-
 /**
  * uses property
  *
@@ -43,7 +40,6 @@ class SessionTestController extends Controller {
  * @access public
  */
 	var $uses = array();
-
 /**
  * session_id method
  *
@@ -54,7 +50,6 @@ class SessionTestController extends Controller {
 		return $this->Session->id();
 	}
 }
-
 /**
  * OrangeSessionTestController class
  *
@@ -62,7 +57,6 @@ class SessionTestController extends Controller {
  * @subpackage    cake.tests.cases.libs.controller.components
  */
 class OrangeSessionTestController extends Controller {
-
 /**
  * uses property
  *
@@ -70,7 +64,6 @@ class OrangeSessionTestController extends Controller {
  * @access public
  */
 	var $uses = array();
-
 /**
  * session_id method
  *
@@ -81,7 +74,6 @@ class OrangeSessionTestController extends Controller {
 		return $this->Session->id();
 	}
 }
-
 /**
  * SessionComponentTest class
  *
@@ -89,7 +81,6 @@ class OrangeSessionTestController extends Controller {
  * @subpackage    cake.tests.cases.libs.controller.components
  */
 class SessionComponentTest extends CakeTestCase {
-
 /**
  * setUp method
  *
@@ -99,7 +90,6 @@ class SessionComponentTest extends CakeTestCase {
 	function setUp() {
 		$this->_session = Configure::read('Session');
 	}
-
 /**
  * tearDown method
  *
@@ -109,7 +99,6 @@ class SessionComponentTest extends CakeTestCase {
 	function tearDown() {
 		Configure::write('Session', $this->_session);
 	}
-
 /**
  * testSessionAutoStart method
  *
@@ -141,7 +130,6 @@ class SessionComponentTest extends CakeTestCase {
 		$result = $Object->requestAction('/orange_session_test/session_id');
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testSessionInitialize method
  *
@@ -161,7 +149,6 @@ class SessionComponentTest extends CakeTestCase {
 		$Session->initialize($sessionController);
 		$this->assertEqual($Session->__bare, 1);
 	}
-
 /**
  * testSessionActivate method
  *
@@ -183,7 +170,6 @@ class SessionComponentTest extends CakeTestCase {
 		Configure::write('Session.start', true);
 		$Session->destroy();
 	}
-
 /**
  * testSessionValid method
  *
@@ -214,7 +200,6 @@ class SessionComponentTest extends CakeTestCase {
 		$this->assertFalse($Session->valid());
 		Configure::write('Session.checkAgent', true);
 	}
-
 /**
  * testSessionError method
  *
@@ -232,7 +217,6 @@ class SessionComponentTest extends CakeTestCase {
 		$this->assertFalse($Session->error());
 		Configure::write('Session.start', true);
 	}
-
 /**
  * testSessionReadWrite method
  *
@@ -273,7 +257,6 @@ class SessionComponentTest extends CakeTestCase {
 		$this->assertFalse($Session->read('Test'));
 		Configure::write('Session.start', true);
 	}
-
 /**
  * testSessionDel method
  *
@@ -294,7 +277,6 @@ class SessionComponentTest extends CakeTestCase {
 		$this->assertFalse($Session->del('Test'));
 		Configure::write('Session.start', true);
 	}
-
 /**
  * testSessionDelete method
  *
@@ -315,7 +297,6 @@ class SessionComponentTest extends CakeTestCase {
 		$this->assertFalse($Session->delete('Test'));
 		Configure::write('Session.start', true);
 	}
-
 /**
  * testSessionCheck method
  *
@@ -337,7 +318,6 @@ class SessionComponentTest extends CakeTestCase {
 		$this->assertFalse($Session->check('Test'));
 		Configure::write('Session.start', true);
 	}
-
 /**
  * testSessionFlash method
  *
@@ -363,7 +343,6 @@ class SessionComponentTest extends CakeTestCase {
 
 		$Session->del('Message');
 	}
-
 /**
  * testSessionId method
  *
@@ -375,7 +354,6 @@ class SessionComponentTest extends CakeTestCase {
 		$Session =& new SessionComponent();
 		$this->assertNull($Session->id());
 	}
-
 /**
  * testSessionDestroy method
  *

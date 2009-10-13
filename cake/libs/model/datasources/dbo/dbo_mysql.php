@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * MySQL layer for DBO
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * Provides common base for MySQL & MySQLi connections
  *
@@ -33,28 +31,24 @@
  * @subpackage    cake.cake.libs.model.datasources.dbo
  */
 class DboMysqlBase extends DboSource {
-
 /**
  * Description property.
- *
+ * 
  * @var string
  */
 	var $description = "MySQL DBO Base Driver";
-
 /**
  * Start quote
  *
  * @var string
  */
 	var $startQuote = "`";
-
 /**
  * End quote
  *
  * @var string
  */
 	var $endQuote = "`";
-
 /**
  * use alias for update and delete. Set to true if version >= 4.1
  *
@@ -62,7 +56,6 @@ class DboMysqlBase extends DboSource {
  * @access protected
  */
 	var $_useAlias = true;
-
 /**
  * Index of basic SQL commands
  *
@@ -74,7 +67,6 @@ class DboMysqlBase extends DboSource {
 		'commit'   => 'COMMIT',
 		'rollback' => 'ROLLBACK'
 	);
-
 /**
  * MySQL column definition
  *
@@ -93,7 +85,6 @@ class DboMysqlBase extends DboSource {
 		'binary' => array('name' => 'blob'),
 		'boolean' => array('name' => 'tinyint', 'limit' => '1')
 	);
-
 /**
  * Generates and executes an SQL UPDATE statement for given model, fields, and values.
  *
@@ -137,7 +128,6 @@ class DboMysqlBase extends DboSource {
 		}
 		return true;
 	}
-
 /**
  * Generates and executes an SQL DELETE statement for given id/conditions on given model.
  *
@@ -168,7 +158,6 @@ class DboMysqlBase extends DboSource {
 		}
 		return true;
 	}
-
 /**
  * Sets the database encoding
  *
@@ -177,7 +166,6 @@ class DboMysqlBase extends DboSource {
 	function setEncoding($enc) {
 		return $this->_execute('SET NAMES ' . $enc) != false;
 	}
-
 /**
  * Returns an array of the indexes in given datasource name.
  *
@@ -210,7 +198,6 @@ class DboMysqlBase extends DboSource {
 		}
 		return $index;
 	}
-
 /**
  * Generate a MySQL Alter Table syntax for the given Schema comparison
  *
@@ -265,7 +252,6 @@ class DboMysqlBase extends DboSource {
 		}
 		return $out;
 	}
-
 /**
  * Generate a MySQL "drop table" statement for the given Schema object
  *
@@ -287,14 +273,13 @@ class DboMysqlBase extends DboSource {
 		}
 		return $out;
 	}
-
 /**
  * Generate MySQL index alteration statements for a table.
  *
  * @param string $table Table to alter indexes for
  * @param array $new Indexes to add and drop
  * @return array Index alteration statements
- */
+ */	
 	function _alterIndexes($table, $indexes) {
 		$alter = array();
 		if (isset($indexes['drop'])) {
@@ -329,7 +314,6 @@ class DboMysqlBase extends DboSource {
 		}
 		return $alter;
 	}
-
 /**
  * Inserts multiple values into a table
  *
@@ -356,14 +340,12 @@ class DboMysqlBase extends DboSource {
  * @subpackage    cake.cake.libs.model.datasources.dbo
  */
 class DboMysql extends DboMysqlBase {
-
 /**
  * Enter description here...
  *
  * @var unknown_type
  */
 	var $description = "MySQL DBO Driver";
-
 /**
  * Base configuration settings for MySQL driver
  *
@@ -378,7 +360,6 @@ class DboMysql extends DboMysqlBase {
 		'port' => '3306',
 		'connect' => 'mysql_pconnect'
 	);
-
 /**
  * Connects to the database using options in the given configuration array.
  *
@@ -407,7 +388,6 @@ class DboMysql extends DboMysqlBase {
 
 		return $this->connected;
 	}
-
 /**
  * Disconnects from database.
  *
@@ -420,7 +400,6 @@ class DboMysql extends DboMysqlBase {
 		$this->connected = !@mysql_close($this->connection);
 		return !$this->connected;
 	}
-
 /**
  * Executes given SQL statement.
  *
@@ -431,7 +410,6 @@ class DboMysql extends DboMysqlBase {
 	function _execute($sql) {
 		return mysql_query($sql, $this->connection);
 	}
-
 /**
  * Returns an array of sources (tables) in the database.
  *
@@ -456,7 +434,6 @@ class DboMysql extends DboMysqlBase {
 			return $tables;
 		}
 	}
-
 /**
  * Returns an array of the fields in given table name.
  *
@@ -491,7 +468,6 @@ class DboMysql extends DboMysqlBase {
 		$this->__cacheDescription($this->fullTableName($model, false), $fields);
 		return $fields;
 	}
-
 /**
  * Returns a quoted and escaped string of $data for use in an SQL statement.
  *
@@ -536,7 +512,6 @@ class DboMysql extends DboMysqlBase {
 		}
 		return $data;
 	}
-
 /**
  * Returns a formatted error message from previous database operation.
  *
@@ -548,7 +523,6 @@ class DboMysql extends DboMysqlBase {
 		}
 		return null;
 	}
-
 /**
  * Returns number of affected rows in previous database operation. If no previous operation exists,
  * this returns false.
@@ -561,7 +535,6 @@ class DboMysql extends DboMysqlBase {
 		}
 		return null;
 	}
-
 /**
  * Returns number of rows in previous resultset. If no previous resultset exists,
  * this returns false.
@@ -574,7 +547,6 @@ class DboMysql extends DboMysqlBase {
 		}
 		return null;
 	}
-
 /**
  * Returns the ID generated from the previous INSERT operation.
  *
@@ -589,7 +561,6 @@ class DboMysql extends DboMysqlBase {
 
 		return null;
 	}
-
 /**
  * Converts database-layer column types to basic types
  *
@@ -637,7 +608,6 @@ class DboMysql extends DboMysqlBase {
 		}
 		return 'text';
 	}
-
 /**
  * Enter description here...
  *
@@ -664,7 +634,6 @@ class DboMysql extends DboMysqlBase {
 			$j++;
 		}
 	}
-
 /**
  * Fetches the next row from the current result set
  *
@@ -684,7 +653,6 @@ class DboMysql extends DboMysqlBase {
 			return false;
 		}
 	}
-
 /**
  * Gets the database encoding
  *

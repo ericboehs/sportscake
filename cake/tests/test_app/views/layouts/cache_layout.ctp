@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  *
  * PHP versions 4 and 5
@@ -36,3 +35,5 @@
 	<?php echo $variable; ?>
 </cake:nocache>
 <p>Additional regular text.</p>
+
+

@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * SecurityTest file
  *
@@ -26,7 +25,6 @@
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
 App::import('Core', 'Security');
-
 /**
  * SecurityTest class
  *
@@ -34,7 +32,6 @@ App::import('Core', 'Security');
  * @subpackage    cake.tests.cases.libs
  */
 class SecurityTest extends CakeTestCase {
-
 /**
  * sut property
  *
@@ -42,7 +39,6 @@ class SecurityTest extends CakeTestCase {
  * @access public
  */
 	var $sut = null;
-
 /**
  * setUp method
  *
@@ -52,7 +48,6 @@ class SecurityTest extends CakeTestCase {
 	function setUp() {
 		$this->sut =& Security::getInstance();
 	}
-
 /**
  * testInactiveMins method
  *
@@ -69,7 +64,6 @@ class SecurityTest extends CakeTestCase {
 		Configure::write('Security.level', 'low');
 		$this->assertEqual(300, Security::inactiveMins());
 	}
-
 /**
  * testGenerateAuthkey method
  *
@@ -79,7 +73,6 @@ class SecurityTest extends CakeTestCase {
 	function testGenerateAuthkey() {
 		$this->assertEqual(strlen(Security::generateAuthKey()), 40);
 	}
-
 /**
  * testValidateAuthKey method
  *
@@ -90,7 +83,6 @@ class SecurityTest extends CakeTestCase {
 		$authKey = Security::generateAuthKey();
 		$this->assertTrue(Security::validateAuthKey($authKey));
 	}
-
 /**
  * testHash method
  *
@@ -140,7 +132,6 @@ class SecurityTest extends CakeTestCase {
 
 		Security::setHash($_hashType);
 	}
-
 /**
  * testCipher method
  *

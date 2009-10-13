@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Basic Cake functionality.
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * Basic defines for timing functions.
  */
@@ -36,7 +34,6 @@
 	define('WEEK', 7 * DAY);
 	define('MONTH', 30 * DAY);
 	define('YEAR', 365 * DAY);
-
 /**
  * Patch for PHP < 5.0
  */
@@ -49,14 +46,12 @@ if (!function_exists('clone')) {
 		}');
 	}
 }
-
 /**
  * Loads configuration files. Receives a set of configuration files
  * to load.
  * Example:
- * <code>
- * config('config1', 'config2');
- * </code>
+ *
+ * `config('config1', 'config2');`
  *
  * @return boolean Success
  */
@@ -79,17 +74,14 @@ if (!function_exists('clone')) {
 		}
 		return true;
 	}
-
 /**
  * Loads component/components from LIBS. Takes optional number of parameters.
  *
  * Example:
- * <code>
- * uses('flay', 'time');
- * </code>
+ *
+ * `uses('flay', 'time');`
  *
  * @param string $name Filename without the .php part
- * @deprecated
  */
 	function uses() {
 		$args = func_get_args();
@@ -97,7 +89,6 @@ if (!function_exists('clone')) {
 			require_once(LIBS . strtolower($file) . '.php');
 		}
 	}
-
 /**
  * Prints out debug information about given variable.
  *
@@ -125,7 +116,6 @@ if (!function_exists('clone')) {
 		}
 	}
 if (!function_exists('getMicrotime')) {
-
 /**
  * Returns microtime for execution time checking
  *
@@ -137,7 +127,6 @@ if (!function_exists('getMicrotime')) {
 	}
 }
 if (!function_exists('sortByKey')) {
-
 /**
  * Sorts given $array by key $sortby.
  *
@@ -169,7 +158,6 @@ if (!function_exists('sortByKey')) {
 	}
 }
 if (!function_exists('array_combine')) {
-
 /**
  * Combines given identical arrays by using the first array's values as keys,
  * and the second one's values as values. (Implemented for backwards compatibility with PHP4)
@@ -198,7 +186,6 @@ if (!function_exists('array_combine')) {
 		return $output;
 	}
 }
-
 /**
  * Convenience method for htmlspecialchars.
  *
@@ -219,19 +206,16 @@ if (!function_exists('array_combine')) {
 		}
 		return htmlspecialchars($text, ENT_QUOTES, $charset);
 	}
-
 /**
  * Returns an array of all the given parameters.
  *
  * Example:
- * <code>
- * a('a', 'b')
- * </code>
+ *
+ * `a('a', 'b')`
  *
  * Would return:
- * <code>
- * array('a', 'b')
- * </code>
+ *
+ * `array('a', 'b')`
  *
  * @return array Array of given parameters
  * @link http://book.cakephp.org/view/694/a
@@ -240,19 +224,16 @@ if (!function_exists('array_combine')) {
 		$args = func_get_args();
 		return $args;
 	}
-
 /**
  * Constructs associative array from pairs of arguments.
  *
  * Example:
- * <code>
- * aa('a','b')
- * </code>
+ *
+ * `aa('a','b')`
  *
  * Would return:
- * <code>
- * array('a'=>'b')
- * </code>
+ *
+ * `array('a'=>'b')`
  *
  * @return array Associative array
  * @link http://book.cakephp.org/view/695/aa
@@ -270,7 +251,6 @@ if (!function_exists('array_combine')) {
 		}
 		return $a;
 	}
-
 /**
  * Convenience method for echo().
  *
@@ -280,7 +260,6 @@ if (!function_exists('array_combine')) {
 	function e($text) {
 		echo $text;
 	}
-
 /**
  * Convenience method for strtolower().
  *
@@ -291,7 +270,6 @@ if (!function_exists('array_combine')) {
 	function low($str) {
 		return strtolower($str);
 	}
-
 /**
  * Convenience method for strtoupper().
  *
@@ -302,7 +280,6 @@ if (!function_exists('array_combine')) {
 	function up($str) {
 		return strtoupper($str);
 	}
-
 /**
  * Convenience method for str_replace().
  *
@@ -315,7 +292,6 @@ if (!function_exists('array_combine')) {
 	function r($search, $replace, $subject) {
 		return str_replace($search, $replace, $subject);
 	}
-
 /**
  * Print_r convenience function, which prints out <PRE> tags around
  * the output of given array. Similar to debug().
@@ -332,7 +308,6 @@ if (!function_exists('array_combine')) {
 			echo '</pre>';
 		}
 	}
-
 /**
  * Display parameters.
  *
@@ -348,7 +323,6 @@ if (!function_exists('array_combine')) {
 		}
 		return $p;
 	}
-
 /**
  * Merge a group of arrays
  *
@@ -370,7 +344,6 @@ if (!function_exists('array_combine')) {
 		}
 		return $r;
 	}
-
 /**
  * Gets an environment variable from available sources, and provides emulation
  * for unsupported or inconsistent environment variables (i.e. DOCUMENT_ROOT on
@@ -447,7 +420,6 @@ if (!function_exists('array_combine')) {
 		return null;
 	}
 if (!function_exists('file_put_contents')) {
-
 /**
  * Writes data into file.
  *
@@ -475,7 +447,6 @@ if (!function_exists('file_put_contents')) {
 		return false;
 	}
 }
-
 /**
  * Reads/writes temporary data to cache files or session.
  *
@@ -527,14 +498,12 @@ if (!function_exists('file_put_contents')) {
 		}
 		return $data;
 	}
-
 /**
  * Used to delete files in the cache directories, or clear contents of cache directories
  *
- * @param mixed $params As String name to be searched for deletion, if name is a directory all files in directory will be deleted.
- *              If array, names to be searched for deletion.
- *              If clearCache() without params, all files in app/tmp/cache/views will be deleted
- *
+ * @param mixed $params As String name to be searched for deletion, if name is a directory all files in
+ *   directory will be deleted. If array, names to be searched for deletion. If clearCache() without params,
+ *   all files in app/tmp/cache/views will be deleted
  * @param string $type Directory in tmp/cache defaults to view directory
  * @param string $ext The file extension you are deleting
  * @return true if files found and deleted false otherwise
@@ -590,7 +559,6 @@ if (!function_exists('file_put_contents')) {
 		}
 		return false;
 	}
-
 /**
  * Recursively strips slashes from all values in an array
  *
@@ -608,7 +576,6 @@ if (!function_exists('file_put_contents')) {
 		}
 		return $values;
 	}
-
 /**
  * Returns a translated string if one is found; Otherwise, the submitted message.
  *
@@ -631,7 +598,6 @@ if (!function_exists('file_put_contents')) {
 			return I18n::translate($singular);
 		}
 	}
-
 /**
  * Returns correct plural form of message identified by $singular and $plural for count $count.
  * Some languages have more than one form for plural messages dependent on the count.
@@ -656,7 +622,6 @@ if (!function_exists('file_put_contents')) {
 			return I18n::translate($singular, $plural, null, 6, $count);
 		}
 	}
-
 /**
  * Allows you to override the current domain for a single message lookup.
  *
@@ -679,7 +644,6 @@ if (!function_exists('file_put_contents')) {
 			return I18n::translate($msg, null, $domain);
 		}
 	}
-
 /**
  * Allows you to override the current domain for a single plural message lookup.
  * Returns correct plural form of message identified by $singular and $plural for count $count
@@ -706,7 +670,6 @@ if (!function_exists('file_put_contents')) {
 			return I18n::translate($singular, $plural, $domain, 6, $count);
 		}
 	}
-
 /**
  * Allows you to override the current domain for a single message lookup.
  * It also allows you to specify a category.
@@ -715,13 +678,14 @@ if (!function_exists('file_put_contents')) {
  * Valid categories are: LC_CTYPE, LC_NUMERIC, LC_TIME, LC_COLLATE, LC_MONETARY, LC_MESSAGES and LC_ALL.
  *
  * Note that the category must be specified with a numeric value, instead of the constant name.  The values are:
- * LC_CTYPE     0
- * LC_NUMERIC   1
- * LC_TIME      2
- * LC_COLLATE   3
- * LC_MONETARY  4
- * LC_MESSAGES  5
- * LC_ALL       6
+ *
+ * - LC_ALL       0
+ * - LC_COLLATE   1
+ * - LC_CTYPE     2
+ * - LC_MONETARY  3
+ * - LC_NUMERIC   4
+ * - LC_TIME      5
+ * - LC_MESSAGES  6
  *
  * @param string $domain Domain
  * @param string $msg Message to translate
@@ -743,7 +707,6 @@ if (!function_exists('file_put_contents')) {
 			return I18n::translate($msg, null, $domain, $category);
 		}
 	}
-
 /**
  * Allows you to override the current domain for a single plural message lookup.
  * It also allows you to specify a category.
@@ -754,13 +717,14 @@ if (!function_exists('file_put_contents')) {
  * Valid categories are: LC_CTYPE, LC_NUMERIC, LC_TIME, LC_COLLATE, LC_MONETARY, LC_MESSAGES and LC_ALL.
  *
  * Note that the category must be specified with a numeric value, instead of the constant name.  The values are:
- * LC_ALL       0
- * LC_COLLATE   1
- * LC_CTYPE     2
- * LC_MONETARY  3
- * LC_NUMERIC   4
- * LC_TIME      5
- * LC_MESSAGES  6
+ *
+ * - LC_ALL       0
+ * - LC_COLLATE   1
+ * - LC_CTYPE     2
+ * - LC_MONETARY  3
+ * - LC_NUMERIC   4
+ * - LC_TIME      5
+ * - LC_MESSAGES  6
  *
  * @param string $domain Domain
  * @param string $singular Singular string to translate
@@ -784,19 +748,19 @@ if (!function_exists('file_put_contents')) {
 			return I18n::translate($singular, $plural, $domain, $category, $count);
 		}
 	}
-
 /**
  * The category argument allows a specific category of the locale settings to be used for fetching a message.
  * Valid categories are: LC_CTYPE, LC_NUMERIC, LC_TIME, LC_COLLATE, LC_MONETARY, LC_MESSAGES and LC_ALL.
  *
  * Note that the category must be specified with a numeric value, instead of the constant name.  The values are:
- * LC_CTYPE     0
- * LC_NUMERIC   1
- * LC_TIME      2
- * LC_COLLATE   3
- * LC_MONETARY  4
- * LC_MESSAGES  5
- * LC_ALL       6
+ *
+ * - LC_ALL       0
+ * - LC_COLLATE   1
+ * - LC_CTYPE     2
+ * - LC_MONETARY  3
+ * - LC_NUMERIC   4
+ * - LC_TIME      5
+ * - LC_MESSAGES  6
  *
  * @param string $msg String to translate
  * @param integer $category Category
@@ -817,7 +781,6 @@ if (!function_exists('file_put_contents')) {
 			return I18n::translate($msg, null, null, $category);
 		}
 	}
-
 /**
  * Computes the difference of arrays using keys for comparison.
  *
@@ -852,7 +815,6 @@ if (!function_exists('file_put_contents')) {
 			return $valuesDiff;
 		}
 	}
-
 /**
  * Computes the intersection of arrays using keys for comparison
  *
@@ -871,7 +833,6 @@ if (!function_exists('file_put_contents')) {
 			return $res;
 		}
 	}
-
 /**
  * Shortcut to Log::write.
  *
@@ -885,7 +846,6 @@ if (!function_exists('file_put_contents')) {
 		$good = ' ';
 		CakeLog::write('error', str_replace($bad, $good, $message));
 	}
-
 /**
  * Searches include path for files.
  *
@@ -906,7 +866,6 @@ if (!function_exists('file_put_contents')) {
 		}
 		return false;
 	}
-
 /**
  * Convert forward slashes to underscores and removes first and last underscores in a string
  *
@@ -920,7 +879,6 @@ if (!function_exists('file_put_contents')) {
 		$string = str_replace('/', '_', $string);
 		return $string;
 	}
-
 /**
  * Implements http_build_query for PHP4.
  *
@@ -960,14 +918,12 @@ if (!function_exists('file_put_contents')) {
 			return implode($argSep, $out);
 		}
 	}
-
 /**
  * Wraps ternary operations. If $condition is a non-empty value, $val1 is returned, otherwise $val2.
  * Don't use for isset() conditions, or wrap your variable with @ operator:
  * Example:
- * <code>
- * ife(isset($variable), @$variable, 'default');
- * </code>
+ *
+ * `ife(isset($variable), @$variable, 'default');`
  *
  * @param mixed $condition Conditional expression
  * @param mixed $val1 Value to return in case condition matches

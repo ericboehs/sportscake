@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * DboAdodbTest file
  *
@@ -29,7 +28,6 @@ require_once LIBS.'model'.DS.'model.php';
 require_once LIBS.'model'.DS.'datasources'.DS.'datasource.php';
 require_once LIBS.'model'.DS.'datasources'.DS.'dbo_source.php';
 require_once LIBS.'model'.DS.'datasources'.DS.'dbo'.DS.'dbo_adodb.php';
-
 /**
  * DboAdoTestDb
  *
@@ -37,7 +35,6 @@ require_once LIBS.'model'.DS.'datasources'.DS.'dbo'.DS.'dbo_adodb.php';
  * @subpackage    cake.tests.cases.libs.model.datasources
  */
 class DboAdoTestDb extends DboAdodb {
-
 /**
  * simulated property
  *
@@ -45,7 +42,6 @@ class DboAdoTestDb extends DboAdodb {
  * @access public
  */
 	var $simulated = array();
-
 /**
  * testing property
  *
@@ -53,7 +49,6 @@ class DboAdoTestDb extends DboAdodb {
  * @access public
  */
 	var $testing = true;
-
 /**
  * execute method
  *
@@ -68,7 +63,6 @@ class DboAdoTestDb extends DboAdodb {
 		}
 		return parent::_execute($sql);
 	}
-
 /**
  * getLastQuery method
  *
@@ -79,7 +73,6 @@ class DboAdoTestDb extends DboAdodb {
 		return $this->simulated[count($this->simulated) - 1];
 	}
 }
-
 /**
  * AdodbTestModel
  *
@@ -87,7 +80,6 @@ class DboAdoTestDb extends DboAdodb {
  * @subpackage    cake.tests.cases.libs.model.datasources
  */
 class AdodbTestModel extends CakeTestModel {
-
 /**
  * name property
  *
@@ -95,7 +87,6 @@ class AdodbTestModel extends CakeTestModel {
  * @access public
  */
 	var $name = 'AdodbTestModel';
-
 /**
  * useTable property
  *
@@ -103,7 +94,6 @@ class AdodbTestModel extends CakeTestModel {
  * @access public
  */
 	var $useTable = false;
-
 /**
  * find method
  *
@@ -117,7 +107,6 @@ class AdodbTestModel extends CakeTestModel {
 	function find($conditions = null, $fields = null, $order = null, $recursive = null) {
 		return $conditions;
 	}
-
 /**
  * findAll method
  *
@@ -131,7 +120,6 @@ class AdodbTestModel extends CakeTestModel {
 	function findAll($conditions = null, $fields = null, $order = null, $recursive = null) {
 		return $conditions;
 	}
-
 /**
  * schema method
  *
@@ -162,7 +150,6 @@ class AdodbTestModel extends CakeTestModel {
 	}
 }
 if (!class_exists('Article')) {
-
 /**
  * Article class
  *
@@ -170,7 +157,6 @@ if (!class_exists('Article')) {
  * @subpackage    cake.tests.cases.libs.model.datasources.dbo
  */
 	class Article extends CakeTestModel {
-
 /**
  * name property
  *
@@ -180,7 +166,6 @@ if (!class_exists('Article')) {
 		var $name = 'Article';
 	}
 }
-
 /**
  * DboAdodbTest class
  *
@@ -188,7 +173,6 @@ if (!class_exists('Article')) {
  * @subpackage    cake.tests.cases.libs.model.datasources.dbo
  */
 class DboAdodbTest extends CakeTestCase {
-
 /**
  * The Dbo instance to be tested
  *
@@ -196,7 +180,6 @@ class DboAdodbTest extends CakeTestCase {
  * @access public
  */
 	var $db = null;
-
 /**
  * fixtures property
  *
@@ -204,7 +187,6 @@ class DboAdodbTest extends CakeTestCase {
  * @access public
  **/
 	var $fixtures = array('core.article');
-
 /**
  * Skip if cannot connect to AdoDb
  *
@@ -215,7 +197,6 @@ class DboAdodbTest extends CakeTestCase {
 		$db =& ConnectionManager::getDataSource('test_suite');
 		$this->skipIf($db->config['driver'] != 'adodb', '%s Adodb connection not available');
 	}
-
 /**
  * Sets up a Dbo class instance for testing
  *
@@ -226,7 +207,6 @@ class DboAdodbTest extends CakeTestCase {
 		$this->db = new DboAdoTestDb($db->config);
 		$this->model = new AdodbTestModel();
 	}
-
 /**
  * Sets up a Dbo class instance for testing
  *
@@ -235,7 +215,6 @@ class DboAdodbTest extends CakeTestCase {
 	function tearDown() {
 		unset($this->db);
 	}
-
 /**
  * Test Dbo value method
  *
@@ -285,7 +264,6 @@ class DboAdodbTest extends CakeTestCase {
 		$result = $this->db->value('00010010001');
 		$this->assertEqual($expected, $result);
 	}
-
 /**
  * testColumns method
  *

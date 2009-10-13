@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * DboMysqliTest file
  *
@@ -27,7 +26,6 @@ if (!defined('CAKEPHP_UNIT_TEST_EXECUTION')) {
 	define('CAKEPHP_UNIT_TEST_EXECUTION', 1);
 }
 App::import('Core', array('Model', 'DataSource', 'DboSource', 'DboMysqli'));
-
 /**
  * DboMysqliTestDb class
  *
@@ -35,7 +33,6 @@ App::import('Core', array('Model', 'DataSource', 'DboSource', 'DboMysqli'));
  * @subpackage    cake.tests.cases.libs.model.datasources
  */
 class DboMysqliTestDb extends DboMysqli {
-
 /**
  * simulated property
  *
@@ -43,7 +40,6 @@ class DboMysqliTestDb extends DboMysqli {
  * @access public
  */
 	var $simulated = array();
-
 /**
  * testing property
  *
@@ -51,7 +47,6 @@ class DboMysqliTestDb extends DboMysqli {
  * @access public
  */
 	var $testing = true;
-
 /**
  * execute method
  *
@@ -66,7 +61,6 @@ class DboMysqliTestDb extends DboMysqli {
 		}
 		return parent::_execute($sql);
 	}
-
 /**
  * getLastQuery method
  *
@@ -77,7 +71,6 @@ class DboMysqliTestDb extends DboMysqli {
 		return $this->simulated[count($this->simulated) - 1];
 	}
 }
-
 /**
  * MysqliTestModel class
  *
@@ -85,7 +78,6 @@ class DboMysqliTestDb extends DboMysqli {
  * @subpackage    cake.tests.cases.libs.model.datasources
  */
 class MysqliTestModel extends Model {
-
 /**
  * name property
  *
@@ -93,7 +85,6 @@ class MysqliTestModel extends Model {
  * @access public
  */
 	var $name = 'MysqliTestModel';
-
 /**
  * useTable property
  *
@@ -101,7 +92,6 @@ class MysqliTestModel extends Model {
  * @access public
  */
 	var $useTable = false;
-
 /**
  * find method
  *
@@ -115,7 +105,6 @@ class MysqliTestModel extends Model {
 	function find($conditions = null, $fields = null, $order = null, $recursive = null) {
 		return $conditions;
 	}
-
 /**
  * findAll method
  *
@@ -129,7 +118,6 @@ class MysqliTestModel extends Model {
 	function findAll($conditions = null, $fields = null, $order = null, $recursive = null) {
 		return $conditions;
 	}
-
 /**
  * schema method
  *
@@ -159,7 +147,6 @@ class MysqliTestModel extends Model {
 		);
 	}
 }
-
 /**
  * DboMysqliTest class
  *
@@ -167,7 +154,6 @@ class MysqliTestModel extends Model {
  * @subpackage    cake.tests.cases.libs.model.datasources.dbo
  */
 class DboMysqliTest extends CakeTestCase {
-
 /**
  * The Dbo instance to be tested
  *
@@ -175,7 +161,6 @@ class DboMysqliTest extends CakeTestCase {
  * @access public
  */
 	var $Db = null;
-
 /**
  * Skip if cannot connect to mysqli
  *
@@ -185,7 +170,6 @@ class DboMysqliTest extends CakeTestCase {
 		$this->_initDb();
 		$this->skipUnless($this->db->config['driver'] == 'mysqli', '%s MySQLi connection not available');
 	}
-
 /**
  * Sets up a Dbo class instance for testing
  *
@@ -196,7 +180,6 @@ class DboMysqliTest extends CakeTestCase {
 		$this->db = new DboMysqliTestDb($db->config);
 		$this->model = new MysqliTestModel();
 	}
-
 /**
  * Sets up a Dbo class instance for testing
  *
@@ -205,7 +188,6 @@ class DboMysqliTest extends CakeTestCase {
 	function tearDown() {
 		unset($this->db);
 	}
-
 /**
  * testIndexDetection method
  *
@@ -268,7 +250,6 @@ class DboMysqliTest extends CakeTestCase {
 		$this->assertEqual($expected, $result);
 		$this->db->query('DROP TABLE ' . $name);
 	}
-
 /**
  * testColumn method
  *
@@ -316,7 +297,6 @@ class DboMysqliTest extends CakeTestCase {
 		$expected = 'float';
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * undocumented function
  *

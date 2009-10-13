@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Short description for file.
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * Short description for file.
  *
@@ -35,7 +33,6 @@
  * @subpackage    cake.cake.libs.controller.components
  */
 class SecurityComponent extends Object {
-
 /**
  * The controller method that will be called if this request is black-hole'd
  *
@@ -43,7 +40,6 @@ class SecurityComponent extends Object {
  * @access public
  */
 	var $blackHoleCallback = null;
-
 /**
  * List of controller actions for which a POST request is required
  *
@@ -52,7 +48,6 @@ class SecurityComponent extends Object {
  * @see SecurityComponent::requirePost()
  */
 	var $requirePost = array();
-
 /**
  * List of controller actions for which a GET request is required
  *
@@ -61,7 +56,6 @@ class SecurityComponent extends Object {
  * @see SecurityComponent::requireGet()
  */
 	var $requireGet = array();
-
 /**
  * List of controller actions for which a PUT request is required
  *
@@ -70,7 +64,6 @@ class SecurityComponent extends Object {
  * @see SecurityComponent::requirePut()
  */
 	var $requirePut = array();
-
 /**
  * List of controller actions for which a DELETE request is required
  *
@@ -79,7 +72,6 @@ class SecurityComponent extends Object {
  * @see SecurityComponent::requireDelete()
  */
 	var $requireDelete = array();
-
 /**
  * List of actions that require an SSL-secured connection
  *
@@ -88,7 +80,6 @@ class SecurityComponent extends Object {
  * @see SecurityComponent::requireSecure()
  */
 	var $requireSecure = array();
-
 /**
  * List of actions that require a valid authentication key
  *
@@ -97,7 +88,6 @@ class SecurityComponent extends Object {
  * @see SecurityComponent::requireAuth()
  */
 	var $requireAuth = array();
-
 /**
  * List of actions that require an HTTP-authenticated login (basic or digest)
  *
@@ -106,7 +96,6 @@ class SecurityComponent extends Object {
  * @see SecurityComponent::requireLogin()
  */
 	var $requireLogin = array();
-
 /**
  * Login options for SecurityComponent::requireLogin()
  *
@@ -115,7 +104,6 @@ class SecurityComponent extends Object {
  * @see SecurityComponent::requireLogin()
  */
 	var $loginOptions = array('type' => '', 'prompt' => null);
-
 /**
  * An associative array of usernames/passwords used for HTTP-authenticated logins.
  * If using digest authentication, passwords should be MD5-hashed.
@@ -125,7 +113,6 @@ class SecurityComponent extends Object {
  * @see SecurityComponent::requireLogin()
  */
 	var $loginUsers = array();
-
 /**
  * Controllers from which actions of the current controller are allowed to receive
  * requests.
@@ -135,7 +122,6 @@ class SecurityComponent extends Object {
  * @see SecurityComponent::requireAuth()
  */
 	var $allowedControllers = array();
-
 /**
  * Actions from which actions of the current controller are allowed to receive
  * requests.
@@ -145,7 +131,6 @@ class SecurityComponent extends Object {
  * @see SecurityComponent::requireAuth()
  */
 	var $allowedActions = array();
-
 /**
  * Form fields to disable
  *
@@ -153,7 +138,6 @@ class SecurityComponent extends Object {
  * @access public
  */
 	var $disabledFields = array();
-
 /**
  * Whether to validate POST data.  Set to false to disable for data coming from 3rd party
  * services, etc.
@@ -162,7 +146,6 @@ class SecurityComponent extends Object {
  * @access public
  */
 	var $validatePost = true;
-
 /**
  * Other components used by the Security component
  *
@@ -170,14 +153,12 @@ class SecurityComponent extends Object {
  * @access public
  */
 	var $components = array('RequestHandler', 'Session');
-
 /**
  * Holds the current action of the controller
  *
  * @var string
  */
 	var $_action = null;
-
 /**
  * Component startup. All security checking happens here.
  *
@@ -206,7 +187,6 @@ class SecurityComponent extends Object {
 		}
 		$this->_generateToken($controller);
 	}
-
 /**
  * Sets the actions that require a POST request, or empty for all actions
  *
@@ -217,7 +197,6 @@ class SecurityComponent extends Object {
 		$args = func_get_args();
 		$this->_requireMethod('Post', $args);
 	}
-
 /**
  * Sets the actions that require a GET request, or empty for all actions
  *
@@ -228,7 +207,6 @@ class SecurityComponent extends Object {
 		$args = func_get_args();
 		$this->_requireMethod('Get', $args);
 	}
-
 /**
  * Sets the actions that require a PUT request, or empty for all actions
  *
@@ -239,7 +217,6 @@ class SecurityComponent extends Object {
 		$args = func_get_args();
 		$this->_requireMethod('Put', $args);
 	}
-
 /**
  * Sets the actions that require a DELETE request, or empty for all actions
  *
@@ -250,7 +227,6 @@ class SecurityComponent extends Object {
 		$args = func_get_args();
 		$this->_requireMethod('Delete', $args);
 	}
-
 /**
  * Sets the actions that require a request that is SSL-secured, or empty for all actions
  *
@@ -261,7 +237,6 @@ class SecurityComponent extends Object {
 		$args = func_get_args();
 		$this->_requireMethod('Secure', $args);
 	}
-
 /**
  * Sets the actions that require an authenticated request, or empty for all actions
  *
@@ -272,7 +247,6 @@ class SecurityComponent extends Object {
 		$args = func_get_args();
 		$this->_requireMethod('Auth', $args);
 	}
-
 /**
  * Sets the actions that require an HTTP-authenticated request, or empty for all actions
  *
@@ -296,7 +270,6 @@ class SecurityComponent extends Object {
 			$this->loginUsers =& $this->loginOptions['users'];
 		}
 	}
-
 /**
  * Attempts to validate the login credentials for an HTTP-authenticated request
  *
@@ -335,7 +308,6 @@ class SecurityComponent extends Object {
 		}
 		return null;
 	}
-
 /**
  * Generates the text of an HTTP-authentication request header from an array of options.
  *
@@ -357,7 +329,6 @@ class SecurityComponent extends Object {
 
 		return $auth . ' ' . join(',', $out);
 	}
-
 /**
  * Parses an HTTP digest authentication response, and returns an array of the data, or null on failure.
  *
@@ -384,7 +355,6 @@ class SecurityComponent extends Object {
 		}
 		return null;
 	}
-
 /**
  * Generates a hash to be compared with an HTTP digest-authenticated response
  *
@@ -400,7 +370,6 @@ class SecurityComponent extends Object {
 			md5(env('REQUEST_METHOD') . ':' . $data['uri'])
 		);
 	}
-
 /**
  * Black-hole an invalid request with a 404 error or custom callback. If SecurityComponent::$blackHoleCallback
  * is specified, it will use this callback by executing the method indicated in $error
@@ -425,7 +394,6 @@ class SecurityComponent extends Object {
 			return $this->_callback($controller, $this->blackHoleCallback, array($error));
 		}
 	}
-
 /**
  * Sets the actions that require a $method HTTP request, or empty for all actions
  *
@@ -437,7 +405,6 @@ class SecurityComponent extends Object {
 	function _requireMethod($method, $actions = array()) {
 		$this->{'require' . $method} = (empty($actions)) ? array('*'): $actions;
 	}
-
 /**
  * Check if HTTP methods are required
  *
@@ -462,7 +429,6 @@ class SecurityComponent extends Object {
 		}
 		return true;
 	}
-
 /**
  * Check if access requires secure connection
  *
@@ -484,7 +450,6 @@ class SecurityComponent extends Object {
 		}
 		return true;
 	}
-
 /**
  * Check if authentication is required
  *
@@ -520,7 +485,6 @@ class SecurityComponent extends Object {
 		}
 		return true;
 	}
-
 /**
  * Check if login is required
  *
@@ -568,7 +532,6 @@ class SecurityComponent extends Object {
 		}
 		return true;
 	}
-
 /**
  * Validate submitted form
  *
@@ -649,7 +612,6 @@ class SecurityComponent extends Object {
 		$check = Security::hash(serialize($fieldList) . Configure::read('Security.salt'));
 		return ($token === $check);
 	}
-
 /**
  * Add authentication key for new form posts
  *
@@ -692,7 +654,6 @@ class SecurityComponent extends Object {
 
 		return true;
 	}
-
 /**
  * Sets the default login options for an HTTP-authenticated request
  *
@@ -709,7 +670,6 @@ class SecurityComponent extends Object {
 		), array_filter($options));
 		$options = array_merge(array('opaque' => md5($options['realm'])), $options);
 	}
-
 /**
  * Calls a controller callback method
  *

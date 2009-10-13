@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><sport:content xmlns:sport="http://xml.sportsdirectinc.com/sport/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<team-sport-content>
+<sport>
+<id>/sport/football</id>
+<name>football</name>
+</sport>
+<league-content>
+<league>
+<id>/sport/football/league:2</id>
+<name>NCAA Football</name>
+<name type="nick">NCAAF</name>
+</league>
+
+<competition>
+<id>/sport/football/competition:26930</id>
+<start-date>2009-10-03T20:00:00.000-04:00</start-date>
+<result-scope>
+<competition-status>complete</competition-status>
+<scope num="4" type="period"/>
+<scope-status>complete</scope-status>
+<update-date>2009-10-03T23:28:14.000-04:00</update-date>
+</result-scope>
+<home-team-content>
+<team>
+<id>/sport/football/team:70</id>
+<name>Miami</name>
+</team>
+<stat-group>
+<scope type="competition"/>
+<stat num="21" type="score"/>
+</stat-group>
+<stat-group>
+<scope num="1" type="period"/>
+<stat num="0" type="score"/>
+</stat-group>
+<stat-group>
+<scope num="2" type="period"/>
+<stat num="7" type="score"/>
+</stat-group>
+<stat-group>
+<scope num="3" type="period"/>
+<stat num="14" type="score"/>
+</stat-group>
+<stat-group>
+<scope num="4" type="period"/>
+<stat num="0" type="score"/>
+</stat-group>
+</home-team-content>
+<away-team-content>
+<team>
+<id>/sport/football/team:139</id>
+<name>Oklahoma</name>
+</team>
+<stat-group>
+<scope type="competition"/>
+<stat num="20" type="score"/>
+</stat-group>
+<stat-group>
+<scope num="1" type="period"/>
+<stat num="7" type="score"/>
+</stat-group>
+<stat-group>
+<scope num="2" type="period"/>
+<stat num="3" type="score"/>
+</stat-group>
+<stat-group>
+<scope num="3" type="period"/>
+<stat num="7" type="score"/>
+</stat-group>
+<stat-group>
+<scope num="4" type="period"/>
+<stat num="3" type="score"/>
+</stat-group>
+</away-team-content>
+</competition></league-content>
+</team-sport-content>
+</sport:content>

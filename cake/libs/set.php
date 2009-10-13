@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Library of array functions for Cake.
  *
@@ -23,7 +22,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * Class used for manipulation of arrays.
  *
@@ -33,13 +31,11 @@
  * @subpackage    cake.cake.libs
  */
 class Set extends Object {
-
 /**
  * Deprecated
  *
  */
 	var $value = array();
-
 /**
  * This function can be thought of as a hybrid between PHP's array_merge and array_merge_recursive. The difference
  * to the two is that if an array key contains another array then the function behaves recursive (unlike array_merge)
@@ -70,7 +66,6 @@ class Set extends Object {
 		}
 		return $r;
 	}
-
 /**
  * Filters empty elements out of a route array, excluding '0'.
  *
@@ -90,7 +85,6 @@ class Set extends Object {
 		}
 		return false;
 	}
-
 /**
  * Pushes the differences in $array2 onto the end of $array
  *
@@ -117,7 +111,6 @@ class Set extends Object {
 		}
 		return $array;
 	}
-
 /**
  * Maps the contents of the Set object to an object hierarchy.
  * Maintains numeric keys as arrays of objects
@@ -231,7 +224,6 @@ class Set extends Object {
 		}
 		return $out;
 	}
-
 /**
  * Checks to see if all the values in the array are numeric
  *
@@ -261,7 +253,6 @@ class Set extends Object {
 		}
 		return $numeric;
 	}
-
 /**
  * Return a value from an array list if the key exists.
  *
@@ -291,7 +282,6 @@ class Set extends Object {
 		}
 		return $return;
 	}
-
 /**
  * Returns a series of values extracted from an array, formatted in a format string.
  *
@@ -349,7 +339,6 @@ class Set extends Object {
 		}
 		return $out;
 	}
-
 /**
  * Implements partial support for XPath 2.0. If $path is an array or $data is empty it the call is delegated to Set::classicExtract.
  *
@@ -397,7 +386,10 @@ class Set extends Object {
 		$contexts = $data;
 		$options = array_merge(array('flatten' => true), $options);
 		if (!isset($contexts[0])) {
-			$contexts = array($data);
+			$current = current($data);
+			if ((is_array($current) && count($data) <= 1) || !is_array($current) || !Set::numeric(array_keys($data))) {
+				$contexts = array($data);
+			}
 		}
 		$tokens = array_slice(preg_split('/(?<!=)\/(?![a-z-]*\])/', $path), 1);
 
@@ -422,7 +414,7 @@ class Set extends Object {
 					$context['key'] = array_pop($context['trace']);
 					if (isset($context['trace'][1]) && $context['trace'][1] > 0) {
 						$context['item'] = $context['item'][0];
-					} elseif (!empty($context['item'][$key])) {
+					} else if(!empty($context['item'][$key])){
 						$context['item'] = $context['item'][$key];
 					} else {
 						$context['item'] = array_shift($context['item']);
@@ -514,7 +506,6 @@ class Set extends Object {
 		}
 		return $r;
 	}
-
 /**
  * This function can be used to see if a single item or a given xpath match certain conditions.
  *
@@ -587,7 +578,6 @@ class Set extends Object {
 		}
 		return true;
 	}
-
 /**
  * Gets a value from an array or object that is contained in a given path using an array path syntax, i.e.:
  * "{n}.Person.{[a-z]+}" - Where "{n}" represents a numeric key, "Person" represents a string literal,
@@ -678,7 +668,6 @@ class Set extends Object {
 		}
 		return $data;
 	}
-
 /**
  * Inserts $data into an array as defined by $path.
  *
@@ -710,7 +699,6 @@ class Set extends Object {
 		}
 		return $list;
 	}
-
 /**
  * Removes an element from a Set or array as defined by $path.
  *
@@ -744,7 +732,6 @@ class Set extends Object {
 		}
 		return $list;
 	}
-
 /**
  * Checks if a particular path is set in an array
  *
@@ -777,7 +764,6 @@ class Set extends Object {
 		}
 		return true;
 	}
-
 /**
  * Computes the difference between a Set and an array, two Sets, or two arrays
  *
@@ -814,7 +800,6 @@ class Set extends Object {
 		}
 		return $out;
 	}
-
 /**
  * Determines if two Sets or arrays are equal
  *
@@ -827,7 +812,6 @@ class Set extends Object {
 	function isEqual($val1, $val2 = null) {
 		return ($val1 == $val2);
 	}
-
 /**
  * Determines if one Set or array contains the exact keys and values of another.
  *
@@ -853,7 +837,6 @@ class Set extends Object {
 		}
 		return true;
 	}
-
 /**
  * Counts the dimensions of an array. If $all is set to false (which is the default) it will
  * only consider the dimension of the first element in the array.
@@ -883,7 +866,6 @@ class Set extends Object {
 		}
 		return $return;
 	}
-
 /**
  * Normalizes a string or array list.
  *
@@ -933,7 +915,6 @@ class Set extends Object {
 		}
 		return $list;
 	}
-
 /**
  * Creates an associative array using a $path1 as the path to build its keys, and optionally
  * $path2 as path to get the values. If $path2 is not specified, all values will be initialized
@@ -997,7 +978,6 @@ class Set extends Object {
 
 		return array_combine($keys, $vals);
 	}
-
 /**
  * Converts an object into an array. If $object is no object, reverse
  * will return the same value.
@@ -1043,7 +1023,6 @@ class Set extends Object {
 		}
 		return $out;
 	}
-
 /**
  * Collapses a multi-dimensional array into a single dimension, using a delimited array path for
  * each array element's key, i.e. array(array('Foo' => array('Bar' => 'Far'))) becomes
@@ -1079,7 +1058,6 @@ class Set extends Object {
 		}
 		return $result;
 	}
-
 /**
  * Flattens an array for sorting
  *
@@ -1095,7 +1073,7 @@ class Set extends Object {
 			if (!is_null($key)) {
 				$id = $key;
 			}
-			if (is_array($r)) {
+			if (is_array($r) && count($r)) {
 				$stack = array_merge($stack, Set::__flatten($r, $id));
 			} else {
 				$stack[] = array('id' => $id, 'value' => $r);
@@ -1103,7 +1081,6 @@ class Set extends Object {
 		}
 		return $stack;
 	}
-
 /**
  * Sorts an array by any value, determined by a Set-compatible path
  *
@@ -1133,7 +1110,6 @@ class Set extends Object {
 		}
 		return $sorted;
 	}
-
 /**
  * Deprecated, Set class should be called statically
  *

@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Mock models file
  *
@@ -28,7 +27,6 @@
 if (!defined('CAKEPHP_UNIT_TEST_EXECUTION')) {
 	define('CAKEPHP_UNIT_TEST_EXECUTION', 1);
 }
-
 /**
  * Test class
  *
@@ -36,7 +34,6 @@ if (!defined('CAKEPHP_UNIT_TEST_EXECUTION')) {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Test extends CakeTestModel {
-
 /**
  * useTable property
  *
@@ -44,7 +41,6 @@ class Test extends CakeTestModel {
  * @access public
  */
 	var $useTable = false;
-
 /**
  * name property
  *
@@ -52,7 +48,6 @@ class Test extends CakeTestModel {
  * @access public
  */
 	var $name = 'Test';
-
 /**
  * schema property
  *
@@ -68,7 +63,6 @@ class Test extends CakeTestModel {
 		'updated'=> array('type' => 'datetime', 'null' => '1', 'default' => '', 'length' => null)
 	);
 }
-
 /**
  * TestAlias class
  *
@@ -76,7 +70,6 @@ class Test extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class TestAlias extends CakeTestModel {
-
 /**
  * useTable property
  *
@@ -84,7 +77,6 @@ class TestAlias extends CakeTestModel {
  * @access public
  */
 	var $useTable = false;
-
 /**
  * name property
  *
@@ -92,7 +84,6 @@ class TestAlias extends CakeTestModel {
  * @access public
  */
 	var $name = 'TestAlias';
-
 /**
  * alias property
  *
@@ -100,7 +91,6 @@ class TestAlias extends CakeTestModel {
  * @access public
  */
 	var $alias = 'TestAlias';
-
 /**
  * schema property
  *
@@ -116,7 +106,6 @@ class TestAlias extends CakeTestModel {
 		'updated'=> array('type' => 'datetime', 'null' => '1', 'default' => '', 'length' => null)
 	);
 }
-
 /**
  * TestValidate class
  *
@@ -124,7 +113,6 @@ class TestAlias extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class TestValidate extends CakeTestModel {
-
 /**
  * useTable property
  *
@@ -132,7 +120,6 @@ class TestValidate extends CakeTestModel {
  * @access public
  */
 	var $useTable = false;
-
 /**
  * name property
  *
@@ -140,7 +127,6 @@ class TestValidate extends CakeTestModel {
  * @access public
  */
 	var $name = 'TestValidate';
-
 /**
  * schema property
  *
@@ -155,7 +141,6 @@ class TestValidate extends CakeTestModel {
 		'created' => array('type' => 'date', 'null' => '1', 'default' => '', 'length' => ''),
 		'modified' => array('type' => 'datetime', 'null' => '1', 'default' => '', 'length' => null)
 	);
-
 /**
  * validateNumber method
  *
@@ -169,7 +154,6 @@ class TestValidate extends CakeTestModel {
 		$valid = ($value['number'] >= $options['min'] && $value['number'] <= $options['max']);
 		return $valid;
 	}
-
 /**
  * validateTitle method
  *
@@ -181,7 +165,6 @@ class TestValidate extends CakeTestModel {
 		return (!empty($value) && strpos(low($value['title']), 'title-') === 0);
 	}
 }
-
 /**
  * User class
  *
@@ -189,7 +172,6 @@ class TestValidate extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class User extends CakeTestModel {
-
 /**
  * name property
  *
@@ -197,7 +179,6 @@ class User extends CakeTestModel {
  * @access public
  */
 	var $name = 'User';
-
 /**
  * validate property
  *
@@ -206,7 +187,6 @@ class User extends CakeTestModel {
  */
 	var $validate = array('user' => 'notEmpty', 'password' => 'notEmpty');
 }
-
 /**
  * Article class
  *
@@ -214,7 +194,6 @@ class User extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Article extends CakeTestModel {
-
 /**
  * name property
  *
@@ -222,7 +201,6 @@ class Article extends CakeTestModel {
  * @access public
  */
 	var $name = 'Article';
-
 /**
  * belongsTo property
  *
@@ -230,7 +208,6 @@ class Article extends CakeTestModel {
  * @access public
  */
 	var $belongsTo = array('User');
-
 /**
  * hasMany property
  *
@@ -238,7 +215,6 @@ class Article extends CakeTestModel {
  * @access public
  */
 	var $hasMany = array('Comment' => array('dependent' => true));
-
 /**
  * hasAndBelongsToMany property
  *
@@ -246,7 +222,6 @@ class Article extends CakeTestModel {
  * @access public
  */
 	var $hasAndBelongsToMany = array('Tag');
-
 /**
  * validate property
  *
@@ -254,7 +229,6 @@ class Article extends CakeTestModel {
  * @access public
  */
 	var $validate = array('user_id' => 'numeric', 'title' => array('allowEmpty' => false, 'rule' => 'notEmpty'), 'body' => 'notEmpty');
-
 /**
  * beforeSaveReturn property
  *
@@ -262,7 +236,6 @@ class Article extends CakeTestModel {
  * @access public
  */
 	var $beforeSaveReturn = true;
-
 /**
  * beforeSave method
  *
@@ -272,7 +245,6 @@ class Article extends CakeTestModel {
 	function beforeSave() {
 		return $this->beforeSaveReturn;
 	}
-
 /**
  * titleDuplicate method
  *
@@ -287,7 +259,6 @@ class Article extends CakeTestModel {
 		return true;
 	}
 }
-
 /**
  * NumericArticle class
  *
@@ -295,7 +266,6 @@ class Article extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class NumericArticle extends CakeTestModel {
-
 /**
  * name property
  *
@@ -303,7 +273,6 @@ class NumericArticle extends CakeTestModel {
  * @access public
  */
 	var $name = 'NumericArticle';
-
 /**
  * useTable property
  *
@@ -312,7 +281,6 @@ class NumericArticle extends CakeTestModel {
  */
 	var $useTable = 'numeric_articles';
 }
-
 /**
  * Article10 class
  *
@@ -320,7 +288,6 @@ class NumericArticle extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Article10 extends CakeTestModel {
-
 /**
  * name property
  *
@@ -328,7 +295,6 @@ class Article10 extends CakeTestModel {
  * @access public
  */
 	var $name = 'Article10';
-
 /**
  * useTable property
  *
@@ -336,7 +302,6 @@ class Article10 extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'articles';
-
 /**
  * hasMany property
  *
@@ -345,7 +310,6 @@ class Article10 extends CakeTestModel {
  */
 	var $hasMany = array('Comment' => array('dependent' => true, 'exclusive' => true));
 }
-
 /**
  * ArticleFeatured class
  *
@@ -353,7 +317,6 @@ class Article10 extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ArticleFeatured extends CakeTestModel {
-
 /**
  * name property
  *
@@ -361,7 +324,6 @@ class ArticleFeatured extends CakeTestModel {
  * @access public
  */
 	var $name = 'ArticleFeatured';
-
 /**
  * belongsTo property
  *
@@ -369,7 +331,6 @@ class ArticleFeatured extends CakeTestModel {
  * @access public
  */
 	var $belongsTo = array('User', 'Category');
-
 /**
  * hasOne property
  *
@@ -377,7 +338,6 @@ class ArticleFeatured extends CakeTestModel {
  * @access public
  */
 	var $hasOne = array('Featured');
-
 /**
  * hasMany property
  *
@@ -385,7 +345,6 @@ class ArticleFeatured extends CakeTestModel {
  * @access public
  */
 	var $hasMany = array('Comment' => array('className' => 'Comment', 'dependent' => true));
-
 /**
  * hasAndBelongsToMany property
  *
@@ -393,7 +352,6 @@ class ArticleFeatured extends CakeTestModel {
  * @access public
  */
 	var $hasAndBelongsToMany = array('Tag');
-
 /**
  * validate property
  *
@@ -402,7 +360,6 @@ class ArticleFeatured extends CakeTestModel {
  */
 	var $validate = array('user_id' => 'numeric', 'title' => 'notEmpty', 'body' => 'notEmpty');
 }
-
 /**
  * Featured class
  *
@@ -410,7 +367,6 @@ class ArticleFeatured extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Featured extends CakeTestModel {
-
 /**
  * name property
  *
@@ -418,7 +374,6 @@ class Featured extends CakeTestModel {
  * @access public
  */
 	var $name = 'Featured';
-
 /**
  * belongsTo property
  *
@@ -427,7 +382,6 @@ class Featured extends CakeTestModel {
  */
 	var $belongsTo = array('ArticleFeatured', 'Category');
 }
-
 /**
  * Tag class
  *
@@ -435,7 +389,6 @@ class Featured extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Tag extends CakeTestModel {
-
 /**
  * name property
  *
@@ -444,7 +397,6 @@ class Tag extends CakeTestModel {
  */
 	var $name = 'Tag';
 }
-
 /**
  * ArticlesTag class
  *
@@ -452,7 +404,6 @@ class Tag extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ArticlesTag extends CakeTestModel {
-
 /**
  * name property
  *
@@ -461,7 +412,6 @@ class ArticlesTag extends CakeTestModel {
  */
 	var $name = 'ArticlesTag';
 }
-
 /**
  * ArticleFeaturedsTag class
  *
@@ -469,7 +419,6 @@ class ArticlesTag extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ArticleFeaturedsTag extends CakeTestModel {
-
 /**
  * name property
  *
@@ -478,7 +427,6 @@ class ArticleFeaturedsTag extends CakeTestModel {
  */
 	var $name = 'ArticleFeaturedsTag';
 }
-
 /**
  * Comment class
  *
@@ -486,7 +434,6 @@ class ArticleFeaturedsTag extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Comment extends CakeTestModel {
-
 /**
  * name property
  *
@@ -494,7 +441,6 @@ class Comment extends CakeTestModel {
  * @access public
  */
 	var $name = 'Comment';
-
 /**
  * belongsTo property
  *
@@ -502,7 +448,6 @@ class Comment extends CakeTestModel {
  * @access public
  */
 	var $belongsTo = array('Article', 'User');
-
 /**
  * hasOne property
  *
@@ -511,7 +456,6 @@ class Comment extends CakeTestModel {
  */
 	var $hasOne = array('Attachment' => array('dependent' => true));
 }
-
 /**
  * Modified Comment Class has afterFind Callback
  *
@@ -519,7 +463,6 @@ class Comment extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ModifiedComment extends CakeTestModel {
-
 /**
  * name property
  *
@@ -527,7 +470,6 @@ class ModifiedComment extends CakeTestModel {
  * @access public
  */
 	var $name = 'Comment';
-
 /**
  * useTable property
  *
@@ -535,7 +477,6 @@ class ModifiedComment extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'comments';
-
 /**
  * belongsTo property
  *
@@ -543,7 +484,6 @@ class ModifiedComment extends CakeTestModel {
  * @access public
  */
 	var $belongsTo = array('Article');
-
 /**
  * afterFind callback
  *
@@ -564,7 +504,6 @@ class ModifiedComment extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class MergeVarPluginAppModel extends AppModel {
-
 /**
  * actsAs parameter
  *
@@ -574,7 +513,6 @@ class MergeVarPluginAppModel extends AppModel {
 		'Containable'
 	);
 }
-
 /**
  * MergeVarPluginPost class
  *
@@ -582,7 +520,6 @@ class MergeVarPluginAppModel extends AppModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class MergeVarPluginPost extends MergeVarPluginAppModel {
-
 /**
  * actsAs parameter
  *
@@ -591,7 +528,6 @@ class MergeVarPluginPost extends MergeVarPluginAppModel {
 	var $actsAs = array(
 		'Tree'
 	);
-
 /**
  * useTable parameter
  *
@@ -599,7 +535,6 @@ class MergeVarPluginPost extends MergeVarPluginAppModel {
  */
 	var $useTable = 'posts';
 }
-
 /**
  * MergeVarPluginComment class
  *
@@ -607,7 +542,6 @@ class MergeVarPluginPost extends MergeVarPluginAppModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class MergeVarPluginComment extends MergeVarPluginAppModel {
-
 /**
  * actsAs parameter
  *
@@ -616,7 +550,6 @@ class MergeVarPluginComment extends MergeVarPluginAppModel {
 	var $actsAs = array(
 		'Containable' => array('some_settings')
 	);
-
 /**
  * useTable parameter
  *
@@ -633,7 +566,6 @@ class MergeVarPluginComment extends MergeVarPluginAppModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Attachment extends CakeTestModel {
-
 /**
  * name property
  *
@@ -642,7 +574,6 @@ class Attachment extends CakeTestModel {
  */
 	var $name = 'Attachment';
 }
-
 /**
  * Category class
  *
@@ -650,7 +581,6 @@ class Attachment extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Category extends CakeTestModel {
-
 /**
  * name property
  *
@@ -659,7 +589,6 @@ class Category extends CakeTestModel {
  */
 	var $name = 'Category';
 }
-
 /**
  * CategoryThread class
  *
@@ -667,7 +596,6 @@ class Category extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class CategoryThread extends CakeTestModel {
-
 /**
  * name property
  *
@@ -675,7 +603,6 @@ class CategoryThread extends CakeTestModel {
  * @access public
  */
 	var $name = 'CategoryThread';
-
 /**
  * belongsTo property
  *
@@ -684,7 +611,6 @@ class CategoryThread extends CakeTestModel {
  */
 	var $belongsTo = array('ParentCategory' => array('className' => 'CategoryThread', 'foreignKey' => 'parent_id'));
 }
-
 /**
  * Apple class
  *
@@ -692,7 +618,6 @@ class CategoryThread extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Apple extends CakeTestModel {
-
 /**
  * name property
  *
@@ -700,7 +625,6 @@ class Apple extends CakeTestModel {
  * @access public
  */
 	var $name = 'Apple';
-
 /**
  * validate property
  *
@@ -708,7 +632,6 @@ class Apple extends CakeTestModel {
  * @access public
  */
 	var $validate = array('name' => 'notEmpty');
-
 /**
  * hasOne property
  *
@@ -716,7 +639,6 @@ class Apple extends CakeTestModel {
  * @access public
  */
 	var $hasOne = array('Sample');
-
 /**
  * hasMany property
  *
@@ -724,7 +646,6 @@ class Apple extends CakeTestModel {
  * @access public
  */
 	var $hasMany = array('Child' => array('className' => 'Apple', 'dependent' => true));
-
 /**
  * belongsTo property
  *
@@ -733,7 +654,6 @@ class Apple extends CakeTestModel {
  */
 	var $belongsTo = array('Parent' => array('className' => 'Apple', 'foreignKey' => 'apple_id'));
 }
-
 /**
  * Sample class
  *
@@ -741,7 +661,6 @@ class Apple extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Sample extends CakeTestModel {
-
 /**
  * name property
  *
@@ -749,7 +668,6 @@ class Sample extends CakeTestModel {
  * @access public
  */
 	var $name = 'Sample';
-
 /**
  * belongsTo property
  *
@@ -758,7 +676,6 @@ class Sample extends CakeTestModel {
  */
 	var $belongsTo = 'Apple';
 }
-
 /**
  * AnotherArticle class
  *
@@ -766,7 +683,6 @@ class Sample extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class AnotherArticle extends CakeTestModel {
-
 /**
  * name property
  *
@@ -774,7 +690,6 @@ class AnotherArticle extends CakeTestModel {
  * @access public
  */
 	var $name = 'AnotherArticle';
-
 /**
  * hasMany property
  *
@@ -783,7 +698,6 @@ class AnotherArticle extends CakeTestModel {
  */
 	var $hasMany = 'Home';
 }
-
 /**
  * Advertisement class
  *
@@ -791,7 +705,6 @@ class AnotherArticle extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Advertisement extends CakeTestModel {
-
 /**
  * name property
  *
@@ -799,7 +712,6 @@ class Advertisement extends CakeTestModel {
  * @access public
  */
 	var $name = 'Advertisement';
-
 /**
  * hasMany property
  *
@@ -808,7 +720,6 @@ class Advertisement extends CakeTestModel {
  */
 	var $hasMany = 'Home';
 }
-
 /**
  * Home class
  *
@@ -816,7 +727,6 @@ class Advertisement extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Home extends CakeTestModel {
-
 /**
  * name property
  *
@@ -824,7 +734,6 @@ class Home extends CakeTestModel {
  * @access public
  */
 	var $name = 'Home';
-
 /**
  * belongsTo property
  *
@@ -833,7 +742,6 @@ class Home extends CakeTestModel {
  */
 	var $belongsTo = array('AnotherArticle', 'Advertisement');
 }
-
 /**
  * Post class
  *
@@ -841,7 +749,6 @@ class Home extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Post extends CakeTestModel {
-
 /**
  * name property
  *
@@ -849,7 +756,6 @@ class Post extends CakeTestModel {
  * @access public
  */
 	var $name = 'Post';
-
 /**
  * belongsTo property
  *
@@ -858,7 +764,6 @@ class Post extends CakeTestModel {
  */
 	var $belongsTo = array('Author');
 }
-
 /**
  * Author class
  *
@@ -866,7 +771,6 @@ class Post extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Author extends CakeTestModel {
-
 /**
  * name property
  *
@@ -874,7 +778,6 @@ class Author extends CakeTestModel {
  * @access public
  */
 	var $name = 'Author';
-
 /**
  * hasMany property
  *
@@ -882,7 +785,6 @@ class Author extends CakeTestModel {
  * @access public
  */
 	var $hasMany = array('Post');
-
 /**
  * afterFind method
  *
@@ -895,7 +797,6 @@ class Author extends CakeTestModel {
 		return $results;
 	}
 }
-
 /**
  * ModifiedAuthor class
  *
@@ -903,7 +804,6 @@ class Author extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ModifiedAuthor extends Author {
-
 /**
  * name property
  *
@@ -911,7 +811,6 @@ class ModifiedAuthor extends Author {
  * @access public
  */
 	var $name = 'Author';
-
 /**
  * afterFind method
  *
@@ -926,7 +825,6 @@ class ModifiedAuthor extends Author {
 		return $results;
 	}
 }
-
 /**
  * Project class
  *
@@ -934,7 +832,6 @@ class ModifiedAuthor extends Author {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Project extends CakeTestModel {
-
 /**
  * name property
  *
@@ -942,7 +839,6 @@ class Project extends CakeTestModel {
  * @access public
  */
 	var $name = 'Project';
-
 /**
  * hasMany property
  *
@@ -951,7 +847,6 @@ class Project extends CakeTestModel {
  */
 	var $hasMany = array('Thread');
 }
-
 /**
  * Thread class
  *
@@ -959,7 +854,6 @@ class Project extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Thread extends CakeTestModel {
-
 /**
  * name property
  *
@@ -967,7 +861,6 @@ class Thread extends CakeTestModel {
  * @access public
  */
 	var $name = 'Thread';
-
 /**
  * hasMany property
  *
@@ -975,7 +868,6 @@ class Thread extends CakeTestModel {
  * @access public
  */
 	var $belongsTo = array('Project');
-
 /**
  * hasMany property
  *
@@ -984,7 +876,6 @@ class Thread extends CakeTestModel {
  */
 	var $hasMany = array('Message');
 }
-
 /**
  * Message class
  *
@@ -992,7 +883,6 @@ class Thread extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Message extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1000,7 +890,6 @@ class Message extends CakeTestModel {
  * @access public
  */
 	var $name = 'Message';
-
 /**
  * hasOne property
  *
@@ -1009,7 +898,6 @@ class Message extends CakeTestModel {
  */
 	var $hasOne = array('Bid');
 }
-
 /**
  * Bid class
  *
@@ -1017,7 +905,6 @@ class Message extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Bid extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1025,7 +912,6 @@ class Bid extends CakeTestModel {
  * @access public
  */
 	var $name = 'Bid';
-
 /**
  * belongsTo property
  *
@@ -1034,7 +920,6 @@ class Bid extends CakeTestModel {
  */
 	var $belongsTo = array('Message');
 }
-
 /**
  * NodeAfterFind class
  *
@@ -1042,7 +927,6 @@ class Bid extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class NodeAfterFind extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1050,7 +934,6 @@ class NodeAfterFind extends CakeTestModel {
  * @access public
  */
 	var $name = 'NodeAfterFind';
-
 /**
  * validate property
  *
@@ -1058,7 +941,6 @@ class NodeAfterFind extends CakeTestModel {
  * @access public
  */
 	var $validate = array('name' => 'notEmpty');
-
 /**
  * useTable property
  *
@@ -1066,7 +948,6 @@ class NodeAfterFind extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'apples';
-
 /**
  * hasOne property
  *
@@ -1074,7 +955,6 @@ class NodeAfterFind extends CakeTestModel {
  * @access public
  */
 	var $hasOne = array('Sample' => array('className' => 'NodeAfterFindSample'));
-
 /**
  * hasMany property
  *
@@ -1082,7 +962,6 @@ class NodeAfterFind extends CakeTestModel {
  * @access public
  */
 	var $hasMany = array('Child' => array('className' => 'NodeAfterFind', 'dependent' => true));
-
 /**
  * belongsTo property
  *
@@ -1090,7 +969,6 @@ class NodeAfterFind extends CakeTestModel {
  * @access public
  */
 	var $belongsTo = array('Parent' => array('className' => 'NodeAfterFind', 'foreignKey' => 'apple_id'));
-
 /**
  * afterFind method
  *
@@ -1102,7 +980,6 @@ class NodeAfterFind extends CakeTestModel {
 		return $results;
 	}
 }
-
 /**
  * NodeAfterFindSample class
  *
@@ -1110,7 +987,6 @@ class NodeAfterFind extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class NodeAfterFindSample extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1118,7 +994,6 @@ class NodeAfterFindSample extends CakeTestModel {
  * @access public
  */
 	var $name = 'NodeAfterFindSample';
-
 /**
  * useTable property
  *
@@ -1126,7 +1001,6 @@ class NodeAfterFindSample extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'samples';
-
 /**
  * belongsTo property
  *
@@ -1135,7 +1009,6 @@ class NodeAfterFindSample extends CakeTestModel {
  */
 	var $belongsTo = 'NodeAfterFind';
 }
-
 /**
  * NodeNoAfterFind class
  *
@@ -1143,7 +1016,6 @@ class NodeAfterFindSample extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class NodeNoAfterFind extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1151,7 +1023,6 @@ class NodeNoAfterFind extends CakeTestModel {
  * @access public
  */
 	var $name = 'NodeAfterFind';
-
 /**
  * validate property
  *
@@ -1159,7 +1030,6 @@ class NodeNoAfterFind extends CakeTestModel {
  * @access public
  */
 	var $validate = array('name' => 'notEmpty');
-
 /**
  * useTable property
  *
@@ -1167,7 +1037,6 @@ class NodeNoAfterFind extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'apples';
-
 /**
  * hasOne property
  *
@@ -1175,7 +1044,6 @@ class NodeNoAfterFind extends CakeTestModel {
  * @access public
  */
 	var $hasOne = array('Sample' => array('className' => 'NodeAfterFindSample'));
-
 /**
  * hasMany property
  *
@@ -1183,7 +1051,6 @@ class NodeNoAfterFind extends CakeTestModel {
  * @access public
  */
 	var $hasMany = array('Child' => array('className' => 'NodeAfterFind', 'dependent' => true));
-
 /**
  * belongsTo property
  *
@@ -1192,7 +1059,6 @@ class NodeNoAfterFind extends CakeTestModel {
  */
 	var $belongsTo = array('Parent' => array('className' => 'NodeAfterFind', 'foreignKey' => 'apple_id'));
 }
-
 /**
  * Node class
  *
@@ -1200,7 +1066,6 @@ class NodeNoAfterFind extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Node extends CakeTestModel{
-
 /**
  * name property
  *
@@ -1208,7 +1073,6 @@ class Node extends CakeTestModel{
  * @access public
  */
 	var $name = 'Node';
-
 /**
  * hasAndBelongsToMany property
  *
@@ -1225,7 +1089,6 @@ class Node extends CakeTestModel{
 		)
 	);
 }
-
 /**
  * Dependency class
  *
@@ -1233,7 +1096,6 @@ class Node extends CakeTestModel{
  * @subpackage    cake.tests.cases.libs.model
  */
 class Dependency extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1242,7 +1104,6 @@ class Dependency extends CakeTestModel {
  */
 	var $name = 'Dependency';
 }
-
 /**
  * ModelA class
  *
@@ -1250,7 +1111,6 @@ class Dependency extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ModelA extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1258,7 +1118,6 @@ class ModelA extends CakeTestModel {
  * @access public
  */
 	var $name = 'ModelA';
-
 /**
  * useTable property
  *
@@ -1266,7 +1125,6 @@ class ModelA extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'apples';
-
 /**
  * hasMany property
  *
@@ -1275,7 +1133,6 @@ class ModelA extends CakeTestModel {
  */
 	var $hasMany = array('ModelB', 'ModelC');
 }
-
 /**
  * ModelB class
  *
@@ -1283,7 +1140,6 @@ class ModelA extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ModelB extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1291,7 +1147,6 @@ class ModelB extends CakeTestModel {
  * @access public
  */
 	var $name = 'ModelB';
-
 /**
  * useTable property
  *
@@ -1299,7 +1154,6 @@ class ModelB extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'messages';
-
 /**
  * hasMany property
  *
@@ -1308,7 +1162,6 @@ class ModelB extends CakeTestModel {
  */
 	var $hasMany = array('ModelD');
 }
-
 /**
  * ModelC class
  *
@@ -1316,7 +1169,6 @@ class ModelB extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ModelC extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1324,7 +1176,6 @@ class ModelC extends CakeTestModel {
  * @access public
  */
 	var $name = 'ModelC';
-
 /**
  * useTable property
  *
@@ -1332,7 +1183,6 @@ class ModelC extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'bids';
-
 /**
  * hasMany property
  *
@@ -1341,7 +1191,6 @@ class ModelC extends CakeTestModel {
  */
 	var $hasMany = array('ModelD');
 }
-
 /**
  * ModelD class
  *
@@ -1349,7 +1198,6 @@ class ModelC extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ModelD extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1357,7 +1205,6 @@ class ModelD extends CakeTestModel {
  * @access public
  */
 	var $name = 'ModelD';
-
 /**
  * useTable property
  *
@@ -1366,7 +1213,6 @@ class ModelD extends CakeTestModel {
  */
 	var $useTable = 'threads';
 }
-
 /**
  * Something class
  *
@@ -1374,7 +1220,6 @@ class ModelD extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Something extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1382,7 +1227,6 @@ class Something extends CakeTestModel {
  * @access public
  */
 	var $name = 'Something';
-
 /**
  * hasAndBelongsToMany property
  *
@@ -1391,7 +1235,6 @@ class Something extends CakeTestModel {
  */
 	var $hasAndBelongsToMany = array('SomethingElse' => array('with' => array('JoinThing' => array('doomed'))));
 }
-
 /**
  * SomethingElse class
  *
@@ -1399,7 +1242,6 @@ class Something extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class SomethingElse extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1407,7 +1249,6 @@ class SomethingElse extends CakeTestModel {
  * @access public
  */
 	var $name = 'SomethingElse';
-
 /**
  * hasAndBelongsToMany property
  *
@@ -1416,7 +1257,6 @@ class SomethingElse extends CakeTestModel {
  */
 	var $hasAndBelongsToMany = array('Something' => array('with' => 'JoinThing'));
 }
-
 /**
  * JoinThing class
  *
@@ -1424,7 +1264,6 @@ class SomethingElse extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class JoinThing extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1432,7 +1271,6 @@ class JoinThing extends CakeTestModel {
  * @access public
  */
 	var $name = 'JoinThing';
-
 /**
  * belongsTo property
  *
@@ -1441,7 +1279,6 @@ class JoinThing extends CakeTestModel {
  */
 	var $belongsTo = array('Something', 'SomethingElse');
 }
-
 /**
  * Portfolio class
  *
@@ -1449,7 +1286,6 @@ class JoinThing extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Portfolio extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1457,7 +1293,6 @@ class Portfolio extends CakeTestModel {
  * @access public
  */
 	var $name = 'Portfolio';
-
 /**
  * hasAndBelongsToMany property
  *
@@ -1466,7 +1301,6 @@ class Portfolio extends CakeTestModel {
  */
 	var $hasAndBelongsToMany = array('Item');
 }
-
 /**
  * Item class
  *
@@ -1474,7 +1308,6 @@ class Portfolio extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Item extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1482,7 +1315,6 @@ class Item extends CakeTestModel {
  * @access public
  */
 	var $name = 'Item';
-
 /**
  * belongsTo property
  *
@@ -1490,7 +1322,6 @@ class Item extends CakeTestModel {
  * @access public
  */
 	var $belongsTo = array('Syfile' => array('counterCache' => true));
-
 /**
  * hasAndBelongsToMany property
  *
@@ -1499,7 +1330,6 @@ class Item extends CakeTestModel {
  */
 	var $hasAndBelongsToMany = array('Portfolio' => array('unique' => false));
 }
-
 /**
  * ItemsPortfolio class
  *
@@ -1507,7 +1337,6 @@ class Item extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ItemsPortfolio extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1516,7 +1345,6 @@ class ItemsPortfolio extends CakeTestModel {
  */
 	var $name = 'ItemsPortfolio';
 }
-
 /**
  * Syfile class
  *
@@ -1524,7 +1352,6 @@ class ItemsPortfolio extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Syfile extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1532,7 +1359,6 @@ class Syfile extends CakeTestModel {
  * @access public
  */
 	var $name = 'Syfile';
-
 /**
  * belongsTo property
  *
@@ -1541,7 +1367,6 @@ class Syfile extends CakeTestModel {
  */
 	var $belongsTo = array('Image');
 }
-
 /**
  * Image class
  *
@@ -1549,7 +1374,6 @@ class Syfile extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Image extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1558,7 +1382,6 @@ class Image extends CakeTestModel {
  */
 	var $name = 'Image';
 }
-
 /**
  * DeviceType class
  *
@@ -1566,7 +1389,6 @@ class Image extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class DeviceType extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1574,7 +1396,6 @@ class DeviceType extends CakeTestModel {
  * @access public
  */
 	var $name = 'DeviceType';
-
 /**
  * order property
  *
@@ -1582,7 +1403,6 @@ class DeviceType extends CakeTestModel {
  * @access public
  */
 	var $order = array('DeviceType.order' => 'ASC');
-
 /**
  * belongsTo property
  *
@@ -1594,7 +1414,6 @@ class DeviceType extends CakeTestModel {
 		'Image' => array('className' => 'Document'),
 		'Extra1' => array('className' => 'Document'),
 		'Extra2' => array('className' => 'Document'));
-
 /**
  * hasMany property
  *
@@ -1603,7 +1422,6 @@ class DeviceType extends CakeTestModel {
  */
 	var $hasMany = array('Device' => array('order' => array('Device.id' => 'ASC')));
 }
-
 /**
  * DeviceTypeCategory class
  *
@@ -1611,7 +1429,6 @@ class DeviceType extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class DeviceTypeCategory extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1620,7 +1437,6 @@ class DeviceTypeCategory extends CakeTestModel {
  */
 	var $name = 'DeviceTypeCategory';
 }
-
 /**
  * FeatureSet class
  *
@@ -1628,7 +1444,6 @@ class DeviceTypeCategory extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class FeatureSet extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1637,7 +1452,6 @@ class FeatureSet extends CakeTestModel {
  */
 	var $name = 'FeatureSet';
 }
-
 /**
  * ExteriorTypeCategory class
  *
@@ -1645,7 +1459,6 @@ class FeatureSet extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ExteriorTypeCategory extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1653,7 +1466,6 @@ class ExteriorTypeCategory extends CakeTestModel {
  * @access public
  */
 	var $name = 'ExteriorTypeCategory';
-
 /**
  * belongsTo property
  *
@@ -1662,7 +1474,6 @@ class ExteriorTypeCategory extends CakeTestModel {
  */
 	var $belongsTo = array('Image' => array('className' => 'Device'));
 }
-
 /**
  * Document class
  *
@@ -1670,7 +1481,6 @@ class ExteriorTypeCategory extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Document extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1678,7 +1488,6 @@ class Document extends CakeTestModel {
  * @access public
  */
 	var $name = 'Document';
-
 /**
  * belongsTo property
  *
@@ -1687,7 +1496,6 @@ class Document extends CakeTestModel {
  */
 	var $belongsTo = array('DocumentDirectory');
 }
-
 /**
  * Device class
  *
@@ -1695,7 +1503,6 @@ class Document extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Device extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1704,7 +1511,6 @@ class Device extends CakeTestModel {
  */
 	var $name = 'Device';
 }
-
 /**
  * DocumentDirectory class
  *
@@ -1712,7 +1518,6 @@ class Device extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class DocumentDirectory extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1721,7 +1526,6 @@ class DocumentDirectory extends CakeTestModel {
  */
 	var $name = 'DocumentDirectory';
 }
-
 /**
  * PrimaryModel class
  *
@@ -1729,7 +1533,6 @@ class DocumentDirectory extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class PrimaryModel extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1738,7 +1541,6 @@ class PrimaryModel extends CakeTestModel {
  */
 	var $name = 'PrimaryModel';
 }
-
 /**
  * SecondaryModel class
  *
@@ -1746,7 +1548,6 @@ class PrimaryModel extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class SecondaryModel extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1755,7 +1556,6 @@ class SecondaryModel extends CakeTestModel {
  */
 	var $name = 'SecondaryModel';
 }
-
 /**
  * JoinA class
  *
@@ -1763,7 +1563,6 @@ class SecondaryModel extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class JoinA extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1771,7 +1570,6 @@ class JoinA extends CakeTestModel {
  * @access public
  */
 	var $name = 'JoinA';
-
 /**
  * hasAndBelongsToMany property
  *
@@ -1780,7 +1578,6 @@ class JoinA extends CakeTestModel {
  */
 	var $hasAndBelongsToMany = array('JoinB', 'JoinC');
 }
-
 /**
  * JoinB class
  *
@@ -1788,7 +1585,6 @@ class JoinA extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class JoinB extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1796,7 +1592,6 @@ class JoinB extends CakeTestModel {
  * @access public
  */
 	var $name = 'JoinB';
-
 /**
  * hasAndBelongsToMany property
  *
@@ -1805,7 +1600,6 @@ class JoinB extends CakeTestModel {
  */
 	var $hasAndBelongsToMany = array('JoinA');
 }
-
 /**
  * JoinC class
  *
@@ -1813,7 +1607,6 @@ class JoinB extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class JoinC extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1821,7 +1614,6 @@ class JoinC extends CakeTestModel {
  * @access public
  */
 	var $name = 'JoinC';
-
 /**
  * hasAndBelongsToMany property
  *
@@ -1830,7 +1622,6 @@ class JoinC extends CakeTestModel {
  */
 	var $hasAndBelongsToMany = array('JoinA');
 }
-
 /**
  * ThePaper class
  *
@@ -1838,7 +1629,6 @@ class JoinC extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ThePaper extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1846,7 +1636,6 @@ class ThePaper extends CakeTestModel {
  * @access public
  */
 	var $name = 'ThePaper';
-
 /**
  * useTable property
  *
@@ -1854,7 +1643,6 @@ class ThePaper extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'apples';
-
 /**
  * hasOne property
  *
@@ -1862,7 +1650,6 @@ class ThePaper extends CakeTestModel {
  * @access public
  */
 	var $hasOne = array('Itself' => array('className' => 'ThePaper', 'foreignKey' => 'apple_id'));
-
 /**
  * hasAndBelongsToMany property
  *
@@ -1871,7 +1658,6 @@ class ThePaper extends CakeTestModel {
  */
 	var $hasAndBelongsToMany = array('Monkey' => array('joinTable' => 'the_paper_monkies', 'order' => 'id'));
 }
-
 /**
  * Monkey class
  *
@@ -1879,7 +1665,6 @@ class ThePaper extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Monkey extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1887,7 +1672,6 @@ class Monkey extends CakeTestModel {
  * @access public
  */
 	var $name = 'Monkey';
-
 /**
  * useTable property
  *
@@ -1896,7 +1680,6 @@ class Monkey extends CakeTestModel {
  */
 	var $useTable = 'devices';
 }
-
 /**
  * AssociationTest1 class
  *
@@ -1904,7 +1687,6 @@ class Monkey extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class AssociationTest1 extends CakeTestModel {
-
 /**
  * useTable property
  *
@@ -1912,7 +1694,6 @@ class AssociationTest1 extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'join_as';
-
 /**
  * name property
  *
@@ -1920,7 +1701,6 @@ class AssociationTest1 extends CakeTestModel {
  * @access public
  */
 	var $name = 'AssociationTest1';
-
 /**
  * hasAndBelongsToMany property
  *
@@ -1931,7 +1711,6 @@ class AssociationTest1 extends CakeTestModel {
 		'unique' => false, 'joinTable' => 'join_as_join_bs', 'foreignKey' => false
 	));
 }
-
 /**
  * AssociationTest2 class
  *
@@ -1939,7 +1718,6 @@ class AssociationTest1 extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class AssociationTest2 extends CakeTestModel {
-
 /**
  * useTable property
  *
@@ -1947,7 +1725,6 @@ class AssociationTest2 extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'join_bs';
-
 /**
  * name property
  *
@@ -1955,7 +1732,6 @@ class AssociationTest2 extends CakeTestModel {
  * @access public
  */
 	var $name = 'AssociationTest2';
-
 /**
  * hasAndBelongsToMany property
  *
@@ -1966,7 +1742,6 @@ class AssociationTest2 extends CakeTestModel {
 		'unique' => false, 'joinTable' => 'join_as_join_bs'
 	));
 }
-
 /**
  * Callback class
  *
@@ -1976,7 +1751,6 @@ class AssociationTest2 extends CakeTestModel {
 class Callback extends CakeTestModel {
 	//
 }
-
 /**
  * Uuid class
  *
@@ -1984,7 +1758,6 @@ class Callback extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Uuid extends CakeTestModel {
-
 /**
  * name property
  *
@@ -1993,7 +1766,6 @@ class Uuid extends CakeTestModel {
  */
 	var $name = 'Uuid';
 }
-
 /**
  * DataTest class
  *
@@ -2001,7 +1773,6 @@ class Uuid extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class DataTest extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2010,7 +1781,6 @@ class DataTest extends CakeTestModel {
  */
 	var $name = 'DataTest';
 }
-
 /**
  * TheVoid class
  *
@@ -2018,7 +1788,6 @@ class DataTest extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class TheVoid extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2026,7 +1795,6 @@ class TheVoid extends CakeTestModel {
  * @access public
  */
 	var $name = 'TheVoid';
-
 /**
  * useTable property
  *
@@ -2035,7 +1803,6 @@ class TheVoid extends CakeTestModel {
  */
 	var $useTable = false;
 }
-
 /**
  * ValidationTest1 class
  *
@@ -2043,7 +1810,6 @@ class TheVoid extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ValidationTest1 extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2051,7 +1817,6 @@ class ValidationTest1 extends CakeTestModel {
  * @access public
  */
 	var $name = 'ValidationTest1';
-
 /**
  * useTable property
  *
@@ -2059,7 +1824,6 @@ class ValidationTest1 extends CakeTestModel {
  * @access public
  */
 	var $useTable = false;
-
 /**
  * schema property
  *
@@ -2067,7 +1831,6 @@ class ValidationTest1 extends CakeTestModel {
  * @access protected
  */
 	var $_schema = array();
-
 /**
  * validate property
  *
@@ -2083,7 +1846,6 @@ class ValidationTest1 extends CakeTestModel {
 			'/^[0-9A-Za-z \\.]{1,}$/s'
 		)
 	);
-
 /**
  * customValidationMethod method
  *
@@ -2094,7 +1856,6 @@ class ValidationTest1 extends CakeTestModel {
 	function customValidationMethod($data) {
 		return $data === 1;
 	}
-
 /**
  * Custom validator with parameters + default values
  *
@@ -2106,7 +1867,6 @@ class ValidationTest1 extends CakeTestModel {
 		unset($this->validatorParams['this']);
 		return true;
 	}
-
 /**
  * Custom validator with messaage
  *
@@ -2117,7 +1877,6 @@ class ValidationTest1 extends CakeTestModel {
 		return 'This field will *never* validate! Muhahaha!';
 	}
 }
-
 /**
  * ValidationTest2 class
  *
@@ -2125,7 +1884,6 @@ class ValidationTest1 extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ValidationTest2 extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2133,7 +1891,6 @@ class ValidationTest2 extends CakeTestModel {
  * @access public
  */
 	var $name = 'ValidationTest2';
-
 /**
  * useTable property
  *
@@ -2141,7 +1898,6 @@ class ValidationTest2 extends CakeTestModel {
  * @access public
  */
 	var $useTable = false;
-
 /**
  * validate property
  *
@@ -2157,7 +1913,6 @@ class ValidationTest2 extends CakeTestModel {
 			'/^[0-9A-Za-z \\.]{1,}$/s'
 		)
 	);
-
 /**
  * customValidationMethod method
  *
@@ -2168,7 +1923,6 @@ class ValidationTest2 extends CakeTestModel {
 	function customValidationMethod($data) {
 		return $data === 1;
 	}
-
 /**
  * schema method
  *
@@ -2179,7 +1933,6 @@ class ValidationTest2 extends CakeTestModel {
 		return array();
 	}
 }
-
 /**
  * Person class
  *
@@ -2187,7 +1940,6 @@ class ValidationTest2 extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Person extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2195,7 +1947,6 @@ class Person extends CakeTestModel {
  * @access public
  */
 	var $name = 'Person';
-
 /**
  * belongsTo property
  *
@@ -2210,7 +1961,6 @@ class Person extends CakeTestModel {
 				'className' => 'Person',
 				'foreignKey' => 'father_id'));
 }
-
 /**
  * UnderscoreField class
  *
@@ -2218,7 +1968,6 @@ class Person extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class UnderscoreField extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2227,7 +1976,6 @@ class UnderscoreField extends CakeTestModel {
  */
 	var $name = 'UnderscoreField';
 }
-
 /**
  * Product class
  *
@@ -2235,7 +1983,6 @@ class UnderscoreField extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Product extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2244,7 +1991,6 @@ class Product extends CakeTestModel {
  */
 	var $name = 'Product';
 }
-
 /**
  * Story class
  *
@@ -2252,7 +1998,6 @@ class Product extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Story extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2260,7 +2005,6 @@ class Story extends CakeTestModel {
  * @access public
  */
 	var $name = 'Story';
-
 /**
  * primaryKey property
  *
@@ -2268,7 +2012,6 @@ class Story extends CakeTestModel {
  * @access public
  */
 	var $primaryKey = 'story';
-
 /**
  * hasAndBelongsToMany property
  *
@@ -2276,7 +2019,6 @@ class Story extends CakeTestModel {
  * @access public
  */
 	var $hasAndBelongsToMany = array('Tag' => array('foreignKey' => 'story'));
-
 /**
  * validate property
  *
@@ -2285,7 +2027,6 @@ class Story extends CakeTestModel {
  */
 	var $validate = array('title' => 'notEmpty');
 }
-
 /**
  * Cd class
  *
@@ -2293,7 +2034,6 @@ class Story extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Cd extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2301,7 +2041,6 @@ class Cd extends CakeTestModel {
  * @access public
  */
 	var $name = 'Cd';
-
 /**
  * hasOne property
  *
@@ -2310,7 +2049,6 @@ class Cd extends CakeTestModel {
  */
 	var $hasOne = array('OverallFavorite' => array('foreignKey' => 'model_id', 'dependent' => true, 'conditions' => array('model_type' => 'Cd')));
 }
-
 /**
  * Book class
  *
@@ -2318,7 +2056,6 @@ class Cd extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Book extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2326,7 +2063,6 @@ class Book extends CakeTestModel {
  * @access public
  */
 	var $name = 'Book';
-
 /**
  * hasOne property
  *
@@ -2335,7 +2071,6 @@ class Book extends CakeTestModel {
  */
 	var $hasOne = array('OverallFavorite' => array('foreignKey' => 'model_id', 'dependent' => true, 'conditions' => array('model_type' => 'Book')));
 }
-
 /**
  * OverallFavorite class
  *
@@ -2343,7 +2078,6 @@ class Book extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class OverallFavorite extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2352,7 +2086,6 @@ class OverallFavorite extends CakeTestModel {
  */
 	var $name = 'OverallFavorite';
 }
-
 /**
  * MyUser class
  *
@@ -2360,7 +2093,6 @@ class OverallFavorite extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class MyUser extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2368,7 +2100,6 @@ class MyUser extends CakeTestModel {
  * @access public
  */
 	var $name = 'MyUser';
-
 /**
  * undocumented variable
  *
@@ -2377,7 +2108,6 @@ class MyUser extends CakeTestModel {
  */
 	var $hasAndBelongsToMany = array('MyCategory');
 }
-
 /**
  * MyCategory class
  *
@@ -2385,7 +2115,6 @@ class MyUser extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class MyCategory extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2393,7 +2122,6 @@ class MyCategory extends CakeTestModel {
  * @access public
  */
 	var $name = 'MyCategory';
-
 /**
  * undocumented variable
  *
@@ -2402,7 +2130,6 @@ class MyCategory extends CakeTestModel {
  */
 	var $hasAndBelongsToMany = array('MyProduct', 'MyUser');
 }
-
 /**
  * MyProduct class
  *
@@ -2410,7 +2137,6 @@ class MyCategory extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class MyProduct extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2418,7 +2144,6 @@ class MyProduct extends CakeTestModel {
  * @access public
  */
 	var $name = 'MyProduct';
-
 /**
  * undocumented variable
  *
@@ -2427,7 +2152,6 @@ class MyProduct extends CakeTestModel {
  */
 	var $hasAndBelongsToMany = array('MyCategory');
 }
-
 /**
  * MyCategoriesMyUser class
  *
@@ -2435,7 +2159,6 @@ class MyProduct extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class MyCategoriesMyUser extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2444,7 +2167,6 @@ class MyCategoriesMyUser extends CakeTestModel {
  */
 	var $name = 'MyCategoriesMyUser';
 }
-
 /**
  * MyCategoriesMyProduct class
  *
@@ -2452,7 +2174,6 @@ class MyCategoriesMyUser extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class MyCategoriesMyProduct extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2461,7 +2182,6 @@ class MyCategoriesMyProduct extends CakeTestModel {
  */
 	var $name = 'MyCategoriesMyProduct';
 }
-
 /**
  * I18nModel class
  *
@@ -2469,7 +2189,6 @@ class MyCategoriesMyProduct extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class I18nModel extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2477,7 +2196,6 @@ class I18nModel extends CakeTestModel {
  * @access public
  */
 	var $name = 'I18nModel';
-
 /**
  * useTable property
  *
@@ -2485,7 +2203,6 @@ class I18nModel extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'i18n';
-
 /**
  * displayField property
  *
@@ -2494,7 +2211,6 @@ class I18nModel extends CakeTestModel {
  */
 	var $displayField = 'field';
 }
-
 /**
  * NumberTree class
  *
@@ -2502,7 +2218,6 @@ class I18nModel extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class NumberTree extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2510,7 +2225,6 @@ class NumberTree extends CakeTestModel {
  * @access public
  */
 	var $name = 'NumberTree';
-
 /**
  * actsAs property
  *
@@ -2518,7 +2232,6 @@ class NumberTree extends CakeTestModel {
  * @access public
  */
 	var $actsAs = array('Tree');
-
 /**
  * initialize method
  *
@@ -2561,7 +2274,6 @@ class NumberTree extends CakeTestModel {
 		}
 	}
 }
-
 /**
  * NumberTreeTwo class
  *
@@ -2569,7 +2281,6 @@ class NumberTree extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class NumberTreeTwo extends NumberTree {
-
 /**
  * name property
  *
@@ -2577,7 +2288,6 @@ class NumberTreeTwo extends NumberTree {
  * @access public
  */
 	var $name = 'NumberTreeTwo';
-
 /**
  * actsAs property
  *
@@ -2586,7 +2296,6 @@ class NumberTreeTwo extends NumberTree {
  */
 	var $actsAs = array();
 }
-
 /**
  * FlagTree class
  *
@@ -2594,7 +2303,6 @@ class NumberTreeTwo extends NumberTree {
  * @subpackage    cake.tests.cases.libs.model
  */
 class FlagTree extends NumberTree {
-
 /**
  * name property
  *
@@ -2603,7 +2311,6 @@ class FlagTree extends NumberTree {
  */
 	var $name = 'FlagTree';
 }
-
 /**
  * UnconventionalTree class
  *
@@ -2611,7 +2318,6 @@ class FlagTree extends NumberTree {
  * @subpackage    cake.tests.cases.libs.model
  */
 class UnconventionalTree extends NumberTree {
-
 /**
  * name property
  *
@@ -2627,7 +2333,6 @@ class UnconventionalTree extends NumberTree {
 		)
 	);
 }
-
 /**
  * UuidTree class
  *
@@ -2635,7 +2340,6 @@ class UnconventionalTree extends NumberTree {
  * @subpackage    cake.tests.cases.libs.model
  */
 class UuidTree extends NumberTree {
-
 /**
  * name property
  *
@@ -2652,7 +2356,6 @@ class UuidTree extends NumberTree {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Campaign extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2660,7 +2363,6 @@ class Campaign extends CakeTestModel {
  * @access public
  */
 	var $name = 'Campaign';
-
 /**
  * hasMany property
  *
@@ -2669,7 +2371,6 @@ class Campaign extends CakeTestModel {
  */
 	var $hasMany = array('Ad' => array('fields' => array('id','campaign_id','name')));
 }
-
 /**
  * Ad class
  *
@@ -2677,7 +2378,6 @@ class Campaign extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Ad extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2685,7 +2385,6 @@ class Ad extends CakeTestModel {
  * @access public
  */
 	var $name = 'Ad';
-
 /**
  * actsAs property
  *
@@ -2693,7 +2392,6 @@ class Ad extends CakeTestModel {
  * @access public
  */
 	var $actsAs = array('Tree');
-
 /**
  * belongsTo property
  *
@@ -2702,7 +2400,6 @@ class Ad extends CakeTestModel {
  */
 	var $belongsTo = array('Campaign');
 }
-
 /**
  * AfterTree class
  *
@@ -2710,7 +2407,6 @@ class Ad extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class AfterTree extends NumberTree {
-
 /**
  * name property
  *
@@ -2718,7 +2414,6 @@ class AfterTree extends NumberTree {
  * @access public
  */
 	var $name = 'AfterTree';
-
 /**
  * actsAs property
  *
@@ -2733,7 +2428,6 @@ class AfterTree extends NumberTree {
 		}
 	}
 }
-
 /**
  * Nonconformant Content class
  *
@@ -2741,7 +2435,6 @@ class AfterTree extends NumberTree {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Content extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2749,7 +2442,6 @@ class Content extends CakeTestModel {
  * @access public
  */
 	var $name = 'Content';
-
 /**
  * useTable property
  *
@@ -2757,7 +2449,6 @@ class Content extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'Content';
-
 /**
  * primaryKey property
  *
@@ -2765,7 +2456,6 @@ class Content extends CakeTestModel {
  * @access public
  */
 	var $primaryKey = 'iContentId';
-
 /**
  * hasAndBelongsToMany property
  *
@@ -2774,7 +2464,6 @@ class Content extends CakeTestModel {
  */
 	var $hasAndBelongsToMany = array('Account' => array('className' => 'Account', 'with' => 'ContentAccount', 'joinTable' => 'ContentAccounts', 'foreignKey' => 'iContentId', 'associationForeignKey', 'iAccountId'));
 }
-
 /**
  * Nonconformant Account class
  *
@@ -2782,7 +2471,6 @@ class Content extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Account extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2790,7 +2478,6 @@ class Account extends CakeTestModel {
  * @access public
  */
 	var $name = 'Account';
-
 /**
  * useTable property
  *
@@ -2798,7 +2485,6 @@ class Account extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'Accounts';
-
 /**
  * primaryKey property
  *
@@ -2807,7 +2493,6 @@ class Account extends CakeTestModel {
  */
 	var $primaryKey = 'iAccountId';
 }
-
 /**
  * Nonconformant ContentAccount class
  *
@@ -2815,7 +2500,6 @@ class Account extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class ContentAccount extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2823,7 +2507,6 @@ class ContentAccount extends CakeTestModel {
  * @access public
  */
 	var $name = 'ContentAccount';
-
 /**
  * useTable property
  *
@@ -2831,7 +2514,6 @@ class ContentAccount extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'ContentAccounts';
-
 /**
  * primaryKey property
  *
@@ -2840,7 +2522,6 @@ class ContentAccount extends CakeTestModel {
  */
 	var $primaryKey = 'iContentAccountsId';
 }
-
 /**
  * FilmFile class
  *
@@ -2850,7 +2531,6 @@ class ContentAccount extends CakeTestModel {
 class FilmFile extends CakeTestModel {
 	var $name = 'FilmFile';
 }
-
 /**
  * Basket test model
  *
@@ -2870,7 +2550,6 @@ class Basket extends CakeTestModel {
 		)
 	);
 }
-
 /**
  * TestPluginArticle class
  *
@@ -2878,7 +2557,6 @@ class Basket extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class TestPluginArticle extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2886,7 +2564,6 @@ class TestPluginArticle extends CakeTestModel {
  * @access public
  */
 	var $name = 'TestPluginArticle';
-
 /**
  * belongsTo property
  *
@@ -2894,7 +2571,6 @@ class TestPluginArticle extends CakeTestModel {
  * @access public
  */
 	var $belongsTo = array('User');
-
 /**
  * hasMany property
  *
@@ -2909,7 +2585,6 @@ class TestPluginArticle extends CakeTestModel {
 		)
 	);
 }
-
 /**
  * TestPluginComment class
  *
@@ -2917,7 +2592,6 @@ class TestPluginArticle extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class TestPluginComment extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2925,7 +2599,6 @@ class TestPluginComment extends CakeTestModel {
  * @access public
  */
 	var $name = 'TestPluginComment';
-
 /**
  * belongsTo property
  *
@@ -2940,7 +2613,6 @@ class TestPluginComment extends CakeTestModel {
 		'User'
 	);
 }
-
 /**
  * Uuidportfolio class
  *
@@ -2948,7 +2620,6 @@ class TestPluginComment extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Uuidportfolio extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2956,7 +2627,6 @@ class Uuidportfolio extends CakeTestModel {
  * @access public
  */
 	var $name = 'Uuidportfolio';
-
 /**
  * hasAndBelongsToMany property
  *
@@ -2965,7 +2635,6 @@ class Uuidportfolio extends CakeTestModel {
  */
 	var $hasAndBelongsToMany = array('Uuiditem');
 }
-
 /**
  * Uuiditem class
  *
@@ -2973,7 +2642,6 @@ class Uuidportfolio extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class Uuiditem extends CakeTestModel {
-
 /**
  * name property
  *
@@ -2981,7 +2649,6 @@ class Uuiditem extends CakeTestModel {
  * @access public
  */
 	var $name = 'Uuiditem';
-
 /**
  * hasAndBelongsToMany property
  *
@@ -2993,7 +2660,6 @@ class Uuiditem extends CakeTestModel {
 	var $hasAndBelongsToMany = array('Uuidportfolio' => array('with' => 'UuiditemsUuidportfolioNumericid'));
 
 }
-
 /**
  * UuiditemsPortfolio class
  *
@@ -3001,7 +2667,6 @@ class Uuiditem extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class UuiditemsUuidportfolio extends CakeTestModel {
-
 /**
  * name property
  *
@@ -3010,7 +2675,6 @@ class UuiditemsUuidportfolio extends CakeTestModel {
  */
 	var $name = 'UuiditemsUuidportfolio';
 }
-
 /**
  * UuiditemsPortfolioNumericid class
  *
@@ -3018,7 +2682,6 @@ class UuiditemsUuidportfolio extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class UuiditemsUuidportfolioNumericid extends CakeTestModel {
-
 /**
  * name property
  *
@@ -3027,7 +2690,6 @@ class UuiditemsUuidportfolioNumericid extends CakeTestModel {
  */
 	var $name = 'UuiditemsUuidportfolioNumericid';
 }
-
 /**
  * TranslateTestModel class.
  *
@@ -3035,7 +2697,6 @@ class UuiditemsUuidportfolioNumericid extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class TranslateTestModel extends CakeTestModel {
-
 /**
  * name property
  *
@@ -3043,7 +2704,6 @@ class TranslateTestModel extends CakeTestModel {
  * @access public
  */
 	var $name = 'TranslateTestModel';
-
 /**
  * useTable property
  *
@@ -3051,7 +2711,6 @@ class TranslateTestModel extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'i18n';
-
 /**
  * displayField property
  *
@@ -3060,7 +2719,6 @@ class TranslateTestModel extends CakeTestModel {
  */
 	var $displayField = 'field';
 }
-
 /**
  * TranslatedItem class.
  *
@@ -3068,7 +2726,6 @@ class TranslateTestModel extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class TranslatedItem extends CakeTestModel {
-
 /**
  * name property
  *
@@ -3076,7 +2733,6 @@ class TranslatedItem extends CakeTestModel {
  * @access public
  */
 	var $name = 'TranslatedItem';
-
 /**
  * cacheQueries property
  *
@@ -3084,7 +2740,6 @@ class TranslatedItem extends CakeTestModel {
  * @access public
  */
 	var $cacheQueries = false;
-
 /**
  * actsAs property
  *
@@ -3092,7 +2747,6 @@ class TranslatedItem extends CakeTestModel {
  * @access public
  */
 	var $actsAs = array('Translate' => array('content', 'title'));
-
 /**
  * translateModel property
  *
@@ -3101,7 +2755,6 @@ class TranslatedItem extends CakeTestModel {
  */
 	var $translateModel = 'TranslateTestModel';
 }
-
 /**
  * TranslatedItemWithTable class.
  *
@@ -3109,7 +2762,6 @@ class TranslatedItem extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class TranslatedItemWithTable extends CakeTestModel {
-
 /**
  * name property
  *
@@ -3117,7 +2769,6 @@ class TranslatedItemWithTable extends CakeTestModel {
  * @access public
  */
 	var $name = 'TranslatedItemWithTable';
-
 /**
  * useTable property
  *
@@ -3125,7 +2776,6 @@ class TranslatedItemWithTable extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'translated_items';
-
 /**
  * cacheQueries property
  *
@@ -3133,7 +2783,6 @@ class TranslatedItemWithTable extends CakeTestModel {
  * @access public
  */
 	var $cacheQueries = false;
-
 /**
  * actsAs property
  *
@@ -3141,7 +2790,6 @@ class TranslatedItemWithTable extends CakeTestModel {
  * @access public
  */
 	var $actsAs = array('Translate' => array('content', 'title'));
-
 /**
  * translateModel property
  *
@@ -3149,7 +2797,6 @@ class TranslatedItemWithTable extends CakeTestModel {
  * @access public
  */
 	var $translateModel = 'TranslateTestModel';
-
 /**
  * translateTable property
  *
@@ -3158,7 +2805,6 @@ class TranslatedItemWithTable extends CakeTestModel {
  */
 	var $translateTable = 'another_i18n';
 }
-
 /**
  * TranslateArticleModel class.
  *
@@ -3166,7 +2812,6 @@ class TranslatedItemWithTable extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class TranslateArticleModel extends CakeTestModel {
-
 /**
  * name property
  *
@@ -3174,7 +2819,6 @@ class TranslateArticleModel extends CakeTestModel {
  * @access public
  */
 	var $name = 'TranslateArticleModel';
-
 /**
  * useTable property
  *
@@ -3182,7 +2826,6 @@ class TranslateArticleModel extends CakeTestModel {
  * @access public
  */
 	var $useTable = 'article_i18n';
-
 /**
  * displayField property
  *
@@ -3191,7 +2834,6 @@ class TranslateArticleModel extends CakeTestModel {
  */
 	var $displayField = 'field';
 }
-
 /**
  * TranslatedArticle class.
  *
@@ -3199,7 +2841,6 @@ class TranslateArticleModel extends CakeTestModel {
  * @subpackage    cake.tests.cases.libs.model
  */
 class TranslatedArticle extends CakeTestModel {
-
 /**
  * name property
  *
@@ -3207,7 +2848,6 @@ class TranslatedArticle extends CakeTestModel {
  * @access public
  */
 	var $name = 'TranslatedArticle';
-
 /**
  * cacheQueries property
  *
@@ -3215,7 +2855,6 @@ class TranslatedArticle extends CakeTestModel {
  * @access public
  */
 	var $cacheQueries = false;
-
 /**
  * actsAs property
  *
@@ -3223,7 +2862,6 @@ class TranslatedArticle extends CakeTestModel {
  * @access public
  */
 	var $actsAs = array('Translate' => array('title', 'body'));
-
 /**
  * translateModel property
  *
@@ -3231,7 +2869,6 @@ class TranslatedArticle extends CakeTestModel {
  * @access public
  */
 	var $translateModel = 'TranslateArticleModel';
-
 /**
  * belongsTo property
  *
@@ -3375,6 +3012,18 @@ class UuidTagNoWith extends CakeTestModel {
 			'associationForeignKey' => 'fruit_id',
 		)
 	);
+}
+
+class ProductUpdateAll extends CakeTestModel {
+	var $name = 'ProductUpdateAll';
+	var $useTable = 'product_update_all';
+
+}
+
+class GroupUpdateAll extends CakeTestModel {
+	var $name = 'GroupUpdateAll';
+	var $useTable = 'group_update_all';
+
 }
 
 ?>

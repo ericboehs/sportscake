@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * ControllerGroupTest file
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
-
 /**
  * ControllerGroupTest
  *
@@ -33,7 +31,6 @@
  * @subpackage    cake.tests.groups
  */
 class ControllerGroupTest extends GroupTest {
-
 /**
  * label property
  *
@@ -41,7 +38,6 @@ class ControllerGroupTest extends GroupTest {
  * @access public
  */
 	var $label = 'All Controllers and Components';
-
 /**
  * LibControllerGroupTest method
  *

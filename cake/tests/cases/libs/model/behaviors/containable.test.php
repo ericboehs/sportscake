@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * ContainableBehaviorTest file
  *
@@ -27,7 +26,6 @@
  */
 App::import('Core', array('AppModel', 'Model'));
 require_once(dirname(dirname(__FILE__)) . DS . 'models.php');
-
 /**
  * ContainableTest class
  *
@@ -35,7 +33,6 @@ require_once(dirname(dirname(__FILE__)) . DS . 'models.php');
  * @subpackage    cake.tests.cases.libs.model.behaviors
  */
 class ContainableBehaviorTest extends CakeTestCase {
-
 /**
  * Fixtures associated with this test case
  *
@@ -46,7 +43,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		'core.article', 'core.article_featured', 'core.article_featureds_tags', 'core.articles_tag', 'core.attachment', 'core.category',
 		'core.comment', 'core.featured', 'core.tag', 'core.user'
 	);
-
 /**
  * Method executed before each test
  *
@@ -73,7 +69,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		$this->Article->Behaviors->attach('Containable');
 		$this->Tag->Behaviors->attach('Containable');
 	}
-
 /**
  * Method executed after each test
  *
@@ -86,7 +81,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 
 		ClassRegistry::flush();
 	}
-
 /**
  * testContainments method
  *
@@ -148,7 +142,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		$this->assertTrue(Set::matches('/Article/keep/User', $r));
 		$this->assertTrue(Set::matches('/Tag/keep/Article', $r));
 	}
-
 /**
  * testInvalidContainments method
  *
@@ -162,7 +155,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		$this->Article->Behaviors->attach('Containable', array('notices' => false));
 		$r = $this->__containments($this->Article, array('Comment', 'InvalidBinding'));
 	}
-
 /**
  * testBeforeFind method
  *
@@ -237,7 +229,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		$this->expectError();
 		$r = $this->Article->find('all', array('contain' => array('Comment' => 'NonExistingBinding')));
 	}
-
 /**
  * testContain method
  *
@@ -253,7 +244,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		$r = $this->Article->find('all');
 		$this->assertFalse(Set::matches('/Comment/User', $r));
 	}
-
 /**
  * testFindEmbeddedNoBindings method
  *
@@ -278,7 +268,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testFindFirstLevel method
  *
@@ -387,7 +376,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testFindEmbeddedFirstLevel method
  *
@@ -494,7 +482,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testFindSecondLevel method
  *
@@ -841,7 +828,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testFindEmbeddedSecondLevel method
  *
@@ -1184,7 +1170,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testFindThirdLevel method
  *
@@ -1505,7 +1490,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testFindEmbeddedThirdLevel method
  *
@@ -1823,7 +1807,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testSettingsThirdLevel method
  *
@@ -2070,7 +2053,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 			$this->assertEqual($result, $expected);
 		}
 	}
-
 /**
  * testFindThirdLevelNonReset method
  *
@@ -2395,7 +2377,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testFindEmbeddedThirdLevelNonReset method
  *
@@ -2885,7 +2866,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		$this->__assertBindings($this->User->ArticleFeatured->Featured, array('belongsTo' => array('ArticleFeatured', 'Category')));
 		$this->__assertBindings($this->User->ArticleFeatured->Comment, array('belongsTo' => array('Article', 'User'), 'hasOne' => array('Attachment')));
 	}
-
 /**
  * testEmbeddedFindFields method
  *
@@ -2946,7 +2926,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testFindConditionalBinding method
  *
@@ -3074,7 +3053,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		$this->assertTrue(Set::matches('/Article[id=1]/Tag[id=2]', $result));
 		$this->assertTrue(empty($this->User->Article->hasAndBelongsToMany['Tag']['order']));
 	}
-
 /**
  * testOtherFinds method
  *
@@ -3138,7 +3116,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testPaginate method
  *
@@ -3243,7 +3220,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		$this->assertTrue(Set::matches('/Comment[article_id=1]', $r));
 		$this->assertTrue(Set::matches('/Comment[id=1]', $r));
 	}
-
 /**
  * testOriginalAssociations method
  *
@@ -3336,7 +3312,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		$this->assertTrue(Set::matches('/Comment[article_id=1]', $result));
 		$this->Article->resetBindings();
 	}
-
 /**
  * testResetAssociation method
  *
@@ -3368,7 +3343,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		$result = $this->Article->Comment->find('all', $initialOptions);
 		$this->assertEqual($result, $initialModels);
 	}
-
 /**
  * testResetDeeperHasOneAssociations method
  *
@@ -3418,7 +3392,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		));
 		$this->assertEqual($expected, $this->Article->User->hasOne);
 	}
-
 /**
  * testResetMultipleHabtmAssociations method
  *
@@ -3510,7 +3483,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 		$this->Article->find('all', array('contain' => array('ShortTag' => array('fields' => array('ShortTag.tag', 'ShortTag.created')))));
 		$this->assertEqual($expected, $this->Article->hasAndBelongsToMany);
 	}
-
 /**
  * containments method
  *
@@ -3532,7 +3504,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 
 		return $result;
 	}
-
 /**
  * assertBindings method
  *
@@ -3548,7 +3519,6 @@ class ContainableBehaviorTest extends CakeTestCase {
 			$this->assertEqual(array_keys($Model->$binding), $expect);
 		}
 	}
-
 /**
  * bindings method
  *

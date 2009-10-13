@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Short description for file.
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * Short description for file.
  *
@@ -36,7 +34,6 @@
  * @since         CakePHP(tm) v 1.2.0.6879 //Correct version number as needed**
  */
 class NodeFixture extends CakeTestFixture {
-
 /**
  * name property
  *
@@ -44,7 +41,6 @@ class NodeFixture extends CakeTestFixture {
  * @access public
  */
 	var $name = 'Node';
-
 /**
  * fields property
  *
@@ -56,7 +52,6 @@ class NodeFixture extends CakeTestFixture {
 		'name' => 'string',
 		'state' => 'integer'
 	);
-
 /**
  * records property
  *

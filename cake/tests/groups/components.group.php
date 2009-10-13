@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * ComponentsGroupTest file
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
-
 /**
  * ComponentsGroupTest class
  *
@@ -35,7 +33,6 @@
  * @subpackage    cake.tests.groups
  */
 class ComponentsGroupTest extends GroupTest {
-
 /**
  * label property
  *
@@ -43,7 +40,6 @@ class ComponentsGroupTest extends GroupTest {
  * @access public
  */
 	var $label = 'All Components';
-
 /**
  * CoreComponentsGroupTest method
  *

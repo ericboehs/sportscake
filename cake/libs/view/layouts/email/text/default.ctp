@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  *
  * PHP versions 4 and 5
@@ -26,3 +25,4 @@
 <?php echo $content_for_layout;?>
 
 This email was sent using the CakePHP Framework, http://cakephp.org.
+

@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * TimeHelperTest file
  *
@@ -29,7 +28,6 @@ if (!defined('CAKEPHP_UNIT_TEST_EXECUTION')) {
 	define('CAKEPHP_UNIT_TEST_EXECUTION', 1);
 }
 App::import('Helper', 'Time');
-
 /**
  * TimeHelperTest class
  *
@@ -37,7 +35,6 @@ App::import('Helper', 'Time');
  * @subpackage    cake.tests.cases.libs.view.helpers
  */
 class TimeHelperTest extends CakeTestCase {
-
 /**
  * setUp method
  *
@@ -47,7 +44,6 @@ class TimeHelperTest extends CakeTestCase {
 	function setUp() {
 		$this->Time = new TimeHelper();
 	}
-
 /**
  * tearDown method
  *
@@ -57,7 +53,6 @@ class TimeHelperTest extends CakeTestCase {
 	function tearDown() {
 		unset($this->Time);
 	}
-
 /**
  * testToQuarter method
  *
@@ -86,7 +81,6 @@ class TimeHelperTest extends CakeTestCase {
 		$result = $this->Time->toQuarter('2007-12-25', true);
 		$this->assertEqual($result, array('2007-10-01', '2007-12-31'));
 	}
-
 /**
  * testTimeAgoInWords method
  *
@@ -300,7 +294,6 @@ class TimeHelperTest extends CakeTestCase {
 		$expected = 'on ' . date('j/n/y', $time);
 		$this->assertEqual($expected, $result);
 	}
-
 /**
  * testRelative method
  *
@@ -313,7 +306,6 @@ class TimeHelperTest extends CakeTestCase {
 		$result = $this->Time->relativeTime('+1 week');
 		$this->assertEqual($result, '1 week');
 	}
-
 /**
  * testNice method
  *
@@ -336,7 +328,6 @@ class TimeHelperTest extends CakeTestCase {
 		$time = null;
 		$this->assertEqual(date('D, M jS Y, H:i', time()), $this->Time->nice($time));
 	}
-
 /**
  * testNiceShort method
  *
@@ -357,7 +348,6 @@ class TimeHelperTest extends CakeTestCase {
 		$time = time() - DAY;
 		$this->assertEqual('Yesterday, '.date('H:i', $time), $this->Time->niceShort($time));
 	}
-
 /**
  * testDaysAsSql method
  *
@@ -371,7 +361,6 @@ class TimeHelperTest extends CakeTestCase {
 		$expected = '(my_field >= \''.date('Y-m-d', $begin).' 00:00:00\') AND (my_field <= \''.date('Y-m-d', $end).' 23:59:59\')';
 		$this->assertEqual($expected, $this->Time->daysAsSql($begin, $end, $field));
 	}
-
 /**
  * testDayAsSql method
  *
@@ -384,7 +373,6 @@ class TimeHelperTest extends CakeTestCase {
 		$expected = '(my_field >= \''.date('Y-m-d', $time).' 00:00:00\') AND (my_field <= \''.date('Y-m-d', $time).' 23:59:59\')';
 		$this->assertEqual($expected, $this->Time->dayAsSql($time, $field));
 	}
-
 /**
  * testToUnix method
  *
@@ -399,7 +387,6 @@ class TimeHelperTest extends CakeTestCase {
 		$this->assertEqual(false, $this->Time->toUnix(''));
 		$this->assertEqual(false, $this->Time->toUnix(null));
 	}
-
 /**
  * testToAtom method
  *
@@ -409,7 +396,6 @@ class TimeHelperTest extends CakeTestCase {
 	function testToAtom() {
 		$this->assertEqual(date('Y-m-d\TH:i:s\Z'), $this->Time->toAtom(time()));
 	}
-
 /**
  * testToRss method
  *
@@ -419,7 +405,6 @@ class TimeHelperTest extends CakeTestCase {
 	function testToRss() {
 		$this->assertEqual(date('r'), $this->Time->toRss(time()));
 	}
-
 /**
  * testFormat method
  *
@@ -436,7 +421,6 @@ class TimeHelperTest extends CakeTestCase {
 		$result = $this->Time->format('Y-m-d', null, 'never');
 		$this->assertEqual($result, 'never');
 	}
-
 /**
  * testOfGmt method
  *
@@ -463,7 +447,6 @@ class TimeHelperTest extends CakeTestCase {
 		$expected = gmmktime($hour, $min, $sec, $month, $day, $year);
 		$this->assertEqual($expected, $this->Time->gmt(null));
 	}
-
 /**
  * testIsToday method
  *
@@ -480,7 +463,6 @@ class TimeHelperTest extends CakeTestCase {
 		$result = $this->Time->isToday('-1 day');
 		$this->assertFalse($result);
 	}
-
 /**
  * testIsThisWeek method
  *
@@ -540,7 +522,6 @@ class TimeHelperTest extends CakeTestCase {
 				break;
 		}
 	}
-
 /**
  * testIsThisMonth method
  *
@@ -558,7 +539,6 @@ class TimeHelperTest extends CakeTestCase {
 		$this->assertFalse($result);
 
 	}
-
 /**
  * testIsThisYear method
  *
@@ -607,7 +587,6 @@ class TimeHelperTest extends CakeTestCase {
 		$result = $this->Time->isTomorrow('-1 day');
 		$this->assertFalse($result);
 	}
-
 /**
  * testWasWithinLast method
  *
@@ -668,7 +647,6 @@ class TimeHelperTest extends CakeTestCase {
 		$result = $this->Time->fromString(time(), $yourTimezone);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * test fromString()
  *

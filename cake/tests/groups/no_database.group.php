@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * NoDatabaseGroupTest file
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
-
 /**
  * NoDatabaseGroupTest class
  *
@@ -35,7 +33,6 @@
  * @subpackage    cake.tests.groups
  */
 class NoDatabaseGroupTest extends GroupTest {
-
 /**
  * label property
  *
@@ -43,7 +40,6 @@ class NoDatabaseGroupTest extends GroupTest {
  * @access public
  */
 	var $label = 'All Libs not requiring a database connection';
-
 /**
  * NoDatabaseGroupTest method
  *
@@ -55,8 +51,8 @@ class NoDatabaseGroupTest extends GroupTest {
 		TestManager::addTestFile($this, CORE_TEST_CASES . DS . 'libs' . DS . 'router');
 		TestManager::addTestFile($this, CORE_TEST_CASES . DS . 'libs' . DS . 'inflector');
 		TestManager::addTestFile($this, CORE_TEST_CASES . DS . 'libs' . DS . 'validation');
-		TestManager::addTestFile($this, CORE_TEST_CASES . DS . 'libs' . DS . 'cake_session');
-		TestManager::addTestFile($this, CORE_TEST_CASES . DS . 'libs' . DS . 'cake_socket');
+		TestManager::addTestFile($this, CORE_TEST_CASES . DS . 'libs' . DS . 'session');
+		TestManager::addTestFile($this, CORE_TEST_CASES . DS . 'libs' . DS . 'socket');
 		TestManager::addTestCasesFromDirectory($this, CORE_TEST_CASES . DS . 'libs' . DS . 'view');
 	}
 }

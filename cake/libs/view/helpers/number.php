@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Number Helper.
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * Number helper library.
  *
@@ -35,7 +33,6 @@
  * @subpackage    cake.cake.libs.view.helpers
  */
 class NumberHelper extends AppHelper {
-
 /**
  * Formats a number with a level of precision.
  *
@@ -47,7 +44,6 @@ class NumberHelper extends AppHelper {
 	function precision($number, $precision = 3) {
 		return sprintf("%01.{$precision}f", $number);
 	}
-
 /**
  * Returns a formatted-for-humans file size.
  *
@@ -69,7 +65,6 @@ class NumberHelper extends AppHelper {
 				return sprintf(__('%.2f TB', true), $this->precision($size / 1024 / 1024 / 1024 / 1024, 2));
 		}
 	}
-
 /**
  * Formats a number into a percentage string.
  *
@@ -81,7 +76,6 @@ class NumberHelper extends AppHelper {
 	function toPercentage($number, $precision = 2) {
 		return $this->precision($number, $precision) . '%';
 	}
-
 /**
  * Formats a number into a currency format.
  *
@@ -125,7 +119,6 @@ class NumberHelper extends AppHelper {
 		}
 		return $out;
 	}
-
 /**
  * Formats a number into a currency format.
  *

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><sport:content xmlns:sport="http://xml.sportsdirectinc.com/sport/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<team-sport-content>
+<sport>
+<id>/sport/football</id>
+<name>football</name>
+</sport>
+<league-content>
+<league>
+<id>/sport/football/league:2</id>
+<name>NCAA Football</name>
+<name type="nick">NCAAF</name>
+</league>
+
+
+
+
+
+
+
+<competition>
+<id>/sport/football/competition:26995</id>
+<start-date>2009-10-10T19:30:00.000-04:00</start-date>
+<result-scope>
+<competition-status>scheduled</competition-status>
+</result-scope>
+<home-team-content>
+<team>
+<id>/sport/football/team:42</id>
+<name>Air Force</name>
+</team>
+</home-team-content>
+<away-team-content>
+<team>
+<id>/sport/football/team:110</id>
+<name>Texas Christian</name>
+</team>
+</away-team-content>
+</competition></league-content>
+</team-sport-content>
+</sport:content>

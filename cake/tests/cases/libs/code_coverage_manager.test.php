@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * CodeCoverageManagerTest file
  *
@@ -25,10 +24,9 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
-require_once CAKE . 'tests' . DS . 'lib' . DS . 'code_coverage_manager.php';
+App::import('Core', 'CodeCoverageManager');
 require_once CAKE . 'tests' . DS . 'lib' . DS . 'cli_reporter.php';
 require_once CAKE . 'tests' . DS . 'lib' . DS . 'cake_reporter.php';
-
 /**
  * CodeCoverageManagerTest class
  *
@@ -36,7 +34,6 @@ require_once CAKE . 'tests' . DS . 'lib' . DS . 'cake_reporter.php';
  * @subpackage    cake.tests.cases.libs
  */
 class CodeCoverageManagerTest extends CakeTestCase {
-
 /**
  * Skip if XDebug not installed
  *
@@ -45,7 +42,6 @@ class CodeCoverageManagerTest extends CakeTestCase {
 	function skip() {
 		$this->skipIf(!extension_loaded('xdebug'), '%s XDebug not installed');
 	}
-
 /**
  * startTest Method
  * Store reference of $_GET to restore later.
@@ -55,7 +51,6 @@ class CodeCoverageManagerTest extends CakeTestCase {
 	function startCase() {
 		$this->_get = $_GET;
 	}
-
 /**
  * End Case - restore GET vars.
  *
@@ -64,7 +59,6 @@ class CodeCoverageManagerTest extends CakeTestCase {
 	function endCase() {
 		$_GET = $this->_get;
 	}
-
 /**
  * testNoTestCaseSupplied method
  *
@@ -78,7 +72,7 @@ class CodeCoverageManagerTest extends CakeTestCase {
 			CodeCoverageManager::report(false);
 			$this->assertError();
 
-			CodeCoverageManager::start('tests' . DS . 'lib' . DS . basename(__FILE__), new CakeHtmlReporter());
+			CodeCoverageManager::start('libs/'.basename(__FILE__), new CakeHtmlReporter());
 			CodeCoverageManager::report(false);
 			$this->assertError();
 
@@ -90,7 +84,6 @@ class CodeCoverageManagerTest extends CakeTestCase {
 			$folder = new Folder();
 			$folder->cd($path);
 			$contents = $folder->ls();
-
 /**
  * remove method
  *
@@ -110,7 +103,6 @@ class CodeCoverageManagerTest extends CakeTestCase {
 			}
 		}
 	}
-
 /**
  * testGetTestObjectFileNameFromTestCaseFile method
  *
@@ -124,7 +116,7 @@ class CodeCoverageManagerTest extends CakeTestCase {
 		$expected = $manager->__testObjectFileFromCaseFile('models/some_file.test.php', true);
 		$this->assertIdentical(APP.'models'.DS.'some_file.php', $expected);
 
-		$expected = $manager->__testObjectFileFromCaseFile('models/datasources/some_file.test.php', true);
+		$expected = $manager->__testObjectFileFromCaseFile('datasources/some_file.test.php', true);
 		$this->assertIdentical(APP.'models'.DS.'datasources'.DS.'some_file.php', $expected);
 
 		$expected = $manager->__testObjectFileFromCaseFile('controllers/some_file.test.php', true);
@@ -151,7 +143,6 @@ class CodeCoverageManagerTest extends CakeTestCase {
 		$expected = $manager->__testObjectFileFromCaseFile('libs/set.test.php', false);
 		$this->assertIdentical(ROOT.DS.'cake'.DS.'libs'.DS.'set.php', $expected);
 	}
-
 /**
  * testOfHtmlReport method
  *
@@ -168,7 +159,6 @@ class CodeCoverageManagerTest extends CakeTestCase {
  * @subpackage    cake.tests.cases.libs
  */
 		class Set extends Object {
-
 /**
 		 * Value of the Set object.
 		 *
@@ -176,7 +166,6 @@ class CodeCoverageManagerTest extends CakeTestCase {
 		 * @access public
 		 */
 			var \$value = array();
-
 /**
 		 * Constructor. Defaults to an empty array.
 		 *
@@ -189,7 +178,6 @@ class CodeCoverageManagerTest extends CakeTestCase {
 					\$this->value = func_get_args();
 				}
 			}
-
 /**
 		 * Returns the contents of the Set object
 		 *
@@ -199,7 +187,6 @@ class CodeCoverageManagerTest extends CakeTestCase {
 			function &get() {
 				return \$this->value;
 			}
-
 /**
 		 * This function can be thought of as a hybrid between PHP's array_merge and array_merge_recursive. The difference
 		 * to the two is that if an array key contains another array then the function behaves recursive (unlike array_merge)
@@ -313,7 +300,6 @@ PHP;
 			}
 		}
 	}
-
 /**
  * testOfHtmlDiffReport method
  *
@@ -330,7 +316,6 @@ PHP;
  * @subpackage    cake.tests.cases.libs
  */
 		class Set extends Object {
-
 /**
 		 * Value of the Set object.
 		 *
@@ -338,7 +323,6 @@ PHP;
 		 * @access public
 		 */
 			var \$value = array();
-
 /**
 		 * Constructor. Defaults to an empty array.
 		 *
@@ -351,7 +335,6 @@ PHP;
 					\$this->value = func_get_args();
 				}
 			}
-
 /**
 		 * Returns the contents of the Set object
 		 *
@@ -361,7 +344,6 @@ PHP;
 			function &get() {
 				return \$this->value;
 			}
-
 /**
 		 * This function can be thought of as a hybrid between PHP's array_merge and array_merge_recursive. The difference
 		 * to the two is that if an array key contains another array then the function behaves recursive (unlike array_merge)
@@ -578,7 +560,6 @@ PHP;
 			$this->assertPattern($pattern, $line, $num.': '.$line." fails");
 		}
 	}
-
 /**
  * testArrayStrrpos method
  *
@@ -611,7 +592,6 @@ PHP;
 		$this->assertEqual(1, $manager->__array_strpos($a, 'orange'));
 		$this->assertEqual(2, $manager->__array_strpos($a, 'orange', true));
 	}
-
 /**
  * testGetExecutableLines method
  *
@@ -649,7 +629,6 @@ HTML;
 			$this->assertIdentical(trim($line), '');
 		}
 	}
-
 /**
  * testCalculateCodeCoverage method
  *

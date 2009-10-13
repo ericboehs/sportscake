@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * TranslateBehaviorTest file
  *
@@ -31,7 +30,6 @@ if (!defined('CAKEPHP_UNIT_TEST_EXECUTION')) {
 
 App::import('Core', array('AppModel', 'Model'));
 require_once(dirname(dirname(__FILE__)) . DS . 'models.php');
-
 /**
  * TranslateBehaviorTest class
  *
@@ -39,7 +37,6 @@ require_once(dirname(dirname(__FILE__)) . DS . 'models.php');
  * @subpackage    cake.tests.cases.libs.model.behaviors
  */
 class TranslateBehaviorTest extends CakeTestCase {
-
 /**
  * autoFixtures property
  *
@@ -47,7 +44,6 @@ class TranslateBehaviorTest extends CakeTestCase {
  * @access public
  */
 	var $autoFixtures = false;
-
 /**
  * fixtures property
  *
@@ -58,7 +54,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		'core.translated_item', 'core.translate', 'core.translate_table',
 		'core.translated_article', 'core.translate_article', 'core.user', 'core.comment', 'core.tag', 'core.articles_tag'
 	);
-
 /**
  * endTest method
  *
@@ -68,7 +63,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 	function endTest() {
 		ClassRegistry::flush();
 	}
-
 /**
  * testTranslateModel method
  *
@@ -95,7 +89,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		$this->assertEqual($TestModel->translateModel()->name, 'TranslateTestModel');
 		$this->assertEqual($TestModel->translateModel()->useTable, 'i18n');
 	}
-
 /**
  * testLocaleFalsePlain method
  *
@@ -120,7 +113,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testLocaleFalseAssociations method
  *
@@ -175,7 +167,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testLocaleSingle method
  *
@@ -231,7 +222,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testLocaleSingleWithConditions method
  *
@@ -271,7 +261,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testLocaleSingleAssociations method
  *
@@ -332,7 +321,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testLocaleMultiple method
  *
@@ -396,7 +384,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testMissingTranslation method
  *
@@ -424,7 +411,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testTranslatedFindList method
  *
@@ -458,7 +444,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		$expected = array(1 => null, 2 => null, 3 => null);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testReadSelectedFields method
  *
@@ -494,7 +479,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testSaveCreate method
  *
@@ -513,7 +497,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		$expected = array('TranslatedItem' => array_merge($data, array('id' => $TestModel->id, 'locale' => 'spa')));
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testSaveUpdate method
  *
@@ -536,7 +519,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		$expected = array('TranslatedItem' => array_merge($oldData, $newData, array('locale' => 'spa')));
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testMultipleCreate method
  *
@@ -575,7 +557,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testMultipleUpdate method
  *
@@ -618,7 +599,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		$TestModel->unbindTranslation($translations);
 		$TestModel->bindTranslation(array('title', 'content'), false);
 	}
-
 /**
  * testMixedCreateUpdateWithArrayLocale method
  *
@@ -658,7 +638,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testValidation method
  *
@@ -690,7 +669,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		$TestModel->create();
 		$this->assertTrue($TestModel->save($data));
 	}
-
 /**
  * testAttachDetach method
  *
@@ -741,7 +719,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		$result = isset($Behavior->runtime[$TestModel->alias]);
 		$this->assertTrue($result);
 	}
-
 /**
  * testAnotherTranslateTable method
  *
@@ -765,7 +742,6 @@ class TranslateBehaviorTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * testTranslateWithAssociations method
  *

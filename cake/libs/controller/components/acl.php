@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Access Control List factory class.
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * Access Control List factory class.
  *
@@ -35,7 +33,6 @@
  * @subpackage    cake.cake.libs.controller.components
  */
 class AclComponent extends Object {
-
 /**
  * Instance of an ACL class
  *
@@ -43,7 +40,6 @@ class AclComponent extends Object {
  * @access protected
  */
 	var $_Instance = null;
-
 /**
  * Constructor. Will return an instance of the correct ACL class.
  *
@@ -63,7 +59,6 @@ class AclComponent extends Object {
 		$this->_Instance =& new $name();
 		$this->_Instance->initialize($this);
 	}
-
 /**
  * Startup is not used
  *
@@ -74,7 +69,6 @@ class AclComponent extends Object {
 	function startup(&$controller) {
 		return true;
 	}
-
 /**
  * Empty class defintion, to be overridden in subclasses.
  *
@@ -82,7 +76,6 @@ class AclComponent extends Object {
  */
 	function _initACL() {
 	}
-
 /**
  * Pass-thru function for ACL check instance.
  *
@@ -95,7 +88,6 @@ class AclComponent extends Object {
 	function check($aro, $aco, $action = "*") {
 		return $this->_Instance->check($aro, $aco, $action);
 	}
-
 /**
  * Pass-thru function for ACL allow instance.
  *
@@ -108,7 +100,6 @@ class AclComponent extends Object {
 	function allow($aro, $aco, $action = "*") {
 		return $this->_Instance->allow($aro, $aco, $action);
 	}
-
 /**
  * Pass-thru function for ACL deny instance.
  *
@@ -121,7 +112,6 @@ class AclComponent extends Object {
 	function deny($aro, $aco, $action = "*") {
 		return $this->_Instance->deny($aro, $aco, $action);
 	}
-
 /**
  * Pass-thru function for ACL inherit instance.
  *
@@ -134,7 +124,6 @@ class AclComponent extends Object {
 	function inherit($aro, $aco, $action = "*") {
 		return $this->_Instance->inherit($aro, $aco, $action);
 	}
-
 /**
  * Pass-thru function for ACL grant instance.
  *
@@ -147,7 +136,6 @@ class AclComponent extends Object {
 	function grant($aro, $aco, $action = "*") {
 		return $this->_Instance->grant($aro, $aco, $action);
 	}
-
 /**
  * Pass-thru function for ACL grant instance.
  *
@@ -161,7 +149,6 @@ class AclComponent extends Object {
 		return $this->_Instance->revoke($aro, $aco, $action);
 	}
 }
-
 /**
  * Access Control List abstract class. Not to be instantiated.
  * Subclasses of this class are used by AclComponent to perform ACL checks in Cake.
@@ -171,7 +158,6 @@ class AclComponent extends Object {
  * @abstract
  */
 class AclBase extends Object {
-
 /**
  * This class should never be instantiated, just subclassed.
  *
@@ -182,7 +168,6 @@ class AclBase extends Object {
 			return NULL;
 		}
 	}
-
 /**
  * Empty method to be overridden in subclasses
  *
@@ -193,7 +178,6 @@ class AclBase extends Object {
  */
 	function check($aro, $aco, $action = "*") {
 	}
-
 /**
  * Empty method to be overridden in subclasses
  *
@@ -203,7 +187,6 @@ class AclBase extends Object {
 	function initialize(&$component) {
 	}
 }
-
 /**
  * In this file you can extend the AclBase.
  *
@@ -211,7 +194,6 @@ class AclBase extends Object {
  * @subpackage    cake.cake.libs.model
  */
 class DbAcl extends AclBase {
-
 /**
  * Constructor
  *
@@ -219,12 +201,11 @@ class DbAcl extends AclBase {
 	function __construct() {
 		parent::__construct();
 		if (!class_exists('AclNode')) {
-			require LIBS . 'model' . DS . 'db_acl.php';
+			uses('model' . DS . 'db_acl');
 		}
 		$this->Aro =& ClassRegistry::init(array('class' => 'Aro', 'alias' => 'Aro'));
 		$this->Aco =& ClassRegistry::init(array('class' => 'Aco', 'alias' => 'Aco'));
 	}
-
 /**
  * Enter description here...
  *
@@ -236,7 +217,6 @@ class DbAcl extends AclBase {
 		$component->Aro = $this->Aro;
 		$component->Aco = $this->Aco;
 	}
-
 /**
  * Checks if the given $aro has access to action $action in $aco
  *
@@ -326,7 +306,6 @@ class DbAcl extends AclBase {
 		}
 		return false;
 	}
-
 /**
  * Allow $aro to have access to action $actions in $aco
  *
@@ -378,7 +357,6 @@ class DbAcl extends AclBase {
 		}
 		return ($this->Aro->Permission->save($save) !== false);
 	}
-
 /**
  * Deny access for $aro to action $action in $aco
  *
@@ -391,7 +369,6 @@ class DbAcl extends AclBase {
 	function deny($aro, $aco, $action = "*") {
 		return $this->allow($aro, $aco, $action, -1);
 	}
-
 /**
  * Let access for $aro to action $action in $aco be inherited
  *
@@ -404,7 +381,6 @@ class DbAcl extends AclBase {
 	function inherit($aro, $aco, $action = "*") {
 		return $this->allow($aro, $aco, $action, 0);
 	}
-
 /**
  * Allow $aro to have access to action $actions in $aco
  *
@@ -418,7 +394,6 @@ class DbAcl extends AclBase {
 	function grant($aro, $aco, $action = "*") {
 		return $this->allow($aro, $aco, $action);
 	}
-
 /**
  * Deny access for $aro to action $action in $aco
  *
@@ -432,7 +407,6 @@ class DbAcl extends AclBase {
 	function revoke($aro, $aco, $action = "*") {
 		return $this->deny($aro, $aco, $action);
 	}
-
 /**
  * Get an array of access-control links between the given Aro and Aco
  *
@@ -459,7 +433,6 @@ class DbAcl extends AclBase {
 			)))
 		);
 	}
-
 /**
  * Get the keys used in an ACO
  *
@@ -478,7 +451,6 @@ class DbAcl extends AclBase {
 		return $newKeys;
 	}
 }
-
 /**
  * In this file you can extend the AclBase.
  *
@@ -486,7 +458,6 @@ class DbAcl extends AclBase {
  * @subpackage    cake.cake.libs.model.iniacl
  */
 class IniAcl extends AclBase {
-
 /**
  * Array with configuration, parsed from ini file
  *
@@ -494,14 +465,12 @@ class IniAcl extends AclBase {
  * @access public
  */
 	var $config = null;
-
 /**
  * The constructor must be overridden, as AclBase is abstract.
  *
  */
 	function __construct() {
 	}
-
 /**
  * Main ACL check function. Checks to see if the ARO (access request object) has access to the ACO (access control object).
  * Looks at the acl.ini.php file for permissions (see instructions in /config/acl.ini.php).
@@ -559,7 +528,6 @@ class IniAcl extends AclBase {
 		}
 		return false;
 	}
-
 /**
  * Parses an INI file and returns an array that reflects the INI file's section structure. Double-quote friendly.
  *
@@ -602,7 +570,6 @@ class IniAcl extends AclBase {
 
 		return $iniSetting;
 	}
-
 /**
  * Removes trailing spaces on all array elements (to prepare for searching)
  *

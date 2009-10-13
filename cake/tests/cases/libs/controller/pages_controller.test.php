@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * PagesControllerTest file
  *
@@ -30,8 +29,7 @@ if (!class_exists('AppController')) {
 } elseif (!defined('APP_CONTROLLER_EXISTS')) {
 	define('APP_CONTROLLER_EXISTS', true);
 }
-App::import('Controller', 'Pages');
-
+App::import('Core', array('Controller', 'PagesController'));
 /**
  * PagesControllerTest class
  *
@@ -39,17 +37,24 @@ App::import('Controller', 'Pages');
  * @subpackage    cake.tests.cases.libs.controller
  */
 class PagesControllerTest extends CakeTestCase {
-
 /**
- * endTest method
+ * setUp method
  *
  * @access public
  * @return void
  */
-	function endTest() {
-		App::build();
+	function setUp() {
+		$this->_viewPaths = Configure::read('viewPaths');
 	}
-
+/**
+ * tearDown method
+ *
+ * @access public
+ * @return void
+ */
+	function tearDown() {
+		Configure::write('viewPaths', $this->_viewPaths);
+	}
 /**
  * testDisplay method
  *
@@ -61,7 +66,7 @@ class PagesControllerTest extends CakeTestCase {
 			return;
 		}
 
-		App::build(array('views' => array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'views'. DS, TEST_CAKE_CORE_INCLUDE_PATH . 'libs' . DS . 'view' . DS)));
+		Configure::write('viewPaths', array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'views'. DS, TEST_CAKE_CORE_INCLUDE_PATH . 'libs' . DS . 'view' . DS));
 		$Pages =& new PagesController();
 
 		$Pages->viewPath = 'posts';

@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * HTTP Socket connection class.
  *
@@ -23,8 +22,7 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-App::import('Core', array('CakeSocket', 'Set', 'Router'));
-
+App::import('Core', array('Socket', 'Set', 'Router'));
 /**
  * Cake network socket connection class.
  *
@@ -34,7 +32,6 @@ App::import('Core', array('CakeSocket', 'Set', 'Router'));
  * @subpackage    cake.cake.libs
  */
 class HttpSocket extends CakeSocket {
-
 /**
  * Object description
  *
@@ -42,17 +39,14 @@ class HttpSocket extends CakeSocket {
  * @access public
  */
 	var $description = 'HTTP-based DataSource Interface';
-
 /**
- * When one activates the $quirksMode by setting it to true, all checks meant to
- * enforce RFC 2616 (HTTP/1.1 specs).
+ * When one activates the $quirksMode by setting it to true, all checks meant to enforce RFC 2616 (HTTP/1.1 specs)
  * will be disabled and additional measures to deal with non-standard responses will be enabled.
  *
  * @var boolean
  * @access public
  */
 	var $quirksMode = false;
-
 /**
  * The default values to use for a request
  *
@@ -86,7 +80,6 @@ class HttpSocket extends CakeSocket {
 		'raw' => null,
 		'cookies' => array()
 	);
-
 /**
 * The default structure for storing the response
 *
@@ -109,7 +102,6 @@ class HttpSocket extends CakeSocket {
 		'body' => '',
 		'cookies' => array()
 	);
-
 /**
  * Default configuration settings for the HttpSocket
  *
@@ -136,7 +128,6 @@ class HttpSocket extends CakeSocket {
 			'cookies' => array()
 		)
 	);
-
 /**
  * String that represents a line break.
  *
@@ -152,17 +143,16 @@ class HttpSocket extends CakeSocket {
  */
 	function __construct($config = array()) {
 		if (is_string($config)) {
-			$this->_configUri($config);
+			$this->configUri($config);
 		} elseif (is_array($config)) {
 			if (isset($config['request']['uri']) && is_string($config['request']['uri'])) {
-				$this->_configUri($config['request']['uri']);
+				$this->configUri($config['request']['uri']);
 				unset($config['request']['uri']);
 			}
 			$this->config = Set::merge($this->config, $config);
 		}
 		parent::__construct($this->config);
 	}
-
 /**
  * Issue the specified request.
  *
@@ -182,7 +172,7 @@ class HttpSocket extends CakeSocket {
 		if (!isset($request['uri'])) {
 			$request['uri'] = null;
 		}
-		$uri = $this->_parseUri($request['uri']);
+		$uri = $this->parseUri($request['uri']);
 
 		if (!isset($uri['host'])) {
 			$host = $this->config['host'];
@@ -193,10 +183,10 @@ class HttpSocket extends CakeSocket {
 		}
 
 		$request['uri'] = $this->url($request['uri']);
-		$request['uri'] = $this->_parseUri($request['uri'], true);
+		$request['uri'] = $this->parseUri($request['uri'], true);
 		$this->request = Set::merge($this->request, $this->config['request'], $request);
 
-		$this->_configUri($this->request['uri']);
+		$this->configUri($this->request['uri']);
 
 		if (isset($host)) {
 			$this->config['host'] = $host;
@@ -204,7 +194,7 @@ class HttpSocket extends CakeSocket {
 		$cookies = null;
 
 		if (is_array($this->request['header'])) {
-			$this->request['header'] = $this->_parseHeader($this->request['header']);
+			$this->request['header'] = $this->parseHeader($this->request['header']);
 			if (!empty($this->request['cookies'])) {
 				$cookies = $this->buildCookies($this->request['cookies']);
 			}
@@ -219,7 +209,7 @@ class HttpSocket extends CakeSocket {
 		}
 
 		if (is_array($this->request['body'])) {
-			$this->request['body'] = $this->_httpSerialize($this->request['body']);
+			$this->request['body'] = $this->httpSerialize($this->request['body']);
 		}
 
 		if (!empty($this->request['body']) && !isset($this->request['header']['Content-Type'])) {
@@ -234,10 +224,10 @@ class HttpSocket extends CakeSocket {
 		if (isset($this->request['header']['Connection'])) {
 			$connectionType = $this->request['header']['Connection'];
 		}
-		$this->request['header'] = $this->_buildHeader($this->request['header']) . $cookies;
+		$this->request['header'] = $this->buildHeader($this->request['header']).$cookies;
 
 		if (empty($this->request['line'])) {
-			$this->request['line'] = $this->_buildRequestLine($this->request);
+			$this->request['line'] = $this->buildRequestLine($this->request);
 		}
 
 		if ($this->quirksMode === false && $this->request['line'] === false) {
@@ -265,18 +255,17 @@ class HttpSocket extends CakeSocket {
 			$this->disconnect();
 		}
 
-		$this->response = $this->_parseResponse($response);
+		$this->response = $this->parseResponse($response);
 		if (!empty($this->response['cookies'])) {
 			$this->config['request']['cookies'] = array_merge($this->config['request']['cookies'], $this->response['cookies']);
 		}
 
 		return $this->response['body'];
 	}
-
 /**
  * Issues a GET request to the specified URI, query, and request.
  *
- * @param mixed $uri URI to request (see {@link _parseUri()})
+ * @param mixed $uri URI to request (see {@link parseUri()})
  * @param array $query Query to append to URI
  * @param array $request An indexed array with indexes such as 'method' or uri
  * @return mixed Result of request
@@ -284,13 +273,13 @@ class HttpSocket extends CakeSocket {
  */
 	function get($uri = null, $query = array(), $request = array()) {
 		if (!empty($query)) {
-			$uri =$this->_parseUri($uri);
+			$uri =$this->parseUri($uri);
 			if (isset($uri['query'])) {
 				$uri['query'] = array_merge($uri['query'], $query);
 			} else {
 				$uri['query'] = $query;
 			}
-			$uri = $this->_buildUri($uri);
+			$uri = $this->buildUri($uri);
 		}
 
 		$request = Set::merge(array('method' => 'GET', 'uri' => $uri), $request);
@@ -300,7 +289,7 @@ class HttpSocket extends CakeSocket {
 /**
  * Issues a POST request to the specified URI, query, and request.
  *
- * @param mixed $uri URI to request (see {@link _parseUri()})
+ * @param mixed $uri URI to request (see {@link parseUri()})
  * @param array $query Query to append to URI
  * @param array $request An indexed array with indexes such as 'method' or uri
  * @return mixed Result of request
@@ -310,11 +299,10 @@ class HttpSocket extends CakeSocket {
 		$request = Set::merge(array('method' => 'POST', 'uri' => $uri, 'body' => $data), $request);
 		return $this->request($request);
 	}
-
 /**
  * Issues a PUT request to the specified URI, query, and request.
  *
- * @param mixed $uri URI to request (see {@link _parseUri()})
+ * @param mixed $uri URI to request (see {@link parseUri()})
  * @param array $query Query to append to URI
  * @param array $request An indexed array with indexes such as 'method' or uri
  * @return mixed Result of request
@@ -324,11 +312,10 @@ class HttpSocket extends CakeSocket {
 		$request = Set::merge(array('method' => 'PUT', 'uri' => $uri, 'body' => $data), $request);
 		return $this->request($request);
 	}
-
 /**
  * Issues a DELETE request to the specified URI, query, and request.
  *
- * @param mixed $uri URI to request (see {@link _parseUri()})
+ * @param mixed $uri URI to request (see {@link parseUri()})
  * @param array $query Query to append to URI
  * @param array $request An indexed array with indexes such as 'method' or uri
  * @return mixed Result of request
@@ -338,7 +325,6 @@ class HttpSocket extends CakeSocket {
 		$request = Set::merge(array('method' => 'DELETE', 'uri' => $uri, 'body' => $data), $request);
 		return $this->request($request);
 	}
-
 /**
  * undocumented function
  *
@@ -363,18 +349,17 @@ class HttpSocket extends CakeSocket {
 		}
 
 		$base = array_merge($this->config['request']['uri'], array('scheme' => array('http', 'https'), 'port' => array(80, 443)));
-		$url = $this->_parseUri($url, $base);
+		$url = $this->parseUri($url, $base);
 
 		if (empty($url)) {
 			$url = $this->config['request']['uri'];
 		}
 
 		if (!empty($uriTemplate)) {
-			return $this->_buildUri($url, $uriTemplate);
+			return $this->buildUri($url, $uriTemplate);
 		}
-		return $this->_buildUri($url);
+		return $this->buildUri($url);
 	}
-
 /**
  * Parses the given message and breaks it down in parts.
  *
@@ -382,7 +367,7 @@ class HttpSocket extends CakeSocket {
  * @return array Parsed message (with indexed elements such as raw, status, header, body)
  * @access protected
  */
-	function _parseResponse($message) {
+	function parseResponse($message) {
 		if (is_array($message)) {
 			return $message;
 		} elseif (!is_string($message)) {
@@ -412,16 +397,16 @@ class HttpSocket extends CakeSocket {
 			$response['status']['reason-phrase'] = $match[3];
 		}
 
-		$response['header'] = $this->_parseHeader($response['raw']['header']);
+		$response['header'] = $this->parseHeader($response['raw']['header']);
 		$transferEncoding = null;
 		if (isset($response['header']['Transfer-Encoding'])) {
 			$transferEncoding = $response['header']['Transfer-Encoding'];
 		}
-		$decoded = $this->_decodeBody($response['raw']['body'], $transferEncoding);
+		$decoded = $this->decodeBody($response['raw']['body'], $transferEncoding);
 		$response['body'] = $decoded['body'];
 
 		if (!empty($decoded['header'])) {
-			$response['header'] = $this->_parseHeader($this->_buildHeader($response['header']).$this->_buildHeader($decoded['header']));
+			$response['header'] = $this->parseHeader($this->buildHeader($response['header']).$this->buildHeader($decoded['header']));
 		}
 
 		if (!empty($response['header'])) {
@@ -436,7 +421,6 @@ class HttpSocket extends CakeSocket {
 
 		return $response;
 	}
-
 /**
  * Generic function to decode a $body with a given $encoding. Returns either an array with the keys
  * 'body' and 'header' or false on failure.
@@ -446,7 +430,7 @@ class HttpSocket extends CakeSocket {
  * @return mixed Array or false
  * @access protected
  */
-	function _decodeBody($body, $encoding = 'chunked') {
+	function decodeBody($body, $encoding = 'chunked') {
 		if (!is_string($body)) {
 			return false;
 		}
@@ -457,13 +441,12 @@ class HttpSocket extends CakeSocket {
 
 		if (!is_callable(array(&$this, $decodeMethod))) {
 			if (!$this->quirksMode) {
-				trigger_error(sprintf(__('HttpSocket::_decodeBody - Unknown encoding: %s. Activate quirks mode to surpress error.', true), h($encoding)), E_USER_WARNING);
+				trigger_error(sprintf(__('HttpSocket::decodeBody - Unknown encoding: %s. Activate quirks mode to surpress error.', true), h($encoding)), E_USER_WARNING);
 			}
 			return array('body' => $body, 'header' => false);
 		}
 		return $this->{$decodeMethod}($body);
 	}
-
 /**
  * Decodes a chunked message $body and returns either an array with the keys 'body' and 'header' or false as
  * a result.
@@ -472,7 +455,7 @@ class HttpSocket extends CakeSocket {
  * @return mixed Array or false
  * @access protected
  */
-	function _decodeChunkedBody($body) {
+	function decodeChunkedBody($body) {
 		if (!is_string($body)) {
 			return false;
 		}
@@ -483,7 +466,7 @@ class HttpSocket extends CakeSocket {
 		while ($chunkLength !== 0) {
 			if (!preg_match("/^([0-9a-f]+) *(?:;(.+)=(.+))?\r\n/iU", $body, $match)) {
 				if (!$this->quirksMode) {
-					trigger_error(__('HttpSocket::_decodeChunkedBody - Could not parse malformed chunk. Activate quirks mode to do this.', true), E_USER_WARNING);
+					trigger_error(__('HttpSocket::decodeChunkedBody - Could not parse malformed chunk. Activate quirks mode to do this.', true), E_USER_WARNING);
 					return false;
 				}
 				break;
@@ -522,27 +505,26 @@ class HttpSocket extends CakeSocket {
 
 		$entityHeader = false;
 		if (!empty($body)) {
-			$entityHeader = $this->_parseHeader($body);
+			$entityHeader = $this->parseHeader($body);
 		}
 		return array('body' => $decodedBody, 'header' => $entityHeader);
 	}
-
 /**
  * Parses and sets the specified URI into current request configuration.
  *
- * @param mixed $uri URI (see {@link _parseUri()})
+ * @param mixed $uri URI (see {@link parseUri()})
  * @return array Current configuration settings
  * @access protected
  */
-	function _configUri($uri = null) {
+	function configUri($uri = null) {
 		if (empty($uri)) {
 			return false;
 		}
 
 		if (is_array($uri)) {
-			$uri = $this->_parseUri($uri);
+			$uri = $this->parseUri($uri);
 		} else {
-			$uri = $this->_parseUri($uri, true);
+			$uri = $this->parseUri($uri, true);
 		}
 
 		if (!isset($uri['host'])) {
@@ -559,7 +541,6 @@ class HttpSocket extends CakeSocket {
 		$this->config = Set::merge($this->config, array_intersect_key($this->config['request']['uri'], $this->config));
 		return $this->config;
 	}
-
 /**
  * Takes a $uri array and turns it into a fully qualified URL string
  *
@@ -568,18 +549,18 @@ class HttpSocket extends CakeSocket {
  * @return string A fully qualified URL formated according to $uriTemplate
  * @access protected
  */
-	function _buildUri($uri = array(), $uriTemplate = '%scheme://%user:%pass@%host:%port/%path?%query#%fragment') {
+	function buildUri($uri = array(), $uriTemplate = '%scheme://%user:%pass@%host:%port/%path?%query#%fragment') {
 		if (is_string($uri)) {
 			$uri = array('host' => $uri);
 		}
-		$uri = $this->_parseUri($uri, true);
+		$uri = $this->parseUri($uri, true);
 
 		if (!is_array($uri) || empty($uri)) {
 			return false;
 		}
 
 		$uri['path'] = preg_replace('/^\//', null, $uri['path']);
-		$uri['query'] = $this->_httpSerialize($uri['query']);
+		$uri['query'] = $this->httpSerialize($uri['query']);
 		$stripIfEmpty = array(
 			'query' => '?%query',
 			'fragment' => '#%fragment',
@@ -606,7 +587,6 @@ class HttpSocket extends CakeSocket {
 		}
 		return $uriTemplate;
 	}
-
 /**
  * Parses the given URI and breaks it down into pieces as an indexed array with elements
  * such as 'scheme', 'port', 'query'.
@@ -616,7 +596,7 @@ class HttpSocket extends CakeSocket {
  * @return array Parsed URI
  * @access protected
  */
-	function _parseUri($uri = null, $base = array()) {
+	function parseUri($uri = null, $base = array()) {
 		$uriBase = array(
 			'scheme' => array('http', 'https'),
 			'host' => null,
@@ -658,7 +638,7 @@ class HttpSocket extends CakeSocket {
 		}
 
 		if (array_key_exists('query', $uri)) {
-			$uri['query'] = $this->_parseQuery($uri['query']);
+			$uri['query'] = $this->parseQuery($uri['query']);
 		}
 
 		if (!array_intersect_key($uriBase, $uri)) {
@@ -666,7 +646,6 @@ class HttpSocket extends CakeSocket {
 		}
 		return $uri;
 	}
-
 /**
  * This function can be thought of as a reverse to PHP5's http_build_query(). It takes a given query string and turns it into an array and
  * supports nesting by using the php bracket syntax. So this menas you can parse queries like:
@@ -675,13 +654,13 @@ class HttpSocket extends CakeSocket {
  * - ?key[]=value1&key[]=value2
  *
  * A leading '?' mark in $query is optional and does not effect the outcome of this function. For the complete capabilities of this implementation
- * take a look at HttpSocketTest::testparseQuery()
+ * take a look at HttpSocketTest::testParseQuery()
  *
  * @param mixed $query A query string to parse into an array or an array to return directly "as is"
  * @return array The $query parsed into a possibly multi-level array. If an empty $query is given, an empty array is returned.
  * @access protected
  */
-	function _parseQuery($query) {
+	function parseQuery($query) {
 		if (is_array($query)) {
 			return $query;
 		}
@@ -730,7 +709,6 @@ class HttpSocket extends CakeSocket {
 		}
 		return $parsedQuery;
 	}
-
 /**
  * Builds a request line according to HTTP/1.1 specs. Activate quirks mode to work outside specs.
  *
@@ -739,13 +717,13 @@ class HttpSocket extends CakeSocket {
  * @return string Request line
  * @access protected
  */
-	function _buildRequestLine($request = array(), $versionToken = 'HTTP/1.1') {
+	function buildRequestLine($request = array(), $versionToken = 'HTTP/1.1') {
 		$asteriskMethods = array('OPTIONS');
 
 		if (is_string($request)) {
 			$isValid = preg_match("/(.+) (.+) (.+)\r\n/U", $request, $match);
 			if (!$this->quirksMode && (!$isValid || ($match[2] == '*' && !in_array($match[3], $asteriskMethods)))) {
-				trigger_error(__('HttpSocket::_buildRequestLine - Passed an invalid request line string. Activate quirks mode to do this.', true), E_USER_WARNING);
+				trigger_error(__('HttpSocket::buildRequestLine - Passed an invalid request line string. Activate quirks mode to do this.', true), E_USER_WARNING);
 				return false;
 			}
 			return $request;
@@ -755,17 +733,16 @@ class HttpSocket extends CakeSocket {
 			return false;
 		}
 
-		$request['uri']	= $this->_parseUri($request['uri']);
+		$request['uri']	= $this->parseUri($request['uri']);
 		$request = array_merge(array('method' => 'GET'), $request);
-		$request['uri'] = $this->_buildUri($request['uri'], '/%path?%query');
+		$request['uri'] = $this->buildUri($request['uri'], '/%path?%query');
 
 		if (!$this->quirksMode && $request['uri'] === '*' && !in_array($request['method'], $asteriskMethods)) {
-			trigger_error(sprintf(__('HttpSocket::_buildRequestLine - The "*" asterisk character is only allowed for the following methods: %s. Activate quirks mode to work outside of HTTP/1.1 specs.', true), join(',', $asteriskMethods)), E_USER_WARNING);
+			trigger_error(sprintf(__('HttpSocket::buildRequestLine - The "*" asterisk character is only allowed for the following methods: %s. Activate quirks mode to work outside of HTTP/1.1 specs.', true), join(',', $asteriskMethods)), E_USER_WARNING);
 			return false;
 		}
 		return $request['method'].' '.$request['uri'].' '.$versionToken.$this->lineBreak;
 	}
-
 /**
  * Serializes an array for transport.
  *
@@ -773,7 +750,7 @@ class HttpSocket extends CakeSocket {
  * @return string Serialized variable
  * @access protected
  */
-	function _httpSerialize($data = array()) {
+	function httpSerialize($data = array()) {
 		if (is_string($data)) {
 			return $data;
 		}
@@ -782,7 +759,6 @@ class HttpSocket extends CakeSocket {
 		}
 		return substr(Router::queryString($data), 1);
 	}
-
 /**
  * Builds the header.
  *
@@ -790,7 +766,7 @@ class HttpSocket extends CakeSocket {
  * @return string Header built from array
  * @access protected
  */
-	function _buildHeader($header, $mode = 'standard') {
+	function buildHeader($header, $mode = 'standard') {
 		if (is_string($header)) {
 			return $header;
 		} elseif (!is_array($header)) {
@@ -804,7 +780,7 @@ class HttpSocket extends CakeSocket {
 			}
 			foreach ((array)$contents as $content) {
 				$contents = preg_replace("/\r\n(?![\t ])/", "\r\n ", $content);
-				$field = $this->_escapeToken($field);
+				$field = $this->escapeToken($field);
 
 				$returnHeader .= $field.': '.$contents.$this->lineBreak;
 			}
@@ -819,7 +795,7 @@ class HttpSocket extends CakeSocket {
  * @return array Parsed header
  * @access protected
  */
-	function _parseHeader($header) {
+	function parseHeader($header) {
 		if (is_array($header)) {
 			foreach ($header as $field => $value) {
 				unset($header[$field]);
@@ -845,7 +821,7 @@ class HttpSocket extends CakeSocket {
 			$value = trim($value);
 			$value = preg_replace("/[\t ]\r\n/", "\r\n", $value);
 
-			$field = $this->_unescapeToken($field);
+			$field = $this->unescapeToken($field);
 
 			$field = strtolower($field);
 			preg_match_all('/(?:^|(?<=-))[a-z]/U', $field, $offsets, PREG_OFFSET_CAPTURE);
@@ -861,7 +837,6 @@ class HttpSocket extends CakeSocket {
 		}
 		return $header;
 	}
-
 /**
  * undocumented function
  *
@@ -903,7 +878,6 @@ class HttpSocket extends CakeSocket {
 		}
 		return $cookies;
 	}
-
 /**
  * undocumented function
  *
@@ -915,12 +889,29 @@ class HttpSocket extends CakeSocket {
 	function buildCookies($cookies) {
 		$header = array();
 		foreach ($cookies as $name => $cookie) {
-			$header[] = $name.'='.$this->_escapeToken($cookie['value'], array(';'));
+			$header[] = $name.'='.$this->escapeToken($cookie['value'], array(';'));
 		}
-		$header = $this->_buildHeader(array('Cookie' => $header), 'pragmatic');
+		$header = $this->buildHeader(array('Cookie' => $header), 'pragmatic');
 		return $header;
 	}
+/**
+ * undocumented function
+ *
+ * @return void
+ * @access public
+ */
+	function saveCookies() {
 
+	}
+/**
+ * undocumented function
+ *
+ * @return void
+ * @access public
+ */
+	function loadCookies() {
+
+	}
 /**
  * Unescapes a given $token according to RFC 2616 (HTTP 1.1 specs)
  *
@@ -929,12 +920,11 @@ class HttpSocket extends CakeSocket {
  * @access protected
  * @todo Test $chars parameter
  */
-	function _unescapeToken($token, $chars = null) {
-		$regex = '/"(['.join('', $this->_tokenEscapeChars(true, $chars)).'])"/';
+	function unescapeToken($token, $chars = null) {
+		$regex = '/"(['.join('', $this->__tokenEscapeChars(true, $chars)).'])"/';
 		$token = preg_replace($regex, '\\1', $token);
 		return $token;
 	}
-
 /**
  * Escapes a given $token according to RFC 2616 (HTTP 1.1 specs)
  *
@@ -943,21 +933,20 @@ class HttpSocket extends CakeSocket {
  * @access protected
  * @todo Test $chars parameter
  */
-	function _escapeToken($token, $chars = null) {
-		$regex = '/(['.join('', $this->_tokenEscapeChars(true, $chars)).'])/';
+	function escapeToken($token, $chars = null) {
+		$regex = '/(['.join('', $this->__tokenEscapeChars(true, $chars)).'])/';
 		$token = preg_replace($regex, '"\\1"', $token);
 		return $token;
 	}
-
 /**
  * Gets escape chars according to RFC 2616 (HTTP 1.1 specs).
  *
  * @param boolean $hex true to get them as HEX values, false otherwise
  * @return array Escape chars
- * @access protected
+ * @access private
  * @todo Test $chars parameter
  */
-	function _tokenEscapeChars($hex = true, $chars = null) {
+	function __tokenEscapeChars($hex = true, $chars = null) {
 		if (!empty($chars)) {
 			$escape = $chars;
 		} else {
@@ -977,7 +966,6 @@ class HttpSocket extends CakeSocket {
 		}
 		return $escape;
 	}
-
 /**
  * Resets the state of this HttpSocket instance to it's initial state (before Object::__construct got executed) or does
  * the same thing partially for the request and the response property only.

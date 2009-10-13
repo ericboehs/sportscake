@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Datasource connection manager
  *
@@ -37,7 +36,6 @@ config('database');
  * @subpackage    cake.cake.libs.model
  */
 class ConnectionManager extends Object {
-
 /**
  * Holds a loaded instance of the Connections object
  *
@@ -45,7 +43,6 @@ class ConnectionManager extends Object {
  * @access public
  */
 	var $config = null;
-
 /**
  * Holds instances DataSource objects
  *
@@ -53,7 +50,6 @@ class ConnectionManager extends Object {
  * @access protected
  */
 	var $_dataSources = array();
-
 /**
  * Contains a list of all file and class names used in Connection settings
  *
@@ -61,7 +57,6 @@ class ConnectionManager extends Object {
  * @access protected
  */
 	var $_connectionsEnum = array();
-
 /**
  * Constructor.
  *
@@ -71,7 +66,6 @@ class ConnectionManager extends Object {
 			$this->config =& new DATABASE_CONFIG();
 		}
 	}
-
 /**
  * Gets a reference to the ConnectionManger object instance
  *
@@ -88,7 +82,6 @@ class ConnectionManager extends Object {
 
 		return $instance[0];
 	}
-
 /**
  * Gets a reference to a DataSource object
  *
@@ -120,7 +113,6 @@ class ConnectionManager extends Object {
 		$return =& $_this->_dataSources[$name];
 		return $return;
 	}
-
 /**
  * Gets the list of available DataSource connections
  *
@@ -132,7 +124,6 @@ class ConnectionManager extends Object {
 		$_this =& ConnectionManager::getInstance();
 		return array_keys($_this->_dataSources);
 	}
-
 /**
  * Gets a DataSource name from an object reference
  *
@@ -151,7 +142,6 @@ class ConnectionManager extends Object {
 		}
 		return null;
 	}
-
 /**
  * Loads the DataSource class for the given connection name
  *
@@ -190,7 +180,6 @@ class ConnectionManager extends Object {
 			return null;
 		}
 	}
-
 /**
  * Gets a list of class and file names associated with the user-defined DataSource connections
  *
@@ -216,7 +205,6 @@ class ConnectionManager extends Object {
 			$_this->cakeError('missingConnection', array(array('className' => 'ConnectionManager')));
 		}
 	}
-
 /**
  * Dynamically creates a DataSource object at runtime, with the given name and settings
  *
@@ -239,7 +227,6 @@ class ConnectionManager extends Object {
 		$return =& $_this->getDataSource($name);
 		return $return;
 	}
-
 /**
  * Returns the file, class name, and parent for the given driver.
  *
@@ -262,7 +249,6 @@ class ConnectionManager extends Object {
 		}
 		return array('filename'  => $filename, 'classname' => $classname, 'parent' => $parent);
 	}
-
 /**
  * Destructor.
  *

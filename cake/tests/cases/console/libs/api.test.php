@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * ApiShellTest file
  *
@@ -23,7 +22,7 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-App::import('Shell', 'Shell', false);
+App::import('Core', 'Shell');
 
 if (!defined('DISABLE_AUTO_DISPATCH')) {
 	define('DISABLE_AUTO_DISPATCH', true);
@@ -56,7 +55,6 @@ Mock::generatePartial(
  * @subpackage    cake.tests.cases.console.libs.tasks
  */
 class ApiShellTest extends CakeTestCase {
-
 /**
  * setUp method
  *
@@ -68,7 +66,6 @@ class ApiShellTest extends CakeTestCase {
 		$this->Shell =& new MockApiShell($this->Dispatcher);
 		$this->Shell->Dispatch =& $this->Dispatcher;
 	}
-
 /**
  * tearDown method
  *
@@ -78,7 +75,6 @@ class ApiShellTest extends CakeTestCase {
 	function endTest() {
 		ClassRegistry::flush();
 	}
-
 /**
  * Test that method names are detected properly including those with no arguments.
  *

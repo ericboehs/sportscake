@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Short description for file.
  *
@@ -25,12 +24,10 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * Load Security class
  */
 App::import('Core', 'Security');
-
 /**
  * Cookie Component.
  *
@@ -41,7 +38,6 @@ App::import('Core', 'Security');
  *
  */
 class CookieComponent extends Object {
-
 /**
  * The name of the cookie.
  *
@@ -52,7 +48,6 @@ class CookieComponent extends Object {
  * @access public
  */
 	var $name = 'CakeCookie';
-
 /**
  * The time a cookie will remain valid.
  *
@@ -65,7 +60,6 @@ class CookieComponent extends Object {
  * @access public
  */
 	var $time = null;
-
 /**
  * Cookie path.
  *
@@ -81,7 +75,6 @@ class CookieComponent extends Object {
  * @access public
  */
 	var $path = '/';
-
 /**
  * Domain path.
  *
@@ -97,7 +90,6 @@ class CookieComponent extends Object {
  * @access public
  */
 	var $domain = '';
-
 /**
  * Secure HTTPS only cookie.
  *
@@ -111,7 +103,6 @@ class CookieComponent extends Object {
  * @access public
  */
 	var $secure = false;
-
 /**
  * Encryption key.
  *
@@ -122,7 +113,6 @@ class CookieComponent extends Object {
  * @access protected
  */
 	var $key = null;
-
 /**
  * Values stored in the cookie.
  *
@@ -133,7 +123,6 @@ class CookieComponent extends Object {
  * @access private
  */
 	var $__values = array();
-
 /**
  * Type of encryption to use.
  *
@@ -145,7 +134,6 @@ class CookieComponent extends Object {
  * @todo add additional encryption methods
  */
 	var $__type = 'cipher';
-
 /**
  * Used to reset cookie time if $expire is passed to CookieComponent::write()
  *
@@ -153,7 +141,6 @@ class CookieComponent extends Object {
  * @access private
  */
 	var $__reset = null;
-
 /**
  * Expire time of the cookie
  *
@@ -163,7 +150,6 @@ class CookieComponent extends Object {
  * @access private
  */
 	var $__expires = 0;
-
 /**
  * Main execution method.
  *
@@ -174,7 +160,6 @@ class CookieComponent extends Object {
 		$this->key = Configure::read('Security.salt');
 		$this->_set($settings);
 	}
-
 /**
  * Start CookieComponent for use in the controller
  *
@@ -187,7 +172,6 @@ class CookieComponent extends Object {
 			$this->__values = $this->__decrypt($_COOKIE[$this->name]);
 		}
 	}
-
 /**
  * Write a value to the $_COOKIE[$key];
  *
@@ -239,7 +223,6 @@ class CookieComponent extends Object {
 		}
 		$this->__encrypted = true;
 	}
-
 /**
  * Read the value of the $_COOKIE[$key];
  *
@@ -275,7 +258,6 @@ class CookieComponent extends Object {
 			return null;
 		}
 	}
-
 /**
  * Delete a cookie value
  *
@@ -311,7 +293,6 @@ class CookieComponent extends Object {
 			}
 		}
 	}
-
 /**
  * Destroy current cookie
  *
@@ -337,7 +318,6 @@ class CookieComponent extends Object {
 			$this->__delete("[$name]");
 		}
 	}
-
 /**
  * Will allow overriding default encryption method.
  *
@@ -348,7 +328,6 @@ class CookieComponent extends Object {
 	function type($type = 'cipher') {
 		$this->__type = 'cipher';
 	}
-
 /**
  * Set the expire time for a session variable.
  *
@@ -374,7 +353,6 @@ class CookieComponent extends Object {
 		}
 		return $this->__expires = strtotime($expires, $now);
 	}
-
 /**
  * Set cookie
  *
@@ -390,7 +368,6 @@ class CookieComponent extends Object {
 			$this->__reset = null;
 		}
 	}
-
 /**
  * Sets a cookie expire time to remove cookie value
  *
@@ -400,7 +377,6 @@ class CookieComponent extends Object {
 	function __delete($name) {
 		setcookie($this->name . $name, '', time() - 42000, $this->path, $this->domain, $this->secure);
 	}
-
 /**
  * Encrypts $value using var $type method in Security class
  *
@@ -419,7 +395,6 @@ class CookieComponent extends Object {
 		}
 		return($value);
 	}
-
 /**
  * Decrypts $value using var $type method in Security class
  *
@@ -474,7 +449,6 @@ class CookieComponent extends Object {
 		}
 		return $name;
 	}
-
 /**
  * Implode method to keep keys are multidimensional arrays
  *
@@ -489,7 +463,6 @@ class CookieComponent extends Object {
 		}
 		return substr($string, 1);
 	}
-
 /**
  * Explode method to return array from string set in CookieComponent::__implode()
  *

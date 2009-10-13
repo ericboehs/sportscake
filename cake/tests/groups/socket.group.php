@@ -1,8 +1,7 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
- * Short description for file.
+ * SocketGroupTest file
  *
  * Long description for file
  *
@@ -17,7 +16,7 @@
  * @filesource
  * @copyright     Copyright 2005-2007, Cake Software Foundation, Inc.
  * @link          https://trac.cakephp.org/wiki/Developement/TestSuite CakePHP(tm) Tests
- * @package       cake.tests
+ * @package       cake
  * @subpackage    cake.tests.groups
  * @since         CakePHP(tm) v 1.2.0.4206
  * @version       $Revision$
@@ -25,31 +24,22 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
-
-/** Socket and HttpSocket tests
- *
- * This test group will run socket class tests (socket, http_socket).
- *
- * @package       cake.tests
- * @subpackage    cake.tests.groups
- */
-
 /**
  * SocketGroupTest class
+ *
+ * This test group will run socket class tests (socket, http_socket).
  *
  * @package       cake
  * @subpackage    cake.tests.groups
  */
 class SocketGroupTest extends GroupTest {
-
 /**
  * label property
  *
  * @var string 'Socket and HttpSocket tests'
  * @access public
  */
-	var $label = 'CakeSocket and HttpSocket tests';
-
+	var $label = 'Socket and HttpSocket';
 /**
  * SocketGroupTest method
  *
@@ -57,7 +47,7 @@ class SocketGroupTest extends GroupTest {
  * @return void
  */
 	function SocketGroupTest() {
-		TestManager::addTestFile($this, CORE_TEST_CASES . DS . 'libs' . DS . 'cake_socket');
+		TestManager::addTestFile($this, CORE_TEST_CASES . DS . 'libs' . DS . 'socket');
 		TestManager::addTestFile($this, CORE_TEST_CASES . DS . 'libs' . DS . 'http_socket');
 	}
 }

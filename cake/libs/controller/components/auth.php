@@ -37,7 +37,6 @@ App::import(array('Router', 'Security'));
  * @subpackage    cake.cake.libs.controller.components
  */
 class AuthComponent extends Object {
-
 /**
  * Maintains current user login state.
  *
@@ -45,7 +44,6 @@ class AuthComponent extends Object {
  * @access private
  */
 	var $_loggedIn = false;
-
 /**
  * Other components utilized by AuthComponent
  *
@@ -53,7 +51,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $components = array('Session', 'RequestHandler');
-
 /**
  * A reference to the object used for authentication
  *
@@ -61,7 +58,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $authenticate = null;
-
 /**
  * The name of the component to use for Authorization or set this to
  * 'controller' will validate against Controller::isAuthorized()
@@ -74,7 +70,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $authorize = false;
-
 /**
  * The name of an optional view element to render when an Ajax request is made
  * with an invalid or expired session
@@ -83,7 +78,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $ajaxLogin = null;
-
 /**
  * The name of the model that represents users which will be authenticated.  Defaults to 'User'.
  *
@@ -91,7 +85,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $userModel = 'User';
-
 /**
  * Additional query conditions to use when looking up and authenticating users,
  * i.e. array('User.is_active' => 1).
@@ -100,7 +93,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $userScope = array();
-
 /**
  * Allows you to specify non-default login name and password fields used in
  * $userModel, i.e. array('username' => 'login_name', 'password' => 'passwd').
@@ -109,7 +101,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $fields = array('username' => 'username', 'password' => 'password');
-
 /**
  * The session key name where the record of the current user is stored.  If
  * unspecified, it will be "Auth.{$userModel name}".
@@ -118,7 +109,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $sessionKey = null;
-
 /**
  * If using action-based access control, this defines how the paths to action
  * ACO nodes is computed.  If, for example, all controller nodes are nested
@@ -129,7 +119,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $actionPath = null;
-
 /**
  * A URL (defined as a string or array) to the controller action that handles
  * logins.
@@ -138,7 +127,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $loginAction = null;
-
 /**
  * Normally, if a user is redirected to the $loginAction page, the location they
  * were redirected from will be stored in the session so that they can be
@@ -149,7 +137,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $loginRedirect = null;
-
 /**
  * The the default action to redirect to after the user is logged out.  While AuthComponent does
  * not handle post-logout redirection, a redirect URL will be returned from AuthComponent::logout().
@@ -161,7 +148,6 @@ class AuthComponent extends Object {
  * @see AuthComponent::logout()
  */
 	var $logoutRedirect = null;
-
 /**
  * The name of model or model object, or any other object has an isAuthorized method.
  *
@@ -169,7 +155,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $object = null;
-
 /**
  * Error to display when user login fails.  For security purposes, only one error is used for all
  * login failures, so as not to expose information on why the login failed.
@@ -178,7 +163,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $loginError = null;
-
 /**
  * Error to display when user attempts to access an object or action to which they do not have
  * acccess.
@@ -187,7 +171,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $authError = null;
-
 /**
  * Determines whether AuthComponent will automatically redirect and exit if login is successful.
  *
@@ -195,7 +178,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $autoRedirect = true;
-
 /**
  * Controller actions for which user validation is not required.
  *
@@ -204,7 +186,6 @@ class AuthComponent extends Object {
  * @see AuthComponent::allow()
  */
 	var $allowedActions = array();
-
 /**
  * Maps actions to CRUD operations.  Used for controller-based validation ($validate = 'controller').
  *
@@ -219,7 +200,6 @@ class AuthComponent extends Object {
 		'view'		=> 'read',
 		'remove'	=> 'delete'
 	);
-
 /**
  * Form data from Controller::$data
  *
@@ -227,7 +207,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $data = array();
-
 /**
  * Parameter data from Controller::$params
  *
@@ -235,7 +214,6 @@ class AuthComponent extends Object {
  * @access public
  */
 	var $params = array();
-
 /**
  * Method list for bound controller
  *
@@ -243,7 +221,6 @@ class AuthComponent extends Object {
  * @access protected
  */
 	var $_methods = array();
-
 /**
  * Initializes AuthComponent for use in the controller
  *
@@ -276,7 +253,6 @@ class AuthComponent extends Object {
 			Debugger::checkSessionKey();
 		}
 	}
-
 /**
  * Main execution method.  Handles redirecting of invalid users, and processing
  * of login form data.
@@ -431,7 +407,6 @@ class AuthComponent extends Object {
 		$controller->redirect($controller->referer(), null, true);
 		return false;
 	}
-
 /**
  * Attempts to introspect the correct values for object properties including
  * $userModel and $sessionKey.
@@ -462,7 +437,6 @@ class AuthComponent extends Object {
 		}
 		return true;
 	}
-
 /**
  * Determines whether the given user is authorized to perform an action.  The type of
  * authorization used is based on the value of AuthComponent::$authorize or the
@@ -555,7 +529,6 @@ class AuthComponent extends Object {
 		}
 		return $valid;
 	}
-
 /**
  * Get authorization type
  *
@@ -577,7 +550,6 @@ class AuthComponent extends Object {
 		}
 		return compact('type', 'object');
 	}
-
 /**
  * Takes a list of actions in the current controller for which authentication is not required, or
  * no parameters to allow all actions.
@@ -599,7 +571,6 @@ class AuthComponent extends Object {
 			$this->allowedActions = array_merge($this->allowedActions, $args);
 		}
 	}
-
 /**
  * Removes items from the list of allowed actions.
  *
@@ -620,7 +591,6 @@ class AuthComponent extends Object {
 		}
 		$this->allowedActions = array_values($this->allowedActions);
 	}
-
 /**
  * Maps action names to CRUD operations. Used for controller-based authentication.
  *
@@ -640,7 +610,6 @@ class AuthComponent extends Object {
 			}
 		}
 	}
-
 /**
  * Manually log-in a user with the given parameter data.  The $data provided can be any data
  * structure used to identify a user in AuthComponent::identify().  If $data is empty or not
@@ -667,7 +636,6 @@ class AuthComponent extends Object {
 		}
 		return $this->_loggedIn;
 	}
-
 /**
  * Logs a user out, and returns the login action to redirect to.
  *
@@ -683,7 +651,6 @@ class AuthComponent extends Object {
 		$this->_loggedIn = false;
 		return Router::normalize($this->logoutRedirect);
 	}
-
 /**
  * Get the current user from the session.
  *
@@ -707,7 +674,6 @@ class AuthComponent extends Object {
 			return null;
 		}
 	}
-
 /**
  * If no parameter is passed, gets the authentication redirect URL.
  *
@@ -731,7 +697,6 @@ class AuthComponent extends Object {
 		}
 		return Router::normalize($redir);
 	}
-
 /**
  * Validates a user against an abstract object.
  *
@@ -754,7 +719,6 @@ class AuthComponent extends Object {
 		}
 		return $this->Acl->check($user, $object, $action);
 	}
-
 /**
  * Returns the path to the ACO node bound to a controller/action.
  *
@@ -771,7 +735,6 @@ class AuthComponent extends Object {
 			$this->actionPath . $action
 		);
 	}
-
 /**
  * Returns a reference to the model object specified, and attempts
  * to load it if it is not found.
@@ -799,7 +762,6 @@ class AuthComponent extends Object {
 
 		return $model;
 	}
-
 /**
  * Identifies a user based on specific criteria.
  *
@@ -875,7 +837,6 @@ class AuthComponent extends Object {
 		}
 		return null;
 	}
-
 /**
  * Hash any passwords found in $data using $userModel and $fields['password']
  *
@@ -895,7 +856,6 @@ class AuthComponent extends Object {
 		}
 		return $data;
 	}
-
 /**
  * Hash a password with the application's salt value (as defined with Configure::write('Security.salt');
  *
@@ -906,7 +866,6 @@ class AuthComponent extends Object {
 	function password($password) {
 		return Security::hash($password, null, true);
 	}
-
 /**
  * Component shutdown.  If user is logged in, wipe out redirect.
  *

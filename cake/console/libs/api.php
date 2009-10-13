@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * API shell to get CakePHP core method signatures.
  *
@@ -33,7 +32,6 @@
  * @subpackage    cake.cake.console.libs
  */
 class ApiShell extends Shell {
-
 /**
  * Map between short name for paths and real paths.
  *
@@ -41,13 +39,12 @@ class ApiShell extends Shell {
  * @access public
  */
 	var $paths = array();
-
 /**
  * Override intialize of the Shell
  *
  * @access public
  */
-	function initialize() {
+	function initialize () {
 		$this->paths = array_merge($this->paths, array(
 			'behavior' => LIBS . 'model' . DS . 'behaviors' . DS,
 			'cache' => LIBS . 'cache' . DS,
@@ -59,7 +56,6 @@ class ApiShell extends Shell {
 			'core' => LIBS
 		));
 	}
-
 /**
  * Override main() to handle action
  *
@@ -86,7 +82,7 @@ class ApiShell extends Shell {
 			$class = Inflector::camelize($file);
 		}
 
-		$objects = App::objects('class', $path);
+		$objects = Configure::listObjects('class', $path);
 		if (in_array($class, $objects)) {
 			if (in_array($type, array('behavior', 'component', 'helper')) && $type !== $file) {
 				if (!preg_match('/' . Inflector::camelize($type) . '$/', $class)) {
@@ -121,7 +117,7 @@ class ApiShell extends Shell {
 				$this->out($list);
 
 				$methods = array_keys($parsed);
-				while ($number = $this->in(__('Select a number to see the more information about a specific method. q to quit. l to list.', true), null, 'q')) {
+				while ($number = strtolower($this->in(__('Select a number to see the more information about a specific method. q to quit. l to list.', true), null, 'q'))) {
 					if ($number === 'q') {
 						$this->out(__('Done', true));
 						$this->_stop();

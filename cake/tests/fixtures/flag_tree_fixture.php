@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Tree behavior class test fixture.
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
-
 /**
  * Flag Tree Test Fixture
  *
@@ -35,7 +33,6 @@
  * @subpackage    cake.tests.fixtures
  */
 class FlagTreeFixture extends CakeTestFixture {
-
 /**
  * name property
  *
@@ -43,7 +40,6 @@ class FlagTreeFixture extends CakeTestFixture {
  * @access public
  */
 	var $name = 'FlagTree';
-
 /**
  * fields property
  *

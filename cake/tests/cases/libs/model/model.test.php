@@ -1,8 +1,7 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
- * ModelTest file
+ * BaseModelTest file
  *
  * Long description for file
  *
@@ -29,15 +28,13 @@ App::import('Core', array('AppModel', 'Model'));
 require_once dirname(__FILE__) . DS . 'models.php';
 
 SimpleTest::ignore('BaseModelTest');
-
 /**
- * ModelBaseTest
+ * BaseModelTest
  *
  * @package       cake
  * @subpackage    cake.tests.cases.libs.model
  */
 class BaseModelTest extends CakeTestCase {
-
 /**
  * autoFixtures property
  *
@@ -45,7 +42,6 @@ class BaseModelTest extends CakeTestCase {
  * @access public
  */
 	var $autoFixtures = false;
-
 /**
  * fixtures property
  *
@@ -73,9 +69,8 @@ class BaseModelTest extends CakeTestCase {
 		'core.counter_cache_user_nonstandard_primary_key',
 		'core.counter_cache_post_nonstandard_primary_key', 'core.uuidportfolio',
 		'core.uuiditems_uuidportfolio', 'core.uuiditems_uuidportfolio_numericid', 'core.fruit',
-		'core.fruits_uuid_tag', 'core.uuid_tag'
+		'core.fruits_uuid_tag', 'core.uuid_tag', 'core.product_update_all', 'core.group_update_all'
 	);
-
 /**
  * start method
  *
@@ -87,7 +82,6 @@ class BaseModelTest extends CakeTestCase {
 		$this->debug = Configure::read('debug');
 		Configure::write('debug', 2);
 	}
-
 /**
  * end method
  *
@@ -98,7 +92,6 @@ class BaseModelTest extends CakeTestCase {
 		parent::end();
 		Configure::write('debug', $this->debug);
 	}
-
 /**
  * endTest method
  *

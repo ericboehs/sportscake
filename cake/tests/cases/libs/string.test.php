@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * StringTest file
  *
@@ -8,21 +7,24 @@
  *
  * PHP versions 4 and 5
  *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2009, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) Tests <https://trac.cakephp.org/wiki/Developement/TestSuite>
+ * Copyright 2005-2008, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
  *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
+ *  Licensed under The Open Group Test Suite License
+ *  Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2009, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org
+ * @filesource
+ * @copyright     Copyright 2005-2008, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
+ * @link          https://trac.cakephp.org/wiki/Developement/TestSuite CakePHP(tm) Tests
  * @package       cake
  * @subpackage    cake.tests.cases.libs
  * @since         CakePHP(tm) v 1.2.0.5432
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @version       $Revision$
+ * @modifiedby    $LastChangedBy$
+ * @lastmodified  $Date$
+ * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
 App::import('Core', 'String');
-
 /**
  * StringTest class
  *
@@ -30,7 +32,6 @@ App::import('Core', 'String');
  * @subpackage    cake.tests.cases.libs
  */
 class StringTest extends CakeTestCase {
-
 /**
  * testUuidGeneration method
  *
@@ -43,7 +44,6 @@ class StringTest extends CakeTestCase {
 		$match = preg_match($pattern, $result);
 		$this->assertTrue($match);
 	}
-
 /**
  * testMultipleUuidGeneration method
  *
@@ -63,7 +63,6 @@ class StringTest extends CakeTestCase {
 			$check[] = $result;
 		}
 	}
-
 /**
  * testInsert method
  *
@@ -200,16 +199,13 @@ class StringTest extends CakeTestCase {
 		$expected = "Pre-pended result";
 		$this->assertEqual($result, $expected);
 	}
-
 /**
  * test Clean Insert
  *
  * @return void
  **/
 	function testCleanInsert() {
-		$result = String::cleanInsert(':incomplete', array(
-			'clean' => true, 'before' => ':', 'after' => ''
-		));
+		$result = String::cleanInsert(':incomplete', array('clean' => true, 'before' => ':', 'after' => ''));
 		$this->assertEqual($result, '');
 
 		$result = String::cleanInsert(':incomplete', array(
@@ -218,40 +214,18 @@ class StringTest extends CakeTestCase {
 		);
 		$this->assertEqual($result, 'complete');
 
-		$result = String::cleanInsert(':in.complete', array(
-			'clean' => true, 'before' => ':', 'after' => ''
-		));
+		$result = String::cleanInsert(':in.complete', array('clean' => true, 'before' => ':', 'after' => ''));
 		$this->assertEqual($result, '');
 
-		$result = String::cleanInsert(':in.complete and', array(
-			'clean' => true, 'before' => ':', 'after' => '')
-		);
+		$result = String::cleanInsert(':in.complete and', array('clean' => true, 'before' => ':', 'after' => ''));
 		$this->assertEqual($result, '');
 
-		$result = String::cleanInsert(':in.complete or stuff', array(
-			'clean' => true, 'before' => ':', 'after' => ''
-		));
+		$result = String::cleanInsert(':in.complete or stuff', array('clean' => true, 'before' => ':', 'after' => ''));
 		$this->assertEqual($result, 'stuff');
 
-		$result = String::cleanInsert(
-			'<p class=":missing" id=":missing">Text here</p>',
-			array('clean' => 'html', 'before' => ':', 'after' => '')
-		);
+		$result = String::cleanInsert('<p class=":missing" id=":missing">Text here</p>', array('clean' => 'html', 'before' => ':', 'after' => ''));
 		$this->assertEqual($result, '<p>Text here</p>');
 	}
-
-/**
- * Tests that non-insertable variables (i.e. arrays) are skipped when used as values in
- * String::insert().
- *
- * @return void
- */
-	function testAutoIgnoreBadInsertData() {
-		$data = array('foo' => 'alpha', 'bar' => 'beta', 'fale' => array());
-		$result = String::insert('(:foo > :bar || :fale!)', $data, array('clean' => 'text'));
-		$this->assertEqual($result, '(alpha > beta || !)');
-	}
-
 /**
  * testTokenize method
  *
@@ -280,5 +254,4 @@ class StringTest extends CakeTestCase {
 		$this->assertEqual($expected, $result);
 	}
 }
-
 ?>

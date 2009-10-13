@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * DboPostgresTest file
  *
@@ -26,7 +25,6 @@
 App::import('Core', array('Model', 'DataSource', 'DboSource', 'DboPostgres'));
 App::import('Model', 'App');
 require_once dirname(dirname(dirname(__FILE__))) . DS . 'models.php';
-
 /**
  * DboPostgresTestDb class
  *
@@ -34,7 +32,6 @@ require_once dirname(dirname(dirname(__FILE__))) . DS . 'models.php';
  * @subpackage    cake.tests.cases.libs.model.datasources
  */
 class DboPostgresTestDb extends DboPostgres {
-
 /**
  * simulated property
  *
@@ -42,7 +39,6 @@ class DboPostgresTestDb extends DboPostgres {
  * @access public
  */
 	var $simulated = array();
-
 /**
  * execute method
  *
@@ -54,7 +50,6 @@ class DboPostgresTestDb extends DboPostgres {
 		$this->simulated[] = $sql;
 		return null;
 	}
-
 /**
  * getLastQuery method
  *
@@ -65,7 +60,6 @@ class DboPostgresTestDb extends DboPostgres {
 		return $this->simulated[count($this->simulated) - 1];
 	}
 }
-
 /**
  * PostgresTestModel class
  *
@@ -73,7 +67,6 @@ class DboPostgresTestDb extends DboPostgres {
  * @subpackage    cake.tests.cases.libs.model.datasources
  */
 class PostgresTestModel extends Model {
-
 /**
  * name property
  *
@@ -81,7 +74,6 @@ class PostgresTestModel extends Model {
  * @access public
  */
 	var $name = 'PostgresTestModel';
-
 /**
  * useTable property
  *
@@ -89,7 +81,6 @@ class PostgresTestModel extends Model {
  * @access public
  */
 	var $useTable = false;
-
 /**
  * find method
  *
@@ -103,7 +94,6 @@ class PostgresTestModel extends Model {
 	function find($conditions = null, $fields = null, $order = null, $recursive = null) {
 		return $conditions;
 	}
-
 /**
  * findAll method
  *
@@ -117,7 +107,6 @@ class PostgresTestModel extends Model {
 	function findAll($conditions = null, $fields = null, $order = null, $recursive = null) {
 		return $conditions;
 	}
-
 /**
  * schema method
  *
@@ -147,7 +136,6 @@ class PostgresTestModel extends Model {
 		);
 	}
 }
-
 /**
  * DboPostgresTest class
  *
@@ -155,7 +143,6 @@ class PostgresTestModel extends Model {
  * @subpackage    cake.tests.cases.libs.model.datasources.dbo
  */
 class DboPostgresTest extends CakeTestCase {
-
 /**
  * Do not automatically load fixtures for each test, they will be loaded manually
  * using CakeTestCase::loadFixtures
@@ -164,7 +151,6 @@ class DboPostgresTest extends CakeTestCase {
  * @access public
  */
 	var $autoFixtures = false;
-
 /**
  * Fixtures
  *
@@ -173,7 +159,6 @@ class DboPostgresTest extends CakeTestCase {
  */
 	var $fixtures = array('core.user', 'core.binary_test', 'core.comment', 'core.article',
 		'core.tag', 'core.articles_tag', 'core.attachment', 'core.person', 'core.post', 'core.author');
-
 /**
  * Actual DB connection used in testing
  *
@@ -181,7 +166,6 @@ class DboPostgresTest extends CakeTestCase {
  * @access public
  */
 	var $db = null;
-
 /**
  * Simulated DB connection used in testing
  *
@@ -189,7 +173,6 @@ class DboPostgresTest extends CakeTestCase {
  * @access public
  */
 	var $db2 = null;
-
 /**
  * Skip if cannot connect to postgres
  *
@@ -199,7 +182,6 @@ class DboPostgresTest extends CakeTestCase {
 		$this->_initDb();
 		$this->skipUnless($this->db->config['driver'] == 'postgres', '%s PostgreSQL connection not available');
 	}
-
 /**
  * Set up test suite database connection
  *
@@ -208,7 +190,6 @@ class DboPostgresTest extends CakeTestCase {
 	function startTest() {
 		$this->_initDb();
 	}
-
 /**
  * Sets up a Dbo class instance for testing
  *
@@ -221,7 +202,6 @@ class DboPostgresTest extends CakeTestCase {
 		$this->db2 = new DboPostgresTestDb($this->db->config, false);
 		$this->model = new PostgresTestModel();
 	}
-
 /**
  * Sets up a Dbo class instance for testing
  *
@@ -231,7 +211,6 @@ class DboPostgresTest extends CakeTestCase {
 		Configure::write('Cache.disable', false);
 		unset($this->db2);
 	}
-
 /**
  * Test field and value quoting method
  *
@@ -269,7 +248,6 @@ class DboPostgresTest extends CakeTestCase {
 		$result = $this->db2->value('1,2', 'float');
 		$this->assertIdentical($expected, $result);
 	}
-
 /**
  * testColumnParsing method
  *
@@ -284,7 +262,6 @@ class DboPostgresTest extends CakeTestCase {
 		$this->assertEqual($this->db2->column('time without time zone'), 'time');
 		$this->assertEqual($this->db2->column('timestamp without time zone'), 'datetime');
 	}
-
 /**
  * testValueQuoting method
  *
@@ -313,7 +290,6 @@ class DboPostgresTest extends CakeTestCase {
 		$this->assertEqual($this->db2->value('1', 'boolean'), 'TRUE');
 		$this->assertEqual($this->db2->value(null, 'boolean'), "NULL");
 	}
-
 /**
  * test that date columns do not generate errors with null and nullish values.
  *
@@ -329,7 +305,6 @@ class DboPostgresTest extends CakeTestCase {
 		$this->assertEqual($this->db2->value('', 'timestamp'), 'NULL');
 		$this->assertEqual($this->db2->value(null, 'timestamp'), 'NULL');
 	}
-
 /**
  * Tests that different Postgres boolean 'flavors' are properly returned as native PHP booleans
  *
@@ -351,7 +326,6 @@ class DboPostgresTest extends CakeTestCase {
 		$this->assertFalse($this->db2->boolean(0));
 		$this->assertFalse($this->db2->boolean(''));
 	}
-
 /**
  * testLastInsertIdMultipleInsert method
  *
@@ -379,7 +353,6 @@ class DboPostgresTest extends CakeTestCase {
 		$this->assertEqual($db1->lastInsertId($table), 1);
 		$this->assertEqual($db2->lastInsertId($table), 2);
 	}
-
 /**
  * Tests that table lists and descriptions are scoped to the proper Postgres schema
  *
@@ -400,7 +373,6 @@ class DboPostgresTest extends CakeTestCase {
 
 		$db2->query('DROP SCHEMA _scope_test');
 	}
-
 /**
  * Tests that column types without default lengths in $columns do not have length values
  * applied when generating schemas.
@@ -417,7 +389,6 @@ class DboPostgresTest extends CakeTestCase {
 		$expected = '"foo" text DEFAULT \'FOO\'';
 		$this->assertEqual($this->db->buildColumn($result), $expected);
 	}
-
 /**
  * Tests that binary data is escaped/unescaped properly on reads and writes
  *
@@ -450,7 +421,6 @@ class DboPostgresTest extends CakeTestCase {
 		$result = $model->find('first');
 		$this->assertEqual($result['BinaryTest']['data'], $data);
 	}
-
 /**
  * Tests the syntax of generated schema indexes
  *
@@ -483,7 +453,6 @@ class DboPostgresTest extends CakeTestCase {
 		$result = $this->db->createSchema($schema);
 		$this->assertNoPattern('/^CREATE INDEX(.+);,$/', $result);
 	}
-
 /**
  * testCakeSchema method
  *
@@ -521,7 +490,6 @@ class DboPostgresTest extends CakeTestCase {
 
 		$db1->query('DROP TABLE ' . $db1->fullTableName('datatypes'));
 	}
-
 /**
  * Test index generation from table info.
  *
@@ -553,7 +521,6 @@ class DboPostgresTest extends CakeTestCase {
 		$this->assertEqual($expected, $result);
 		$this->db->query('DROP TABLE ' . $name);
 	}
-
 /**
  * Test the alterSchema capabilities of postgres
  *
@@ -599,7 +566,6 @@ class DboPostgresTest extends CakeTestCase {
 
 		$this->db->query($this->db->dropSchema($New));
 	}
-
 /**
  * Test the alter index capabilities of postgres
  *

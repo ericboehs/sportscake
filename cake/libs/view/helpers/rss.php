@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * RSS Helper class file.
  *
@@ -34,7 +33,6 @@ App::import('Helper', 'Xml');
  * @subpackage    cake.cake.libs.view.helpers
  */
 class RssHelper extends XmlHelper {
-
 /**
  * Helpers used by RSS Helper
  *
@@ -42,7 +40,6 @@ class RssHelper extends XmlHelper {
  * @access public
  **/
 	var $helpers = array('Time');
-
 /**
  * Base URL
  *
@@ -50,7 +47,6 @@ class RssHelper extends XmlHelper {
  * @var string
  */
 	var $base = null;
-
 /**
  * URL to current action.
  *
@@ -58,7 +54,6 @@ class RssHelper extends XmlHelper {
  * @var string
  */
 	var $here = null;
-
 /**
  * Parameter array.
  *
@@ -66,7 +61,6 @@ class RssHelper extends XmlHelper {
  * @var array
  */
 	var $params = array();
-
 /**
  * Current action.
  *
@@ -74,7 +68,6 @@ class RssHelper extends XmlHelper {
  * @var string
  */
 	var $action = null;
-
 /**
  * POSTed model data
  *
@@ -82,7 +75,6 @@ class RssHelper extends XmlHelper {
  * @var array
  */
 	var $data = null;
-
 /**
  * Name of the current model
  *
@@ -90,7 +82,6 @@ class RssHelper extends XmlHelper {
  * @var string
  */
 	var $model = null;
-
 /**
  * Name of the current field
  *
@@ -98,7 +89,6 @@ class RssHelper extends XmlHelper {
  * @var string
  */
 	var $field = null;
-
 /**
  * Default spec version of generated RSS
  *
@@ -106,7 +96,6 @@ class RssHelper extends XmlHelper {
  * @var string
  */
 	var $version = '2.0';
-
 /**
  * Returns an RSS document wrapped in <rss /> tags
  *
@@ -124,7 +113,6 @@ class RssHelper extends XmlHelper {
 
 		return $this->elem('rss', $attrib, $content);
 	}
-
 /**
  * Returns an RSS <channel /> element
  *
@@ -169,7 +157,6 @@ class RssHelper extends XmlHelper {
 		}
 		return $this->elem('channel', $attrib, $elems . $content, !($content === null));
 	}
-
 /**
  * Transforms an array of data using an optional callback, and maps it to a set
  * of <item /> tags
@@ -192,7 +179,6 @@ class RssHelper extends XmlHelper {
 		}
 		return $out;
 	}
-
 /**
  * Converts an array into an <item /> element and its contents
  *
@@ -277,7 +263,6 @@ class RssHelper extends XmlHelper {
 		}
 		return $this->output($this->elem('item', $att, $content, !($content === null)));
 	}
-
 /**
  * Converts a time in any format to an RSS time
  *

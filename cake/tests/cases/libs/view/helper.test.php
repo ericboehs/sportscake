@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * HelperTest file
  *
@@ -26,7 +25,6 @@
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
 App::import('Core', array('View', 'Helper'));
-
 /**
  * HelperTestPost class
  *
@@ -34,7 +32,6 @@ App::import('Core', array('View', 'Helper'));
  * @subpackage    cake.tests.cases.libs.view
  */
 class HelperTestPost extends Model {
-
 /**
  * useTable property
  *
@@ -42,7 +39,6 @@ class HelperTestPost extends Model {
  * @access public
  */
 	var $useTable = false;
-
 /**
  * schema method
  *
@@ -61,7 +57,6 @@ class HelperTestPost extends Model {
 		);
 		return $this->_schema;
 	}
-
 /**
  * hasAndBelongsToMany property
  *
@@ -70,7 +65,6 @@ class HelperTestPost extends Model {
  */
 	var $hasAndBelongsToMany = array('HelperTestTag'=> array('with' => 'HelperTestPostsTag'));
 }
-
 /**
  * HelperTestComment class
  *
@@ -78,7 +72,6 @@ class HelperTestPost extends Model {
  * @subpackage    cake.tests.cases.libs.view
  */
 class HelperTestComment extends Model {
-
 /**
  * useTable property
  *
@@ -86,7 +79,6 @@ class HelperTestComment extends Model {
  * @access public
  */
 	var $useTable = false;
-
 /**
  * schema method
  *
@@ -105,7 +97,6 @@ class HelperTestComment extends Model {
 		return $this->_schema;
 	}
 }
-
 /**
  * HelperTestTag class
  *
@@ -113,7 +104,6 @@ class HelperTestComment extends Model {
  * @subpackage    cake.tests.cases.libs.view
  */
 class HelperTestTag extends Model {
-
 /**
  * useTable property
  *
@@ -121,7 +111,6 @@ class HelperTestTag extends Model {
  * @access public
  */
 	var $useTable = false;
-
 /**
  * schema method
  *
@@ -138,7 +127,6 @@ class HelperTestTag extends Model {
 		return $this->_schema;
 	}
 }
-
 /**
  * HelperTestPostsTag class
  *
@@ -146,7 +134,6 @@ class HelperTestTag extends Model {
  * @subpackage    cake.tests.cases.libs.view
  */
 class HelperTestPostsTag extends Model {
-
 /**
  * useTable property
  *
@@ -154,7 +141,6 @@ class HelperTestPostsTag extends Model {
  * @access public
  */
 	var $useTable = false;
-
 /**
  * schema method
  *
@@ -169,7 +155,6 @@ class HelperTestPostsTag extends Model {
 		return $this->_schema;
 	}
 }
-
 /**
  * HelperTest class
  *
@@ -177,7 +162,6 @@ class HelperTestPostsTag extends Model {
  * @subpackage    cake.tests.cases.libs
  */
 class HelperTest extends CakeTestCase {
-
 /**
  * setUp method
  *
@@ -194,7 +178,6 @@ class HelperTest extends CakeTestCase {
 		ClassRegistry::addObject('HelperTestComment', new HelperTestComment());
 		ClassRegistry::addObject('HelperTestTag', new HelperTestTag());
 	}
-
 /**
  * tearDown method
  *
@@ -205,7 +188,6 @@ class HelperTest extends CakeTestCase {
 		unset($this->Helper, $this->View);
 		ClassRegistry::flush();
 	}
-
 /**
  * testFormFieldNameParsing method
  *
@@ -342,7 +324,6 @@ class HelperTest extends CakeTestCase {
 		$this->assertEqual($this->View->association, null);
 		$this->assertEqual($this->View->fieldSuffix, null);
 	}
-
 /**
  * test getting values from Helper
  *
@@ -374,7 +355,6 @@ class HelperTest extends CakeTestCase {
 		$result = $this->Helper->value('Post.2.created.year');
 		$this->assertEqual($result, '2008');
 	}
-
 /**
  * Ensure HTML escaping of url params.  So link addresses are valid and not exploited
  *
@@ -405,12 +385,11 @@ class HelperTest extends CakeTestCase {
 		$this->assertEqual($result, "/posts/index/param:%7Baround%20here%7D%5Bthings%5D%5Bare%5D%24%24");
 
 		$result = $this->Helper->url(array(
-			'controller' => 'posts', 'action' => 'index', 'page' => '1',
+			'controller' => 'posts', 'action' => 'index', 'page' => '1', 
 			'?' => array('one' => 'value', 'two' => 'value', 'three' => 'purple')
 		));
 		$this->assertEqual($result, "/posts/index/page:1?one=value&amp;two=value&amp;three=purple");
 	}
-
 /**
  * testFieldsWithSameName method
  *
@@ -446,7 +425,6 @@ class HelperTest extends CakeTestCase {
 		$this->assertEqual($this->View->fieldSuffix, null);
 
 	}
-
 /**
  * testFieldSameAsModel method
  *
@@ -468,7 +446,6 @@ class HelperTest extends CakeTestCase {
 		$this->assertEqual($this->View->fieldSuffix, null);
 
 	}
-
 /**
  * testFieldSuffixForDate method
  *
@@ -494,7 +471,6 @@ class HelperTest extends CakeTestCase {
 		$this->assertEqual($this->View->association, null);
 		$this->assertEqual($this->View->fieldSuffix, 'month');
 	}
-
 /**
  * testMulitDimensionValue method
  *
@@ -528,7 +504,6 @@ class HelperTest extends CakeTestCase {
 		$result = $this->Helper->value('0.id');
 		$this->assertEqual($result, 100);
 	}
-
 /**
  * testClean method
  *

@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Short description for file.
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * Short description for file.
  *
@@ -35,7 +33,6 @@
  * @subpackage    cake.cake.libs
  */
 class L10n extends Object {
-
 /**
  * The language for current locale
  *
@@ -43,7 +40,6 @@ class L10n extends Object {
  * @access public
  */
 	var $language = 'English (United States)';
-
 /**
  * Locale search paths
  *
@@ -51,7 +47,6 @@ class L10n extends Object {
  * @access public
  */
 	var $languagePath = array('eng');
-
 /**
  * ISO 639-3 for current locale
  *
@@ -59,7 +54,6 @@ class L10n extends Object {
  * @access public
  */
 	var $lang = 'eng';
-
 /**
  * Locale
  *
@@ -67,7 +61,6 @@ class L10n extends Object {
  * @access public
  */
 	var $locale = 'en_us';
-
 /**
  * Default ISO 639-3 language.
  *
@@ -77,7 +70,6 @@ class L10n extends Object {
  * @access public
  */
 	var $default = null;
-
 /**
  * Encoding used for current locale
  *
@@ -85,7 +77,6 @@ class L10n extends Object {
  * @access public
  */
 	var $charset = 'utf-8';
-
 /**
  * Set to true if a locale is found
  *
@@ -93,7 +84,6 @@ class L10n extends Object {
  * @access public
  */
 	var $found = false;
-
 /**
  * Maps ISO 639-3 to I10n::__l10nCatalog
  *
@@ -177,7 +167,6 @@ class L10n extends Object {
 								/* Xhosa */ 'xho' => 'xh',
 								/* Yiddish */ 'yid' => 'yi',
 								/* Zulu */ 'zul' => 'zu');
-
 /**
  * HTTP_ACCEPT_LANGUAGE catalog
  *
@@ -325,7 +314,6 @@ class L10n extends Object {
 										'zh-sg' => array('language' => 'Chinese (Singapore)', 'locale' => 'zh_sg', 'localeFallback' => 'chi', 'charset' => 'utf-8'),
 										'zh-tw' => array('language' => 'Chinese (Taiwan)', 'locale' => 'zh_tw', 'localeFallback' => 'chi', 'charset' => 'utf-8'),
 										'zu' => array('language' => 'Zulu', 'locale' => 'zul', 'localeFallback' => 'zul', 'charset' => 'utf-8'));
-
 /**
  * Class constructor
  */
@@ -335,7 +323,6 @@ class L10n extends Object {
 		}
 		parent::__construct();
 	}
-
 /**
  * Gets the settings for $language.
  * If $language is null it attempt to get settings from I10n::__autoLanguage(); if this fails
@@ -351,7 +338,6 @@ class L10n extends Object {
 			return $this->__setLanguage();
 		}
 	}
-
 /**
  * Sets the class vars to correct values for $language.
  * If $language is null it will use the DEFAULT_LANGUAGE if defined
@@ -400,7 +386,6 @@ class L10n extends Object {
 			return $language;
 		}
 	}
-
 /**
  * Attempts to find the locale settings based on the HTTP_ACCEPT_LANGUAGE variable
  *
@@ -428,7 +413,6 @@ class L10n extends Object {
 		}
 		return false;
 	}
-
 /**
  * Attempts to find locale for language, or language for locale
  *
@@ -455,7 +439,6 @@ class L10n extends Object {
 		}
 		return $this->__l10nMap;
 	}
-
 /**
  * Attempts to find catalog record for requested language
  *

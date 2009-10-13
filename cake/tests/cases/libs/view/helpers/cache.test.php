@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * CacheHelperTest file
  *
@@ -30,7 +29,6 @@ if (!defined('CAKEPHP_UNIT_TEST_EXECUTION')) {
 }
 App::import('Core', array('Controller', 'Model', 'View'));
 App::import('Helper', 'Cache');
-
 /**
  * TestCacheHelper class
  *
@@ -39,7 +37,6 @@ App::import('Helper', 'Cache');
  */
 class TestCacheHelper extends CacheHelper {
 }
-
 /**
  * CacheTestController class
  *
@@ -47,7 +44,6 @@ class TestCacheHelper extends CacheHelper {
  * @subpackage    cake.tests.cases.libs.view.helpers
  */
 class CacheTestController extends Controller {
-
 /**
  * helpers property
  *
@@ -55,7 +51,6 @@ class CacheTestController extends Controller {
  * @access public
  */
 	var $helpers = array('Html', 'Cache');
-
 /**
  * cache_parsing method
  *
@@ -69,7 +64,6 @@ class CacheTestController extends Controller {
 		$this->set('superman', 'clark kent');
 	}
 }
-
 /**
  * CacheHelperTest class
  *
@@ -77,7 +71,6 @@ class CacheTestController extends Controller {
  * @subpackage    cake.tests.cases.libs.view.helpers
  */
 class CacheHelperTest extends CakeTestCase {
-
 /**
  * setUp method
  *
@@ -90,7 +83,6 @@ class CacheHelperTest extends CakeTestCase {
 		Configure::write('Cache.check', true);
 		Configure::write('Cache.disable', false);
 	}
-
 /**
  * Start Case - switch view paths
  *
@@ -98,11 +90,9 @@ class CacheHelperTest extends CakeTestCase {
  * @return void
  */
 	function startCase() {
-		App::build(array(
-			'views' => array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'views'. DS)
-		));
+		$this->_viewPaths = Configure::read('viewPaths');
+		Configure::write('viewPaths', array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'views'. DS));
 	}
-
 /**
  * End Case - restore view Paths
  *
@@ -110,9 +100,8 @@ class CacheHelperTest extends CakeTestCase {
  * @return void
  */
 	function endCase() {
-		App::build();
+		Configure::write('viewPaths', $this->_viewPaths);
 	}
-
 /**
  * tearDown method
  *
@@ -120,10 +109,8 @@ class CacheHelperTest extends CakeTestCase {
  * @return void
  */
 	function tearDown() {
-		clearCache();
 		unset($this->Cache);
 	}
-
 /**
  * test cache parsing with no cake:nocache tags in view file.
  *
@@ -148,27 +135,6 @@ class CacheHelperTest extends CakeTestCase {
 		$this->assertPattern('/php echo \$variable/', $contents);
 		$this->assertPattern('/php echo microtime()/', $contents);
 		$this->assertPattern('/clark kent/', $result);
-
-		@unlink($filename);
-	}
-
-/**
- * test cache parsing with non-latin characters in current route
- *
- * @access public
- * @return void
- */
-	function testCacheNonLatinCharactersInRoute() {
-		$this->Controller->cache_parsing();
-		$this->Controller->cacheAction = 21600;
-		$this->Controller->here = '/posts/view/風街ろまん';
-		$this->Controller->action = 'view';
-
-		$View = new View($this->Controller);
-		$result = $View->render('index');
-
-		$filename = CACHE . 'views' . DS . 'posts_view_風街ろまん.php';
-		$this->assertTrue(file_exists($filename));
 
 		@unlink($filename);
 	}
@@ -199,7 +165,6 @@ class CacheHelperTest extends CakeTestCase {
 
 		@unlink($filename);
 	}
-
 /**
  * testComplexNoCache method
  *
@@ -254,7 +219,6 @@ class CacheHelperTest extends CakeTestCase {
 		//$this->assertPattern('/6\. in element with no cache tags/', $contents);
 		$this->assertPattern('/7\. layout after content and after element with no cache tags/', $contents);
 	}
-
 /**
  * testCacheEmptySections method
  *

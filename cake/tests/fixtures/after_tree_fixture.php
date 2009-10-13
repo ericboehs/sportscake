@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Short description for after_tree_fixture.php
  *
@@ -24,7 +23,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * AdFixture class
  *
@@ -32,7 +30,6 @@
  * @subpackage    cake.tests.fixtures
  */
 class AfterTreeFixture extends CakeTestFixture {
-
 /**
  * name property
  *
@@ -40,7 +37,6 @@ class AfterTreeFixture extends CakeTestFixture {
  * @access public
  */
 	var $name = 'AfterTree';
-
 /**
  * fields property
  *
@@ -54,7 +50,6 @@ class AfterTreeFixture extends CakeTestFixture {
 		'rght' => array('type' => 'integer'),
 		'name' => array('type' => 'string', 'length' => 255, 'null' => false)
 	);
-
 /**
  * records property
  *

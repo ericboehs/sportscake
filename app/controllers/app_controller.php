@@ -36,9 +36,19 @@
  * @subpackage    cake.cake.libs.controller
  */
 class AppController extends Controller {
-  var $components = array('RequestHandler');
-  function beforeFilter() {
-    $this->RequestHandler->setContent('json', 'text/x-json');
-  }
+	var $components = array('RequestHandler');
+	function beforeFilter() {
+		$this->RequestHandler->setContent('json', 'text/x-json');
+	}
+	function do_xpath_query($xmlobj, $xpath){
+		$result = $xmlobj->xpath($xpath);
+		if(empty($result))
+			return false;
+		while(list( , $node) = each($result))
+			$results[] = $node;
+		if(count($results) == 1)
+			$results = $results[0];
+		return $results;
+	}
 }
 ?>

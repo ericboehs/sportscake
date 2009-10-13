@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * CacheTest file
  *
@@ -28,7 +27,6 @@
 if (!class_exists('Cache')) {
 	require LIBS . 'cache.php';
 }
-
 /**
  * CacheTest class
  *
@@ -36,7 +34,6 @@ if (!class_exists('Cache')) {
  * @subpackage    cake.tests.cases.libs
  */
 class CacheTest extends CakeTestCase {
-
 /**
  * setUp method
  *
@@ -52,7 +49,6 @@ class CacheTest extends CakeTestCase {
 
 		Cache::engine('File', array('path' => TMP . 'tests'));
 	}
-
 /**
  * tearDown method
  *
@@ -64,7 +60,6 @@ class CacheTest extends CakeTestCase {
 		Cache::config('default', $this->_defaultCacheConfig['settings']);
 		Cache::engine('File');
 	}
-
 /**
  * testConfig method
  *
@@ -76,27 +71,6 @@ class CacheTest extends CakeTestCase {
 		$results = Cache::config('new', $settings);
 		$this->assertEqual($results, Cache::config('new'));
 	}
-
-/**
- * testInvalidConfig method
- *
- * Test that the cache class doesn't cause fatal errors with a partial path
- *
- * @access public
- * @return void
- */
-	function testInvaidConfig() {
-		Cache::config('Invalid', array(
-			'engine' => 'File',
-			'duration' => '+1 year',
-			'prefix' => 'testing_invalid_',
-			'path' => 'data/',
-			'serialize' => true
-		));
-		$read = Cache::read('Test', 'Invalid');
-		$this->assertEqual($read, null);
-	}
-
 /**
  * testConfigChange method
  *
@@ -116,7 +90,6 @@ class CacheTest extends CakeTestCase {
 		Cache::config('sessions', $_cacheConfigSessions['settings']);
 		Cache::config('tests', $_cacheConfigTests['settings']);
 	}
-
 /**
  * testWritingWithConfig method
  *
@@ -142,7 +115,6 @@ class CacheTest extends CakeTestCase {
 
 		Cache::config('sessions', $_cacheConfigSessions['settings']);
 	}
-
 /**
  * testInitSettings method
  *
@@ -167,7 +139,6 @@ class CacheTest extends CakeTestCase {
 
 		Cache::engine('File');
 	}
-
 /**
  * testWriteEmptyValues method
  *
@@ -190,7 +161,6 @@ class CacheTest extends CakeTestCase {
 		Cache::write('App.zeroTest2', '0');
 		$this->assertIdentical(Cache::read('App.zeroTest2'), '0');
 	}
-
 /**
  * testCacheDisable method
  *
@@ -234,7 +204,6 @@ class CacheTest extends CakeTestCase {
 		$this->assertFalse(Cache::write('key_6', 'hello'));
 		$this->assertFalse(Cache::read('key_6'));
 	}
-
 /**
  * testSet method
  *

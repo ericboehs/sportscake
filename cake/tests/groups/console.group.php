@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * ConsoleGroupTest file
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
-
 /**
  * ConsoleGroupTest class
  *
@@ -35,7 +33,6 @@
  * @subpackage    cake.tests.groups
  */
 class ConsoleGroupTest extends GroupTest {
-
 /**
  * label property
  *
@@ -43,7 +40,6 @@ class ConsoleGroupTest extends GroupTest {
  * @access public
  */
 	var $label = 'ShellDispatcher, Shell and all Tasks';
-
 /**
  * ConsoleGroupTest method
  *

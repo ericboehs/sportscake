@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * CakeTestCaseTest file
  *
@@ -38,7 +37,6 @@ Mock::generate('CakeTestCase', 'CakeDispatcherMockTestCase');
 
 SimpleTest::ignore('SubjectCakeTestCase');
 SimpleTest::ignore('CakeDispatcherMockTestCase');
-
 /**
  * SubjectCakeTestCase
  *
@@ -46,7 +44,6 @@ SimpleTest::ignore('CakeDispatcherMockTestCase');
  * @subpackage    cake.tests.cases.libs
  */
 class SubjectCakeTestCase extends CakeTestCase {
-
 /**
  * Feed a Mocked Reporter to the subject case
  * prevents its pass/fails from affecting the real test
@@ -58,7 +55,6 @@ class SubjectCakeTestCase extends CakeTestCase {
 	function setReporter(&$reporter) {
 		$this->_reporter = &$reporter;
 	}
-
 /**
  * testDummy method
  *
@@ -68,7 +64,6 @@ class SubjectCakeTestCase extends CakeTestCase {
 	function testDummy() {
 	}
 }
-
 /**
  * CakeTestCaseTest
  *
@@ -76,7 +71,6 @@ class SubjectCakeTestCase extends CakeTestCase {
  * @subpackage    cake.tests.cases.libs
  */
 class CakeTestCaseTest extends CakeTestCase {
-
 /**
  * setUp
  *
@@ -89,7 +83,6 @@ class CakeTestCaseTest extends CakeTestCase {
 		$this->Case->setReporter($reporter);
 		$this->Reporter = $reporter;
 	}
-
 /**
  * tearDown
  *
@@ -100,17 +93,6 @@ class CakeTestCaseTest extends CakeTestCase {
 		unset($this->Case);
 		unset($this->Reporter);
 	}
-
-/**
- * endTest
- *
- * @access public
- * @return void
- */
-	function endTest() {
-		App::build();
-	}
-
 /**
  * testAssertGoodTags
  *
@@ -166,7 +148,6 @@ class CakeTestCaseTest extends CakeTestCase {
 		);
 		$this->assertTrue($this->Case->assertTags($input, $pattern));
 	}
-
 /**
  * testBadAssertTags
  *
@@ -193,7 +174,6 @@ class CakeTestCaseTest extends CakeTestCase {
 		);
 		$this->assertFalse($this->Case->assertTags($input, $pattern));
 	}
-
 /**
  * testBefore
  *
@@ -211,7 +191,6 @@ class CakeTestCaseTest extends CakeTestCase {
 		$this->assertTrue(is_a($this->Case->_fixtures['core.post'], 'CakeTestFixture'));
 		$this->assertEqual($this->Case->_fixtureClassMap['Post'], 'core.post');
 	}
-
 /**
  * testAfter
  *
@@ -228,7 +207,6 @@ class CakeTestCaseTest extends CakeTestCase {
 		$this->Case->after('testDummy');
 		$this->assertTrue($this->Case->__truncated);
 	}
-
 /**
  * testLoadFixtures
  *
@@ -243,7 +221,6 @@ class CakeTestCaseTest extends CakeTestCase {
 		$this->Case->loadFixtures('Wrong!');
 		$this->Case->end();
 	}
-
 /**
  * testGetTests Method
  *
@@ -255,7 +232,6 @@ class CakeTestCaseTest extends CakeTestCase {
 		$this->assertEqual(array_slice($result, 0, 2), array('start', 'startCase'));
 		$this->assertEqual(array_slice($result, -2), array('endCase', 'end'));
 	}
-
 /**
  * TestTestAction
  *
@@ -263,12 +239,16 @@ class CakeTestCaseTest extends CakeTestCase {
  * @return void
  **/
 	function testTestAction() {
-		App::build(array(
-			'plugins' => array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'plugins' . DS),
-			'models' => array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'models' . DS),
-			'views' => array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'views' . DS),
-			'controllers' => array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'controllers' . DS)
-		), true);
+		$_back = array(
+			'controller' => Configure::read('controllerPaths'),
+			'view' => Configure::read('viewPaths'),
+			'model' => Configure::read('modelPaths'),
+			'plugin' => Configure::read('pluginPaths')
+		);
+		Configure::write('controllerPaths', array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'controllers' . DS));
+		Configure::write('viewPaths', array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'views' . DS));
+		Configure::write('modelPaths', array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'models' . DS));
+		Configure::write('pluginPaths', array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'plugins' . DS));
 
 		$result = $this->Case->testAction('/tests_apps/index', array('return' => 'view'));
 		$this->assertPattern('/This is the TestsAppsController index view/', $result);
@@ -387,8 +367,13 @@ class CakeTestCaseTest extends CakeTestCase {
 		$db =& ConnectionManager::getDataSource('test_suite');
 		$db->config['prefix'] = $_backPrefix;
 		$fixture->drop($db);
-	}
 
+
+		Configure::write('modelPaths', $_back['model']);
+		Configure::write('controllerPaths', $_back['controller']);
+		Configure::write('viewPaths', $_back['view']);
+		Configure::write('pluginPaths', $_back['plugin']);
+	}
 /**
  * testSkipIf
  *
@@ -398,7 +383,6 @@ class CakeTestCaseTest extends CakeTestCase {
 		$this->assertTrue($this->Case->skipIf(true));
 		$this->assertFalse($this->Case->skipIf(false));
 	}
-
 /**
  * testTestDispatcher
  *
@@ -406,12 +390,14 @@ class CakeTestCaseTest extends CakeTestCase {
  * @return void
  */
 	function testTestDispatcher() {
-		App::build(array(
-			'plugins' => array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'plugins' . DS),
-			'models' => array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'models' . DS),
-			'views' => array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'views' . DS),
-			'controllers' => array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'controllers' . DS)
-		), true);
+		$_back = array(
+			'controller' => Configure::read('controllerPaths'),
+			'view' => Configure::read('viewPaths'),
+			'plugin' => Configure::read('pluginPaths')
+		);
+		Configure::write('controllerPaths', array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'controllers' . DS));
+		Configure::write('viewPaths', array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'views' . DS));
+		Configure::write('pluginPaths', array(TEST_CAKE_CORE_INCLUDE_PATH . 'tests' . DS . 'test_app' . DS . 'plugins' . DS));
 
 		$Dispatcher =& new CakeTestDispatcher();
 		$Case =& new CakeDispatcherMockTestCase();
@@ -423,6 +409,10 @@ class CakeTestCaseTest extends CakeTestCase {
 		$this->assertTrue(isset($Dispatcher->testCase));
 
 		$return = $Dispatcher->dispatch('/tests_apps/index', array('autoRender' => 0, 'return' => 1, 'requested' => 1));
+
+		Configure::write('controllerPaths', $_back['controller']);
+		Configure::write('viewPaths', $_back['view']);
+		Configure::write('pluginPaths', $_back['plugin']);
 	}
 }
 ?>

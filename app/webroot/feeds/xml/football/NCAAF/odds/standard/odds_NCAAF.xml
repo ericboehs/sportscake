@@ -1,0 +1,1663 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<sport:content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:sport="http://xml.sportsdirectinc.com/sport/v2">
+		   <team-sport-content>
+	      <sport>
+		         <id>/sport/football</id>
+		         <name>football</name>
+	      </sport>
+
+   	      <league-content>
+	 	         <league>
+	 		            <id>/sport/football/league:2</id>
+	 		            <name>National College Football League</name>
+	 		            <name type="short">NCAAF</name>
+	 	         </league>
+		
+	      			         	 	         <competition>
+	 		            <id>/sport/football/competition:27713</id>
+			             <start-date>2009-10-06T20:00:00.000-04:00</start-date>
+			             <name>Middle Tennessee St. vs. Troy</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:196</id>
+	                  	                   <name>Troy</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:143</id>
+	                  	                   <name>Middle Tennessee</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <money-line status="active" opening="true" date="2009-10-05T15:45:08.767-04:00">
+                    <id>/betting/odds:18515013</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-odds>
+                        				      			         	<american>-230</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>190</american>
+      			                       </away-odds>                    
+                </money-line>                                
+            				            	                <point-spread status="active" opening="false" date="2009-10-05T15:45:08.733-04:00">
+                    <id>/betting/odds:18515009</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-5.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>302</home-rotation-number>
+	                           	            		               	                <away-rotation-number>301</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26951</id>
+			             <start-date>2009-10-08T21:00:00.000-04:00</start-date>
+			             <name>Nebraska vs. Missouri</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:119</id>
+	                  	                   <name>Missouri</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:55</id>
+	                  	                   <name>Nebraska</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T13:55:09.713-04:00">
+                    <id>/betting/odds:18514027</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>3.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>304</home-rotation-number>
+	                           	            		               	                <away-rotation-number>303</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26952</id>
+			             <start-date>2009-10-09T21:00:00.000-04:00</start-date>
+			             <name>Louisiana Tech vs. Nevada</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:135</id>
+	                  	                   <name>Nevada</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:57</id>
+	                  	                   <name>Louisiana Tech</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T15:45:08.923-04:00">
+                    <id>/betting/odds:18515017</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-8.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>306</home-rotation-number>
+	                           	            		               	                <away-rotation-number>305</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26963</id>
+			             <start-date>2009-10-10T12:00:00.000-04:00</start-date>
+			             <name>West Virginia vs. Syracuse</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:104</id>
+	                  	                   <name>Syracuse</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:62</id>
+	                  	                   <name>West Virginia</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="true" date="2009-10-05T11:05:09.797-04:00">
+                    <id>/betting/odds:18512837</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>10.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>308</home-rotation-number>
+	                           	            		               	                <away-rotation-number>307</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26980</id>
+			             <start-date>2009-10-10T12:00:00.000-04:00</start-date>
+			             <name>Michigan State vs. Illinois</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:72</id>
+	                  	                   <name>Illinois</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:113</id>
+	                  	                   <name>Michigan State</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T15:45:09.017-04:00">
+                    <id>/betting/odds:18515021</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>4.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>310</home-rotation-number>
+	                           	            		               	                <away-rotation-number>309</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26974</id>
+			             <start-date>2009-10-10T12:00:00.000-04:00</start-date>
+			             <name>Boston College vs. Virginia Tech</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:45</id>
+	                  	                   <name>Virginia Tech</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:34</id>
+	                  	                   <name>Boston College</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:55:09.423-04:00">
+                    <id>/betting/odds:18515725</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-13.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>312</home-rotation-number>
+	                           	            		               	                <away-rotation-number>311</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26983</id>
+			             <start-date>2009-10-10T12:00:00.000-04:00</start-date>
+			             <name>Eastern Michigan vs. Central Michigan</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:141</id>
+	                  	                   <name>Central Michigan</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:136</id>
+	                  	                   <name>Eastern Michigan</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T15:45:09.110-04:00">
+                    <id>/betting/odds:18515025</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-22.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>314</home-rotation-number>
+	                           	            		               	                <away-rotation-number>313</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26958</id>
+			             <start-date>2009-10-10T12:00:00.000-04:00</start-date>
+			             <name>Purdue vs. Minnesota</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:140</id>
+	                  	                   <name>Minnesota</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:35</id>
+	                  	                   <name>Purdue</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:15:14.863-04:00">
+                    <id>/betting/odds:18515300</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-3.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>322</home-rotation-number>
+	                           	            		               	                <away-rotation-number>321</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26956</id>
+			             <start-date>2009-10-10T12:00:00.000-04:00</start-date>
+			             <name>Miami (Ohio) vs. Northwestern</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:94</id>
+	                  	                   <name>Northwestern</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:121</id>
+	                  	                   <name>Miami (Ohio)</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:15:15.130-04:00">
+                    <id>/betting/odds:18515308</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-20.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>326</home-rotation-number>
+	                           	            		               	                <away-rotation-number>325</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26979</id>
+			             <start-date>2009-10-10T12:00:00.000-04:00</start-date>
+			             <name>Vanderbilt vs. Army</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:127</id>
+	                  	                   <name>Army</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:115</id>
+	                  	                   <name>Vanderbilt</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:25:15.620-04:00">
+                    <id>/betting/odds:18515381</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>11.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>334</home-rotation-number>
+	                           	            		               	                <away-rotation-number>333</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26953</id>
+			             <start-date>2009-10-10T12:00:00.000-04:00</start-date>
+			             <name>Auburn vs. Arkansas</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:126</id>
+	                  	                   <name>Arkansas</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:84</id>
+	                  	                   <name>Auburn</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:55:11.377-04:00">
+                    <id>/betting/odds:18515765</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>3.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>374</home-rotation-number>
+	                           	            		               	                <away-rotation-number>373</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26988</id>
+			             <start-date>2009-10-10T12:20:00.000-04:00</start-date>
+			             <name>Georgia vs. Tennessee</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:114</id>
+	                  	                   <name>Tennessee</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:52</id>
+	                  	                   <name>Georgia</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:55:10.503-04:00">
+                    <id>/betting/odds:18515737</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-1.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>346</home-rotation-number>
+	                           	            		               	                <away-rotation-number>345</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26984</id>
+			             <start-date>2009-10-10T12:30:00.000-04:00</start-date>
+			             <name>Iowa State vs. Kansas</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:49</id>
+	                  	                   <name>Kansas</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:101</id>
+	                  	                   <name>Iowa State</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:25:15.200-04:00">
+                    <id>/betting/odds:18515373</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-20.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>328</home-rotation-number>
+	                           	            		               	                <away-rotation-number>327</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26978</id>
+			             <start-date>2009-10-10T12:30:00.000-04:00</start-date>
+			             <name>Houston vs. Mississippi State</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:76</id>
+	                  	                   <name>Mississippi State</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:96</id>
+	                  	                   <name>Houston</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:55:10.207-04:00">
+                    <id>/betting/odds:18515729</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>2.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>338</home-rotation-number>
+	                           	            		               	                <away-rotation-number>337</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26987</id>
+			             <start-date>2009-10-10T12:30:00.000-04:00</start-date>
+			             <name>Kentucky vs. South Carolina</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:161</id>
+	                  	                   <name>South Carolina</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:122</id>
+	                  	                   <name>Kentucky</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:55:11.283-04:00">
+                    <id>/betting/odds:18515761</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-11.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>372</home-rotation-number>
+	                           	            		               	                <away-rotation-number>371</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26968</id>
+			             <start-date>2009-10-10T13:00:00.000-04:00</start-date>
+			             <name>Ball State vs. Temple</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:56</id>
+	                  	                   <name>Temple</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:86</id>
+	                  	                   <name>Ball State</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:25:15.513-04:00">
+                    <id>/betting/odds:18515377</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-13.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>332</home-rotation-number>
+	                           	            		               	                <away-rotation-number>331</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26991</id>
+			             <start-date>2009-10-10T14:00:00.000-04:00</start-date>
+			             <name>New Mexico vs. Wyoming</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:87</id>
+	                  	                   <name>Wyoming</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:63</id>
+	                  	                   <name>New Mexico</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T14:15:10.223-04:00">
+                    <id>/betting/odds:18514156</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-10.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>336</home-rotation-number>
+	                           	            		               	                <away-rotation-number>335</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26973</id>
+			             <start-date>2009-10-10T15:30:00.000-04:00</start-date>
+			             <name>Indiana vs. Virginia</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:134</id>
+	                  	                   <name>Virginia</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:107</id>
+	                  	                   <name>Indiana</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:15:14.723-04:00">
+                    <id>/betting/odds:18515296</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-6.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>320</home-rotation-number>
+	                           	            		               	                <away-rotation-number>319</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26969</id>
+			             <start-date>2009-10-10T15:30:00.000-04:00</start-date>
+			             <name>Connecticut vs. Pittsburgh</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:36</id>
+	                  	                   <name>Pittsburgh</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:144</id>
+	                  	                   <name>Connecticut</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:15:14.990-04:00">
+                    <id>/betting/odds:18515304</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-8.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>324</home-rotation-number>
+	                           	            		               	                <away-rotation-number>323</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26959</id>
+			             <start-date>2009-10-10T15:30:00.000-04:00</start-date>
+			             <name>Alabama vs. Mississippi</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:77</id>
+	                  	                   <name>Mississippi</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:51</id>
+	                  	                   <name>Alabama</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="true" date="2009-10-05T11:05:12.107-04:00">
+                    <id>/betting/odds:18512881</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>6.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>330</home-rotation-number>
+	                           	            		               	                <away-rotation-number>329</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26990</id>
+			             <start-date>2009-10-10T15:30:00.000-04:00</start-date>
+			             <name>Bowling Green vs. Kent State</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:123</id>
+	                  	                   <name>Kent State</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:85</id>
+	                  	                   <name>Bowling Green</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:55:10.330-04:00">
+                    <id>/betting/odds:18515733</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>5.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>342</home-rotation-number>
+	                           	            		               	                <away-rotation-number>341</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26992</id>
+			             <start-date>2009-10-10T15:30:00.000-04:00</start-date>
+			             <name>Marshall vs. Tulane</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:48</id>
+	                  	                   <name>Tulane</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:118</id>
+	                  	                   <name>Marshall</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:55:10.550-04:00">
+                    <id>/betting/odds:18515741</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>3.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>348</home-rotation-number>
+	                           	            		               	                <away-rotation-number>347</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26964</id>
+			             <start-date>2009-10-10T15:30:00.000-04:00</start-date>
+			             <name>Wisconsin vs. Ohio State</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:105</id>
+	                  	                   <name>Ohio State</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:111</id>
+	                  	                   <name>Wisconsin</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:55:10.830-04:00">
+                    <id>/betting/odds:18515749</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-13.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>356</home-rotation-number>
+	                           	            		               	                <away-rotation-number>355</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26954</id>
+			             <start-date>2009-10-10T15:30:00.000-04:00</start-date>
+			             <name>Oregon vs. UCLA</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:91</id>
+	                  	                   <name>UCLA</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:39</id>
+	                  	                   <name>Oregon</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T14:15:11.893-04:00">
+                    <id>/betting/odds:18514160</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>6.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>366</home-rotation-number>
+	                           	            		               	                <away-rotation-number>365</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26965</id>
+			             <start-date>2009-10-10T15:30:00.000-04:00</start-date>
+			             <name>Baylor vs. Oklahoma</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:139</id>
+	                  	                   <name>Oklahoma</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:88</id>
+	                  	                   <name>Baylor</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T17:05:18.747-04:00">
+                    <id>/betting/odds:18515921</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-25.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>376</home-rotation-number>
+	                           	            		               	                <away-rotation-number>375</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26970</id>
+			             <start-date>2009-10-10T15:30:00.000-04:00</start-date>
+			             <name>Navy vs. Rice</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:98</id>
+	                  	                   <name>Rice</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:66</id>
+	                  	                   <name>Navy</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:55:11.517-04:00">
+                    <id>/betting/odds:18515773</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>13.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>378</home-rotation-number>
+	                           	            		               	                <away-rotation-number>377</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26960</id>
+			             <start-date>2009-10-10T16:00:00.000-04:00</start-date>
+			             <name>Duke vs. North Carolina State</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:79</id>
+	                  	                   <name>North Carolina State</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:95</id>
+	                  	                   <name>Duke</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T15:45:09.173-04:00">
+                    <id>/betting/odds:18515029</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-15.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>316</home-rotation-number>
+	                           	            		               	                <away-rotation-number>315</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26976</id>
+			             <start-date>2009-10-10T17:00:00.000-04:00</start-date>
+			             <name>Arizona State vs. Washington State</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:40</id>
+	                  	                   <name>Washington State</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:112</id>
+	                  	                   <name>Arizona State</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T15:15:19.357-04:00">
+                    <id>/betting/odds:18514649</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>20.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>360</home-rotation-number>
+	                           	            		               	                <away-rotation-number>359</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26981</id>
+			             <start-date>2009-10-10T18:00:00.000-04:00</start-date>
+			             <name>Ohio vs. Akron</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:124</id>
+	                  	                   <name>Akron</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:117</id>
+	                  	                   <name>Ohio</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:55:11.003-04:00">
+                    <id>/betting/odds:18515753</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>4.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>362</home-rotation-number>
+	                           	            		               	                <away-rotation-number>361</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26993</id>
+			             <start-date>2009-10-10T18:00:00.000-04:00</start-date>
+			             <name>Utah vs. Colorado State</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:89</id>
+	                  	                   <name>Colorado State</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:93</id>
+	                  	                   <name>Utah</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T11:25:12.303-04:00">
+                    <id>/betting/odds:18513184</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>7.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>364</home-rotation-number>
+	                           	            		               	                <away-rotation-number>363</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26962</id>
+			             <start-date>2009-10-10T18:30:00.000-04:00</start-date>
+			             <name>Maryland vs. Wake Forest</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:138</id>
+	                  	                   <name>Wake Forest</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:60</id>
+	                  	                   <name>Maryland</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:15:14.630-04:00">
+                    <id>/betting/odds:18515292</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-11.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>318</home-rotation-number>
+	                           	            		               	                <away-rotation-number>317</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26966</id>
+			             <start-date>2009-10-10T19:00:00.000-04:00</start-date>
+			             <name>Stanford vs. Oregon State</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:81</id>
+	                  	                   <name>Oregon State</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:106</id>
+	                  	                   <name>Stanford</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T11:35:14.080-04:00">
+                    <id>/betting/odds:18513275</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>1.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>344</home-rotation-number>
+	                           	            		               	                <away-rotation-number>343</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26989</id>
+			             <start-date>2009-10-10T19:00:00.000-04:00</start-date>
+			             <name>Kansas State vs. Texas Tech</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:64</id>
+	                  	                   <name>Texas Tech</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:130</id>
+	                  	                   <name>Kansas State</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="true" date="2009-10-05T11:05:13.797-04:00">
+                    <id>/betting/odds:18512926</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-17.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>350</home-rotation-number>
+	                           	            		               	                <away-rotation-number>349</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26994</id>
+			             <start-date>2009-10-10T19:00:00.000-04:00</start-date>
+			             <name>Western Michigan vs. Toledo</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:82</id>
+	                  	                   <name>Toledo</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:67</id>
+	                  	                   <name>Western Michigan</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:55:11.220-04:00">
+                    <id>/betting/odds:18515757</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-8.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>368</home-rotation-number>
+	                           	            		               	                <away-rotation-number>367</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:27638</id>
+			             <start-date>2009-10-10T19:00:00.000-04:00</start-date>
+			             <name>Florida International vs. Western Kentucky</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:189</id>
+	                  	                   <name>Western Kentucky</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:230</id>
+	                  	                   <name>Florida International</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:15:18.583-04:00">
+                    <id>/betting/odds:18515312</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>3.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>398</home-rotation-number>
+	                           	            		               	                <away-rotation-number>397</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26977</id>
+			             <start-date>2009-10-10T19:00:00.000-04:00</start-date>
+			             <name>North Texas vs. UL Lafayette</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:38</id>
+	                  	                   <name>UL Lafayette</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:99</id>
+	                  	                   <name>North Texas</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="true" date="2009-10-05T11:15:21.743-04:00">
+                    <id>/betting/odds:18513076</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-6.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>400</home-rotation-number>
+	                           	            		               	                <away-rotation-number>399</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26972</id>
+			             <start-date>2009-10-10T19:15:00.000-04:00</start-date>
+			             <name>Colorado vs. Texas</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:131</id>
+	                  	                   <name>Texas</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:90</id>
+	                  	                   <name>Colorado</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:55:10.657-04:00">
+                    <id>/betting/odds:18515745</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-32.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>352</home-rotation-number>
+	                           	            		               	                <away-rotation-number>351</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26995</id>
+			             <start-date>2009-10-10T19:30:00.000-04:00</start-date>
+			             <name>Texas Christian vs. Air Force</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:42</id>
+	                  	                   <name>Air Force</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:110</id>
+	                  	                   <name>Texas Christian</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T17:15:15.573-04:00">
+                    <id>/betting/odds:18515999</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>10.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>380</home-rotation-number>
+	                           	            		               	                <away-rotation-number>379</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26955</id>
+			             <start-date>2009-10-10T20:00:00.000-04:00</start-date>
+			             <name>Georgia Tech vs. Florida State</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:47</id>
+	                  	                   <name>Florida State</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:125</id>
+	                  	                   <name>Georgia Tech</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="true" date="2009-10-05T11:05:14.187-04:00">
+                    <id>/betting/odds:18512935</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-2.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>354</home-rotation-number>
+	                           	            		               	                <away-rotation-number>353</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:27001</id>
+			             <start-date>2009-10-10T20:00:00.000-04:00</start-date>
+			             <name>East Carolina vs. Southern Methodist</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:73</id>
+	                  	                   <name>Southern Methodist</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:78</id>
+	                  	                   <name>East Carolina</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="true" date="2009-10-05T11:15:20.587-04:00">
+                    <id>/betting/odds:18513040</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>6.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>382</home-rotation-number>
+	                           	            		               	                <away-rotation-number>381</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26997</id>
+			             <start-date>2009-10-10T20:00:00.000-04:00</start-date>
+			             <name>Florida vs. Louisiana State</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:116</id>
+	                  	                   <name>Louisiana State</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:69</id>
+	                  	                   <name>Florida</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T15:45:12.767-04:00">
+                    <id>/betting/odds:18515045</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>8.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>384</home-rotation-number>
+	                           	            		               	                <away-rotation-number>383</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:27000</id>
+			             <start-date>2009-10-10T20:00:00.000-04:00</start-date>
+			             <name>Michigan vs. Iowa</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:133</id>
+	                  	                   <name>Iowa</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:103</id>
+	                  	                   <name>Michigan</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T16:25:19.120-04:00">
+                    <id>/betting/odds:18515389</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-8.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>386</home-rotation-number>
+	                           	            		               	                <away-rotation-number>385</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26998</id>
+			             <start-date>2009-10-10T20:00:00.000-04:00</start-date>
+			             <name>Utah State vs. New Mexico State</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:74</id>
+	                  	                   <name>New Mexico State</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:100</id>
+	                  	                   <name>Utah State</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T17:15:15.807-04:00">
+                    <id>/betting/odds:18516003</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>12.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>388</home-rotation-number>
+	                           	            		               	                <away-rotation-number>387</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26999</id>
+			             <start-date>2009-10-10T20:00:00.000-04:00</start-date>
+			             <name>Texas El Paso vs. Memphis</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:37</id>
+	                  	                   <name>Memphis</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:41</id>
+	                  	                   <name>Texas El Paso</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T17:15:15.887-04:00">
+                    <id>/betting/odds:18516007</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>2.5</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>390</home-rotation-number>
+	                           	            		               	                <away-rotation-number>389</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26996</id>
+			             <start-date>2009-10-10T20:00:00.000-04:00</start-date>
+			             <name>Idaho vs. San Jose State</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:43</id>
+	                  	                   <name>San Jose State</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:80</id>
+	                  	                   <name>Idaho</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T17:25:15.007-04:00">
+                    <id>/betting/odds:18516078</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>-3.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>392</home-rotation-number>
+	                           	            		               	                <away-rotation-number>391</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:26975</id>
+			             <start-date>2009-10-10T22:00:00.000-04:00</start-date>
+			             <name>Arizona vs. Washington</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:54</id>
+	                  	                   <name>Washington</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:83</id>
+	                  	                   <name>Arizona</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="false" date="2009-10-05T11:35:13.940-04:00">
+                    <id>/betting/odds:18513271</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>3.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>340</home-rotation-number>
+	                           	            		               	                <away-rotation-number>339</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:27002</id>
+			             <start-date>2009-10-10T22:00:00.000-04:00</start-date>
+			             <name>Brigham Young vs. UNLV</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:108</id>
+	                  	                   <name>UNLV</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:33</id>
+	                  	                   <name>Brigham Young</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="true" date="2009-10-05T11:15:21.353-04:00">
+                    <id>/betting/odds:18513064</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>16.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>394</home-rotation-number>
+	                           	            		               	                <away-rotation-number>393</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						         	 	         <competition>
+	 		            <id>/sport/football/competition:27003</id>
+			             <start-date>2009-10-10T23:00:00.000-04:00</start-date>
+			             <name>Fresno State vs. Hawaii</name>
+			             
+	            		               		             <home-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:50</id>
+	                  	                   <name>Hawaii</name>
+	                  	        	    </team>
+	             </home-team-content>
+	               	               		             <away-team-content>
+        	        <team>
+	        		  <id>/sport/football/team:109</id>
+	                  	                   <name>Fresno State</name>
+	                  	        	    </team>
+	             </away-team-content>                      			                				                              			
+	               		                         <betting>
+                        	                <point-spread status="active" opening="true" date="2009-10-05T11:15:21.493-04:00">
+                    <id>/betting/odds:18513068</id>
+                                                            <sportsbook>logans</sportsbook>
+                    <home-handicap>9.0</home-handicap>
+                    <home-odds>
+                        				      			         	<american>-110</american>
+      			                       </home-odds>                    
+                    <away-odds>
+                        				      			         	<american>-110</american>
+      			                       </away-odds>                    
+                </point-spread>
+                				            		               	                <home-rotation-number>396</home-rotation-number>
+	                           	            		               	                <away-rotation-number>395</away-rotation-number>
+	                                      	</betting>
+			
+		</competition>     	     
+						</league-content>
+			</team-sport-content> 
+	</sport:content>

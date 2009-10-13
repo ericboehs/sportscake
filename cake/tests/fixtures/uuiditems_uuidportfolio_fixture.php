@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Short description for file.
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
-
 /**
  * Short description for class.
  *
@@ -33,7 +31,6 @@
  * @subpackage    cake.tests.fixtures
  */
 class UuiditemsUuidportfolioFixture extends CakeTestFixture {
-
 /**
  * name property
  *
@@ -41,7 +38,6 @@ class UuiditemsUuidportfolioFixture extends CakeTestFixture {
  * @access public
  */
 	var $name = 'UuiditemsUuidportfolio';
-
 /**
  * fields property
  *
@@ -53,7 +49,6 @@ class UuiditemsUuidportfolioFixture extends CakeTestFixture {
 		'uuiditem_id' => array('type' => 'string', 'length' => 36, 'null' => false),
 		'uuidportfolio_id' => array('type' => 'string', 'length' => 36, 'null' => false)
 	);
-
 /**
  * records property
  *

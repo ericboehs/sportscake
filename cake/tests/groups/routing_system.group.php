@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * RoutingSystemGroupTest
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
-
 /**
  * RoutingSystemGroupTest class
  *
@@ -35,7 +33,6 @@
  * @subpackage    cake.tests.groups
  */
 class RoutingSystemGroupTest extends GroupTest {
-
 /**
  * label property
  *
@@ -43,7 +40,6 @@ class RoutingSystemGroupTest extends GroupTest {
  * @access public
  */
 	var $label = 'Router and Dispatcher';
-
 /**
  * RoutingSystemGroupTest method
  *

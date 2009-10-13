@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Parses the request URL into controller, action, and parameters.
  *
@@ -25,15 +24,13 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-
 /**
  * Included libraries.
  *
  */
 if (!class_exists('Object')) {
-	require LIBS . 'object.php';
+	App::import('Core', 'Object');
 }
-
 /**
  * Parses the request URL into controller, action, and parameters.
  *
@@ -41,7 +38,6 @@ if (!class_exists('Object')) {
  * @subpackage    cake.cake.libs
  */
 class Router extends Object {
-
 /**
  * Array of routes
  *
@@ -49,7 +45,6 @@ class Router extends Object {
  * @access public
  */
 	var $routes = array();
-
 /**
  * Caches admin setting from Configure class
  *
@@ -57,7 +52,6 @@ class Router extends Object {
  * @access private
  */
 	var $__admin = null;
-
 /**
  * List of action prefixes used in connected routes
  *
@@ -65,7 +59,6 @@ class Router extends Object {
  * @access private
  */
 	var $__prefixes = array();
-
 /**
  * Directive for Router to parse out file extensions for mapping to Content-types.
  *
@@ -73,7 +66,6 @@ class Router extends Object {
  * @access private
  */
 	var $__parseExtensions = false;
-
 /**
  * List of valid extensions to parse from a URL.  If null, any extension is allowed.
  *
@@ -81,7 +73,6 @@ class Router extends Object {
  * @access private
  */
 	var $__validExtensions = null;
-
 /**
  * 'Constant' regular expression definitions for named route elements
  *
@@ -96,7 +87,6 @@ class Router extends Object {
 		'ID'		=> '[0-9]+',
 		'UUID'		=> '[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}'
 	);
-
 /**
  * Stores all information necessary to decide what named arguments are parsed under what conditions.
  *
@@ -109,7 +99,6 @@ class Router extends Object {
 		'separator' => ':',
 		'rules' => false,
 	);
-
 /**
  * The route matching the URL of the current request
  *
@@ -117,7 +106,6 @@ class Router extends Object {
  * @access private
  */
 	var $__currentRoute = array();
-
 /**
  * HTTP header shortcut map.  Used for evaluating header-based route expressions.
  *
@@ -129,7 +117,6 @@ class Router extends Object {
 		'method'	=> 'request_method',
 		'server'	=> 'server_name'
 	);
-
 /**
  * Default HTTP request method => controller action map.
  *
@@ -144,7 +131,6 @@ class Router extends Object {
 		array('action' => 'delete',	'method' => 'DELETE',	'id' => true),
 		array('action' => 'edit',	'method' => 'POST', 	'id' => true)
 	);
-
 /**
  * List of resource-mapped controllers
  *
@@ -152,7 +138,6 @@ class Router extends Object {
  * @access private
  */
 	var $__resourceMapped = array();
-
 /**
  * Maintains the parameter stack for the current request
  *
@@ -160,7 +145,6 @@ class Router extends Object {
  * @access private
  */
 	var $__params = array();
-
 /**
  * Maintains the path stack for the current request
  *
@@ -168,7 +152,6 @@ class Router extends Object {
  * @access private
  */
 	var $__paths = array();
-
 /**
  * Keeps Router state to determine if default routes have already been connected
  *
@@ -176,7 +159,6 @@ class Router extends Object {
  * @access private
  */
 	var $__defaultsMapped = false;
-
 /**
  * Gets a reference to the Router object instance
  *
@@ -193,7 +175,6 @@ class Router extends Object {
 		}
 		return $instance[0];
 	}
-
 /**
  * Gets the named route elements for use in app/config/routes.php
  *
@@ -206,7 +187,6 @@ class Router extends Object {
 		$_this =& Router::getInstance();
 		return $_this->__named;
 	}
-
 /**
  * Returns this object's routes array. Returns false if there are no routes available.
  *
@@ -234,7 +214,6 @@ class Router extends Object {
 		$_this->routes[] = array($route, $default, $params);
 		return $_this->routes;
 	}
-
 /**
  * Specifies what named parameters CakePHP should be parsing. The most common setups are:
  *
@@ -294,7 +273,6 @@ class Router extends Object {
 		$_this->named['greedy'] = $options['greedy'];
 		return $_this->named;
 	}
-
 /**
  * Creates REST resource routes for the given controller(s)
  *
@@ -330,7 +308,6 @@ class Router extends Object {
 			$_this->__resourceMapped[] = $urlName;
 		}
 	}
-
 /**
  * Builds a route regular expression
  *
@@ -403,7 +380,6 @@ class Router extends Object {
 		}
 		return array('#^' . join('', $parsed) . '[\/]*$#', $names);
 	}
-
 /**
  * Returns the list of prefixes used in connected routes
  *
@@ -415,7 +391,6 @@ class Router extends Object {
 		$_this =& Router::getInstance();
 		return $_this->__prefixes;
 	}
-
 /**
  * Parses given URL and returns an array of controllers, action and parameters
  * taken from that URL.
@@ -509,7 +484,6 @@ class Router extends Object {
 		}
 		return $out;
 	}
-
 /**
  * Checks to see if the given URL matches the given route
  *
@@ -548,7 +522,6 @@ class Router extends Object {
 		}
 		return $r;
 	}
-
 /**
  * Compiles a route by numeric key and returns the compiled expression, replacing
  * the existing uncompiled route.  Do not call statically.
@@ -568,7 +541,6 @@ class Router extends Object {
 		);
 		return $this->routes[$i];
 	}
-
 /**
  * Parses a file extension out of a URL, if Router::parseExtensions() is enabled.
  *
@@ -600,7 +572,6 @@ class Router extends Object {
 		}
 		return compact('ext', 'url');
 	}
-
 /**
  * Connects the default, built-in routes, including admin routes, and (deprecated) web services
  * routes.
@@ -617,7 +588,7 @@ class Router extends Object {
 			$params = array('prefix' => $this->__admin, $this->__admin => true);
 		}
 
-		if ($plugins = App::objects('plugin')) {
+		if ($plugins = Configure::listObjects('plugin')) {
 			foreach ($plugins as $key => $value) {
 				$plugins[$key] = Inflector::underscore($value);
 			}
@@ -643,7 +614,6 @@ class Router extends Object {
 		}
 		$this->__defaultsMapped = true;
 	}
-
 /**
  * Takes parameter and path information back from the Dispatcher
  *
@@ -667,7 +637,6 @@ class Router extends Object {
 			}
 		}
 	}
-
 /**
  * Gets parameter information
  *
@@ -686,7 +655,6 @@ class Router extends Object {
 		}
 		return array();
 	}
-
 /**
  * Gets URL parameter by name
  *
@@ -703,7 +671,6 @@ class Router extends Object {
 		}
 		return null;
 	}
-
 /**
  * Gets path information
  *
@@ -722,7 +689,6 @@ class Router extends Object {
 		}
 		return $_this->__paths[0];
 	}
-
 /**
  * Reloads default Router settings
  *
@@ -737,7 +703,6 @@ class Router extends Object {
 		}
 		$_this->__admin = Configure::read('Routing.admin');
 	}
-
 /**
  * Promote a route (by default, the last one added) to the beginning of the list
  *
@@ -760,7 +725,6 @@ class Router extends Object {
 		array_unshift($_this->routes, $route);
 		return true;
 	}
-
 /**
  * Finds URL for specified action.
  *
@@ -798,6 +762,9 @@ class Router extends Object {
 				$params = $_this->__params[0];
 			} else {
 				$params = end($_this->__params);
+			}
+			if (isset($params['prefix']) && strpos($params['action'], $params['prefix']) === 0) {
+				$params['action'] = substr($params['action'], strlen($params['prefix']) + 1);
 			}
 		}
 		$path = array('base' => null);
@@ -965,7 +932,6 @@ class Router extends Object {
 
 		return $output . $extension . $_this->queryString($q, array(), $escape) . $frag;
 	}
-
 /**
  * Maps a URL array onto a route and returns the string result, or false if no match
  *
@@ -1070,7 +1036,6 @@ class Router extends Object {
 		}
 		return Router::__mapRoute($route, array_merge($filled, compact('pass', 'named', 'prefix')));
 	}
-
 /**
  * Merges URL parameters into a route string
  *
@@ -1127,7 +1092,6 @@ class Router extends Object {
 
 		return $out;
 	}
-
 /**
  * Takes an array of URL parameters and separates the ones that can be used as named arguments
  *
@@ -1153,7 +1117,6 @@ class Router extends Object {
 		}
 		return array($named, $params);
 	}
-
 /**
  * Return true if a given named $param's $val matches a given $rule depending on $context. Currently implemented
  * rule types are controller, action and match that can be combined with each other.
@@ -1187,7 +1150,6 @@ class Router extends Object {
 		$valueMatches = !isset($rule['match']) || preg_match(sprintf('/%s/', $rule['match']), $val);
 		return $valueMatches;
 	}
-
 /**
  * Generates a well-formed querystring from $q
  *
@@ -1220,7 +1182,6 @@ class Router extends Object {
 		}
 		return $out;
 	}
-
 /**
  * Normalizes a URL for purposes of comparison
  *
@@ -1251,7 +1212,6 @@ class Router extends Object {
 		}
 		return $url;
 	}
-
 /**
  * Returns the route matching the current request URL.
  *
@@ -1263,7 +1223,6 @@ class Router extends Object {
 		$_this =& Router::getInstance();
 		return $_this->__currentRoute[0];
 	}
-
 /**
  * Returns the route matching the current request (useful for requestAction traces)
  *
@@ -1275,7 +1234,6 @@ class Router extends Object {
 		$_this =& Router::getInstance();
 		return $_this->__currentRoute[count($_this->__currentRoute) - 1];
 	}
-
 /**
  * Removes the plugin name from the base URL.
  *
@@ -1298,7 +1256,6 @@ class Router extends Object {
 		}
 		return $base;
 	}
-
 /**
  * Strip escape characters from parameter values.
  *
@@ -1328,7 +1285,6 @@ class Router extends Object {
 		}
 		return $return;
 	}
-
 /**
  * Instructs the router to parse out file extensions from the URL. For example,
  * http://example.com/posts.rss would yield an file extension of "rss".
@@ -1352,7 +1308,6 @@ class Router extends Object {
 			$_this->__validExtensions = func_get_args();
 		}
 	}
-
 /**
  * Takes an passed params and converts it to args
  *

@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Short description for file.
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
-
 /**
  * Short description for class.
  *
@@ -33,7 +31,6 @@
  * @subpackage    cake.tests.fixtures
  */
 class AcoTwoFixture extends CakeTestFixture {
-
 /**
  * name property
  *
@@ -41,7 +38,6 @@ class AcoTwoFixture extends CakeTestFixture {
  * @access public
  */
 	var $name = 'AcoTwo';
-
 /**
  * fields property
  *
@@ -50,14 +46,13 @@ class AcoTwoFixture extends CakeTestFixture {
  */
 	var $fields = array(
 		'id'		=> array('type' => 'integer', 'key' => 'primary'),
-		'parent_id'	=> array('type' => 'integer', 'length' => 10, 'null' => true, 'default' => 0),
-		'model'		=> array('type' => 'string', 'default' => ''),
+		'parent_id'	=> array('type' => 'integer', 'length' => 10, 'null' => true),
+		'model'		=> array('type' => 'string', 'null' => true),
 		'foreign_key' => array('type' => 'integer', 'length' => 10, 'null' => true),
 		'alias'		=> array('type' => 'string', 'default' => ''),
 		'lft'		=> array('type' => 'integer', 'length' => 10, 'null' => true),
 		'rght'		=> array('type' => 'integer', 'length' => 10, 'null' => true)
 	);
-
 /**
  * records property
  *

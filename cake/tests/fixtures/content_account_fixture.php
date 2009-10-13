@@ -1,6 +1,5 @@
 <?php
 /* SVN FILE: $Id$ */
-
 /**
  * Short description for file.
  *
@@ -25,7 +24,6 @@
  * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
-
 /**
  * Short description for class.
  *
@@ -33,7 +31,6 @@
  * @subpackage    cake.tests.fixtures
  */
 class ContentAccountFixture extends CakeTestFixture {
-
 /**
  * name property
  *
@@ -42,7 +39,6 @@ class ContentAccountFixture extends CakeTestFixture {
  */
 	var $name = 'ContentAccount';
 	var $table = 'ContentAccounts';
-
 /**
  * fields property
  *
@@ -54,7 +50,6 @@ class ContentAccountFixture extends CakeTestFixture {
 		'iContentId'		=> array('type' => 'integer'),
 		'iAccountId'		=> array('type' => 'integer')
 	);
-
 /**
  * records property
  *
