@@ -2,6 +2,9 @@
 class Season extends AppModel {
 
 	var $name = 'Season';
+	var $validate = array(
+		'publisher_id' => array('numeric')
+	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 	var $belongsTo = array(
@@ -15,17 +18,6 @@ class Season extends AppModel {
 		'League' => array(
 			'className' => 'League',
 			'foreignKey' => 'league_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
-
-	var $hasOne = array(
-		'InjuryPhase' => array(
-			'className' => 'InjuryPhase',
-			'foreignKey' => 'season_id',
-			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
@@ -47,6 +39,5 @@ class Season extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-
 }
 ?>

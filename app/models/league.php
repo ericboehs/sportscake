@@ -2,6 +2,10 @@
 class League extends AppModel {
 
 	var $name = 'League';
+	var $validate = array(
+		'league_key' => array('notempty'),
+		'sport_id' => array('numeric')
+	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 	var $belongsTo = array(

@@ -1,6 +1,6 @@
 <?php 
 /* SVN FILE: $Id$ */
-/* SeasonsController Test cases generated on: 2009-08-20 15:08:15 : 1250799195*/
+/* SeasonsController Test cases generated on: 2009-10-13 20:02:22 : 1255464142*/
 App::import('Controller', 'Seasons');
 
 class TestSeasons extends SeasonsController {

@@ -1,6 +1,6 @@
 <?php 
 /* SVN FILE: $Id$ */
-/* Conference Fixture generated on: 2009-10-09 07:13:58 : 1255072438*/
+/* Conference Fixture generated on: 2009-10-13 20:03:44 : 1255464224*/
 
 class ConferenceFixture extends CakeTestFixture {
 	var $name = 'Conference';

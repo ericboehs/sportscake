@@ -1,11 +1,11 @@
 <?php 
 /* SVN FILE: $Id$ */
-/* Conference Test cases generated on: 2009-10-09 07:13:58 : 1255072438*/
+/* Conference Test cases generated on: 2009-10-13 20:03:45 : 1255464225*/
 App::import('Model', 'Conference');
 
 class ConferenceTestCase extends CakeTestCase {
 	var $Conference = null;
-	var $fixtures = array('app.conference', 'app.league', 'app.division');
+	var $fixtures = array('app.conference', 'app.league', 'app.division', 'app.division');
 
 	function startTest() {
 		$this->Conference =& ClassRegistry::init('Conference');

@@ -4,6 +4,7 @@
  		<legend><?php __('Add Season');?></legend>
 	<?php
 		echo $form->input('season_key');
+		echo $form->input('name');
 		echo $form->input('publisher_id');
 		echo $form->input('league_id');
 		echo $form->input('start_date_time');
@@ -14,20 +15,12 @@
 </div>
 <div class="actions">
 	<ul>
-		<li><?php echo $html->link(__('List Seasons', true), array('action'=>'index'));?></li>
-		<li><?php echo $html->link(__('List Publishers', true), array('controller'=> 'publishers', 'action'=>'index')); ?> </li>
-		<li><?php echo $html->link(__('New Publisher', true), array('controller'=> 'publishers', 'action'=>'add')); ?> </li>
-		<li><?php echo $html->link(__('List Affiliations', true), array('controller'=> 'affiliations', 'action'=>'index')); ?> </li>
-		<li><?php echo $html->link(__('New League', true), array('controller'=> 'affiliations', 'action'=>'add')); ?> </li>
-		<li><?php echo $html->link(__('List Injury Phases', true), array('controller'=> 'injury_phases', 'action'=>'index')); ?> </li>
-		<li><?php echo $html->link(__('New Injury Phase', true), array('controller'=> 'injury_phases', 'action'=>'add')); ?> </li>
-		<li><?php echo $html->link(__('List Team Phases', true), array('controller'=> 'team_phases', 'action'=>'index')); ?> </li>
-		<li><?php echo $html->link(__('New Start Team Phase', true), array('controller'=> 'team_phases', 'action'=>'add')); ?> </li>
-		<li><?php echo $html->link(__('List Affiliation Phases', true), array('controller'=> 'affiliation_phases', 'action'=>'index')); ?> </li>
-		<li><?php echo $html->link(__('New Affiliation Phase Start', true), array('controller'=> 'affiliation_phases', 'action'=>'add')); ?> </li>
-		<li><?php echo $html->link(__('List Events Sub Seasons', true), array('controller'=> 'events_sub_seasons', 'action'=>'index')); ?> </li>
-		<li><?php echo $html->link(__('New Events Sub Season', true), array('controller'=> 'events_sub_seasons', 'action'=>'add')); ?> </li>
-		<li><?php echo $html->link(__('List Sub Seasons', true), array('controller'=> 'sub_seasons', 'action'=>'index')); ?> </li>
-		<li><?php echo $html->link(__('New Sub Season', true), array('controller'=> 'sub_seasons', 'action'=>'add')); ?> </li>
+		<li><?php echo $html->link(__('List Seasons', true), array('action' => 'index'));?></li>
+		<li><?php echo $html->link(__('List Publishers', true), array('controller' => 'publishers', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Publisher', true), array('controller' => 'publishers', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Leagues', true), array('controller' => 'leagues', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New League', true), array('controller' => 'leagues', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Injury Phases', true), array('controller' => 'injury_phases', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Injury Phase', true), array('controller' => 'injury_phases', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

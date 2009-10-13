@@ -14,6 +14,9 @@ CREATE TABLE leagues (
 
 ALTER TABLE seasons 
 	CHANGE season_key season_key VARCHAR(255)
+;
+
+ALTER TABLE seasons 
 	ADD name VARCHAR(255) AFTER season_key 
 ;
 
